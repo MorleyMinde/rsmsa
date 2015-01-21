@@ -1,21 +1,14 @@
 <md-dialog aria-label="Mango (Fruit)"  ng-controller="offenceCtrl">
   <md-content>
-  <md-checkbox ng-repeat="off in data" ng-model="offence.offences" ng-click="checkClick(this,off.section)" aria-label="Checkbox 2">
+  <md-checkbox ng-repeat="off in data.offenceRegistry" ng-click="checkClick(off.section)" aria-label="Checkbox 2">
     {{off.nature}}
   </md-checkbox>
   
     
   </md-content>
   <div class="md-actions" layout="row">
-    <md-button href="http://en.wikipedia.org/wiki/Mango" target="_blank" hide show-md>
-      More on Wikipedia
-    </md-button>
-    <span flex></span>
-    <md-button ng-click="answer('not useful')">
-     Not Useful
-    </md-button>
-    <md-button ng-click="answer('useful')" class="md-primary">
-      Useful
+    <md-button ng-click="hide()" class="md-primary">
+      OK
     </md-button>
   </div>
 </md-dialog>

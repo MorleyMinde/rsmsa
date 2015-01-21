@@ -19,3 +19,8 @@ Route::get('/offenceregistry', function()
 {
 	return OffenceRegistry::all();
 });
+Route::get('/model/vehicle/{reg_number}', function($id)
+{
+	return Vehicle::where('reg_number','=',$id)->get();
+	
+});
