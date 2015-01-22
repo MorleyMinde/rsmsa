@@ -35,4 +35,16 @@ class Offence extends Eloquent{
 	{
 		return $this->hasOne('Driver');
 	}
+	
+	/**
+	 * Returns the police involved in issueing an offence
+	 *
+	 * @see Driver Model
+	 *
+	 * @return Object(Police)
+	 */
+	public function police()
+	{
+		return $this->hasOne('Police');
+	}
 }

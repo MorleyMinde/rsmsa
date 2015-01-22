@@ -18,6 +18,7 @@ class CreateTables extends Migration {
 			$table->increments('id');
 			$table->string('first_name', 128);
 			$table->string('last_name');
+			$table->string('address');
 			$table->string('gender');
 			$table->date('birthdate');
 			$table->string('phone_number')->unique();
@@ -37,27 +38,37 @@ class CreateTables extends Migration {
 			$table->foreign('person_id')->references('id')->on('persons')->onDelete('cascade');
 			$table->timestamps();
 		});
-		Schema::create('ranks', function($table)
+		Schema::create('stations', function($table)
+		{
+			$table->increments('id');
+			$table->string('name',128);
+			$table->timestamps();
+		});
+		Schema::create('police', function($table)
 		{
 			$table->string('rank_no');
 			$table->primary('rank_no');
+			$table->integer('station_id')->unsigned();
+			$table->foreign('station_id')->references('id')->on('stations')->onDelete('cascade');
 			$table->integer('person_id')->unsigned();
 			$table->foreign('person_id')->references('id')->on('persons')->onDelete('cascade');
 			$table->timestamps();
 		});
 		Schema::create('vehicles', function($table)
 		{
-			$table->string('reg_number');
-			$table->primary('reg_number');
+			$table->string('plate_number');
+			$table->primary('plate_number');
 			$table->string('make');
 			$table->string('type');
+			$table->string('color');
 		});
 		Schema::create('drivers', function($table)
 		{
-			$table->string('reg_number');
-			$table->primary('reg_number');
+			$table->string('license_number');
+			$table->primary('license_number');
 			$table->string('first_name');
 			$table->string('last_name');
+			$table->string('address');
 			$table->string('gender');
 			$table->date('birthdate');
 			$table->string('phone_number')->unique();
@@ -72,12 +83,24 @@ class CreateTables extends Migration {
 		Schema::create('offences', function($table)
 		{
 			$table->increments('id');
-			$table->string('vehicle_reg_number');
-			$table->string('driver_reg_number');
+			$table->string('to');
+			$table->string('address');
+			$table->date('offence_date');
+			$table->string('place');
+			$table->string('facta');
+			$table->string('factb');
+			$table->string('factc');
+			$table->string('factd');
+			$table->string('vehicle_plate_number');
+			$table->string('driver_license_number');
 			$table->string('rank_no');
-			$table->foreign('vehicle_reg_number')->references('reg_number')->on('vehicles');
-			$table->foreign('driver_reg_number')->references('reg_number')->on('drivers');
-			$table->foreign('rank_no')->references('rank_no')->on('ranks');
+			$table->string('amount');
+			$table->string('commit');
+			$table->string('latitude');
+			$table->string('longitude');
+			$table->foreign('vehicle_plate_number')->references('plate_number')->on('vehicles');
+			$table->foreign('driver_license_number')->references('license_number')->on('drivers');
+			$table->foreign('rank_no')->references('rank_no')->on('police');
 			$table->timestamps();
 		});
 		Schema::create('offence_events', function($table)

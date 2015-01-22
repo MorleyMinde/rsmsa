@@ -12,3 +12,11 @@ md-input-container{
 md-toolbar{
 	background-color:gray !important;
 }
+div.offences{
+	border-bottom:2px dotted black;
+	padding:10px;
+	width:300px;
+	display:inline-block;
+	height:40px;
+	margin-bottom:-15px;
+}

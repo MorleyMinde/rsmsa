@@ -1,6 +1,7 @@
 <md-dialog aria-label="Mango (Fruit)"  ng-controller="offenceCtrl">
   <md-content>
-  <md-checkbox ng-repeat="off in data.offenceRegistry" ng-click="checkClick(off.section)" aria-label="Checkbox 2">
+  <md-checkbox ng-repeat="off in data.offenceRegistry" ng-click="checkClick(off.section)" 
+  aria-label="Checkbox 2">
     {{off.nature}}
   </md-checkbox>
   
@@ -8,7 +9,7 @@
   </md-content>
   <div class="md-actions" layout="row">
     <md-button ng-click="hide()" class="md-primary">
-      OK
+      Close
     </md-button>
   </div>
 </md-dialog>

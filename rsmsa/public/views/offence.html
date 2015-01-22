@@ -36,19 +36,23 @@
 		<md-content> 
 			<div style="padding:50px;padding-top:0">
 			<form  name="offenceForm" class="form-inline">
+			<md-input-container ng-keyup="getDriver()"> 
+				<label>Licence No.</label> 
+				<input name="name" ng-model="driver.license_number" required> 
+			</md-input-container>
 			<md-input-container> 
 				<label>To</label> 
-				<input name="name" ng-model="offence.name" required> 
+				<input name="name" ng-model="offence.to" required> 
 			</md-input-container> 
 			<md-input-container>
 				<label>Address</label> 
 				<input name="address" ng-model="offence.address" class="form-control" required> 
 			</md-input-container>
 		<ol>
-			<li>You are charged with offence(s) number(s) {{data.selectedOffence}}
-			<md-input-container class="inline-container" > 
-				<input  name="offences" ng-model="offence.offences" ng-click="showOffences($event)"> 
-			</md-input-container> that on 
+			<li>You are charged with offence(s) number(s) <div ng-click="showOffences($event)" class="offences"><span ng-repeat="off in offence.offences">{{off}} , </span> </div>
+			<!-- <md-input-container class="inline-container" > 
+				<input name="offences" ng-model="data.selectedOffence"  ng-click="showOffences($event)"> 
+			</md-input-container> --> that on 
 			<md-input-container class="inline-container"> 
 				<input name="date" ng-model="offence.date" type="date" required> 
 			</md-input-container> At 
@@ -120,13 +124,13 @@
 				I
 				<md-input-container class="inline-container"> 
 					<label>Full Name</label>
-					<input name="aName" ng-model="offence.a.name"> 
+					<input name="aName" ng-model="offence.name"> 
 				</md-input-container>
 				of
 				<md-input-container class="inline-container"> 
 				<label>(residential or business address)</label>
 				<input
-					ng-model="offence.a.residence"> </md-input-container>
+					ng-model="offence.address"> </md-input-container>
 				Intend to answer in court the charge(s) No.(s)
 				<md-input-container class="inline-container"> 
 					<input
@@ -154,13 +158,13 @@
 				I
 				<md-input-container class="inline-container"> 
 					<label>Full Name</label>
-					<input name="bName" ng-model="offence.b.name"> 
+					<input name="bName" ng-model="offence.name"> 
 				</md-input-container>
 				of
 				<md-input-container class="inline-container"> 
 				<label>(residential or business address)</label>
 				<input
-					ng-model="offence.b.residence"> </md-input-container>
+					ng-model="offence.address"> </md-input-container>
 				plead guilty to the charge(s) No.(s)
 				<md-input-container  class="inline-container"> <input
 					ng-model="offence.b.charges"> </md-input-container>
@@ -174,8 +178,8 @@
 				<md-input-container class="inline-container"> <input
 					ng-model="user.title"> </md-input-container><br />
 				Date:
-				<md-input-container class="inline-container"> <input
-					ng-model="user.title"> </md-input-container>
+				<md-input-container class="inline-container"> <input type="date"
+					ng-model="offence.date"> </md-input-container>
 					<br /><br />
 				<table border="1">
 					<thead style="background-color: gray;">
@@ -185,16 +189,14 @@
 						<tr>
 							<td width="50%">
 								<md-input-container class="inline-container" ng-keyup="getVehicle()"> 
-								<label>Reg No.</label>
+								<label>Plate Number.</label>
 								<input name="vehicle" ng-model="vehicle.regNo" required>
-								<div ng-messages="offenceForm.vehicle.$error">
-						          <div ng-message="required">Enter registered vehicle.</div>
-						        </div> 
+								 
 								
 								</md-input-container>
 							</td>
 							<td>
-								<md-input-container class="inline-container"> 
+								<md-input-container class="inline-container" ng-keyup="getPolice()"> 
 								<label>No. Rank</label>
 								<input ng-model="police.rank"> 
 								</md-input-container>
@@ -210,7 +212,7 @@
 							<td>
 								<md-input-container class="inline-container"> 
 								<label>Station</label>
-								<input ng-model="user.title" disabled> 
+								<input ng-model="police.station" disabled> 
 								</md-input-container>
 							</td>
 						</tr>
@@ -242,7 +244,10 @@
 			<md-button class="md-raised md-primary" ng-click="submitOffence()"  
 				ng-disabled="offenceForm.name.$invalid || offenceForm.address.$invalid || 
 				offenceForm.place.$invalid || offenceForm.station.$invalid
-				|| offenceForm.date.$invalid">
+				|| offenceForm.date.$invalid || (offence.offences.length == 0)">
+				Submit
+			</md-button>
+			<md-button class="md-raised md-primary" ng-click="submitOffence()">
 				Submit
 			</md-button>
 		</form>

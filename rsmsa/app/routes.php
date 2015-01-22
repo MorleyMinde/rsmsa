@@ -11,16 +11,44 @@
 |
 */
 
-Route::get('/', function()
+/*Route::get('/', function()
 {
 	return View::make('hello');
-});
+});*/
+
+Route::get('/api/request/{tag}', 'AndroidController@processtag');
 Route::get('/offenceregistry', function()
 {
 	return OffenceRegistry::all();
-});
-Route::get('/model/vehicle/{reg_number}', function($id)
+});Route::get('/model/vehicle/{plate_number}', function($plate_number)
 {
-	return Vehicle::where('reg_number','=',$id)->get();
+	return Vehicle::where('plate_number','=',$plate_number)->get();
 	
 });
+Route::get('/model/police/{rank_no}', function($rank_no)
+{
+	$police = Police::where('rank_no','=',$rank_no)->get();
+	if(count($police) == 0)
+	{
+		return "[]";
+	}
+	$police->push(Station::find($police[0]['station_id']));
+	return $police;
+
+});
+Route::get('/model/driver/{license_number}', function($license_number)
+{
+	return Driver::where('license_number','=',$license_number)->get();
+
+});
+Route::post('/api/offence/', function()
+{
+	$request = Request::instance();
+
+    // Now we can get the content from it
+    $content = $request->getContent();
+
+    return $content[name];
+});
+
+
