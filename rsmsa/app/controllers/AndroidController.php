@@ -36,7 +36,21 @@ class AndroidController extends BaseController {
 				//push the driver information array
 				array_push($arr,array('driver'=>$driverJSON));
 				//push the offences made by the driver
-				array_push($arr,array('offences' => Offence::where('driver_license_number','=',$licence_number)->get()));
+				$offences = Offence::where('driver_license_number','=',$licence_number)->get();
+				$offenceReturn = array();
+				foreach($offences as $off)
+				{
+					$offence_events =  OffenceEvent::where('offence_id','=',$off->id)->get();
+					$events = array();
+					foreach($offence_events as $offEvent)
+					{
+						$offence_registry = OffenceRegistry::where('id','=',$offEvent->offence_registry_id)->get();
+						array_push($events,$offence_registry);
+					}
+					$off->events = $events;
+					array_push($offenceReturn,$off);
+				}
+				array_push($arr,array('offences' => $offenceReturn));
 				return $this->getJSON($arr);
 			}
 		}

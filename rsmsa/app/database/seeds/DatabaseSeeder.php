@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('PoliceTableSeeder');
 		$this->call('VehicleTableSeeder');
 		$this->call('OffenceTableSeeder');
+		$this->call('OffenceEventTableSeeder');
 	}
 
 }

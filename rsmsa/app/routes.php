@@ -48,7 +48,7 @@ Route::post('/api/offence/', function()
     // Now we can get the content from it
     $content = $request->getContent();
 
-    return $content[name];
+    return json_encode($content)['name'];
 });
 
 
