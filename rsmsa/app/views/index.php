@@ -133,7 +133,7 @@ function DialogController($scope, $mdDialog) {
     	</div>
     	<div style="width:75%">
     		<h2 class="md-toolbar-tools" style="padding-top: 60px;;font-size:20px;color:white">
-        		Toolbar
+        		RSMSA
       		</h2>
     	</div>
     	<div style="width:12.5%">

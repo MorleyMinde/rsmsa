@@ -7,8 +7,8 @@
 	},
 	"home":"index.html",
 	"routes":[
-		{"name":"Home","route":"/home","view":"/index.html","controller":"offenceController"},
-		{"name":"Another","route":"/list","view":"/offencelistdialog.html"}
+		{"name":"Home","route":"/home","view":"/offencelist.html","controller":"offenceController"},
+		{"name":"Report Offence","route":"/list","view":"/index.html"}
 	],
 	"color":{
 		"c500":"#9E9E9E",

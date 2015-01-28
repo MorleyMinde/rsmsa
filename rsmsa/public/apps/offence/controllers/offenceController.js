@@ -1,8 +1,35 @@
-angular.module('offenceApp', [ 'ngMaterial' ]).constant("dataUrl",
-		"/offenceregistry").controller(
+var routProvider = null;
+angular.module('offenceApp', [ 'ngMaterial' , "ngRoute"]).constant("dataUrl",
+		"/offenceregistry").config(function ($routeProvider) {
+			routeProvider = $routeProvider;
+		}).controller(
 		'offenceCtrl',
-		function($scope, $mdDialog, $http, dataUrl) {
-			alert("kiur");
+		function($scope, $mdDialog, $http, dataUrl,$mdSidenav) {
+			$scope.toggleLeft = function() {
+			    $mdSidenav('left').toggle();
+			  };
+			  $scope.app = {};
+			  $http.get("manifest").success(function(app) {
+					$scope.app = app;
+					//alert(app.routes);
+					
+				for(var i = 0;i < app.routes.length;i++)
+				{
+					alert(app.routes[i].name);
+					var route = app.routes[i];
+					routeProvider.when(route.route, {
+						templateUrl: "views"+route.view
+						//resolve: resolveController('controllers/'+route.controller+'.js')
+					});
+				}
+				}).error(function(error) {
+					alert(error);
+					$scope.data.error = error;
+				});
+			$http.get("/api/offences").success(function(app) {
+				  
+			});
+			$scope.offenceList = {};
 			$scope.data = {};
 			$scope.data.selectedOffence = [];
 			//Offence 

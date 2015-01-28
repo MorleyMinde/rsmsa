@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="rsmsaApp"  ng-controller="AppCtrl">
+<html ng-app="offenceApp">
 <head>
 
 <!-- Angulars Material CSS now available via Google CDN; version 0.6 used here -->
@@ -18,7 +18,7 @@
 <link rel="stylesheet"
 	href="/angular-material/angular-text.min.css">
 <link rel="stylesheet" href="/css/style.css">
-</head>
+
 <style>
 .container {
 	position: fixed;
@@ -36,7 +36,6 @@
 	position: absolute;
 	width: 75%;
 	background-color: white;
-	height: 1000px;
 	left: 12.5%;
 	top: 20px;
 	overflow: hidden;
@@ -65,10 +64,9 @@ md-icon{
 	margin-top:0;
 }
 </style>
-<script ng-repeat="app in app.routes" ng-src="{{getControllerSrc(app.controller)}}"></script>
 <script>
-var routeProvider = null;
-var mainModule = angular.module('rsmsaApp', ['ngMaterial', "ngRoute"]).config(function ($routeProvider) {
+/*var routeProvider = null;
+var mainModule = angular.module('offenceApp', ['ngMaterial', "ngRoute"]).config(function ($routeProvider) {
 	routeProvider = $routeProvider;
 });
 mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route) {
@@ -76,31 +74,13 @@ mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route
   $scope.toggleLeft = function() {
     $mdSidenav('left').toggle();
   };
-  $scope.getControllerSrc = function(src){
-		return "controllers/"+ src+".js";
-  };
   $scope.app = {};
-	//Gets the manifest file for the app
-  $http.get("manifest").success(function(app) {
-		$scope.app = app;
-		//alert(app.routes);
-		
-	for(var i = 0;i < app.routes.length;i++)
-	{
-		alert(app.routes[i].name);
-		var route = app.routes[i];
-		routeProvider.when(route.route, {
-			templateUrl: "views"+route.view
-			//resolve: resolveController('controllers/'+route.controller+'.js')
-		});
-	}
-	}).error(function(error) {
-		alert(error);
-		$scope.data.error = error;
-	});
-});
+	
+});*/
 </script>
-<body style="">
+<script src="controllers/offenceController.js"></script>
+</head>
+<body style="" ng-controller="offenceCtrl">
 	<div class="container">
 		<md-content> <md-toolbar class="md-tall md-warn md-hue-3" style="background-color: {{app.color.c500}}  !important"> </md-toolbar>
 		
@@ -119,7 +99,7 @@ mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route
 					<md-item-content>
 					<a href="#{{route.route}}" style="width:100%"><md-button class="sub-menu-button">{{route.name}}</md-button></a>
 					</md-item-content>
-				</md-item>				
+				</md-item>					
 			</md-list>
 		</md-sidenav>
 		<md-toolbar style="background-color:{{app.color.c200}} !important">
