@@ -61,6 +61,6 @@ class AndroidController extends BaseController {
 		foreach($data as $v) {
 			$output[key($v)] = current($v);
 		}
-		echo json_encode($output, 128);
+		return json_encode($output, 128);
 	}
 }

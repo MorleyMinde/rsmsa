@@ -4,45 +4,53 @@ angular.module('offenceApp', [ 'ngMaterial' ]).constant("dataUrl",
 		function($scope, $mdDialog, $http, dataUrl) {
 			$scope.data = {};
 			$scope.data.selectedOffence = [];
+			//Offence 
 			$scope.offence = {
-				name : "",
-				to : "",
-				address : "",
-				offences : [],
-				place : "",
-				facts : {
-					a : "",
-					b : "",
-					c : "",
-					d : ""
+				"name" : "",
+				"to" : "",
+				"address" : "",
+				"offences" : [],
+				"place" : "",
+				"facts" : {
+					"a" : "",
+					"b" : "",
+					"c" : "",
+					"d" : ""
 				},
-				station : "",
-				a : {
-					name : "",
-					residence : "",
-					charges : [],
-					notification : ""
+				"station" : "",
+				"a" : {
+					"name" : "",
+					"residence" : "",
+					"charges" : [],
+					"notification" : ""
 				},
-				b : {
-					name : "",
-					residence : "",
-					charges : [],
-					amount : ""
+				"b" : {
+					"name" : "",
+					"residence" : "",
+					"charges" : [],
+					"amount" : ""
 				},
-				date : ""
+				"date" : "",
+				"vehicle_plate_number":"",
+				"driver_license_number":"",
+				"rank_no":""
 			};
+			//driver object
 			$scope.driver = {
 				license_number:""
 			}
+			//vehicle object
 			$scope.vehicle = {
 				regNo : "",
 				make : "",
 				type : ""
 			};
+			//police object
 			$scope.police = {
 				rank : "",
 				station : ""
 			};
+			//Fetch offence registry information
 			$http.get(dataUrl).success(function(data) {
 				$scope.data.offenceRegistry = data;
 				for(var i = 0; i < $scope.data.offenceRegistry.length; i++)
@@ -53,6 +61,7 @@ angular.module('offenceApp', [ 'ngMaterial' ]).constant("dataUrl",
 				alert(error);
 				$scope.data.error = error;
 			});
+			//Fetch driver infromation given the license number
 			$scope.getDriver = function() {
 				$http.get("/model/driver/" + $scope.driver.license_number)
 				.success(
@@ -71,7 +80,7 @@ angular.module('offenceApp', [ 'ngMaterial' ]).constant("dataUrl",
 					$scope.data.error = error;
 				});
 			}
-			//Fetches vehicle information
+			//Fetches vehicle information given the plate number
 			$scope.getVehicle = function() {
 				$http.get("/model/vehicle/" + $scope.vehicle.regNo).success(
 						function(data) {
@@ -89,6 +98,7 @@ angular.module('offenceApp', [ 'ngMaterial' ]).constant("dataUrl",
 					$scope.data.error = error;
 				});
 			}
+			//fetch police information given the rank
 			$scope.getPolice = function() {
 				$http.get("/model/police/" + $scope.police.rank).success(
 						function(data) {
@@ -104,6 +114,7 @@ angular.module('offenceApp', [ 'ngMaterial' ]).constant("dataUrl",
 					$scope.data.error = error;
 				});
 			}
+			//submit the offence object to the server
 			$scope.submitOffence = function() {
 				$http.post("/api/offence/",$scope.offence).success(function(data){
 					alert("Task added."+data);
@@ -111,6 +122,7 @@ angular.module('offenceApp', [ 'ngMaterial' ]).constant("dataUrl",
 					alert(error);
 				});
 			}
+			//Show a dialog box of offence registry
 			$scope.showOffences = function(ev) {
 				for(var i = 0; i < $scope.offence.offences.length; i++)
 				{

@@ -111,6 +111,11 @@ class CreateTables extends Migration {
 			$table->foreign('offence_id')->references('id')->on('offences');
 			$table->foreign('offence_registry_id')->references('id')->on('offence_registry');
 		});
+		Schema::create('apps', function($table)
+		{
+			$table->increments('id');
+			$table->string('location');
+		});
 			
 	}
 	/**
