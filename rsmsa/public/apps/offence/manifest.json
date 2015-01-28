@@ -7,7 +7,7 @@
 	},
 	"home":"index.html",
 	"routes":[
-		{"name":"Home","route":"/home","view":"/index.html"},
+		{"name":"Home","route":"/home","view":"/index.html","controller":"offenceController"},
 		{"name":"Another","route":"/list","view":"/offencelistdialog.html"}
 	],
 	"color":{

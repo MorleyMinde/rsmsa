@@ -25,7 +25,7 @@ Route::get('/apps/manifests', function()
 		$json = "";
 		try{
 			//Fetch the manifest.json content from the location
-			$json = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT']."\\".$app->location."\manifest.json"));
+			$json = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT']."/apps/".$app->location."/manifest.json"));
 			//add the id of the app to the manifest
 			$json->id = $app->id;
 		}catch(Exception $e){
@@ -36,25 +36,32 @@ Route::get('/apps/manifests', function()
 	//Encode to json
 	return json_encode($arr);
 });
-Route::get('/app/{id}', function()
+Route::get('/app/{id}', function($id)
 {
-	return View::make('app');
+	//return View::make('app');
+	$app = AppEntity::find($id);
+	return View::make("apps/".$app->location."/index");
 });
 Route::get('/app/{id}/manifest', function($id)
 {
 	$app = AppEntity::find($id);
 	//return json_encode($output, 128);
-	return (file_get_contents($_SERVER['DOCUMENT_ROOT']."\\".$app->location."\manifest.json"));
+	return (file_get_contents($_SERVER['DOCUMENT_ROOT']."/apps/".$app->location."/manifest.json"));
 });
 Route::get('/app/{id}/{file}', function($id,$file)
 {
 	$app = AppEntity::find($id);
-	return Redirect::to("/".$app->location."/".$file);
+	return Redirect::to("/apps/".$app->location."/".$file);
 });
 Route::get('/app/{id}/views/{file}', function($id,$file)
 {
 	$app = AppEntity::find($id);
-	return Redirect::to("/".$app->location."/views/".$file);
+	return Redirect::to("/apps/".$app->location."/views/".$file);
+});
+Route::get('/app/{id}/controllers/{file}', function($id,$file)
+{
+	$app = AppEntity::find($id);
+	return Redirect::to("/apps/".$app->location."/controllers/".$file);
 });
 Route::get('/api/request/{tag}', 'AndroidController@processtag');
 Route::get('/offenceregistry', function()

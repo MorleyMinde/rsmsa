@@ -2,6 +2,7 @@ angular.module('offenceApp', [ 'ngMaterial' ]).constant("dataUrl",
 		"/offenceregistry").controller(
 		'offenceCtrl',
 		function($scope, $mdDialog, $http, dataUrl) {
+			alert("kiur");
 			$scope.data = {};
 			$scope.data.selectedOffence = [];
 			//Offence 

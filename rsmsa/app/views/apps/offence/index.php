@@ -67,7 +67,7 @@ md-icon{
 </style>
 <script ng-repeat="app in app.routes" ng-src="{{getControllerSrc(app.controller)}}"></script>
 <script>
-/*var routeProvider = null;
+var routeProvider = null;
 var mainModule = angular.module('rsmsaApp', ['ngMaterial', "ngRoute"]).config(function ($routeProvider) {
 	routeProvider = $routeProvider;
 });
@@ -99,7 +99,6 @@ mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route
 		$scope.data.error = error;
 	});
 });
-*/
 </script>
 <body style="">
 	<div class="container">
