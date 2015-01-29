@@ -87,7 +87,7 @@ angular.module('rsmsaApp', ['ngMaterial'])
 .controller('AppCtrl', function($scope, $http, $mdDialog) {
 	$scope.apps = {};
 	//Gets manifests of all files registered
-	$http.get("/apps/manifests").success(function(data) {
+	$http.get("index.php/apps/manifests").success(function(data) {
 		$scope.apps = data;
 	}).error(function(error) {
 		alert(error);

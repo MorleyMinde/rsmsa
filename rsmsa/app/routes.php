@@ -25,7 +25,7 @@ Route::get('/apps/manifests', function()
 		$json = "";
 		try{
 			//Fetch the manifest.json content from the location
-			$json = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT']."\\".$app->location."\manifest.json"));
+			$json = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT']."/".$app->location."/manifest.json"));
 			//add the id of the app to the manifest
 			$json->id = $app->id;
 		}catch(Exception $e){

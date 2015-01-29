@@ -26,7 +26,6 @@ class CreateTables extends Migration {
 			$table->timestamps();
 		});
 			
-			
 		Schema::create('users', function($table)
 		{
 			$table->increments('id');
