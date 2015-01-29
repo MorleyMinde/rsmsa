@@ -6,8 +6,8 @@
 <link rel="stylesheet" href="/angular-material/angular-material.css">
 
 <!-- Angular Material Dependencies -->
-<script src="/angular/angular.min.js"></script>
-<script src="/hammerjs/hammer.min.js"></script>
+<script src="<?php echo asset('angular/angular.min.js')?>"></script>
+<script src="<?php echo asset('angular/angular.min.js')?>"></script>
 <script src="/angular-animate/angular-animate.min.js"></script>
 <script src="/angular-aria/angular-aria.min.js"></script>
 <script src="/angular/angular-messages.min.js"></script>
@@ -76,28 +76,8 @@ mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route
   $scope.toggleLeft = function() {
     $mdSidenav('left').toggle();
   };
-  $scope.getControllerSrc = function(src){
-		return "controllers/"+ src+".js";
-  };
   $scope.app = {};
-	//Gets the manifest file for the app
-  $http.get("manifest").success(function(app) {
-		$scope.app = app;
-		//alert(app.routes);
-		
-	for(var i = 0;i < app.routes.length;i++)
-	{
-		alert(app.routes[i].name);
-		var route = app.routes[i];
-		routeProvider.when(route.route, {
-			templateUrl: "views"+route.view
-			//resolve: resolveController('controllers/'+route.controller+'.js')
-		});
-	}
-	}).error(function(error) {
-		alert(error);
-		$scope.data.error = error;
-	});
+	
 });
 </script>
 <body style="">
@@ -115,9 +95,15 @@ mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route
 				<h1 class="md-toolbar-tools">Menu</h1>
 			</md-toolbar> 
 			<md-list>
-				<md-item ng-repeat="route in app.routes">
+			<!-- Menu buttons -->
+				<md-item>
 					<md-item-content>
-					<a href="#{{route.route}}" style="width:100%"><md-button class="sub-menu-button">{{route.name}}</md-button></a>
+					<a href="#/home" style="width:100%"><md-button class="sub-menu-button">Home</md-button></a>
+					</md-item-content>
+				</md-item>
+				<md-item>
+					<md-item-content>
+					<a href="#/home" style="width:100%"><md-button class="sub-menu-button">Home</md-button></a>
 					</md-item-content>
 				</md-item>				
 			</md-list>
@@ -131,15 +117,13 @@ mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route
 				</div>
 				<div flex>
 					<h2 class="md-toolbar-tools">
-						<span>{{app.name}}</span>
+						<span>App title</span>
 					</h2>
 				</div>
 			</div>
 		</md-toolbar>
 	</section>
-	<!-- Enter your views here -->
-	
-	
+	<!-- Put app content here -->
 	<ng-view />
 	</md-card-content> </md-card>
 </body>

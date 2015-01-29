@@ -1,14 +1,52 @@
-angular.module('offenceApp', [ 'ngMaterial' ])
-    .constant("dataUrl",
-		"/offenceregistry")
-
-      .controller(
-		'offenceCtrl', function($scope, $mdDialog, $http, dataUrl) {
-
+var routProvider = null;
+angular.module('offenceApp', [ 'ngMaterial' , "ngRoute"])
+	.constant("dataUrl","/api/offenceregistry")
+	.config(function ($routeProvider) {
+			routeProvider = $routeProvider;
+		})
+	.controller('offenceCtrl',function($scope, $mdDialog, $http, dataUrl,$mdSidenav) {
+			$scope.toggleLeft = function() {
+			    $mdSidenav('left').toggle();
+			  };
+			  $scope.appControllers = [];
+			  $scope.getContollerUrl =function(controller){
+				  return "controllers/"+controller+".js";
+			  }
+			  $scope.closeNav = function() {
+				    $mdSidenav('left').close();
+				  };
+			  $scope.app = {};
+			  $http.get("manifest").success(function(app) {
+					$scope.app = app;
+					//alert(app.routes);
+					
+				for(var i = 0;i < app.routes.length;i++)
+				{
+					var route = app.routes[i];
+					routeProvider.when(route.route, {
+						templateUrl: "views"+route.view,
+						//controller:"offenceListController"
+						//resolve: resolveController('controllers/'+route.controller+'.js')
+					});
+					//alert(route.controller);
+					if(!(route.controller == undefined))
+					{
+						$scope.appControllers.push(route.controller);
+					}
+						
+				}
+				}).error(function(error) {
+					alert(error);
+					$scope.data.error = error;
+				});
+			 /* $scope.offenceList = {};
+			$http.get("/api/offences").success(function(data) {
+				$scope.offenceList = data;
+			});
+			
 			$scope.data = {};
 			$scope.data.selectedOffence = [];
-
-			//Offence
+			//Offence 
 			$scope.offence = {
 				"name" : "",
 				"to" : "",
@@ -54,10 +92,12 @@ angular.module('offenceApp', [ 'ngMaterial' ])
 				rank : "",
 				station : ""
 			};
+			$scope.viewOffence = function(val){
+				alert(val);
+			}
 			//Fetch offence registry information
 			$http.get(dataUrl).success(function(data) {
 				$scope.data.offenceRegistry = data;
-
 				for(var i = 0; i < $scope.data.offenceRegistry.length; i++)
 				{
 					$scope.data.selectedOffence[$scope.data.offenceRegistry[i].section] = false;
@@ -66,9 +106,7 @@ angular.module('offenceApp', [ 'ngMaterial' ])
 				alert(error);
 				$scope.data.error = error;
 			});
-
 			//Fetch driver infromation given the license number
-
 			$scope.getDriver = function() {
 				$http.get("/model/driver/" + $scope.driver.license_number)
 				.success(
@@ -141,10 +179,11 @@ angular.module('offenceApp', [ 'ngMaterial' ])
 				$mdDialog.show({
 					controller : DialogController,
 					templateUrl : 'offencelistdialog.html',
-					targetEvent : ev
+					targetEvent : ev,
 				});
-			};
-		});
+			};*/
+		})
+
 function DialogController($scope, $mdDialog) {
 	$scope.hide = function() {
 		$mdDialog.hide();

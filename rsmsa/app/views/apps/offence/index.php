@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="rsmsaApp"  ng-controller="AppCtrl">
+<html ng-app="offenceApp" ng-controller="offenceCtrl">
 <head>
 
 <!-- Angulars Material CSS now available via Google CDN; version 0.6 used here -->
@@ -18,7 +18,7 @@
 <link rel="stylesheet"
 	href="/angular-material/angular-text.min.css">
 <link rel="stylesheet" href="/css/style.css">
-</head>
+
 <style>
 .container {
 	position: fixed;
@@ -36,12 +36,14 @@
 	position: absolute;
 	width: 75%;
 	background-color: white;
-	height: 1000px;
 	left: 12.5%;
 	top: 20px;
 	overflow: hidden;
+	min-height:500px;
 }
-
+.view{
+	padding:20px;
+}
 md-card, .content {
 	padding: 0;
 }
@@ -65,42 +67,12 @@ md-icon{
 	margin-top:0;
 }
 </style>
-<script ng-repeat="app in app.routes" ng-src="{{getControllerSrc(app.controller)}}"></script>
-<script>
-var routeProvider = null;
-var mainModule = angular.module('rsmsaApp', ['ngMaterial', "ngRoute"]).config(function ($routeProvider) {
-	routeProvider = $routeProvider;
-});
-mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route) {
-	 //When menu button is clicked show the left menu
-  $scope.toggleLeft = function() {
-    $mdSidenav('left').toggle();
-  };
-  $scope.getControllerSrc = function(src){
-		return "controllers/"+ src+".js";
-  };
-  $scope.app = {};
-	//Gets the manifest file for the app
-  $http.get("manifest").success(function(app) {
-		$scope.app = app;
-		//alert(app.routes);
-		
-	for(var i = 0;i < app.routes.length;i++)
-	{
-		alert(app.routes[i].name);
-		var route = app.routes[i];
-		routeProvider.when(route.route, {
-			templateUrl: "views"+route.view
-			//resolve: resolveController('controllers/'+route.controller+'.js')
-		});
-	}
-	}).error(function(error) {
-		alert(error);
-		$scope.data.error = error;
-	});
-});
-</script>
-<body style="">
+<script src="controllers/offenceController.js"></script>
+<!-- <script ng-repeat="controller in appControllers" ng-src="{{getContollerUrl(controller)}}"></script> -->
+<script src="controllers/offenceListController.js"></script>
+<script src="controllers/offenceFormController.js"></script>
+</head>
+<body style="" >
 	<div class="container">
 		<md-content> <md-toolbar class="md-tall md-warn md-hue-3" style="background-color: {{app.color.c500}}  !important"> </md-toolbar>
 		
@@ -115,11 +87,11 @@ mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route
 				<h1 class="md-toolbar-tools">Menu</h1>
 			</md-toolbar> 
 			<md-list>
-				<md-item ng-repeat="route in app.routes">
+				<md-item ng-repeat="menu in app.menu">
 					<md-item-content>
-					<a href="#{{route.route}}" style="width:100%"><md-button class="sub-menu-button">{{route.name}}</md-button></a>
+					<a href="#{{menu.route}}" style="width:100%"><md-button class="sub-menu-button" ng-click="closeNav()">{{menu.name}}</md-button></a>
 					</md-item-content>
-				</md-item>				
+				</md-item>					
 			</md-list>
 		</md-sidenav>
 		<md-toolbar style="background-color:{{app.color.c200}} !important">
@@ -137,10 +109,10 @@ mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route
 			</div>
 		</md-toolbar>
 	</section>
-	<!-- Enter your views here -->
+	<div class="view">
+		<div ng-view="#/home" />
+	</div>
 	
-	
-	<ng-view />
 	</md-card-content> </md-card>
 </body>
 </html>

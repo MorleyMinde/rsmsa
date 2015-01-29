@@ -1,33 +1,6 @@
-<!DOCTYPE html>
-<html ng-app="offenceApp">
-<head>
-
-<!-- Angulars Material CSS now available via Google CDN; version 0.6 used here -->
-<link rel="stylesheet" href="../angular-material/angular-material.css">
-
-<!-- Angular Material Dependencies -->
-<script src="../hammerjs/hammer.min.js"></script>
-<script src="../angular/angular.min.js"></script>
-<script src="../angular-animate/angular-animate.min.js"></script>
-<script src="../angular-aria/angular-aria.min.js"></script>
-<script src="../angular/angular-messages.min.js"></script>
-<!-- Angular Material Javascript now available via Google CDN; version 0.6 used here -->
-<script src="../angular-material/angular-material.min.js"></script>
-
-<script src="../angular-material/angular-text.min.js"></script>
-<link rel="stylesheet" href="../angular-material/angular-text.min.css">
-<script src="../controllers/offenceController.js"></script>
-
-<script>
-	
-</script>
-<link rel="stylesheet" href="../css/style.css">
-</head>
-
-<body>
-	<div ng-controller="offenceCtrl">
+	<div ng-controller="offenceFormController">
 	<center>
-		<img src="../img/logo.jpg" /><br />
+		<img src="/img/logo.jpg" /><br />
 		<h3>THE UNITED REPUBLIC OF TANZANIA</h3>
 		<h4>THE ROAD TRAFFIC ACT (CAP 168)</h4>
 		<h2>NOTIFICATION OF TRAFFIC OFFENCES</h2>
@@ -36,9 +9,9 @@
 		<md-content> 
 			<div style="padding:50px;padding-top:0">
 			<form  name="offenceForm" class="form-inline">
-			<md-input-container ng-keyup="getDriver()"> 
+			<md-input-container ng-keyup="getDriver()" > 
 				<label>Licence No.</label> 
-				<input name="name" ng-model="driver.license_number" required> 
+				<input name="name" ng-model="offence.driver_license_number" required ng-click="isReadOnly(this)"> 
 			</md-input-container>
 			<md-input-container> 
 				<label>To</label> 
@@ -54,7 +27,7 @@
 				<input name="offences" ng-model="data.selectedOffence"  ng-click="showOffences($event)"> 
 			</md-input-container> --> that on 
 			<md-input-container class="inline-container"> 
-				<input name="date" ng-model="offence.date" type="date" required> 
+				<input name="date" ng-model="offence.offence_date" type="date" required> 
 			</md-input-container> At 
 			<md-input-container class="inline-container"> 
 				<label>Place</label>
@@ -63,13 +36,13 @@
 				(brief facts)
 				<ol type="a" style="list-style-type: a">
 					<li><md-input-container> <input
-							ng-model="offence.facts.a" class="form-control"> </md-input-container>
+							ng-model="offence.facta" class="form-control"> </md-input-container>
 					<li><md-input-container> <input
-							ng-model="offence.facts.b" class="form-control"> </md-input-container>
+							ng-model="offence.factb" class="form-control"> </md-input-container>
 					<li><md-input-container> <input
-							ng-model="offence.facts.c" class="form-control"> </md-input-container>
+							ng-model="offence.factc" class="form-control"> </md-input-container>
 					<li><md-input-container> <input
-							ng-model="offence.facts.d" class="form-control"> </md-input-container>
+							ng-model="offence.factd" class="form-control"> </md-input-container>
 				</ol>
 			</li>
 			<li>If you WISH to admit commission of the offence(s) you should
@@ -124,7 +97,7 @@
 				I
 				<md-input-container class="inline-container"> 
 					<label>Full Name</label>
-					<input name="aName" ng-model="offence.name"> 
+					<input name="aName" ng-model="offence.to"> 
 				</md-input-container>
 				of
 				<md-input-container class="inline-container"> 
@@ -144,7 +117,7 @@
 				Date:
 				<md-input-container class="inline-container"> 
 				<input type="date"
-					ng-model="offence.date"> 
+					ng-model="offence.offence_date"> 
 					</md-input-container>
 			</div>
 			<br /><br />
@@ -158,7 +131,7 @@
 				I
 				<md-input-container class="inline-container"> 
 					<label>Full Name</label>
-					<input name="bName" ng-model="offence.name"> 
+					<input name="bName" ng-model="offence.to"> 
 				</md-input-container>
 				of
 				<md-input-container class="inline-container"> 
@@ -190,7 +163,7 @@
 							<td width="50%">
 								<md-input-container class="inline-container" ng-keyup="getVehicle()"> 
 								<label>Plate Number.</label>
-								<input name="vehicle" ng-model="vehicle.regNo" required>
+								<input name="vehicle" ng-model="offence.vehicle_plate_number" required>
 								 
 								
 								</md-input-container>
@@ -198,7 +171,7 @@
 							<td>
 								<md-input-container class="inline-container" ng-keyup="getPolice()"> 
 								<label>No. Rank</label>
-								<input ng-model="police.rank"> 
+								<input ng-model="offence.rank_no"> 
 								</md-input-container>
 							</td>
 						</tr>
@@ -251,6 +224,3 @@
 		</div>
 		</md-content>
 	</div>
-</body>
-
-</html>

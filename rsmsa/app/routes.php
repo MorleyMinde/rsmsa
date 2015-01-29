@@ -22,6 +22,10 @@ Route::post('login', array('uses'=>'LoginController@login'));
 Route::get('apps', function(){
 	return View::make('index')->with('apps',AppEntity::all());
 });
+/*
+ * 
+ * These are app routes. Routes for getting app specific information
+ */
 Route::get('/apps/manifests', function()
 {
 	$arr = array();
@@ -31,7 +35,7 @@ Route::get('/apps/manifests', function()
 		$json = "";
 		try{
 			//Fetch the manifest.json content from the location
-			$json = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT']."\\".$app->location."\manifest.json"));
+			$json = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT']."/apps/".$app->location."/manifest.json"));
 			//add the id of the app to the manifest
 			$json->id = $app->id;
 		}catch(Exception $e){
@@ -42,39 +46,55 @@ Route::get('/apps/manifests', function()
 	//Encode to json
 	return json_encode($arr);
 });
-Route::get('/app/{id}', function()
+Route::get('/app/{id}', function($id)
 {
-	return View::make('app');
+	//return View::make('app');
+	$app = AppEntity::find($id);
+	return View::make("apps/".$app->location."/index");
 });
 Route::get('/app/{id}/manifest', function($id)
 {
 	$app = AppEntity::find($id);
 	//return json_encode($output, 128);
-	return (file_get_contents($_SERVER['DOCUMENT_ROOT']."\\".$app->location."\manifest.json"));
+	return (file_get_contents($_SERVER['DOCUMENT_ROOT']."/apps/".$app->location."/manifest.json"));
 });
 Route::get('/app/{id}/{file}', function($id,$file)
 {
 	$app = AppEntity::find($id);
-	return Redirect::to("/".$app->location."/".$file);
+	return Redirect::to("/apps/".$app->location."/".$file);
 });
 Route::get('/app/{id}/views/{file}', function($id,$file)
 {
 	$app = AppEntity::find($id);
-	return Redirect::to("/".$app->location."/views/".$file);
+	return Redirect::to("/apps/".$app->location."/views/".$file);
 });
+Route::get('/app/{id}/controllers/{file}', function($id,$file)
+{
+	$app = AppEntity::find($id);
+	return Redirect::to("/apps/".$app->location."/controllers/".$file);
+});
+/*
+ * These are routes to api requests
+ */
 Route::get('/api/request/{tag}', 'AndroidController@processtag');
-
-Route::get('/offenceregistry', function()
+Route::get('/api/offenceregistry', function()
 {
 	return OffenceRegistry::all();
+});
+Route::get('/api/offences', function()
+{
+	return Offence::all();
+});
+Route::get('/api/offence/{id}', function($id)
+{
+	return Offence::find($id);
 });
 
 Route::get('/model/vehicle/{plate_number}', function($plate_number)
 {
-	return Vehicle::where('plate_number','=',$plate_number)->get();
-	
+	//return Vehicle::where('plate_number','=',$plate_number)->get();
+	return Vehicle::find($plate_number);
 });
-
 Route::get('/model/police/{rank_no}', function($rank_no)
 {
 	$police = Police::where('rank_no','=',$rank_no)->get();
@@ -93,13 +113,12 @@ Route::get('/model/driver/{license_number}', function($license_number)
 	return Driver::where('license_number','=',$license_number)->get();
 
 });
-
 Route::post('/api/offence/', function()
 {
 	$request = Request::instance();
 
     // Now we can get the content from it
-    //$content = $request->getContent();
+    $content = $request->getContent();
     $content = '{"name" : "hey",
 				"to" : "",
 				"address" : "",
