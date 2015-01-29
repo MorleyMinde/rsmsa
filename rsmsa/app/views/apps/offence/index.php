@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="offenceApp">
+<html ng-app="offenceApp" ng-controller="offenceCtrl">
 <head>
 
 <!-- Angulars Material CSS now available via Google CDN; version 0.6 used here -->
@@ -39,8 +39,11 @@
 	left: 12.5%;
 	top: 20px;
 	overflow: hidden;
+	min-height:500px;
 }
-
+.view{
+	padding:20px;
+}
 md-card, .content {
 	padding: 0;
 }
@@ -64,23 +67,12 @@ md-icon{
 	margin-top:0;
 }
 </style>
-<script>
-/*var routeProvider = null;
-var mainModule = angular.module('offenceApp', ['ngMaterial', "ngRoute"]).config(function ($routeProvider) {
-	routeProvider = $routeProvider;
-});
-mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route) {
-	 //When menu button is clicked show the left menu
-  $scope.toggleLeft = function() {
-    $mdSidenav('left').toggle();
-  };
-  $scope.app = {};
-	
-});*/
-</script>
 <script src="controllers/offenceController.js"></script>
+<!-- <script ng-repeat="controller in appControllers" ng-src="{{getContollerUrl(controller)}}"></script> -->
+<script src="controllers/offenceListController.js"></script>
+<script src="controllers/offenceFormController.js"></script>
 </head>
-<body style="" ng-controller="offenceCtrl">
+<body style="" >
 	<div class="container">
 		<md-content> <md-toolbar class="md-tall md-warn md-hue-3" style="background-color: {{app.color.c500}}  !important"> </md-toolbar>
 		
@@ -95,9 +87,9 @@ mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route
 				<h1 class="md-toolbar-tools">Menu</h1>
 			</md-toolbar> 
 			<md-list>
-				<md-item ng-repeat="route in app.routes">
+				<md-item ng-repeat="menu in app.menu">
 					<md-item-content>
-					<a href="#{{route.route}}" style="width:100%"><md-button class="sub-menu-button">{{route.name}}</md-button></a>
+					<a href="#{{menu.route}}" style="width:100%"><md-button class="sub-menu-button" ng-click="closeNav()">{{menu.name}}</md-button></a>
 					</md-item-content>
 				</md-item>					
 			</md-list>
@@ -117,7 +109,10 @@ mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route
 			</div>
 		</md-toolbar>
 	</section>
-	<ng-view />
+	<div class="view">
+		<div ng-view="#/home" />
+	</div>
+	
 	</md-card-content> </md-card>
 </body>
 </html>

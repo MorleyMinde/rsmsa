@@ -16,6 +16,10 @@ Route::get('/', function()
 	
 	return View::make('index')->with('apps',AppEntity::all());
 });
+/*
+ * 
+ * These are app routes. Routes for getting app specific information
+ */
 Route::get('/apps/manifests', function()
 {
 	$arr = array();
@@ -63,14 +67,27 @@ Route::get('/app/{id}/controllers/{file}', function($id,$file)
 	$app = AppEntity::find($id);
 	return Redirect::to("/apps/".$app->location."/controllers/".$file);
 });
+/*
+ * These are routes to api requests
+ */
 Route::get('/api/request/{tag}', 'AndroidController@processtag');
-Route::get('/offenceregistry', function()
+Route::get('/api/offenceregistry', function()
 {
 	return OffenceRegistry::all();
-});Route::get('/model/vehicle/{plate_number}', function($plate_number)
+});
+Route::get('/api/offences', function()
 {
-	return Vehicle::where('plate_number','=',$plate_number)->get();
-	
+	return Offence::all();
+});
+Route::get('/api/offence/{id}', function($id)
+{
+	return Offence::find($id);
+});
+
+Route::get('/model/vehicle/{plate_number}', function($plate_number)
+{
+	//return Vehicle::where('plate_number','=',$plate_number)->get();
+	return Vehicle::find($plate_number);
 });
 Route::get('/model/police/{rank_no}', function($rank_no)
 {
@@ -93,7 +110,7 @@ Route::post('/api/offence/', function()
 	$request = Request::instance();
 
     // Now we can get the content from it
-    //$content = $request->getContent();
+    $content = $request->getContent();
     $content = '{"name" : "hey",
 				"to" : "",
 				"address" : "",

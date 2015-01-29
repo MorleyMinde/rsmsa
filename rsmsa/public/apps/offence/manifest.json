@@ -5,13 +5,18 @@
 	"icons":{
 		"small":"icon16.png"
 	},
-	"home":"index.html",
+	"home":"offencelist.html",
+	"menu":[
+		{"name":"Home","route":"/home"},
+		{"name":"Report Offence","route":"/list"}
+	],
 	"routes":[
-		{"name":"Home","route":"/home","view":"/offencelist.html","controller":"offenceController"},
-		{"name":"Report Offence","route":"/list","view":"/index.html"}
+		{"route":"/home","view":"/offencelist.html"},
+		{"route":"/list","view":"/offenceForm.html","controller":"offenceListController"},
+		{"route":"/:request/:id","view":"/offenceForm.html"}
 	],
 	"color":{
-		"c500":"#9E9E9E",
-		"c200":"#EEEEEE"
+		"c500":"#673AB7",
+		"c200":"#B39DDB"
 	}
 }
