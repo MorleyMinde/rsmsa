@@ -14,7 +14,7 @@ class AppTableSeeder extends Seeder{
 				array('location' => 'insurance'),
 				array('location' => 'account'),
 		);
-		DB::table('apps')->delete();
+		DB::table('rsmsa_apps')->delete();
 
 		foreach($arrays as $arr)
 		{

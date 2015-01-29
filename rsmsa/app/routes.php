@@ -13,7 +13,13 @@
 
 Route::get('/', function()
 {
-	
+    return View::make('login');
+});
+
+//process login form
+Route::post('login', array('uses'=>'LoginController@login'));
+
+Route::get('apps', function(){
 	return View::make('index')->with('apps',AppEntity::all());
 });
 Route::get('/apps/manifests', function()
@@ -57,18 +63,23 @@ Route::get('/app/{id}/views/{file}', function($id,$file)
 	return Redirect::to("/".$app->location."/views/".$file);
 });
 Route::get('/api/request/{tag}', 'AndroidController@processtag');
+
 Route::get('/offenceregistry', function()
 {
 	return OffenceRegistry::all();
-});Route::get('/model/vehicle/{plate_number}', function($plate_number)
+});
+
+Route::get('/model/vehicle/{plate_number}', function($plate_number)
 {
 	return Vehicle::where('plate_number','=',$plate_number)->get();
 	
 });
+
 Route::get('/model/police/{rank_no}', function($rank_no)
 {
 	$police = Police::where('rank_no','=',$rank_no)->get();
-	if(count($police) == 0)
+
+    if(count($police) == 0)
 	{
 		return "[]";
 	}
@@ -76,11 +87,13 @@ Route::get('/model/police/{rank_no}', function($rank_no)
 	return $police;
 
 });
+
 Route::get('/model/driver/{license_number}', function($license_number)
 {
 	return Driver::where('license_number','=',$license_number)->get();
 
 });
+
 Route::post('/api/offence/', function()
 {
 	$request = Request::instance();

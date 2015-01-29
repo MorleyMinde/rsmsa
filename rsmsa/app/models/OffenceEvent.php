@@ -6,7 +6,7 @@ class OffenceEvent extends Eloquent{
 	 *
 	 * @var string
 	 */
-	protected $table = 'offence_events';
+	protected $table = 'rsmsa_offence_events';
 	
 	public $timestamps = false;
 }

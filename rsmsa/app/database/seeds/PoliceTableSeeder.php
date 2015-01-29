@@ -7,8 +7,9 @@ class PoliceTableSeeder extends Seeder{
 				array('rank_no'=>'R6478','station_id' => '1','person_id' => '1'),
 				array('rank_no'=>'R6488','station_id' => '1','person_id' => '2'),
 				array('rank_no'=>'R6278','station_id' => '1','person_id' => '3'),
+                array('rank_no'=>'R111','station_id' => '1','person_id' => '4'),
 		);
-		DB::table('police')->delete();
+		DB::table('rsmsa_police')->delete();
 
 		foreach($arrays as $arr)
 		{

@@ -7,7 +7,7 @@ class VehicleTableSeeder extends Seeder{
 				array('plate_number' => 'T673 ABD','make' => 'Toyota','type' => 'Low','color' => 'blue'),
 				array('plate_number' => 'T673 ACD','make' => 'Toyota','type' => 'High','color' => 'blue'),
 		);
-		DB::table('vehicles')->delete();
+		DB::table('rsmsa_vehicles')->delete();
 
 		foreach($arrays as $arr)
 		{

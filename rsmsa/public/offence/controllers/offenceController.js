@@ -1,10 +1,14 @@
-angular.module('offenceApp', [ 'ngMaterial' ]).constant("dataUrl",
-		"/offenceregistry").controller(
-		'offenceCtrl',
-		function($scope, $mdDialog, $http, dataUrl) {
+angular.module('offenceApp', [ 'ngMaterial' ])
+    .constant("dataUrl",
+		"/offenceregistry")
+
+      .controller(
+		'offenceCtrl', function($scope, $mdDialog, $http, dataUrl) {
+
 			$scope.data = {};
 			$scope.data.selectedOffence = [];
-			//Offence 
+
+			//Offence
 			$scope.offence = {
 				"name" : "",
 				"to" : "",
@@ -53,6 +57,7 @@ angular.module('offenceApp', [ 'ngMaterial' ]).constant("dataUrl",
 			//Fetch offence registry information
 			$http.get(dataUrl).success(function(data) {
 				$scope.data.offenceRegistry = data;
+
 				for(var i = 0; i < $scope.data.offenceRegistry.length; i++)
 				{
 					$scope.data.selectedOffence[$scope.data.offenceRegistry[i].section] = false;
@@ -61,7 +66,9 @@ angular.module('offenceApp', [ 'ngMaterial' ]).constant("dataUrl",
 				alert(error);
 				$scope.data.error = error;
 			});
+
 			//Fetch driver infromation given the license number
+
 			$scope.getDriver = function() {
 				$http.get("/model/driver/" + $scope.driver.license_number)
 				.success(
@@ -134,7 +141,7 @@ angular.module('offenceApp', [ 'ngMaterial' ]).constant("dataUrl",
 				$mdDialog.show({
 					controller : DialogController,
 					templateUrl : 'offencelistdialog.html',
-					targetEvent : ev,
+					targetEvent : ev
 				});
 			};
 		});

@@ -8,7 +8,7 @@ class DriverTableSeeder extends Seeder{
 				array('license_number'=>'T64267 ABB','first_name' => 'Koze','last_name' => 'Jummanne','gender' => 'M','birthdate' => '2015-01-14','address' => 'P.O. Box 1970 Dar','phone_number' => '+255718076490'),
 				array('license_number'=>'T683747 ACB','first_name' => 'Paul','last_name' => 'Nyailema','gender' => 'M','birthdate' => '2015-01-14','address' => 'P.O. Box 1150 Dar','phone_number' => '+255718956490'),
 		);
-		DB::table('drivers')->delete();
+		DB::table('rsmsa_drivers')->delete();
 
 		foreach($arrays as $arr)
 		{
