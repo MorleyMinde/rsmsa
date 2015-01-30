@@ -108,7 +108,7 @@ class CreateTables extends Migration {
 			$table->integer('offence_id')->unsigned();
 			$table->integer('offence_registry_id')->unsigned();
 			$table->primary(array('offence_id','offence_registry_id'));
-			$table->foreign('offence_id')->references('id')->on('offences');
+			$table->foreign('offence_id')->references('id')->on('offences');//->onDelete('cascade');
 			$table->foreign('offence_registry_id')->references('id')->on('offence_registry');
 		});
 		Schema::create('apps', function($table)

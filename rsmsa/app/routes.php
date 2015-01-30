@@ -19,152 +19,37 @@ Route::get('/', function()
 /*
  * 
  * These are app routes. Routes for getting app specific information
+ * 
  */
-Route::get('/apps/manifests', function()
-{
-	$arr = array();
-	//Loop through all the apps
-	foreach(AppEntity::all() as $app)
-	{
-		$json = "";
-		try{
-			//Fetch the manifest.json content from the location
-			$json = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT']."/apps/".$app->location."/manifest.json"));
-			//add the id of the app to the manifest
-			$json->id = $app->id;
-		}catch(Exception $e){
-			continue;
-		}
-		array_push($arr,$json);
-	}
-	//Encode to json
-	return json_encode($arr);
-});
-Route::get('/app/{id}', function($id)
-{
-	//return View::make('app');
-	$app = AppEntity::find($id);
-	return View::make("apps/".$app->location."/index");
-});
-Route::get('/app/{id}/manifest', function($id)
-{
-	$app = AppEntity::find($id);
-	//return json_encode($output, 128);
-	return (file_get_contents($_SERVER['DOCUMENT_ROOT']."/apps/".$app->location."/manifest.json"));
-});
-Route::get('/app/{id}/{file}', function($id,$file)
-{
-	$app = AppEntity::find($id);
-	return Redirect::to("/apps/".$app->location."/".$file);
-});
-Route::get('/app/{id}/views/{file}', function($id,$file)
-{
-	$app = AppEntity::find($id);
-	return Redirect::to("/apps/".$app->location."/views/".$file);
-});
-Route::get('/app/{id}/controllers/{file}', function($id,$file)
-{
-	$app = AppEntity::find($id);
-	return Redirect::to("/apps/".$app->location."/controllers/".$file);
-});
+Route::get('/apps/manifests', 'AppController@getManifests');
+Route::get('/app/{id}', 'AppController@getApp');
+Route::get('/app/{id}/manifest', 'AppController@getManifest');
+Route::get('/app/{id}/{file}','AppController@getFile' );
+Route::get('/app/{id}/views/{file}', 'AppController@getView');
+Route::get('/app/{id}/controllers/{file}', 'AppController@getController');
 /*
  * These are routes to api requests
  */
 Route::get('/api/request/{tag}', 'AndroidController@processtag');
-Route::get('/api/offenceregistry', function()
-{
-	return OffenceRegistry::all();
-});
-Route::get('/api/offences', function()
-{
-	return Offence::all();
-});
-Route::get('/api/offence/{id}', function($id)
-{
-	return Offence::find($id);
-});
 
-Route::get('/model/vehicle/{plate_number}', function($plate_number)
-{
-	//return Vehicle::where('plate_number','=',$plate_number)->get();
-	return Vehicle::find($plate_number);
-});
-Route::get('/model/police/{rank_no}', function($rank_no)
-{
-	$police = Police::where('rank_no','=',$rank_no)->get();
-	if(count($police) == 0)
-	{
-		return "[]";
-	}
-	$police->push(Station::find($police[0]['station_id']));
-	return $police;
+//Vehicle Controller Rooutes
+Route::get('/api/vehicle/{plate_number}', "VehicleController@getVehicle");
 
-});
-Route::get('/model/driver/{license_number}', function($license_number)
-{
-	return Driver::where('license_number','=',$license_number)->get();
+//Police Controller Rooutes
+Route::get('/api/police/{rank_no}', "PoliceController@getPolice");
 
-});
-Route::post('/api/offence/', function()
-{
-	$request = Request::instance();
+//Station Controller Rooutes
+Route::get('/api/station/{id}', "StationController@getStation");
+//Driver Controller Rooutes
+Route::get('/api/driver/{license_number}', "DriverController@getDriver");
 
-    // Now we can get the content from it
-    $content = $request->getContent();
-    $content = '{"name" : "hey",
-				"to" : "",
-				"address" : "",
-				"offences" : [],
-				"place" : "",
-				"facts" : {
-					"a" : "",
-					"b" : "",
-					"c" : "",
-					"d" : ""
-				},
-				"station" : "",
-				"a" : {
-					"name" : "",
-					"residence" : "",
-					"charges" : [],
-					"notification" : ""
-				},
-				"b" : {
-					"name" : "",
-					"residence" : "",
-					"charges" : [],
-					"amount" : ""
-				},
-				"date" : ""
-			}';
-    $json = json_decode($content,true);
-    DB::transaction(function()
-    {
-    	$newOffence = Offence::create([
-    			'to' => $json['name'],
-    			'address' => $json['address'],
-    			'offence_date' => $json['date'],
-    			'place' => $json['place'],
-    			'facta' => $json['facts']['a'],
-    			'factb' => $json['facts']['b'],
-    			'factc' => $json['facts']['c'],
-    			'factd' => $json['facts']['d'],
-    			'vehicle_plate_number' => $json['vehicle_plate_number'],
-    			'driver_license_number' => $json['driver_license_number'],
-    			'rank_no' => $json['rank_no'],
-    			//'amount' => $json['amount'],
-    			//'commit' => $json['commit'],
-    			]);
-    	foreach($json['offences'] as $offence){
-    		$offRegistry = OffenceRegistry::where('section','=',$offence)->get();
-    		
-    	}
-    	$newOffenceEvent = User::create([
-    			'username' => Input::get('username'),
-    			'account_id' => $newAcct->id,
-    			]);
-    });
-    return $json['name'];
-});
+//Offence Controller Rooutes
+Route::get('/api/offence/registry', "OffenceController@getOffenceRegistry");
+Route::get('/api/offence/{id}', "OffenceController@getOffence");
+
+Route::get('/api/offences', "OffenceController@getOffences");
+Route::post('/api/offence/', "OffenceController@processOffencePost");
+Route::get('/api/offence/{id}/events/', "OffenceController@getEvents");
+Route::get('/api/offence/{id}/delete/', "OffenceController@delete");
 
 

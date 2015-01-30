@@ -42,7 +42,7 @@
 	min-height:500px;
 }
 .view{
-	padding:20px;
+	padding:80px;
 }
 md-card, .content {
 	padding: 0;
