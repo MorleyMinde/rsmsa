@@ -13,6 +13,8 @@ class AppTableSeeder extends Seeder{
 				array('location' => 'vehicle'),
 				array('location' => 'insurance'),
 				array('location' => 'account'),
+				array('location' => 'administrative_unit'),
+				array('location' => 'user'),
 		);
 		DB::table('apps')->delete();
 

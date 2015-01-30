@@ -1,0 +1,32 @@
+
+<div class="col-sm-12">
+    <table class="table table-stripped">
+        <tr>
+            <th># </th>
+            <th>License No</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Phone Number</th>
+            <th>Address</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="driver in data.drivers">
+            <td>{{ $index+1 }}</td>
+            <td>{{ driver.license_number }}</td>
+            <td>{{ driver.first_name }} {{ driver.last_name }}</td>
+            <td>{{ driver.birthdate }}</td>
+            <td>{{ driver.gender }}</td>
+            <td>{{ driver.phone_number }}</td>
+            <td>{{ driver.address }}</td>
+            <td>
+                <md-button class="md-hue-3 md-raised md-primary md-fab" style="height: 24px;width: 24px"><i class="fa fa-info"></i> </md-button>
+                <md-button class="md-hue-3 md-accent md-raised md-fab" style="height: 24px;width: 24px"><i class="fa fa-edit"></i> </md-button>
+                <md-button class="md-hue-3 md-warn md-raised md-fab" style="height: 24px;width: 24px"><i class="fa fa-trash-o"></i> </md-button>
+                <md-button class="md-hue-3 md-raised" style="height: 24px">Offence </md-button>
+                <md-button class="md-hue-3 md-raised" style="height: 24px">Accidents </md-button>
+            </td>
+        </tr>
+    </table>
+
+</div>

@@ -87,7 +87,7 @@ angular.module('rsmsaApp', ['ngMaterial'])
 .controller('AppCtrl', function($scope, $http, $mdDialog) {
 	$scope.apps = {};
 	//Gets manifests of all files registered
-	$http.get("index.php/apps/manifests").success(function(data) {
+	$http.get("/apps/manifests").success(function(data) {
 		$scope.apps = data;
 	}).error(function(error) {
 		alert(error);
@@ -133,7 +133,7 @@ function DialogController($scope, $mdDialog) {
     	</div>
     	<div style="width:75%">
     		<h2 class="md-toolbar-tools" style="padding-top: 60px;;font-size:20px;color:white">
-        		Toolbar
+        		RSMSA
       		</h2>
     	</div>
     	<div style="width:12.5%">
@@ -147,9 +147,8 @@ function DialogController($scope, $mdDialog) {
     <div layout="row" layout-wrap style="margin:auto;width:75%;">
   	<md-card ng-repeat="app in apps" ng-click="openApp($event,app.id)" style="background-color:{{app.color.c200}}">
 	 	<div class="img" style="background-image:url(app/{{app.id}}/{{app.icons.small}})">
-	 		
+<!--	 		<img src="app/{{app.id}}/{{app.icons.small}}" style="width: 150;" class="img-circle img-responsive">-->
 	 	</div>
-	      
 	      <md-card-content style="background-color:{{app.color.c500}}">
 	        {{app.name}}
 	      </md-card-content>
