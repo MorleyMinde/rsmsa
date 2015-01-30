@@ -19,9 +19,11 @@ Route::get('/', function()
 //process login form
 Route::post('login', array('uses'=>'LoginController@login'));
 
-Route::get('apps', function(){
+Route::get('/', function(){
+
 	return View::make('index')->with('apps',AppEntity::all());
 });
+
 /*
  * 
  * These are app routes. Routes for getting app specific information
@@ -145,7 +147,9 @@ Route::post('/api/offence/', function()
 				},
 				"date" : ""
 			}';
+
     $json = json_decode($content,true);
+
     DB::transaction(function()
     {
     	$newOffence = Offence::create([

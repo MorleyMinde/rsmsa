@@ -67,20 +67,27 @@ md-icon{
 	margin-top:0;
 }
 </style>
+
 <script src="controllers/offenceController.js"></script>
 <!-- <script ng-repeat="controller in appControllers" ng-src="{{getContollerUrl(controller)}}"></script> -->
 <script src="controllers/offenceListController.js"></script>
 <script src="controllers/offenceFormController.js"></script>
 </head>
+
 <body style="" >
+
 	<div class="container">
 		<md-content> <md-toolbar class="md-tall md-warn md-hue-3" style="background-color: {{app.color.c500}}  !important"> </md-toolbar>
 		
 		</md-content>
 	</div>
-	<md-card class="main"> 
+
+	<md-card class="main">
+
 	<md-card-content class="content">
+
 	<section layout="row" flex>
+
 		<md-sidenav class="md-sidenav-left md-whiteframe-z2"
 			md-component-id="left"> 
 			<md-toolbar class="md-theme-light" style="background-color:{{app.color.c200}} !important">
@@ -89,7 +96,8 @@ md-icon{
 			<md-list>
 				<md-item ng-repeat="menu in app.menu">
 					<md-item-content>
-					<a href="#{{menu.route}}" style="width:100%"><md-button class="sub-menu-button" ng-click="closeNav()">{{menu.name}}</md-button></a>
+					<a href="#{{menu.route}}" style="width:100%">
+                        <md-button class="sub-menu-button" ng-click="closeNav()">{{menu.name}}</md-button></a>
 					</md-item-content>
 				</md-item>					
 			</md-list>
