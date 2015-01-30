@@ -108,7 +108,7 @@ mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route
 	<section layout="row" flex>
 		<md-sidenav class="md-sidenav-left md-whiteframe-z2"
 			md-component-id="left"> 
-			<md-toolbar class="md-theme-light" style="background-color:#B0E0E6 !important">
+			<md-toolbar class="md-theme-light">
 				<h1 class="md-toolbar-tools">Menu</h1>
 			</md-toolbar> 
 			<md-list>
@@ -125,7 +125,7 @@ mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route
 				</md-item>				
 			</md-list>
 		</md-sidenav>
-		<md-toolbar style="background-color:#B0E0E6 !important">
+		<md-toolbar>
 			<div layout="row" >
 				<div flex>
 					<md-button class="menu-button" aria-label="Profile" ng-click="toggleLeft()"> <md-icon
@@ -134,7 +134,7 @@ mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route
 				</div>
 				<div flex>
 					<h2 class="md-toolbar-tools">
-						<span style="color:black">ACCIDENT APP</span>
+						<span>ACCIDENT APP</span>
 					</h2>
 				</div>
 			</div>
