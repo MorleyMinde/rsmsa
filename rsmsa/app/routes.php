@@ -11,11 +11,14 @@
 |
 */
 
-Route::get('/', function()
-{
-	
+//process login form
+Route::post('login', array('uses'=>'LoginController@login'));
+
+Route::get('/', function(){
+
 	return View::make('index')->with('apps',AppEntity::all());
 });
+
 /*
  * 
  * These are app routes. Routes for getting app specific information
@@ -32,11 +35,13 @@ Route::get('/app/{id}/controllers/{file}', 'AppController@getController');
  */
 Route::get('/api/request/{tag}', 'AndroidController@processtag');
 
+
 //Vehicle Controller Rooutes
 Route::get('/api/vehicle/{plate_number}', "VehicleController@getVehicle");
 
 //Police Controller Rooutes
 Route::get('/api/police/{rank_no}', "PoliceController@getPolice");
+
 
 //Station Controller Rooutes
 Route::get('/api/station/{id}', "StationController@getStation");
@@ -51,5 +56,4 @@ Route::get('/api/offences', "OffenceController@getOffences");
 Route::post('/api/offence/', "OffenceController@processOffencePost");
 Route::get('/api/offence/{id}/events/', "OffenceController@getEvents");
 Route::get('/api/offence/{id}/delete/', "OffenceController@delete");
-
 

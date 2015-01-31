@@ -3,29 +3,32 @@
 <head>
 
 <!-- Angulars Material CSS now available via Google CDN; version 0.6 used here -->
-<link rel="stylesheet" href="/angular-material/angular-material.css">
+<link rel="stylesheet" href="<?php echo asset('angular-material/angular-material.css')?>">
 
 <!-- Angular Material Dependencies -->
 <script src="<?php echo asset('angular/angular.min.js')?>"></script>
 <script src="<?php echo asset('angular/angular.min.js')?>"></script>
-<script src="/angular-animate/angular-animate.min.js"></script>
-<script src="/angular-aria/angular-aria.min.js"></script>
-<script src="/angular/angular-messages.min.js"></script>
+<script src="<?php echo asset('angular-animate/angular-animate.min.js')?>"></script>
+<script src="<?php echo asset('angular-aria/angular-aria.min.js')?>"></script>
+<script src="<?php echo asset('angular/angular-messages.min.js')?>"></script>
 <!-- Angular Material Javascript now available via Google CDN; version 0.6 used here -->
-<script src="/angular-material/angular-material.min.js"></script>
-<script src="/angular-material/angular-text.min.js"></script>
-<script src="/angular/angular-route.min.js"></script>
-<link rel="stylesheet"
-	href="/angular-material/angular-text.min.css">
-<link rel="stylesheet" href="/css/style.css">
-</head>
+<script src="<?php echo asset('angular-material/angular-material.min.js')?>"></script>
+<script src="<?php echo asset('angular-material/angular-text.min.js')?>"></script>
+<script src="<?php echo asset('angular/angular-route.min.js')?>"></script>
+
+<link rel="stylesheet"href="<?php echo asset('angular-material/angular-text.min.css')?>">
+<link rel="stylesheet" href="<?php echo asset('css/style.css')?>">
+<link rel="stylesheet" href="<?php echo asset('apps/accident/css/bootstrap.css')?>">
+<link rel="stylesheet" href="<?php echo asset('apps/accident/css/material-design.css')?>">
+
+
 <style>
 .container {
 	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 0;
-	background: url(/img/background.jpg);
+	background: url('/img/background.jpg');
 	height: 100%;
 	width: 100%;
 }
@@ -35,8 +38,8 @@
 .main {
 	position: absolute;
 	width: 75%;
+    min-height: 200px;
 	background-color: white;
-	height: 1000px;
 	left: 12.5%;
 	top: 20px;
 	overflow: hidden;
@@ -68,21 +71,35 @@ md-icon{
 <script ng-repeat="app in app.routes" ng-src="{{getControllerSrc(app.controller)}}"></script>
 <script>
 var routeProvider = null;
+
 var mainModule = angular.module('rsmsaApp', ['ngMaterial', "ngRoute"]).config(function ($routeProvider) {
+
 	routeProvider = $routeProvider;
 });
+
 mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route) {
 	 //When menu button is clicked show the left menu
   $scope.toggleLeft = function() {
     $mdSidenav('left').toggle();
   };
   $scope.app = {};
-	
+
+
+    $scope.closeNav = function() {
+        $mdSidenav('left').close();
+    };
+
 });
 </script>
+
+<script src="<?php echo asset('apps/accident/js/accident.js')?>"></script>
+
+</head>
+
 <body style="">
+
 	<div class="container">
-		<md-content> <md-toolbar class="md-tall md-warn md-hue-3" style="background-color: {{app.color.c500}}  !important"> </md-toolbar>
+		<md-content> <md-toolbar class="md-tall md-warn md-hue-3" style="background-color:#00F5FF !important"> </md-toolbar>
 		
 		</md-content>
 	</div>
@@ -91,24 +108,31 @@ mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route
 	<section layout="row" flex>
 		<md-sidenav class="md-sidenav-left md-whiteframe-z2"
 			md-component-id="left"> 
-			<md-toolbar class="md-theme-light" style="background-color:{{app.color.c200}} !important">
+			<md-toolbar class="md-theme-light" style="background-color:#B0E0E6 !important">
 				<h1 class="md-toolbar-tools">Menu</h1>
 			</md-toolbar> 
 			<md-list>
 			<!-- Menu buttons -->
 				<md-item>
 					<md-item-content>
-					<a href="#/home" style="width:100%"><md-button class="sub-menu-button">Home</md-button></a>
+					<a href="#/home" style="width:100%;font-size:14px"><md-button class="sub-menu-button" ng-click="closeNav()">Report Accident</md-button></a>
 					</md-item-content>
 				</md-item>
 				<md-item>
 					<md-item-content>
-					<a href="#/home" style="width:100%"><md-button class="sub-menu-button">Home</md-button></a>
+					<a href="#/report" style="width:100%;font-size:14px"><md-button class="sub-menu-button "ng-click="closeNav()" >View Accident History</md-button></a>
 					</md-item-content>
-				</md-item>				
+				</md-item>
+
+                <md-item>
+                    <md-item-content>
+                        <a href="#/report" style="width:100%;font-size:14px"><md-button class="sub-menu-button "ng-click="closeNav()" >View Accidents Summary</md-button></a>
+                    </md-item-content>
+                </md-item>
+
 			</md-list>
 		</md-sidenav>
-		<md-toolbar style="background-color:{{app.color.c200}} !important">
+		<md-toolbar style="background-color:#B0E0E6 !important">
 			<div layout="row" >
 				<div flex>
 					<md-button class="menu-button" aria-label="Profile" ng-click="toggleLeft()"> <md-icon
@@ -117,7 +141,7 @@ mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route
 				</div>
 				<div flex>
 					<h2 class="md-toolbar-tools">
-						<span>App title</span>
+						<span style="color:black">ACCIDENT APP</span>
 					</h2>
 				</div>
 			</div>

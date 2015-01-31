@@ -5,7 +5,7 @@ class OffenceRegistry extends Eloquent{
 	 *
 	 * @var string
 	 */
-	protected $table = 'offence_registry';
+	protected $table = 'rsmsa_offence_registry';
 	
 	/**
 	 * Returns the offences assosiated with an offence that has been registered

@@ -6,7 +6,7 @@ class StationTableSeeder extends Seeder{
 		$arrays = array(
 				array('name' => 'Kijitonyama')
 		);
-		DB::table('stations')->delete();
+		DB::table('rsmsa_stations')->delete();
 
 		foreach($arrays as $arr)
 		{
