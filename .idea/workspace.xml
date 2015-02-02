@@ -2,47 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44897c0c-e8d9-4e4c-aedb-3340e6857d69" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/driver/icon16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/license/icon16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/offence/icon16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/user/icon16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/controllers/OrgUnitAppCtrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/driver/controllers/driverAppCtrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/driver/controllers/driverImportCtrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/driver/views/home.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/offence/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/app/views/apps/accident/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/app/views/apps/administrative_unit/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/app/views/apps/driver/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/app/views/apps/license/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/app/views/apps/offence/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/app/views/apps/user/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/driver/views/licence.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/driver/views/list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/manifest.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/manifest.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/license/manifest.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/offence/manifest.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/user/manifest.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/offence/controllers/offenceFormController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/offence/controllers/offenceListController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/offence/views/offencelist.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/routes.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/driver/routes.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/template.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/rsmsa/public/icons/ic_computer_48px.svg" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/rsmsa/public/offence/controllers/offenceController.js" afterPath="$PROJECT_DIR$/rsmsa/public/apps/offence/controllers/offenceController.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/rsmsa/public/offence/icon16.png" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/icon16.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/rsmsa/public/offence/manifest.json" afterPath="$PROJECT_DIR$/rsmsa/public/apps/driver/manifest.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/rsmsa/public/offence/views/index.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/offence/views/offenceForm.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/rsmsa/public/offence/views/offencelistdialog.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/offence/views/offencelistdialog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/database/seeds/AppTableSeeder.php" afterPath="$PROJECT_DIR$/rsmsa/app/database/seeds/AppTableSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/models/Vehicle.php" afterPath="$PROJECT_DIR$/rsmsa/app/models/Vehicle.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/views/app.html" afterPath="$PROJECT_DIR$/rsmsa/public/views/app.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/views/app.php" afterPath="$PROJECT_DIR$/rsmsa/app/views/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/views/index.php" afterPath="$PROJECT_DIR$/rsmsa/app/views/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/routes.php" afterPath="$PROJECT_DIR$/rsmsa/app/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-action.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-action.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-action.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-action.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-alert.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-alert.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-alert.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-alert.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-av.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-av.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-av.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-av.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-communication.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-communication.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-communication.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-communication.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-content.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-content.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-content.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-content.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-device.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-device.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-device.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-device.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-editor.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-editor.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-editor.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-editor.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-file.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-file.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-file.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-file.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-hardware.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-hardware.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-hardware.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-hardware.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-image.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-image.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-image.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-image.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-maps.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-maps.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-maps.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-maps.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-navigation.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-navigation.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-navigation.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-navigation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-notification.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-notification.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-notification.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-notification.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-social.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-social.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-social.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-social.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-toggle.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-toggle.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-toggle.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-toggle.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="rsmsa.iws" />
@@ -69,7 +58,7 @@
       <file leaf-file-name="routes.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="35" selection-start="613" selection-end="613" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="522">
+            <state line="18" column="35" selection-start="613" selection-end="613" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="522">
               <folding />
             </state>
           </provider>
@@ -78,16 +67,16 @@
       <file leaf-file-name="OrgUnitAppCtrl.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/controllers/OrgUnitAppCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="117" column="37" selection-start="4751" selection-end="4765" vertical-scroll-proportion="-6.535714" vertical-offset="1887" max-vertical-offset="6516">
+            <state line="117" column="37" selection-start="4751" selection-end="4765" vertical-scroll-proportion="0.0" vertical-offset="2106" max-vertical-offset="6552">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="district_list.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="district_list.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/views/district_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="9" selection-start="29" selection-end="29" vertical-scroll-proportion="0.046272494" vertical-offset="0" max-vertical-offset="450">
+            <state line="1" column="9" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="450">
               <folding />
             </state>
           </provider>
@@ -96,7 +85,7 @@
       <file leaf-file-name="region_list.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/views/region_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="75" selection-start="336" selection-end="336" vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="450">
+            <state line="7" column="75" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="450">
               <folding />
             </state>
           </provider>
@@ -105,7 +94,7 @@
       <file leaf-file-name="village_list.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/views/village_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="20" selection-start="468" selection-end="468" vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="450">
+            <state line="9" column="20" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="450">
               <folding />
             </state>
           </provider>
@@ -114,7 +103,7 @@
       <file leaf-file-name="AdministrativeUnitController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/app/controllers/AdministrativeUnitController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="400" column="26" selection-start="10051" selection-end="10051" vertical-scroll-proportion="-5.1454544" vertical-offset="6917" max-vertical-offset="10728">
+            <state line="400" column="26" selection-start="10051" selection-end="10051" vertical-scroll-proportion="0.0" vertical-offset="6917" max-vertical-offset="10728">
               <folding />
             </state>
           </provider>
@@ -132,7 +121,7 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/app/views/apps/administrative_unit/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="28" selection-start="3489" selection-end="3489" vertical-scroll-proportion="1.3333334" vertical-offset="1530" max-vertical-offset="3672">
+            <state line="188" column="52" selection-start="7349" selection-end="7349" vertical-scroll-proportion="0.0" vertical-offset="2778" max-vertical-offset="3672">
               <folding />
             </state>
           </provider>
@@ -141,7 +130,16 @@
       <file leaf-file-name="stations.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/views/stations.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="19" selection-start="179" selection-end="179" vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="594">
+            <state line="0" column="48" selection-start="48" selection-end="48" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2015_01_30_052503_create_village_table.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_30_052503_create_village_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="19" selection-start="115" selection-end="115" vertical-scroll-proportion="0.074257426" vertical-offset="42" max-vertical-offset="738">
               <folding />
             </state>
           </provider>
@@ -155,6 +153,7 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -175,20 +174,20 @@
         <option value="$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_30_050511_create_region_table.php" />
         <option value="$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_30_050529_create_district_table.php" />
         <option value="$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_30_050553_create_wards_table.php" />
-        <option value="$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_30_052503_create_village_table.php" />
         <option value="$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/manifest.json" />
         <option value="$PROJECT_DIR$/rsmsa/public/apps/driver/views/home.html" />
         <option value="$PROJECT_DIR$/rsmsa/public/apps/driver/views/list.html" />
         <option value="$PROJECT_DIR$/rsmsa/app/database/seeds/AppTableSeeder.php" />
         <option value="$PROJECT_DIR$/rsmsa/app/routes.php" />
         <option value="$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/routes.js" />
-        <option value="$PROJECT_DIR$/rsmsa/app/views/apps/administrative_unit/index.php" />
-        <option value="$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/views/stations.html" />
         <option value="$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/controllers/OrgUnitAppCtrl.js" />
         <option value="$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/views/village_list.html" />
         <option value="$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/views/region_list.html" />
         <option value="$PROJECT_DIR$/rsmsa/app/controllers/AdministrativeUnitController.php" />
         <option value="$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/views/district_list.html" />
+        <option value="$PROJECT_DIR$/rsmsa/app/views/apps/administrative_unit/index.php" />
+        <option value="$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/views/stations.html" />
+        <option value="$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_30_052503_create_village_table.php" />
       </list>
     </option>
   </component>
@@ -225,6 +224,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -579,13 +579,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rsmsa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rsmsa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rsmsa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -667,17 +692,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1602" height="874" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25096276" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25738126" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18485238" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18485238" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934928" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33022636" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -713,43 +738,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/driver/controllers/driverAppCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="32" selection-start="174" selection-end="182" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="270">
-          <folding />
-        </state>
+        <state line="6" column="32" selection-start="174" selection-end="182" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="270" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/driver/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="26" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="396">
-          <folding />
-        </state>
+        <state line="5" column="26" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="396" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/driver/views/licence.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="24" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
-          <folding />
-        </state>
+        <state line="0" column="24" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/driver/views/list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="42" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
-          <folding>
-            <element signature="n#style#0;n#md-button#0;n#td#7;n#tr#1;n#table#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#md-button#1;n#td#7;n#tr#1;n#table#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#md-button#2;n#td#7;n#tr#1;n#table#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#md-button#3;n#td#7;n#tr#1;n#table#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#md-button#4;n#td#7;n#tr#1;n#table#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
+        <state line="27" column="42" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/offence/views/offenceForm.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="35" selection-start="57" selection-end="84" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="4158">
-          <folding />
-        </state>
+        <state line="2" column="35" selection-start="57" selection-end="84" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="4158" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/views/index.php">
@@ -824,9 +833,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/driver/views/licence.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="24" selection-start="24" selection-end="24" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="108">
-          <folding />
-        </state>
+        <state line="0" column="24" selection-start="24" selection-end="24" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="108" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/offence/controllers/offenceController.js">
@@ -846,9 +853,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/driver/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="26" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="396">
-          <folding />
-        </state>
+        <state line="5" column="26" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="396" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/controllers/DriverController.php">
@@ -883,16 +888,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/offence/views/offenceForm.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="35" selection-start="57" selection-end="84" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="4158">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_30_052503_create_village_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="41" selection-start="478" selection-end="478" vertical-scroll-proportion="0.60674155" vertical-offset="126" max-vertical-offset="738">
-          <folding />
-        </state>
+        <state line="2" column="35" selection-start="57" selection-end="84" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="4158" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_30_050618_create_police_stations_table.php">
@@ -912,9 +908,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_30_050511_create_region_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="29" selection-start="531" selection-end="531" vertical-scroll-proportion="0.84705883" vertical-offset="162" max-vertical-offset="702">
-          <folding />
-        </state>
+        <state line="30" column="29" selection-start="531" selection-end="531" vertical-scroll-proportion="0.84705883" vertical-offset="162" max-vertical-offset="702" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/manifest.json">
@@ -926,36 +920,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/driver/views/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="452">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="452" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/driver/views/list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="23" selection-start="24" selection-end="24" vertical-scroll-proportion="-0.6666667" vertical-offset="0" max-vertical-offset="666">
-          <folding>
-            <element signature="n#style#0;n#md-button#0;n#td#7;n#tr#1;n#table#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#md-button#1;n#td#7;n#tr#1;n#table#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#md-button#2;n#td#7;n#tr#1;n#table#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#md-button#3;n#td#7;n#tr#1;n#table#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#md-button#4;n#td#7;n#tr#1;n#table#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
+        <state line="1" column="23" selection-start="24" selection-end="24" vertical-scroll-proportion="-0.6666667" vertical-offset="0" max-vertical-offset="666" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/database/seeds/AppTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="56" selection-start="460" selection-end="460" vertical-scroll-proportion="0.6323185" vertical-offset="0" max-vertical-offset="558">
-          <folding />
-        </state>
+        <state line="15" column="56" selection-start="460" selection-end="460" vertical-scroll-proportion="0.6323185" vertical-offset="0" max-vertical-offset="558" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/driver/controllers/driverAppCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="24" selection-start="57" selection-end="65" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <folding />
-        </state>
+        <state line="3" column="24" selection-start="57" selection-end="65" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/routes.js">
@@ -967,58 +947,61 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="285" column="14" selection-start="9349" selection-end="9349" vertical-scroll-proportion="-31.148148" vertical-offset="4289" max-vertical-offset="5292">
-          <folding>
-            <element signature="e#7#392#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/views/apps/administrative_unit/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="28" selection-start="3489" selection-end="3489" vertical-scroll-proportion="1.3333334" vertical-offset="1530" max-vertical-offset="3672">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/views/stations.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="19" selection-start="179" selection-end="179" vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="594">
-          <folding />
-        </state>
+        <state line="285" column="14" selection-start="9349" selection-end="9349" vertical-scroll-proportion="-31.148148" vertical-offset="4289" max-vertical-offset="5292" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/views/village_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="20" selection-start="468" selection-end="468" vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="450">
+        <state line="9" column="20" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="450">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/views/region_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="75" selection-start="336" selection-end="336" vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="450">
+        <state line="7" column="75" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="450">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/controllers/OrgUnitAppCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="37" selection-start="4751" selection-end="4765" vertical-scroll-proportion="-6.535714" vertical-offset="1887" max-vertical-offset="6516">
+        <state line="117" column="37" selection-start="4751" selection-end="4765" vertical-scroll-proportion="0.0" vertical-offset="2106" max-vertical-offset="6552">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/controllers/AdministrativeUnitController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="400" column="26" selection-start="10051" selection-end="10051" vertical-scroll-proportion="-5.1454544" vertical-offset="6917" max-vertical-offset="10728">
+        <state line="400" column="26" selection-start="10051" selection-end="10051" vertical-scroll-proportion="0.0" vertical-offset="6917" max-vertical-offset="10728">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/views/district_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="9" selection-start="29" selection-end="29" vertical-scroll-proportion="0.046272494" vertical-offset="0" max-vertical-offset="450">
+        <state line="1" column="9" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="450">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/app/views/apps/administrative_unit/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="188" column="52" selection-start="7349" selection-end="7349" vertical-scroll-proportion="0.0" vertical-offset="2778" max-vertical-offset="3672">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/views/stations.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="48" selection-start="48" selection-end="48" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_30_052503_create_village_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="19" selection-start="115" selection-end="115" vertical-scroll-proportion="0.074257426" vertical-offset="42" max-vertical-offset="738">
           <folding />
         </state>
       </provider>
