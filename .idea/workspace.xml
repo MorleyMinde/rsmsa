@@ -1,39 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="44897c0c-e8d9-4e4c-aedb-3340e6857d69" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-action.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-action.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-action.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-action.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-alert.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-alert.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-alert.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-alert.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-av.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-av.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-av.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-av.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-communication.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-communication.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-communication.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-communication.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-content.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-content.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-content.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-content.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-device.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-device.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-device.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-device.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-editor.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-editor.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-editor.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-editor.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-file.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-file.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-file.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-file.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-hardware.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-hardware.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-hardware.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-hardware.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-image.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-image.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-image.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-image.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-maps.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-maps.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-maps.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-maps.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-navigation.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-navigation.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-navigation.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-navigation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-notification.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-notification.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-notification.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-notification.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-social.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-social.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-social.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-social.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-toggle.css" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-toggle.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-toggle.html" afterPath="$PROJECT_DIR$/rsmsa/public/img/sprites/svg-sprite/svg-sprite-toggle.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="44897c0c-e8d9-4e4c-aedb-3340e6857d69" name="Default" comment="" />
     <ignored path="rsmsa.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -103,16 +71,7 @@
       <file leaf-file-name="AdministrativeUnitController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/app/controllers/AdministrativeUnitController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="400" column="26" selection-start="10051" selection-end="10051" vertical-scroll-proportion="0.0" vertical-offset="6917" max-vertical-offset="10728">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="manifest.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/administrative_unit/manifest.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="101" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="396">
+            <state line="400" column="26" selection-start="10051" selection-end="10051" vertical-scroll-proportion="0.0" vertical-offset="7200" max-vertical-offset="10728">
               <folding />
             </state>
           </provider>
@@ -136,10 +95,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2015_01_30_052503_create_village_table.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="2015_01_30_052503_create_village_table.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_30_052503_create_village_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="19" selection-start="115" selection-end="115" vertical-scroll-proportion="0.074257426" vertical-offset="42" max-vertical-offset="738">
+            <state line="5" column="19" selection-start="115" selection-end="115" vertical-scroll-proportion="-1.1111112" vertical-offset="42" max-vertical-offset="738">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2015_01_20_090222_create_tables.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="64" column="9" selection-start="1782" selection-end="1782" vertical-scroll-proportion="-2.5820897" vertical-offset="2172" max-vertical-offset="2574">
               <folding />
             </state>
           </provider>
@@ -614,7 +582,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../nmb" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
     <property name="options.lastSelected" value="appearance" />
@@ -692,17 +660,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1602" height="874" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25738126" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2605905" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18485238" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18485238" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934928" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33022636" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -861,11 +829,6 @@
         <state line="33" column="37" selection-start="450" selection-end="450" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="1656" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="9" selection-start="1782" selection-end="1782" vertical-scroll-proportion="0.84653467" vertical-offset="792" max-vertical-offset="2574" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/views/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-4.5652175" vertical-offset="1890" max-vertical-offset="2736" />
@@ -1001,7 +964,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_30_052503_create_village_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="19" selection-start="115" selection-end="115" vertical-scroll-proportion="0.074257426" vertical-offset="42" max-vertical-offset="738">
+        <state line="5" column="19" selection-start="115" selection-end="115" vertical-scroll-proportion="-1.1111112" vertical-offset="42" max-vertical-offset="738">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="9" selection-start="1782" selection-end="1782" vertical-scroll-proportion="-2.5820897" vertical-offset="2172" max-vertical-offset="2574">
           <folding />
         </state>
       </provider>
