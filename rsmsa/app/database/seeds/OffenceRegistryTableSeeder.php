@@ -20,7 +20,7 @@ class OffenceRegistryTableSeeder extends Seeder{
 				array('nature'=>'Causing damage to a motor vehicle','section'=>'S.61(1)(2)(3)'),
 				array('nature'=>'Careless or inconsiderate use of motor vehicle','section'=>'S.50')
 		);
-		DB::table('offence_registry')->delete();
+		DB::table('rsmsa_offence_registry')->delete();
 		
 		foreach($arrays as $arr)
 		{

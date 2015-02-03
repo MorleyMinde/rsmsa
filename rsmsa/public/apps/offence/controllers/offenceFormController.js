@@ -1,106 +1,83 @@
 angular.module('offenceApp').controller('offenceFormController',function($scope,$http, $mdDialog
 		,$rootScope, $scope, $routeParams, $route) {
 	$scope.isreadonly = false;
+	//Offence  mirrored as in the database
 	$scope.offence = {
-			"name" : "",
 			"to" : "",
 			"address" : "",
 			"offences" : [],
 			"place" : "",
-			"facts" : {
-				"a" : "",
-				"b" : "",
-				"c" : "",
-				"d" : ""
-			},
+			"facta" : "",
+			"factb" : "",
+			"factc" : "",
+			"factd" : "",
 			"station" : "",
-			"a" : {
-				"name" : "",
-				"residence" : "",
-				"charges" : [],
-				"notification" : ""
-			},
-			"b" : {
-				"name" : "",
-				"residence" : "",
-				"charges" : [],
-				"amount" : ""
-			},
-			"date" : "",
+			"commit":"",
+			"amount":"",
+			"offence_date" : "",
 			"vehicle_plate_number":"",
 			"driver_license_number":"",
 			"rank_no":""
 		};
+	//Stores the offence events of an offence
+	$scope.offenceEvents = [];
 	if($routeParams.request){
-		//alert("view or edit");
-		if($routeParams.request == "view")
+		if($routeParams.request == "view" || $routeParams.request == "edit")// if the route is /view or /edit
 		{
+			//Fetch the offence involved
 			$http.get("/api/offence/"+$routeParams.id).success(function(data){
+				//data.offence_date = convertDateToClient(data.offence_date);
 				$scope.offence = data;
 			}).error(function(error) {
 				alert(error);
 			});
+			//Fetch the events of the offence involved
+			$http.get("/api/offence/"+$routeParams.id+"/events/").success(
+					function(data) {
+						$scope.offenceEvents = data;
+					}).error(function(error) {
+				alert(error);
+				$scope.data.error = error;
+			});
 		}
 	}else
 	{
+		//This is when the use is reporting a new offence
 		//alert("Not request");
-	};
-	$scope.isReadOnly = function(elem){
-		alert("here");
-		elem.readOnly = $scope.isreadonly;
 	};
 	$scope.data = {};
 	//$scope.data.offenceRegistry = [];
+	
+	//Stores the offeces selected from the dialogbox
 	$scope.data.selectedOffence = [];
-	//Offence 
 	
-	//driver object
-	$scope.driver = {
-		license_number:""
-	}
-	//vehicle object
-	/*$scope.vehicle = {
-		regNo : "",
-		make : "",
-		type : ""
-	};*/
-	//police object
-	$scope.police = {
-		rank : "",
-		station : ""
-	};
-	$scope.viewOffence = function(val){
-		alert(val);
-	}
-	//Fetch offence registry information
-	
-	//Fetch driver infromation given the license number
-	$scope.getDriver = function() {
-		$http.get("/model/driver/" + $scope.driver.license_number)
-		.success(
-				function(data) {
-					if (data.length > 0) {
-						$scope.offence.name = data[0].first_name + " " + data[0].last_name;
-						$scope.offence.to = $scope.offence.name + " (" +data[0].phone_number +")";
-						$scope.offence.address = data[0].address;
-					} else {
-						$scope.vehicle.make = "";
-						$scope.vehicle.type = "";
-					}
-
-				}).error(function(error) {
-			alert("Err:"+error);
-			$scope.data.error = error;
-		});
-	}
-	$scope.vehicle ={};
-	//Fetches vehicle information given the plate number
-	$scope.$watch('offence.rank_no', function (newValue, oldValue) {
-		
+	//Driver  as in the database
+	$scope.driver ={};
+	//Watch for changes on the license number
+	$scope.$watch('offence.driver_license_number', function (newValue, oldValue) {
 		if(newValue != '')
 		{
-			alert(newValue);
-			$http.get("/model/vehicle/" + newValue)
+			//Fetch driver from the server
+			$http.get("/api/driver/" + newValue)
+				.success(
+					function(data) {
+						$scope.driver = data;
+						$scope.offence.to = data.first_name +" "+ data.last_name;
+						$scope.offence.address = data.address;
+					})
+				.error(function(error) {
+					alert("Err:"+error);
+					$scope.data.error = error;
+				});
+		}
+    });
+	//Vehicle  mirrors the one on the database
+	$scope.vehicle ={};
+	//Fetches vehicle information given the plate number
+	$scope.$watch('offence.vehicle_plate_number', function (newValue, oldValue) {
+		if(newValue != '')
+		{
+			$http.get("/api/vehicle/" + newValue)
 				.success(
 					function(data) {
 						$scope.vehicle = data;
@@ -113,19 +90,27 @@ angular.module('offenceApp').controller('offenceFormController',function($scope,
     });
 	//fetch police information given the rank
 	$scope.police = {};
-$scope.$watch('offence.vehicle_plate_number', function (newValue, oldValue) {
+	$scope.$watch('offence.rank_no', function (newValue, oldValue) {
 		
 		if(newValue != '')
 		{
-			$http.get("/model/police/" + $scope.police.rank).success(
+			$http.get("/api/police/" + newValue).success(
 					function(data) {
-						// alert(data[0].make);
-						if (data.length > 0) {
-							$scope.police.station = data[1].name;
-						} else {
-							$scope.police.station = "";
-						}
-						
+						$scope.police = data;
+					}).error(function(error) {
+				alert(error);
+				$scope.data.error = error;
+			});
+		}
+	});
+	$scope.station = {};
+	$scope.$watch('police.station_id', function (newValue, oldValue) {
+		
+		if(newValue != '')
+		{
+			$http.get("/api/station/" + newValue).success(
+					function(data) {
+						$scope.station = data;
 					}).error(function(error) {
 				alert(error);
 				$scope.data.error = error;
@@ -134,20 +119,29 @@ $scope.$watch('offence.vehicle_plate_number', function (newValue, oldValue) {
 	});
 	//submit the offence object to the server
 	$scope.submitOffence = function() {
-		$http.post("/api/offence/",$scope.offence).success(function(data){
+		/*$http.post("/api/offence/","{'offence':"+$scope.offence+",'events':"+$scope.offenceEvents+"}").success(function(data){
 			alert("Task added."+data);
 		}).error(function(error) {
-			alert(error);
-		});
+			alert(error.type);
+		});*/
+		$http({
+		    url: '/api/offence/',
+		    method: "POST",
+		    data: {'offence':$scope.offence,'events':$scope.offenceEvents}
+		})
+		.then(function(response) {
+			alert("Task added."+response);
+		    }, 
+		    function(response) { // optional
+		    	alert(response[0]);
+		    }
+		);
 	}
 	//Show a dialog box of offence registry
 	$scope.showOffences = function(ev) {
-		for(var i = 0; i < $scope.offence.offences.length; i++)
-		{
-			$scope.data.selectedOffence[$scope.offence.offences[i]] = true;
-		}
-		$mdDialog.push = function(sec){
-			$scope.offence.offences.push(angular.copy(sec));
+		$mdDialog.selectedOffence = $scope.selectedOffence;
+		$mdDialog.push = function(offenceEvent){
+			$scope.offenceEvents.push(angular.copy(offenceEvent));
 		};
 		$mdDialog.show({
 			controller : DialogController,
@@ -156,6 +150,21 @@ $scope.$watch('offence.vehicle_plate_number', function (newValue, oldValue) {
 		});
 	};
 });
+/*function convertDateToClient(date){
+	var newdate = "";
+	alert(date);
+	newdate[0] = date[5];
+	newdate[1] = date[6];
+	newdate[3] = '/';
+	newdate[4] = date[8];
+	newdate[5] = date[9];
+	newdate[6] = '/';
+	newdate[7] = date[0];
+	newdate[8] = date[1];
+	newdate[9] = date[2];
+	newdate[0] = date[3];
+	return newDate
+}*/
 function DialogController($scope, $mdDialog,$http) {
 	$scope.offenceRegistry = [];
 	//Hide the dialog box
@@ -163,12 +172,16 @@ function DialogController($scope, $mdDialog,$http) {
 		$mdDialog.hide();
 	};
 	//Push the check offence to the offence form
-	$scope.checkClick = function(sec) {
-		$mdDialog.push(sec);
+	$scope.checkClick = function(offenceEvent) {
+		$mdDialog.push(offenceEvent);
 	}
 	//fetch Offence registry list
-	$http.get("/api/offenceregistry").success(function(data) {
+	$http.get("/api/offence/registry").success(function(data) {
 		$scope.offenceRegistry = data;
+		for(i = 0; i < $scope.offenceRegistry.length;i++)
+		{
+			//$scope.offenceRegistry
+		}
 	}).error(function(error) {
 		alert(error);
 		$scope.data.error = error;

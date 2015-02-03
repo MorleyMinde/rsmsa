@@ -3,7 +3,7 @@
 	"description": "This extension shows a Google Image search result for the current page",
 	"version": "1.0",
 	"icons":{
-		"small":"icon16.png"
+		"small":"leaf.png"
 	},
 	"home":"index.html",
 	"routes":[
@@ -11,7 +11,7 @@
 		{"name":"Another","route":"/list","view":"/offencelistdialog.html"}
 	],
 	"color":{
-		"c500":"#FFEB3B",
-		"c200":"#FFF59D"
+		"c500":"#00F5FF",
+		"c200":"#B0E0E6"
 	}
 }

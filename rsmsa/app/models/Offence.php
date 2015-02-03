@@ -8,7 +8,8 @@ class Offence extends Eloquent{
 	 *
 	 * @return array of OffenceRegistry Object
 	 */
-	
+
+    protected $table= 'rsmsa_offences';
 	public function offenceRegistries()
 	{
 		return $this->belongsToMany('OffenceRegistry','offence_events','offence_id','offence_registry_id');

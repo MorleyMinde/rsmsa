@@ -9,6 +9,8 @@ class Person extends Eloquent{
 	 *
 	 * @return Object(User)
 	 */
+
+    protected $table = 'rsmsa_persons' ;
 	public function user(){
 		return $this->hasOne('User');
 	}

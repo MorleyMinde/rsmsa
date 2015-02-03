@@ -5,7 +5,7 @@
 	"icons":{
 		"small":"icon16.png"
 	},
-	"home":"offencelist.html",
+	"defaultRoute":"/home",
 	"menu":[
 		{"name":"Home","route":"/home"},
 		{"name":"Report Offence","route":"/list"}

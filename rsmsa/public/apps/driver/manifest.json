@@ -3,7 +3,7 @@
 	"description": "This extension shows a Google Image search result for the current page",
 	"version": "1.0",
 	"icons":{
-		"small":"icon.jpg"
+		"small":"icon16.png"
 	},
 	"home":"index.html",
 	"routes":[

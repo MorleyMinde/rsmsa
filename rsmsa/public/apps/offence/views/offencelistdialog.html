@@ -1,7 +1,6 @@
 <md-dialog aria-label="Mango (Fruit)"  ng-controller="offenceFormController">
   <md-content>
-  <md-checkbox ng-repeat="off in offenceRegistry" ng-click="checkClick(off.section)" 
-  aria-label="Checkbox 2">
+  <md-checkbox ng-repeat="off in offenceRegistry" ng-click="checkClick(off)" aria-label="Checkbox 2">
     {{off.nature}}
   </md-checkbox>
   
