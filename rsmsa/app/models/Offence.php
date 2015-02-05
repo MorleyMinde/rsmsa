@@ -12,7 +12,7 @@ class Offence extends Eloquent{
     protected $table= 'rsmsa_offences';
 	public function offenceRegistries()
 	{
-		return $this->belongsToMany('OffenceRegistry','offence_events','offence_id','offence_registry_id');
+		return $this->belongsToMany('OffenceRegistry','rsmsa_offence_events','offence_id','offence_registry_id');
 	}
 	/**
 	 * Returns the vehicle involved in the offence
@@ -47,5 +47,26 @@ class Offence extends Eloquent{
 	public function police()
 	{
 		return $this->hasOne('Police');
+	}
+	/**
+	 * Returns list of offences with there amounts calculated involved in issueing an offence
+	 *
+	 * @see Driver Model
+	 *
+	 * @return Object(Police)
+	 */
+	public static function appendAmoutToOffences($offences){
+		$offencesRet = array();
+		foreach($offences as $offence)
+		{
+			$total = 0;
+			foreach($offence->offenceRegistries as $registry)
+			{
+				$total += $registry->amount;
+			}
+			$offence->amount = $total;
+			array_push($offencesRet,$offence);
+		}
+		return $offencesRet;
 	}
 }

@@ -3,16 +3,10 @@ angular.module('offenceApp').controller('offenceFormController',function($scope,
 	$scope.isreadonly = false;
 	//Offence  mirrored as in the database
 	$scope.offence = {
-			"to" : "",
-			"address" : "",
-			"offences" : [],
 			"place" : "",
-			"facta" : "",
-			"factb" : "",
-			"factc" : "",
-			"factd" : "",
-			"station" : "",
-			"commit":"",
+			"facts" : "",
+			"admit": false,
+			"paid":false,
 			"amount":"",
 			"offence_date" : "",
 			"vehicle_plate_number":"",
@@ -21,13 +15,34 @@ angular.module('offenceApp').controller('offenceFormController',function($scope,
 		};
 	//Stores the offence events of an offence
 	$scope.offenceEvents = [];
+	$scope.amountPayable = 0;
+	$scope.updateAmountPayable = function(){
+		$scope.amountPayable = 0;
+		for(i = 0;i < $scope.offenceEvents.length;i++)
+		{
+			$scope.amountPayable += parseInt($scope.offenceEvents[i].amount);
+		}
+	}
+	$scope.$watch('offenceEvents', function (newValue, oldValue) {
+		$scope.updateAmountPayable();
+    });
+	$scope.deleteOffence = function(offence){
+		for(i = 0; i < $scope.offenceEvents.length;i++)
+		{
+			if($scope.offenceEvents[i].id == offence.id)
+			{
+				$scope.offenceEvents.splice(i,1);
+				break;
+			}
+		}
+	};
 	if($routeParams.request){
 		if($routeParams.request == "view" || $routeParams.request == "edit")// if the route is /view or /edit
 		{
 			//Fetch the offence involved
 			$http.get("/api/offence/"+$routeParams.id).success(function(data){
 				//data.offence_date = convertDateToClient(data.offence_date);
-				$scope.offence = data;
+				$scope.offence = offenceConversion(data);
 			}).error(function(error) {
 				alert(error);
 			});
@@ -119,29 +134,32 @@ angular.module('offenceApp').controller('offenceFormController',function($scope,
 	});
 	//submit the offence object to the server
 	$scope.submitOffence = function() {
-		/*$http.post("/api/offence/","{'offence':"+$scope.offence+",'events':"+$scope.offenceEvents+"}").success(function(data){
-			alert("Task added."+data);
-		}).error(function(error) {
-			alert(error.type);
-		});*/
 		$http({
 		    url: '/api/offence/',
 		    method: "POST",
-		    data: {'offence':$scope.offence,'events':$scope.offenceEvents}
-		})
-		.then(function(response) {
-			alert("Task added."+response);
-		    }, 
-		    function(response) { // optional
-		    	alert(response[0]);
+		    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+		    responseType: "json",
+		    data: {
+		    	offence:$scope.offence,
+		    	events:$scope.offenceEvents
 		    }
-		);
+		})
+		.then(
+				function(data) {
+					alert("Task added."+data.status);
+				}, 
+				function(data) { // optional
+					alert(data);
+				}
+			);
 	}
+	
 	//Show a dialog box of offence registry
 	$scope.showOffences = function(ev) {
 		$mdDialog.selectedOffence = $scope.selectedOffence;
 		$mdDialog.push = function(offenceEvent){
 			$scope.offenceEvents.push(angular.copy(offenceEvent));
+			$scope.updateAmountPayable();
 		};
 		$mdDialog.show({
 			controller : DialogController,
@@ -149,22 +167,32 @@ angular.module('offenceApp').controller('offenceFormController',function($scope,
 			targetEvent : ev,
 		});
 	};
+	$scope.getAnswerValue = function(value) {
+		if(value)
+		{
+			return "Yes";
+		}else
+		{
+			return "No";
+		}
+	};
 });
-/*function convertDateToClient(date){
-	var newdate = "";
-	alert(date);
-	newdate[0] = date[5];
-	newdate[1] = date[6];
-	newdate[3] = '/';
-	newdate[4] = date[8];
-	newdate[5] = date[9];
-	newdate[6] = '/';
-	newdate[7] = date[0];
-	newdate[8] = date[1];
-	newdate[9] = date[2];
-	newdate[0] = date[3];
-	return newDate
-}*/
+function offenceConversion(offence){
+	if(offence.admit == 1)
+	{
+		offence.admit = true;
+	}else{
+		offence.admit = false;
+	}
+	if(offence.paid == 1)
+	{
+		offence.paid = true;
+	}else{
+		offence.paid = false;
+	}
+	return offence;
+}
+//Dialog box to select offences from list of offences
 function DialogController($scope, $mdDialog,$http) {
 	$scope.offenceRegistry = [];
 	//Hide the dialog box
@@ -178,10 +206,7 @@ function DialogController($scope, $mdDialog,$http) {
 	//fetch Offence registry list
 	$http.get("/api/offence/registry").success(function(data) {
 		$scope.offenceRegistry = data;
-		for(i = 0; i < $scope.offenceRegistry.length;i++)
-		{
-			//$scope.offenceRegistry
-		}
+		
 	}).error(function(error) {
 		alert(error);
 		$scope.data.error = error;

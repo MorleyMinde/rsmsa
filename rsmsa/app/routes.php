@@ -38,6 +38,9 @@ Route::get('/api/request/{tag}', 'AndroidController@processtag');
 
 //Vehicle Controller Rooutes
 Route::get('/api/vehicle/{plate_number}', "VehicleController@getVehicle");
+Route::get('/api/vehicle/{plate_number}/offences', "VehicleController@getOffences");
+Route::get('/api/vehicle/{plate_number}/offences/paid', "VehicleController@getPaidOffences");
+Route::get('/api/vehicle/{plate_number}/offences/notpaid', "VehicleController@getNotPaidOffences");
 
 //Police Controller Rooutes
 Route::get('/api/police/{rank_no}', "PoliceController@getPolice");
@@ -47,9 +50,15 @@ Route::get('/api/police/{rank_no}', "PoliceController@getPolice");
 Route::get('/api/station/{id}', "StationController@getStation");
 //Driver Controller Rooutes
 Route::get('/api/driver/{license_number}', "DriverController@getDriver");
+Route::get('/api/driver/{license_number}/offences', "DriverController@getOffences");
+Route::get('/api/driver/{license_number}/offences/paid', "DriverController@getPaidOffences");
+Route::get('/api/driver/{license_number}/offences/notpaid', "DriverController@getNotPaidOffences");
 
 //Offence Controller Rooutes
 Route::get('/api/offence/registry', "OffenceController@getOffenceRegistry");
+Route::get('/api/offence/report', "OffenceController@getReport");
+Route::post('/api/offence/stats', "OffenceController@getStats");
+Route::get('/api/offence/registry/{id}/offences', "OffenceController@getOffenceRegistryOffences");
 Route::get('/api/offence/{id}', "OffenceController@getOffence");
 
 Route::get('/api/offences', "OffenceController@getOffences");
