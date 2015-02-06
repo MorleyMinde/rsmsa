@@ -1,9 +1,10 @@
 var routProvider = null;
-angular.module('offenceApp', [ 'ngMaterial' , "ngRoute",'chartjs'])
+angular.module('offenceApp', [ 'ngMaterial' , "ngRoute",'ui.date'])
 	.config(function ($routeProvider) {
 			routeProvider = $routeProvider;
 		})
 	.controller('offenceCtrl',function($scope, $mdDialog, $http,$mdSidenav, $location) {
+			
 			$scope.toggleLeft = function() {
 			    $mdSidenav('left').toggle();
 			  };

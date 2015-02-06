@@ -1,5 +1,5 @@
 <?php
-class Offence extends Eloquent{
+class Offence extends JSONPresentableImpl{
 
 	/**
 	 * Returns the offences registered according to

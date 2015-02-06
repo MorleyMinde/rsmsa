@@ -4,7 +4,7 @@ angular.module('offenceApp').controller('offencePaymentController',function($sco
 		                 { id: 'driver', name: 'Driver' , ref :'License No.'},
 		                 { id: 'vehicle', name: 'Vehicle' , ref :'Plate No.'}
 		               ];
-	$scope.status = { id: 'all', name: 'All'};
+	$scope.status = { id: '', name: 'All'};
 	$scope.statuses = [
 		                 { id: '', name: 'All'},
 		                 { id: 'paid', name: 'Paid'},
@@ -25,7 +25,7 @@ angular.module('offenceApp').controller('offencePaymentController',function($sco
 				}
 				$http.get(url).success(function(data){
 					//data.offence_date = convertDateToClient(data.offence_date);
-					$scope.offences = data;
+					$scope.offences = data.offences;
 				}).error(function(error) {
 					alert(error);
 				});

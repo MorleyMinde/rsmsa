@@ -1,5 +1,5 @@
 <?php
-class Driver extends Eloquent{
+class Driver extends HasOffenceImpl{
 
 	protected $primaryKey = "license_number";
 	protected $table= 'rsmsa_drivers';

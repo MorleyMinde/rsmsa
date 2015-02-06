@@ -17,23 +17,19 @@ class OffenceController extends BaseController {
 			DB::transaction(function()use ($offenceJSON,$eventsJSON)
 			{
 				$offence = "";
-				
+				$hasID = false;
 				if(array_key_exists( "id", $offenceJSON)){
-					$offence = Offence::find($offenceJSON['id']);
-					foreach($offenceJSON as $key => $val)
+					if($offenceJSON['id'] != "")
 					{
-						//return $key.$val;
-						$offence[$key] = $val;
+						$offence = Offence::find($offenceJSON['id']);
+						$this->saveOffence($offence,$offenceJSON);
+						$hasID = true;
 					}
-					$offence->save();
-				}else {
+				}
+				if(!$hasID){
+					
 					$offence = new Offence();
-					foreach($offenceJSON as $key => $val)
-					{
-						//return $key.$val;
-						$offence[$key] = $val;
-					}
-					$offence->save();
+					$this->saveOffence($offence,$offenceJSON);
 				}
 				foreach($eventsJSON as $registry)
 				{
@@ -47,10 +43,19 @@ class OffenceController extends BaseController {
 					};
 				}
 			});
-		}catch(Exception $e){
+		}catch(Exception $exception){
+			Log::error($exception);
 			return "{'status':'ERROR','code': 1,'message':'Message will come soon.'}";
 		}
 		return "{'status':'OK'}";
+	}
+	private function saveOffence($offence,$offenceJSON){
+		$offence->setValuesByJSON($offenceJSON);
+		if(is_numeric ($offence['offence_date']))
+		{
+			$offence['offence_date'] = date("Y-m-d",$offence['offence_date']);
+		}
+		$offence->save();
 	}
 	public function getEvents($id)
 	{
