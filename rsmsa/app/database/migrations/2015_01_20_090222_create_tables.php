@@ -78,6 +78,8 @@ class CreateTables extends Migration {
 			$table->increments('id');
 			$table->text('nature');
 			$table->string('section');
+			$table->string('relating');
+			$table->string('amount');
 			$table->timestamps();
 		});
 		Schema::create('rsmsa_offences', function($table)
@@ -87,15 +89,13 @@ class CreateTables extends Migration {
 			$table->string('address');
 			$table->date('offence_date');
 			$table->string('place');
-			$table->string('facta');
-			$table->string('factb');
-			$table->string('factc');
-			$table->string('factd');
+			$table->string('facts');
 			$table->string('vehicle_plate_number');
 			$table->string('driver_license_number');
 			$table->string('rank_no');
-			$table->string('amount');
-			$table->string('commit');
+			$table->boolean('admit');
+			$table->boolean('paid');
+			$table->string('payment_mode');
 			$table->string('latitude');
 			$table->string('longitude');
 			$table->foreign('vehicle_plate_number')->references('plate_number')->on('rsmsa_vehicles');
@@ -108,7 +108,7 @@ class CreateTables extends Migration {
 			$table->integer('offence_id')->unsigned();
 			$table->integer('offence_registry_id')->unsigned();
 			$table->primary(array('offence_id','offence_registry_id'));
-			$table->foreign('offence_id')->references('id')->on('rsmsa_offences');
+			$table->foreign('offence_id')->references('id')->on('rsmsa_offences')->onDelete('cascade');
 			$table->foreign('offence_registry_id')->references('id')->on('rsmsa_offence_registry');
 		});
 		Schema::create('rsmsa_apps', function($table)

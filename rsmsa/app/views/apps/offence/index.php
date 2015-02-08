@@ -4,6 +4,7 @@
 
 <!-- Angulars Material CSS now available via Google CDN; version 0.6 used here -->
 <link rel="stylesheet" href="/angular-material/angular-material.css">
+<link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
 
 <!-- Angular Material Dependencies -->
 <script src="/angular/angular.min.js"></script>
@@ -17,10 +18,11 @@
 <script src="/angular/angular-route.min.js"></script>
 <link rel="stylesheet"
 	href="/angular-material/angular-text.min.css">
-<link rel="stylesheet" href="/css/style.css">
+<!-- <link rel="stylesheet" href="/css/style.css"> -->
 
 <style>
 .container {
+	padding:0;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -67,10 +69,17 @@ md-icon{
 	margin-top:0;
 }
 </style>
+<script src="/js/Chart.js"></script>
+<script src="/js/angular-chartjs.min.js"></script>
 <script src="controllers/offenceController.js"></script>
-<!-- <script ng-repeat="controller in appControllers" ng-src="{{getContollerUrl(controller)}}"></script> -->
+<!--<script ng-repeat="controller in appControllers" ng-src="{{getContollerUrl(controller)}}"></script>-->
+
+<script src="controllers/statsController.js"></script>
 <script src="controllers/offenceListController.js"></script>
 <script src="controllers/offenceFormController.js"></script>
+<script src="controllers/offenceRegController.js"></script>
+<script src="controllers/offenceReportController.js"></script>
+<script src="controllers/offencePaymentController.js"></script>
 </head>
 <body style="" >
 	<div class="container">
@@ -112,7 +121,9 @@ md-icon{
 	<div class="view">
 		<div ng-view="#/home" />
 	</div>
+	<div>
 	
+	</div>
 	</md-card-content> </md-card>
 </body>
 </html>

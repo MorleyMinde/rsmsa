@@ -11,7 +11,18 @@ class DriverController extends \BaseController {
 	{
 		return Driver::all();
 	}
-
+	public function getOffences($license_number){
+		$driver = Driver::find($license_number);
+		return appendAmoutToOffences($driver->offences);
+	}
+	public function getPaidOffences($license_number){
+		$driver = Driver::find($license_number);
+		return Offence::appendAmoutToOffences($driver->paidOffences);
+	}
+	public function getNotPaidOffences($license_number){
+		$driver = Driver::find($license_number);
+		return Offence::appendAmoutToOffences($driver->notPaidOffences);
+	}
 
 	/**
 	 * Show the form for creating a new resource.

@@ -1,5 +1,5 @@
 var routProvider = null;
-angular.module('offenceApp', [ 'ngMaterial' , "ngRoute"])
+angular.module('offenceApp', [ 'ngMaterial' , "ngRoute",'chartjs'])
 	.config(function ($routeProvider) {
 			routeProvider = $routeProvider;
 		})
@@ -27,15 +27,26 @@ angular.module('offenceApp', [ 'ngMaterial' , "ngRoute"])
 							//controller:"offenceListController"
 							//resolve: resolveController('controllers/'+route.controller+'.js')
 						});
-						//alert(route.controller);
+						/*var fileref=document.createElement('script')
+						  fileref.setAttribute("type","text/javascript")
+						  fileref.setAttribute("src", 'controllers/'+route.controller+'.js')
+						//alert(route.controller);*/
 						if(!(route.controller == undefined))
 						{
 							$scope.appControllers.push(route.controller);
 						}
 							
 					}
+					//alert("Root:"+$routeParams.path());
 					routeProvider.otherwise({redirectTo: $scope.app.defaultRoute});
-					$location.path($scope.app.defaultRoute);
+					if($location.path() == '')
+					{
+						$location.path($scope.app.defaultRoute);
+					}else
+					{
+						$location.path($location.path());
+					}
+					
 				}).error(function(error) {
 					alert(error);
 					$scope.data.error = error;

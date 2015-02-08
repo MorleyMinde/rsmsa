@@ -14,6 +14,6 @@ class OffenceRegistry extends Eloquent{
 	 */
 	public function offences()
 	{
-		return $this->belongsToMany('Offence','offence_events','offence_id','offence_registry_id');
+		return $this->belongsToMany('Offence','rsmsa_offence_events','offence_registry_id','offence_id');
 	}
 }

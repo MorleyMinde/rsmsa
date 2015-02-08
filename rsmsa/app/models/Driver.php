@@ -6,6 +6,12 @@ class Driver extends Eloquent{
 	public $timestamps = false;
 	
 	public function offences(){
-		return $this->hasMany('Offence');
+		return $this->hasMany('Offence','driver_license_number');
+	}
+	public function paidOffences(){
+		return $this->offences()->where('paid', '=', true);
+	}
+	public function notPaidOffences(){
+		return $this->offences()->where('paid', '=', false);
 	}
 }
