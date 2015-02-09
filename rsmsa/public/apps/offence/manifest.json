@@ -8,14 +8,16 @@
 	"defaultRoute":"/home",
 	"menu":[
 		{"name":"Home","route":"/home"},
-		{"name":"Report Offence","route":"/list"},
+		{"name":"Offence List","route":"/list"},
+		{"name":"Report Offence","route":"/report"},
 		{"name":"Registry","route":"/registry"},
 		{"name":"Payment Report","route":"/offence/payments"},
 		{"name":"Offence Report","route":"/offence/report"}		
 	],
 	"routes":[
 		{"route":"/home","view":"/stats.html"},
-		{"route":"/list","view":"/offenceForm.html","controller":"offenceListController"},
+		{"route":"/list","view":"/offencelist.html"},
+		{"route":"/report","view":"/offenceForm.html","controller":"offenceListController"},
 		{"route":"/offence/:request/:id","view":"/offenceForm.html"},
 		{"route":"/registry","view":"/offenceReg.html"},
 		{"route":"/registry/:id/offences","view":"/offencelist.html"},

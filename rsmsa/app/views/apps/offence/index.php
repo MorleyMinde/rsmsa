@@ -7,6 +7,10 @@
 <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
 
 <!-- Angular Material Dependencies -->
+<script src="/js/jquery/jquery.js"></script>
+<script src="/js/jquery/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="/js/jquery/jquery-ui.min.css">
+
 <script src="/angular/angular.min.js"></script>
 <script src="/hammerjs/hammer.min.js"></script>
 <script src="/angular-animate/angular-animate.min.js"></script>
@@ -16,6 +20,9 @@
 <script src="/angular-material/angular-material.min.js"></script>
 <script src="/angular-material/angular-text.min.js"></script>
 <script src="/angular/angular-route.min.js"></script>
+<script src="/angular/ui-date/date.js"></script>
+<script src="/angular/highcharts/highcharts-custom.js"></script>
+<script src="/angular/highcharts/highcharts-ng.js"></script>
 <link rel="stylesheet"
 	href="/angular-material/angular-text.min.css">
 <!-- <link rel="stylesheet" href="/css/style.css"> -->
@@ -70,7 +77,6 @@ md-icon{
 }
 </style>
 <script src="/js/Chart.js"></script>
-<script src="/js/angular-chartjs.min.js"></script>
 <script src="controllers/offenceController.js"></script>
 <!--<script ng-repeat="controller in appControllers" ng-src="{{getContollerUrl(controller)}}"></script>-->
 

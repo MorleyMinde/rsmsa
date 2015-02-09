@@ -1,6 +1,11 @@
 angular.module('offenceApp').controller('offenceFormController',function($scope,$http, $mdDialog
 		,$rootScope, $scope, $routeParams, $route) {
 	$scope.isreadonly = false;
+	$scope.dateOptions = {
+	        changeYear: true,
+	        changeMonth: true,
+	        yearRange: '1900:-0'
+	    };
 	//Offence  mirrored as in the database
 	$scope.offence = {
 			"place" : "",
@@ -8,7 +13,7 @@ angular.module('offenceApp').controller('offenceFormController',function($scope,
 			"admit": false,
 			"paid":false,
 			"amount":"",
-			"offence_date" : "",
+			"offence_date" : Date(),
 			"vehicle_plate_number":"",
 			"driver_license_number":"",
 			"rank_no":""

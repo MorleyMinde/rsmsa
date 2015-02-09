@@ -1,6 +1,6 @@
 <?php
 
-class Vehicle extends Eloquent{
+class Vehicle extends HasOffenceImpl{
 
     protected   $table = 'rsmsa_vehicles';
 	

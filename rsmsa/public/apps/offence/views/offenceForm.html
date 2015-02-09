@@ -1,3 +1,9 @@
+<style>
+	.md-dialog-container{
+		position: fixed;
+		height: 100%;
+	}
+</style>
 	<div ng-controller="offenceFormController">
 	<center>
 		<h2>Report an Offence</h2>
@@ -34,7 +40,7 @@
 			<md-button ng-click="showOffences($event)" class="md-raised md-primary" ng-click="">Add Offence</md-button>
 			<md-input-container class="inline-container"> 
 				<label>Date of offence</label>
-				<input name="date" ng-model="offence.offence_date" type="date" required> 
+				<input name="date" ng-model="offence.offence_date" ui-date="dateOptions" required> 
 			</md-input-container><br />
 			<md-input-container class="inline-container"> 
 				<label>Place of Offence</label>
@@ -52,7 +58,7 @@
 				</md-switch>
 				<md-input-container class="inline-container" style="width:500px">
 					<label>Amount payable</label>
-					<input ng-model="amountPayable" /> </md-input-container><br /><br />
+					<input ng-model="amountPayable" readonly/> </md-input-container><br /><br />
 				<md-input-container>
 				Is amount paid:
 				<md-switch ng-model="offence.paid">
@@ -67,8 +73,14 @@
 			<div>
 				
 					<br /><br />
-				<table border="1">
-					<thead style="background-color: gray;">
+				<style>
+					.bottomtable td{
+						padding-left: 30px;
+						padding-right: 30px;
+					}
+				</style>
+				<table border="1" class="bottomtable">
+					<thead style="background-color: {{app.color.c200}};color:white">
 						<tr><td style="text-align:center">VEHICLE DETAILS</td><td style="text-align:center">ISSUED BY</td></tr>
 					</thead>
 					<tbody>
@@ -112,7 +124,7 @@
 							<td>
 								<md-input-container class="inline-container"> 
 								<label>Date.</label>
-								<input type="date" ng-model="offence.offence_date"> 
+								<input ng-model="offence.offence_date" ui-date="dateOptions"> 
 								</md-input-container>
 							</td>
 						</tr>
