@@ -11,19 +11,13 @@
 |
 */
 
-Route::get('/', function()
-{
-    return View::make('login');
-});
 
+Route::get('/', array('before' => 'auth' , 'uses' => 'LoginController@index'));
+
+Route::get('login', array('uses'=>'LoginController@getLogin'));
+Route::get('logout', array('uses'=>'LoginController@logout'));
 //process login form
 Route::post('login', array('uses'=>'LoginController@login'));
-
-Route::get('/', function(){
-
-	return View::make('index')->with('apps',AppEntity::all());
-});
-
 /*
  * 
  * These are app routes. Routes for getting app specific information
@@ -79,14 +73,17 @@ Route::get('/app/{id}/controllers/{file}', function($id,$file)
  * These are routes to api requests
  */
 Route::get('/api/request/{tag}', 'AndroidController@processtag');
+
 Route::get('/api/offenceregistry', function()
 {
 	return OffenceRegistry::all();
 });
+
 Route::get('/api/offences', function()
 {
 	return Offence::all();
 });
+
 Route::get('/api/offence/{id}', function($id)
 {
 	return Offence::find($id);
@@ -94,9 +91,9 @@ Route::get('/api/offence/{id}', function($id)
 
 Route::get('/model/vehicle/{plate_number}', function($plate_number)
 {
-	//return Vehicle::where('plate_number','=',$plate_number)->get();
-	return Vehicle::find($plate_number);
+	return Vehicle::where('plate_number','=',$plate_number)->get();
 });
+
 Route::get('/model/police/{rank_no}', function($rank_no)
 {
 	$police = Police::where('rank_no','=',$rank_no)->get();
@@ -106,6 +103,7 @@ Route::get('/model/police/{rank_no}', function($rank_no)
 		return "[]";
 	}
 	$police->push(Station::find($police[0]['station_id']));
+
 	return $police;
 
 });
@@ -115,9 +113,11 @@ Route::get('/model/driver/{license_number}', function($license_number)
 	return Driver::where('license_number','=',$license_number)->get();
 
 });
+
+
 Route::post('/api/offence/', function()
 {
-	$request = Request::instance();
+    $request = Request::instance();
 
     // Now we can get the content from it
     $content = $request->getContent();
@@ -152,31 +152,42 @@ Route::post('/api/offence/', function()
 
     DB::transaction(function()
     {
-    	$newOffence = Offence::create([
-    			'to' => $json['name'],
-    			'address' => $json['address'],
-    			'offence_date' => $json['date'],
-    			'place' => $json['place'],
-    			'facta' => $json['facts']['a'],
-    			'factb' => $json['facts']['b'],
-    			'factc' => $json['facts']['c'],
-    			'factd' => $json['facts']['d'],
-    			'vehicle_plate_number' => $json['vehicle_plate_number'],
-    			'driver_license_number' => $json['driver_license_number'],
-    			'rank_no' => $json['rank_no'],
-    			//'amount' => $json['amount'],
-    			//'commit' => $json['commit'],
-    			]);
-    	foreach($json['offences'] as $offence){
-    		$offRegistry = OffenceRegistry::where('section','=',$offence)->get();
-    		
-    	}
-    	$newOffenceEvent = User::create([
-    			'username' => Input::get('username'),
-    			'account_id' => $newAcct->id,
-    			]);
+        $newOffence = Offence::create([
+            'to' => $json['name'],
+            'address' => $json['address'],
+            'offence_date' => $json['date'],
+            'place' => $json['place'],
+            'facta' => $json['facts']['a'],
+            'factb' => $json['facts']['b'],
+            'factc' => $json['facts']['c'],
+            'factd' => $json['facts']['d'],
+            'vehicle_plate_number' => $json['vehicle_plate_number'],
+            'driver_license_number' => $json['driver_license_number'],
+            'rank_no' => $json['rank_no'],
+            //'amount' => $json['amount'],
+            //'commit' => $json['commit'],
+        ]);
+        foreach($json['offences'] as $offence){
+            $offRegistry = OffenceRegistry::where('section','=',$offence)->get();
+
+        }
+        $newOffenceEvent = User::create([
+            'username' => Input::get('username'),
+            'account_id' => $newAcct->id,
+        ]);
     });
     return $json['name'];
 });
 
 
+Route::post('/api/accident/', array('uses' => 'AccidentController@submitAccident'));
+
+Route::get('/api/accidents/', array('uses' => 'AccidentController@getAccidents'));
+
+Route::get('/api/accident/{accident_id}', array('uses' => 'AccidentController@viewAccident'));
+
+Route::get('/api/accident/driver/{driver_id}', array('uses' => 'AccidentController@getDriver'));
+
+Route::get('/api/accident/vehicle/{vehicle_id}', array('uses' => 'AccidentController@getVehicle'));
+
+Route::get('/accident/police/{rank_no}', array('uses' => 'AccidentController@getPoliceInfo'));

@@ -152,7 +152,7 @@ $scope.$watch('offence.vehicle_plate_number', function (newValue, oldValue) {
 		$mdDialog.show({
 			controller : DialogController,
 			templateUrl : 'views/offencelistdialog.html',
-			targetEvent : ev,
+			targetEvent : ev
 		});
 	};
 });

@@ -1,21 +1,5 @@
-<!DOCTYPE html>
-<html ng-app="accidentApp">
-<head>
-    <title>Accident Form</title>
 
-
-
-    <link href="apps/accident/css/bootstrap-theme.css" rel="stylesheet" />
-    <link href="apps/accident/css/bootstrap.css" rel="stylesheet">
-    <link href="apps/accident/css/material-design.css" rel="stylesheet" />
-
-
-</head>
-
-<body>
-
-
-<div class="row" style="padding: 15px" >
+<div class="row" style="padding: 15px" ng-controller = "ViewAccidentController">
 
 <h3 class="panel-heading"  style="background-color: #ffffff;color: #000000;border: solid,#000000" ><center>TANZANIA ACCIDENT FORM SHEET (AFS)</center>  </h3>
 
@@ -34,8 +18,8 @@
             <td style="width:22%"> <input class="ingizo"  type="text" ng-model="accident_no" name="accident_no" required/> </td>
             <td style="width:8.5%">OCS Check</td>
             <td style="width:8.5%"> <input class="ingizo"  type="text" ng-model="ocs_check" name="ocs_check" required /> </td>
-            <td  style="width:8.5%">Supervisor Check</td>
-            <td style="width:8.5%"> <input class="ingizo"  type="text" name="supervisor_check" required /> </td>
+            <td  style="width:8.5%">S.visor Check</td>
+            <td style="width:8.5%"> <input class="ingizo"  type="text" ng-model="supervisor_check" name="supervisor_check" required /> </td>
         </tr>
 
         </tbody>
@@ -54,13 +38,13 @@
             <td class="number" style="border-width:0px">1</td>
             <td class="my_td"  style="width: 10%">Police Station</td>
             <td style="width: 10%">
-                <input class="ingizo"  type="text" name="police_station" required/></td>
+                <input class="ingizo"  type="text" ng-model="police_station" name="police_station" required/></td>
             <td class="my_td"  style="width: 10%"></td>
             <td class="my_td"  style="width: 11%">Number</td>
             <td class="my_td"  style="width: 11%">Name</td>
             <td class="my_td"  style="width: 11%">Sign.Date</td>
             <td class="my_td"  style="width: 8.5%"></td>
-            <td  style="width: 8.5%">Accident Severity</td>
+            <td  style="width: 8.5%">Acc.Severity</td>
             <td class="my_td"  style="width: 8.5%"></td>
             <td class="my_td"  style="width: 8.5%"></td>
 
@@ -71,13 +55,13 @@
             <td class="my_td"  style="width: 10%">District </td>
             <td style="width: 10%"><input class="ingizo"  type="text" /></td>
             <td class="my_td"  style="width: 10%">Police Officer (1) </td>
-            <td style="width: 11%"><input class="ingizo"  type="text" /></td>
+            <td style="width: 11%"><input class="ingizo" ng-model="rank_no" type="text" /></td>
             <td style="width: 11%"><input class="ingizo"  type="text"/></td>
-            <td style="width: 11%"><input class="ingizo"  type="text"/></td>
+            <td style="width: 11%"><input class="ingizo"  ng-model="sign_date" type="text"/></td>
             <td style="width: 8.5%">Fatal(n)</td>
-            <td  style="width:8.5%"><input class="ingizo"  type="text"/></td>
-            <td  style="width: 8.5%">Simple Injured(n)</td>
-            <td style="width: 8.5%"><input class="ingizo"  type="text/"></td>
+            <td  style="width:8.5%"><input class="ingizo" ng-model="accident_fatal" type="text"/></td>
+            <td  style="width: 8.5%">Simple(n)</td>
+            <td style="width: 8.5%"><input class="ingizo" ng-model="accident_simple_injury" type="text/"></td>
 
         </tr>
 
@@ -90,9 +74,9 @@
             <td><input class="ingizo"  type="text"/></td>
             <td><input class="ingizo"  type="text"/></td>
             <td class="my_td" >Severe Injury(n)</td>
-            <td><input class="ingizo"  type="text"/></td>
+            <td><input class="ingizo" ng-model="accident_severe_injury" type="text"/></td>
             <td class="my_td" >Only Damage</td>
-            <td><input class="ingizo"  type="text"/></td>
+            <td><input class="ingizo" ng-model="accident_only_damage" type="text"/></td>
         </tr>
 
         </tbody>
@@ -109,11 +93,11 @@
         <tr>
             <td class="my_heading" style="border-width:0px">B : TIME AND LOCATION</td>
             <td style="width:11%">Latitude</td>
-            <td style="width:11%"> <input class="ingizo"  type="text" /> </td>
+            <td style="width:11%"> <input class="ingizo" ng-model="latitude" type="text" /> </td>
             <td style="width:11%">Longitude</td>
-            <td style="width:8.5%"> <input class="ingizo"  type="text" /> </td>
+            <td style="width:8.5%"> <input class="ingizo" ng-model="longitude" type="text" /> </td>
             <td style="width:12.75%">Hit & Run</td>
-            <td style="width:12.75%"> <input style="margin: 0px ;border:0px " type="checkbox" /> </td>
+            <td style="width:12.75%"> <input style="margin: 0px ;border:0px " type="checkbox" ng-true-value="hit and run" ng-false-value="'No'"/> </td>
         </tr>
 
         </tbody>
@@ -146,14 +130,14 @@
         <tr>
             <td class="number" style="border-width:0px">2</td>
             <td class="my_td"  style="width: 10%">Day</td>
-            <td style="width:5%"> <input class="ingizo"  type="text" /> </td>
+            <td style="width:5%"> <input class="ingizo" ng-model="accident_date_time" type="text" /> </td>
             <td style="width: 10%">Hour(24)</td>
             <td style="width:5%"> <input class="ingizo"  type="text" /> </td>
             <td class="my_td"  style="width: 11%">Area Name</td>
-            <td style="width:11%"> <input class="ingizo"  type="text" /> </td>
+            <td style="width:11%"> <input class="ingizo"  ng-model="accident_area" type="text" /> </td>
             <td style="width: 11%">Name </td>
-            <td style="width:8.5%"> <input class="ingizo"  type="text" /> </td>
-            <td style="width:12.75%"> <input class="ingizo"  type="text" /> </td>
+            <td style="width:8.5%"> <input class="ingizo" ng-model="road_name" type="text" /> </td>
+            <td style="width:12.75%"> <input class="ingizo"  ng-model="intersection_name" type="text" /> </td>
         </tr>
 
         <tr>
@@ -162,11 +146,11 @@
             <td > <input class="ingizo"  type="text" /> </td>
             <td >Min(60)</td>
             <td> <input class="ingizo"  type="text" /> </td>
-            <td class="my_td" >District</td>
-            <td> <input class="ingizo"  type="text" /> </td>
+            <td class="my_td" >City/Region</td>
+            <td> <input class="ingizo"  ng-model="area_region" type="text" /> </td>
             <td>No </td>
-            <td> <input class="ingizo"  type="text" /> </td>
-            <td> <input class="ingizo"  type="text" /> </td>
+            <td> <input class="ingizo" ng-model=road_number type="text" /> </td>
+            <td> <input class="ingizo" ng-model="intersection_number" type="text" /> </td>
         </tr>
 
 
@@ -176,11 +160,11 @@
             <td > <input class="ingizo"  type="text" /> </td>
             <td class="my_td" ></td>
             <td> <input class="ingizo"  type="text" /> </td>
-            <td class="my_td" >City/Region</td>
-            <td> <input class="ingizo"  type="text" /> </td>
+            <td class="my_td" >District</td>
+            <td> <input class="ingizo" ng-model="area_district" type="text" /> </td>
             <td>Kilometer(Mark) </td>
-            <td> <input class="ingizo"  type="text" /> </td>
-            <td> <input class="ingizo"  type="text" /> </td>
+            <td> <input class="ingizo" ng-model="road_mark" type="text" /> </td>
+            <td> <input class="ingizo" ng-model="intersection_name" type="text" /> </td>
         </tr>
 
         </tbody>
@@ -200,7 +184,7 @@
     <tr>
         <td class="my_heading2" style="border-width:0px">C : VEHICLE & DRIVER</td>
         <td style="width:5%"> Fatal</td>
-        <td style="width:11%"><input class="ingizo"  type="text" /></td>
+        <td style="width:11%"><input class="ingizo" ng-model="vehicle_severe_injury" type="text" /></td>
         <td style="width:11%"> Severe Injury</td>
         <td style="width:11%"> Simple Injury</td>
         <td  style="width:21.25%">Not Injured</td>
@@ -228,100 +212,101 @@
     <tbody>
     <tr>
         <td class="number" style="border-width:0px">2</td>
-        <td style="width: 15%" class="my_td">Surname </td>
-        <td style="width:15%"> <input class="ingizo-driver"  type="text" /> </td>
-        <td style="width: 16.5%" class="my_td">Vehicle Type </td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
+
+        <td style="width: 15%" class="my_td">Driving License ID </td>
+        <td style="width: 15%"><input class="ingizo-driver" ng-model="license_number" type="text" /></td>
+        <td style="width: 16.5%" class="my_td">Vehicle Registration Number </td>
+        <td style="width: 16.5%"><input class="ingizo-gari" ng-model="plate_number" type="text" /></td>
         <td style="width: 17%" class="my_td">Insurance Company</td>
         <td style="width: 17%" class="my_td"><input class="ingizo-insurance" type="text"></td>
 
     <tr>
 
         <td class="number" style="border-width:0px">3</td>
-        <td style="width: 15%" class="my_td">Other Names </td>
-        <td style="width:15%"> <input class="ingizo-driver"  type="text" /> </td>
-        <td style="width: 16.5%" class="my_td">Vehicle Registration Number </td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
+        <td style="width: 16.5%" class="my_td">Surname </td>
+        <td style="width:16.5%"> <input class="ingizo-driver"  ng-model="first_name" type="text" /> </td>
+        <td style="width: 15%" class="my_td">Vehicle Type </td>
+        <td style="width:15%"> <input class="ingizo-gari" ng-model="type" type="text" /> </td>
         <td style="width: 17%" class="my_td">Insurance Type</td>
         <td style="width: 17%"><input class="ingizo-insurance" type="text"></td>
     </tr>
     <tr>
 
         <td class="number" style="border-width:0px">4</td>
-        <td style="width: 15%" class="my_td">Physical Address </td>
-        <td style="width:15%"> <input class="ingizo-driver"  type="text" /> </td>
-        <td style="width: 16.5%" class="my_td">Owner's Full name</td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
+        <td style="width: 15%" class="my_td">Other Names </td>
+        <td style="width:15%"> <input class="ingizo-driver"  ng-model="last_name"  type="text" /> </td>
+        <td style="width: 15%" class="my_td">Owner's Full name </td>
+        <td style="width:15%"> <input class="ingizo-gari" ng-model="owner_name" type="text" /> </td>
         <td style="width: 17%" class="my_td">Phone Number</td>
         <td style="width: 17%"><input class="ingizo-insurance" type="text"></td>
     </tr>
     <tr>
 
         <td class="number" style="border-width:0px">5</td>
-        <td style="width: 15%" class="my_td">Address PO Box </td>
-        <td style="width:15%"> <input class="ingizo-driver"  type="text" /> </td>
+        <td style="width: 15%" class="my_td">Physical Address </td>
+        <td style="width:15%"> <input class="ingizo-driver"  ng-model="physical_address"  type="text" /> </td>
         <td style="width: 16.5%" class="my_td">Nationality</td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
+        <td style="width: 16.5%"><input class="ingizo-gari" ng-model="owner_nationality" type="text" /></td>
         <td style="width: 17%" class="my_td">Policy Number </td>
         <td style="width: 17%"><input class="ingizo-insurance" type="text"></td>
     </tr>
     <tr>
 
         <td class="number" style="border-width:0px">6</td>
-        <td style="width: 15%" class="my_td">National ID </td>
-        <td style="width:15%"> <input class="ingizo-driver"  type="text" /> </td>
+        <td style="width: 15%" class="my_td">Address PO Box </td>
+        <td style="width:15%"> <input class="ingizo-driver"  ng-model="address"  type="text" /> </td>
         <td style="width: 16.5%" class="my_td">Physical Address</td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
-        <td style="width: 17%" class="my_td">Expiration Date</td>
+        <td style="width: 16.5%"><input class="ingizo-gari" ng-model="owner_physical_address" type="text" /></td>
+        <td style="width: 17%" class="my_td">Policy Period</td>
         <td style="width: 17%"><input class="ingizo-insurance" type="text"></td>
     </tr>
     <tr>
 
         <td class="number" style="border-width:0px">7</td>
-        <td style="width: 15%" class="my_td">Phone No  </td>
-        <td style="width:15%"> <input class="ingizo-driver"  type="text" /> </td>
+        <td style="width: 15%" class="my_td">National ID </td>
+        <td style="width:15%"> <input class="ingizo-driver"  ng-model="national_id"  type="text" /> </td>
         <td style="width: 16.5%" class="my_td">Address</td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
+        <td style="width: 16.5%"><input class="ingizo-gari" ng-model="owner_address" type="text" /></td>
         <td style="width: 17%" class="my_td">Estimated Repair TSH</td>
         <td style="width: 17%"><input class="ingizo-insurance" type="text"></td>
     </tr>
     <tr>
 
         <td class="number" style="border-width:0px">8</td>
-        <td style="width: 15%" class="my_td">Gender </td>
-        <td style="width:15%"> <input class="ingizo-driver"  type="text" /> </td>
+        <td style="width: 15%" class="my_td">Phone No  </td>
+        <td style="width:15%"> <input class="ingizo-driver" ng-model="phone_number"  type="text" /> </td>
         <td style="width: 16.5%" class="my_td">Damage</td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
+        <td style="width: 16.5%"><input class="ingizo-gari" ng-model=""  type="text" /></td>
         <td style="width: 17%;text-align: center" ><strong>Damage</strong></td>
         <td style="width: 17%"><input class="ingizo-driver" type="text"></td>
     </tr>
     <tr>
 
         <td class="number" style="border-width:0px">9</td>
-        <td style="width: 15%" class="my_td">Date Of Birth </td>
-        <td style="width: 15%"> <input class="ingizo-driver"type="text" /> </td>
+        <td style="width: 15%" class="my_td">Gender </td>
+        <td style="width:15%"> <input class="ingizo-driver"  ng-model="gender" type="text" /> </td>
         <td style="width: 16.5%" class="my_td">Year of manufacturing</td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
+        <td style="width: 16.5%"><input class="ingizo-gari" ng-model="yom" type="text" /></td>
         <td style="width: 17%" class="my_td">Vehicle</td>
         <td style="width: 17%"><input class="ingizo-driver" type="text"></td>
     </tr>
     <tr>
 
         <td class="number" style="border-width:0px">10</td>
-        <td style="width: 15%" class="my_td">Nationality </td>
-        <td style="width: 15%"> <input class="ingizo-driver"  type="text" /> </td>
+        <td style="width: 15%" class="my_td">Date Of Birth </td>
+        <td style="width: 15%"> <input class="ingizo-driver"  ng-model="birthdate" type="text" /> </td>
         <td style="width: 16.5%" class="my_td">Chassis Number</td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
+        <td style="width: 16.5%"><input class="ingizo-gari" ng-model="chasis_no" type="text" /></td>
         <td style="width: 17%" class="my_td">Vehicle Total</td>
         <td style="width: 17%"><input class="ingizo-driver" type="text"></td>
     </tr>
     <tr>
 
         <td class="number" style="border-width:0px">11</td>
-        <td style="width: 15%" class="my_td">Driving License ID </td>
-        <td style="width: 15%"> <input class="ingizo-driver" type="text" /> </td>
-        <td style="width: 16.5%" >Drugs <span> <input type="checkbox"/> </span> </td>
-        <td style="width: 16.5%">Phone Use <span> <input type="checkbox"/> </span> </td>
+        <td style="width: 15%" class="my_td">Nationality </td>
+        <td style="width: 15%"> <input class="ingizo-driver"  ng-model="nationality" type="text" /> </td>
+        <td style="width: 16.5%" >Drugs <span> <input type="checkbox"  style="margin: 0px ;border:0px "/> </span> </td>
+        <td style="width: 16.5%">Phone Use <span> <input type="checkbox"  style="margin: 0px ;border:0px "/> </span> </td>
         <td style="width: 17%" class="my_td">Infrastructure</td>
         <td style="width: 17%"><input class="ingizo-driver" type="text"></td>
     </tr>
@@ -329,7 +314,7 @@
 
         <td class="number" style="border-width:0px">12</td>
         <td style="width: 15%" class="my_td">Occupation </td>
-        <td style="width: 15%"> <input class="ingizo-driver" type="text" /> </td>
+        <td style="width: 15%"> <input class="ingizo-driver"  ng-model="occupation" type="text" /> </td>
         <td style="width: 16.5%" >
             Alcohol [%]
             <select>
@@ -346,8 +331,8 @@
             </select>
 
         </td>
-        <td style="width: 16.5%">Seat Belt / Helmet use <input type="checkbox"> </td>
-        <td style="width: 17%" class="my_td">Insurance Company</td>
+        <td style="width: 16.5%">Seat Belt / Helmet use <input type="checkbox"  style="margin: 0px ;border:0px "/> </td>
+        <td style="width: 17%" class="my_td">Rescue cost</td>
         <td style="width: 17%"><input class="ingizo-driver" type="text"></td>
     </tr>
 
@@ -356,7 +341,7 @@
     </tbody>
 </table>
 
-<table class="table table-bordered table-striped " id="drive">
+<table class="table table-bordered table-striped " id="driver2">
 
     <tbody>
     <tr>
@@ -373,82 +358,41 @@
     <tr>
         <td class="number" style="border-width:0px">1</td>
         <td style="width: 15%" class="my_td">Name </td>
-        <td style="width:15%"> <input class="ingizo-driver"  type="text" /> </td>
-        <td style="width: 16.5%" class="my_td">Vehicle Type </td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
-        <td style="width: 17%" class="my_td">Insurance Company</td>
-        <td style="width: 17%" class="my_td"><input class="ingizo-insurance" type="text"></td>
+        <td style="width:15%"> <input class="ingizo-driver" ng-model="pass_name"  type="text" required/> </td>
+        <td style="width: 16.5%" class="my_td">Gender</td>
+        <td style="width:16.5%">
+            <select style="width: 100%" ng-model = "pass_gender">
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </td>
+        <td style="width: 17%" class="my_td">Date of Birth </td>
+        <td style="width:17%"> <input class="ingizo-driver" ng-model="pass_dob" type="text" required/> </td>
 
     <tr>
 
         <td class="number" style="border-width:0px">2</td>
-        <td style="width: 15%" class="my_td">Gender</td>
-        <td style="width:15%"> <input class="ingizo-driver"  type="text" /> </td>
-        <td style="width: 16.5%" class="my_td">Vehicle Registration Number </td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
-        <td style="width: 17%" class="my_td">Insurance Type</td>
-        <td style="width: 17%"><input class="ingizo-insurance" type="text"></td>
+        <td style="width: 15%" class="my_td">Physical Address </td>
+        <td style="width:15%"> <input class="ingizo-driver"  type="text" required ng-model="pass_physical_address"/> </td>
+        <td style="width: 16.5%" class="my_td">Address</td>
+        <td style="width:16.5%"> <input class="ingizo-driver" ng-model="pass_address" type="text" required/> </td>
+        <td style="width: 17%" class="my_td">Nationality/ID  </td>
+        <td style="width:17%"> <input class="ingizo-driver" ng-model="pass_national_id"  type="text" required/> </td>
     </tr>
     <tr>
 
         <td class="number" style="border-width:0px">3</td>
-        <td style="width: 15%" class="my_td">Date of Birth </td>
-        <td style="width:15%"> <input class="ingizo-driver"  type="text" /> </td>
-        <td style="width: 16.5%" class="my_td">Owner's Full name</td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
-        <td style="width: 17%" class="my_td">Phone Number</td>
-        <td style="width: 17%"><input class="ingizo-insurance" type="text"></td>
-    </tr>
-    <tr>
-
-        <td class="number" style="border-width:0px">4</td>
-        <td style="width: 15%" class="my_td">Physical Address </td>
-        <td style="width:15%"> <input class="ingizo-driver"  type="text" /> </td>
-        <td style="width: 16.5%" class="my_td">Nationality</td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
-        <td style="width: 17%" class="my_td">Policy Number </td>
-        <td style="width: 17%"><input class="ingizo-insurance" type="text"></td>
-    </tr>
-    <tr>
-
-        <td class="number" style="border-width:0px">5</td>
-        <td style="width: 15%" class="my_td">Address</td>
-        <td style="width:15%"> <input class="ingizo-driver"  type="text" /> </td>
-        <td style="width: 16.5%" class="my_td">Physical Address</td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
-        <td style="width: 17%" class="my_td">Expiration Date</td>
-        <td style="width: 17%"><input class="ingizo-insurance" type="text"></td>
-    </tr>
-    <tr>
-
-        <td class="number" style="border-width:0px">6</td>
-        <td style="width: 15%" class="my_td">Nationality/ID  </td>
-        <td style="width:15%"> <input class="ingizo-driver"  type="text" /> </td>
-        <td style="width: 16.5%" class="my_td">Address</td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
-        <td style="width: 17%" class="my_td">Estimated Repair TSH</td>
-        <td style="width: 17%"><input class="ingizo-insurance" type="text"></td>
-    </tr>
-    <tr>
-
-        <td class="number" style="border-width:0px">7</td>
         <td style="width: 15%" class="my_td">Phone Number </td>
-        <td style="width:15%"> <input class="ingizo-driver"  type="text" /> </td>
-        <td style="width: 16.5%" class="my_td">Damage</td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
-        <td style="width: 17%;text-align: center" ><strong>Damage</strong></td>
-        <td style="width: 17%"><input class="ingizo-driver" type="text"></td>
-    </tr>
-    <tr>
-
-        <td class="number" style="border-width:0px">8</td>
-        <td style="width: 15%"  class="my_td">
+        <td style="width:15%"> <input class="ingizo-driver"  type="text" required ng-model="pass_phone_number"/> </td>
+        <td style="width: 16.5%"  class="my_td">
             Alcohol [%]
 
 
         </td>
-        <td style="width: 15%">
-            <select>
+        <td style="width: 16.5%">
+            <select style="width: 100%" ng-model="pass_alcohol">
                 <option value="10">10</option>
                 <option value="20">20</option>
                 <option value="30">30</option>
@@ -461,213 +405,60 @@
                 <option value="100">100</option>
             </select> </td>
 
-        <td style="width: 16.5%" class="my_td">Year of manufacturing</td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
-        <td style="width: 17%" class="my_td">Vehicle</td>
-        <td style="width: 17%"><input class="ingizo-driver" type="text"></td>
-    </tr>
-    <tr>
-
-        <td class="number" style="border-width:0px">9</td>
-        <td style="width: 15%"  class="my_td">Seat Belt / Helmet use
-        <td style="width: 15%"><input type="checkbox" style="padding: 0px;margin: 0px;border: 0px"> </td> </td>
-        <td style="width: 16.5%" class="my_td">Chassis Number</td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
-        <td style="width: 17%" class="my_td">Vehicle Total</td>
-        <td style="width: 17%"><input class="ingizo-driver" type="text"></td>
-    </tr>
-    <tr>
-
-        <td class="number" style="border-width:0px">10</td>
-        <td style="width: 15%"  class="my_td">
-            Casuality
-
-        </td>
-        <td style="width: 15%">
-            <select>
-                <option value="">Casuality</option>
-                <option value="1">Fatal</option>
-                <option value="2">Severe</option>
-                <option value="3">Light</option>
+        <td style="width: 17%"  class="my_td">Seat Belt / Helmet use <input type="checkbox"  ng-true-value="'No seat belt'" ng-false-value="'No seat belt'"  style="padding: 0px;padding-left:5px; margin: 0px;border: 0px"></td>
+        <td style="width: 17%">
+            <select style="width: 100%" ng-model="pass_casuality">
+                <option value="">Choose Passenger casuality</option>
+                <option value="Fatal">Fatal</option>
+                <option value="Severe">Severe</option>
+                <option value="Light">Light</option>
             </select> </td>
-        <td style="width: 16.5%" >Drugs <span> <input type="checkbox"/> </span> </td>
-        <td style="width: 16.5%">Phone Use <span> <input type="checkbox"/> </span> </td>
-        <td style="width: 17%" class="my_td">Infrastructure</td>
-        <td style="width: 17%"><input class="ingizo-driver" type="text"></td>
     </tr>
     </tbody>
 </table>
 
 
-<table class="table table-bordered table-striped " id="driv">
+
+<table class="table table-bordered table-striped " id="driver1">
 
     <tbody>
     <tr>
-        <td class="my_heading2" style="border-width:0px">C : SCENE OF ACCIDENT & SEVERITY</td>
-        <td style="width:5%"> Fatal</td>
-        <td style="width:11%"><input class="ingizo"  type="text" /></td>
-        <td style="width:11%"> Severe Injury</td>
-        <td style="width:11%"> Simple Injury</td>
-        <td  style="width:21.25%">Not Injured</td>
-        <td style="width:12.75%;background-color:#c5d9f1 ">
-
+        <td class="my_heading2" style="border-width:0px;width: 100%">F:WITNESS</td>
     </tr>
     </tbody>
 
 </table>
+
 
 <table class="table table-bordered table-striped table-condensed" >
 
     <tbody>
     <tr>
         <td class="number" style="border-width:0px">1</td>
-        <td style="width: 30%" class="driver" >Driver Details</td>
-        <td style="width: 33%" class="vehicle">Vehicle Details</td>
-        <td style="width: 34%" class="insurance"> Vehicle Insurance</td>
-    </tr>
-    </tbody>
-</table>
+        <td style="width: 15%" class="my_td">Name </td>
+        <td style="width:15%"> <input class="ingizo-driver"  type="text" required  ng-model="witness_name"/> </td>
+        <td style="width: 16.5%" class="my_td">Gender</td>
+        <td style="width:16.5%"> <input class="ingizo-driver"  type="text" required  ng-model="witness_gender"/> </td>
+        <td style="width: 17%" class="my_td">Date of Birth </td>
+        <td style="width:17%"> <input class="ingizo-driver"  type="text" required  ng-model="witness_dob"/> </td>
 
-
-<table class="table table-bordered table-striped table-condensed" >
-
-    <tbody>
     <tr>
+
         <td class="number" style="border-width:0px">2</td>
-        <td style="width: 15%" class="my_td">Surname </td>
-        <td style="width:15%"> <input class="ingizo-driver"  type="text" /> </td>
-        <td style="width: 16.5%" class="my_td">Vehicle Type </td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
-        <td style="width: 17%" class="my_td">Insurance Company</td>
-        <td style="width: 17%" class="my_td"><input class="ingizo-insurance" type="text"></td>
-
-    <tr>
-
-        <td class="number" style="border-width:0px">3</td>
-        <td style="width: 15%" class="my_td">Other Names </td>
-        <td style="width:15%"> <input class="ingizo-driver"  type="text" /> </td>
-        <td style="width: 16.5%" class="my_td">Vehicle Registration Number </td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
-        <td style="width: 17%" class="my_td">Insurance Type</td>
-        <td style="width: 17%"><input class="ingizo-insurance" type="text"></td>
-    </tr>
-    <tr>
-
-        <td class="number" style="border-width:0px">4</td>
         <td style="width: 15%" class="my_td">Physical Address </td>
-        <td style="width:15%"> <input class="ingizo-driver"  type="text" /> </td>
-        <td style="width: 16.5%" class="my_td">Owner's Full name</td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
-        <td style="width: 17%" class="my_td">Phone Number</td>
-        <td style="width: 17%"><input class="ingizo-insurance" type="text"></td>
-    </tr>
-    <tr>
-
-        <td class="number" style="border-width:0px">5</td>
-        <td style="width: 15%" class="my_td">Address PO Box </td>
-        <td style="width:15%"> <input class="ingizo-driver"  type="text" /> </td>
-        <td style="width: 16.5%" class="my_td">Nationality</td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
-        <td style="width: 17%" class="my_td">Policy Number </td>
-        <td style="width: 17%"><input class="ingizo-insurance" type="text"></td>
-    </tr>
-    <tr>
-
-        <td class="number" style="border-width:0px">6</td>
-        <td style="width: 15%" class="my_td">National ID </td>
-        <td style="width:15%"> <input class="ingizo-driver"  type="text" /> </td>
-        <td style="width: 16.5%" class="my_td">Physical Address</td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
-        <td style="width: 17%" class="my_td">Expiration Date</td>
-        <td style="width: 17%"><input class="ingizo-insurance" type="text"></td>
-    </tr>
-    <tr>
-
-        <td class="number" style="border-width:0px">7</td>
-        <td style="width: 15%" class="my_td">Phone No  </td>
-        <td style="width:15%"> <input class="ingizo-driver"  type="text" /> </td>
+        <td style="width:15%"> <input class="ingizo-driver"  type="text" required ng-model="witness_physical_address"/> </td>
         <td style="width: 16.5%" class="my_td">Address</td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
-        <td style="width: 17%" class="my_td">Estimated Repair TSH</td>
-        <td style="width: 17%"><input class="ingizo-insurance" type="text"></td>
+        <td style="width:16.5%"> <input class="ingizo-driver"  type="text" required  ng-model="witness_address"/> </td>
+        <td style="width: 17%" class="my_td">Nationality/ID  </td>
+        <td style="width:17%"> <input class="ingizo-driver"  type="text" required ng-model="witness_national_id"/> </td>
     </tr>
-    <tr>
-
-        <td class="number" style="border-width:0px">8</td>
-        <td style="width: 15%" class="my_td">Gender </td>
-        <td style="width:15%"> <input class="ingizo-driver"  type="text" /> </td>
-        <td style="width: 16.5%" class="my_td">Damage</td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
-        <td style="width: 17%;text-align: center" ><strong>Damage</strong></td>
-        <td style="width: 17%"><input class="ingizo-driver" type="text"></td>
-    </tr>
-    <tr>
-
-        <td class="number" style="border-width:0px">9</td>
-        <td style="width: 15%" class="my_td">Date Of Birth </td>
-        <td style="width: 15%"> <input class="ingizo-driver"type="text" /> </td>
-        <td style="width: 16.5%" class="my_td">Year of manufacturing</td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
-        <td style="width: 17%" class="my_td">Vehicle</td>
-        <td style="width: 17%"><input class="ingizo-driver" type="text"></td>
-    </tr>
-    <tr>
-
-        <td class="number" style="border-width:0px">10</td>
-        <td style="width: 15%" class="my_td">Nationality </td>
-        <td style="width: 15%"> <input class="ingizo-driver"  type="text" /> </td>
-        <td style="width: 16.5%" class="my_td">Chassis Number</td>
-        <td style="width: 16.5%"><input class="ingizo-gari" type="text" /></td>
-        <td style="width: 17%" class="my_td">Vehicle Total</td>
-        <td style="width: 17%"><input class="ingizo-driver" type="text"></td>
-    </tr>
-    <tr>
-
-        <td class="number" style="border-width:0px">11</td>
-        <td style="width: 15%" class="my_td">Driving License ID </td>
-        <td style="width: 15%"> <input class="ingizo-driver" type="text" /> </td>
-        <td style="width: 16.5%" >Drugs <span> <input type="checkbox"/> </span> </td>
-        <td style="width: 16.5%">Phone Use <span> <input type="checkbox"/> </span> </td>
-        <td style="width: 17%" class="my_td">Infrastructure</td>
-        <td style="width: 17%"><input class="ingizo-driver" type="text"></td>
-    </tr>
-    <tr>
-
-        <td class="number" style="border-width:0px">12</td>
-        <td style="width: 15%" class="my_td">Occupation </td>
-        <td style="width: 15%"> <input class="ingizo-driver" type="text" /> </td>
-        <td style="width: 16.5%" >
-            Alcohol [%]
-            <select>
-                <option value="10">10</option>
-                <option value="20">20</option>
-                <option value="30">30</option>
-                <option value="40">40</option>
-                <option value="50">50</option>
-                <option value="60">60</option>
-                <option value="70">70</option>
-                <option value="80">80</option>
-                <option value="90">90</option>
-                <option value="100">100</option>
-            </select>
-
-        </td>
-        <td style="width: 16.5%">Seat Belt / Helmet use <input type="checkbox"> </td>
-        <td style="width: 17%" class="my_td">Insurance Company</td>
-        <td style="width: 17%"><input class="ingizo-driver" type="text"></td>
-    </tr>
-
-
-
     </tbody>
 </table>
+
+
 </div>
 </div>
 
 </form>
 
 </div>
-
-</body>
-
-</html>

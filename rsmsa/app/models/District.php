@@ -6,6 +6,21 @@
  * Time: 10:07 AM
  */
 
-class District {
+class District extends Eloquent{
+
+
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'districts';
+
+    protected  $guarded = array('id');
+
+    public function region(){
+        return $this->belongsTo('Region', 'region_id', 'id');
+    }
+
 
 } 

@@ -6,6 +6,19 @@
  * Time: 10:09 AM
  */
 
-class Region {
+class Region extends Eloquent{
+
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'regions';
+
+    protected  $guarded = array('id');
+
+    public function district(){
+        return $this->hasMany('District', 'region_id', 'id');
+    }
 
 } 

@@ -1,11 +1,11 @@
 
 
-<div class="row" >
+<div class="row" ng-controller="AccidentFormCtrl">
 
 <h3 class="panel-heading"  style="background-color: #ffffff;color: #000000;border: solid,#000000" ><center>TANZANIA ACCIDENT FORM SHEET (AFS)</center>  </h3>
 
 
-<form name="accident_form" novalidate>
+<form name="AccidentForm" novalidate >
 
 <div class="panel-body">
 
@@ -16,11 +16,11 @@
         <tr>
             <td class="my_heading" style="border-width:0px">A : SCENE OF ACCIDENT & SEVERITY</td>
             <td style="width:11%;background-color: #ffffff">Acc Register</td>
-            <td style="width:22%"> <input class="ingizo"  type="text" ng-model="accident_no" name="accident_no" required/> </td>
+            <td style="width:22%"> <input class="ingizo"  type="text" ng-model="accident.accident_reg_no" name="accident_no" required/> </td>
             <td style="width:8.5%">OCS Check</td>
-            <td style="width:8.5%"> <input class="ingizo"  type="text" ng-model="ocs_check" name="ocs_check" required /> </td>
+            <td style="width:8.5%"> <input class="ingizo"  type="text" ng-model="accident.ocs_check" name="ocs_check" required /> </td>
             <td  style="width:8.5%">S.visor Check</td>
-            <td style="width:8.5%"> <input class="ingizo"  type="text" name="supervisor_check" required /> </td>
+            <td style="width:8.5%"> <input class="ingizo"  type="text" ng-model="accident.supervisor_check" name="supervisor_check" required /> </td>
         </tr>
 
         </tbody>
@@ -39,7 +39,7 @@
             <td class="number" style="border-width:0px">1</td>
             <td class="my_td"  style="width: 10%">Police Station</td>
             <td style="width: 10%">
-                <input class="ingizo"  type="text" name="police_station" required/></td>
+                <input class="ingizo"  type="text" ng-model="accident.police_station" ng-name="police_station" required/></td>
             <td class="my_td"  style="width: 10%"></td>
             <td class="my_td"  style="width: 11%">Number</td>
             <td class="my_td"  style="width: 11%">Name</td>
@@ -53,31 +53,37 @@
 
         <tr>
             <td class="number" style="border-width:0px">2</td>
-            <td class="my_td"  style="width: 10%">District </td>
-            <td style="width: 10%"><input class="ingizo"  type="text" /></td>
-            <td class="my_td"  style="width: 10%">Police Officer (1) </td>
-            <td style="width: 11%"><input class="ingizo"  type="text" /></td>
-            <td style="width: 11%"><input class="ingizo"  type="text"/></td>
-            <td style="width: 11%"><input class="ingizo"  type="text"/></td>
+            <td class="my_td" >Region</td>
+            <td><input class="ingizo"  type="text" name="accident.station_region" ng-model="accident.station_region" required ></td><td class="my_td"  style="width: 10%">Police Officer (1) </td>
+            <td style="width: 11%"><input class="ingizo" ng-model="accident.office1_rank_no" name="office1_rank_no" type="text" required  ng-mouseleave="getPolice()" /></td>
+            <td style="width: 11%"><input class="ingizo" ng-model="accident.office1_name" name="office1_name" type="text"required /></td>
+            <td style="width: 11%" ng-controller="DatepickerDemoCtrl">
+                <p class="input-group" style="padding: 0px;border: 0px;margin: 0px">
+                    <input placeholder="sign. date" type="text" style="height:15px !important; padding: 0px;border: 0px;margin: 0px;font-size: 11px" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="accident.dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button  style="padding: 0px;border: 0px;margin: 0px" type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+                </p>
+            </td>
             <td style="width: 8.5%">Fatal(n)</td>
-            <td  style="width:8.5%"><input class="ingizo"  type="text"/></td>
+            <td  style="width:8.5%"><input class="ingizo" ng-model="accident.fatal" name="accident_fatal"  type="text" required/></td>
             <td  style="width: 8.5%">Simple Injured(n)</td>
-            <td style="width: 8.5%"><input class="ingizo"  type="text/"></td>
+            <td style="width: 8.5%"><input class="ingizo" ng-model="accident.simple" name="accident_simple"  type="text" required/></td>
 
         </tr>
 
         <tr>
             <td class="number" style="border-width:0px">3</td>
-            <td class="my_td" >Region</td>
-            <td><input class="ingizo"  type="text" name="region" required ></td>
+            <td class="my_td"  style="width: 10%">District </td>
+            <td style="width: 10%"><input class="ingizo"  type="text" ng-model="accident.station_district" name="station_district" required /></td>
             <td class="my_td" >Police Officer (2) </td>
-            <td><input class="ingizo"  type="text"  name="officer_2" required/></td>
-            <td><input class="ingizo"  type="text"/></td>
-            <td><input class="ingizo"  type="text"/></td>
+            <td><input class="ingizo"  type="text"  ng-model="accident.office2_rank_no" name="office2_rank_no" required/></td>
+            <td><input class="ingizo"  type="text" ng-model="accident.office2_name" name="office2_name"/></td>
+            <td><input class="ingizo"  type="text"  ng-model="accident.office2_sign_date" name="office2_sign_date"/></td>
             <td class="my_td" >Severe Injury(n)</td>
-            <td><input class="ingizo"  type="text"/></td>
+            <td><input class="ingizo"  type="text" ng-model="accident.severe" name="accident_severe" required/></td>
             <td class="my_td" >Only Damage</td>
-            <td><input class="ingizo"  type="text"/></td>
+            <td><input class="ingizo"  type="text" ng-model="accident.damage" name="accident_damage"  required/></td>
         </tr>
 
         </tbody>
@@ -94,11 +100,11 @@
         <tr>
             <td class="my_heading" style="border-width:0px">B : TIME AND LOCATION</td>
             <td style="width:11%">Latitude</td>
-            <td style="width:11%"> <input class="ingizo"  type="text" /> </td>
+            <td style="mewidth:11%"> <input class="ingizo"  type="text" ng-model="accident.latitude" name="latitude"  required /> </td>
             <td style="width:11%">Longitude</td>
-            <td style="width:8.5%"> <input class="ingizo"  type="text" /> </td>
+            <td style="width:8.5%"> <input class="ingizo"  type="text" ng-model="accident.longitude" name="longitude"  required /> </td>
             <td style="width:12.75%">Hit & Run</td>
-            <td style="width:12.75%"> <input style="margin: 0px ;border:0px " type="checkbox" /> </td>
+            <td style="width:12.75%"> <input style="margin: 0px ;border:0px " type="checkbox"  ng-model="accident.hit" name="hit" ng-true-value="'hit and run'" ng-false-value="'No'" required /> </td>
         </tr>
 
         </tbody>
@@ -114,13 +120,19 @@
         <table class="table table-bordered table-striped" style="padding-right: 2px">
 
             <tbody >
-            <tr>
-                <td class="number" style="border-width:0px">1</td>
-                <td style="width: 15%">Accident Date</td>
-                <td style="width: 15%">Accident Time</td>
-                <td class="my_td"  style="width: 33%">Area Of Accident </td>
-                <td class="my_td"  style="width: 8.5%">Road </td>
-                <td class="my_td"  style="width:12.75%">Intersection</td>
+            <td class="number" style="border-width:0px">1</td>
+            <td style="width: 15%" ng-controller="DatepickerDemoCtrl">
+                <p class="input-group">
+                    <input type="text" style=" height:15px !important;padding: 0px;border: 0px;margin: 0px;font-size: 11px" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="accident.dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button  style="padding: 0px;border: 0px;margin: 0px" type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+                </p>
+            </td>
+            <td style="width: 15%">Accident Time</td>
+            <td class="my_td"  style="width: 33%">Area Of Accident </td>
+            <td class="my_td"  style="width: 8.5%">Road </td>
+            <td class="my_td"  style="width:12.75%">Intersection</td>
             </tr>
             </tbody>
 
@@ -135,10 +147,10 @@
                 <td style="width: 10%">Hour(24)</td>
                 <td style="width:5%"> <input class="ingizo"  type="text" /> </td>
                 <td class="my_td"  style="width: 11%">Area Name</td>
-                <td style="width:11%"> <input class="ingizo"  type="text" /> </td>
+                <td style="width:11%"> <input class="ingizo"  type="text" ng-model="accident.area_name" name="area_name"  required /> </td>
                 <td style="width: 11%">Name </td>
-                <td style="width:8.5%"> <input class="ingizo"  type="text" /> </td>
-                <td style="width:12.75%"> <input class="ingizo"  type="text" /> </td>
+                <td style="width:8.5%"> <input class="ingizo"  type="text" ng-model="accident.road_name" name="road_name"  required /> </td>
+                <td style="width:12.75%"> <input class="ingizo"  type="text" ng-model="accident.intersection_name" name="intersection_name"  required /> </td>
             </tr>
 
             <tr>
@@ -147,11 +159,11 @@
                 <td > <input class="ingizo"  type="text" /> </td>
                 <td >Min(60)</td>
                 <td> <input class="ingizo"  type="text" /> </td>
-                <td class="my_td" >District</td>
-                <td> <input class="ingizo"  type="text" /> </td>
+                <td class="my_td" >City/Region</td>
+                <td> <input class="ingizo"  type="text"  ng-model="accident.region" name="region"  required/> </td>
                 <td>No </td>
-                <td> <input class="ingizo"  type="text" /> </td>
-                <td> <input class="ingizo"  type="text" /> </td>
+                <td> <input class="ingizo"  type="text" ng-model="accident.road_no" name="road_no"  required/> </td>
+                <td> <input class="ingizo"  type="text" ng-model="accident.intersection_no" name="intersection_no"  required /> </td>
             </tr>
 
 
@@ -161,11 +173,11 @@
                 <td > <input class="ingizo"  type="text" /> </td>
                 <td class="my_td" ></td>
                 <td> <input class="ingizo"  type="text" /> </td>
-                <td class="my_td" >City/Region</td>
-                <td> <input class="ingizo"  type="text" /> </td>
+                <td class="my_td" >District</td>
+                <td> <input class="ingizo"  type="text"  ng-model="accident.district" name="district"  required /> </td>
                 <td>Kilometer(Mark) </td>
-                <td> <input class="ingizo"  type="text" /> </td>
-                <td> <input class="ingizo"  type="text" /> </td>
+                <td> <input class="ingizo"  type="text"  ng-model="accident.road_mark" name="road_mark"  required /> </td>
+                <td> <input class="ingizo"  type="text"  ng-model="accident.intersection_mark" name="intersection_mark"  required /> </td>
             </tr>
 
             </tbody>
@@ -300,7 +312,7 @@
         </div>
 
     </div>
-
+    <center> <md-button style="padding-top: 5px" class="md-raised md-primary" ng-click="sendAccident(accident)" ng-disabled="AccidentFormCtrl.$invalid"> Report This Accident</md-button></center>
 </div>
 </form>
 

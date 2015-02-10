@@ -6,6 +6,18 @@
  * Time: 10:59 AM
  */
 
-class AccidentDriver {
+class AccidentDriver extends Eloquent{
+
+    protected $table = 'rsmsa_accident_driver';
+
+    public function accident(){
+
+        return $this -> belongsTo('Accident' ,'accident_id');
+    }
+
+    public function driver(){
+
+        return $this -> belongsTo('Driver' ,'driver_id');
+    }
 
 } 

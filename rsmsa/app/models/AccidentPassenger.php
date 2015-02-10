@@ -6,6 +6,14 @@
  * Time: 2:50 PM
  */
 
-class AccidentPassenger {
+class AccidentPassenger extends Eloquent{
 
+protected $table = 'rsmsa_accident_passenger';
+
+    //returns an accident that a passenger is involved using an accident id
+
+    public function accident(){
+
+        return $this -> belongsTo('Accident' ,'accident_id');
+    }
 } 

@@ -11,7 +11,13 @@ class Person extends Eloquent{
 	 */
 
     protected $table = 'rsmsa_persons' ;
+
 	public function user(){
+
 		return $this->hasOne('User');
 	}
+    public function police(){
+
+        return $this->hasOne('Police');
+    }
 }
