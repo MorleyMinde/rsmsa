@@ -22,163 +22,163 @@ Route::post('login', array('uses'=>'LoginController@login'));
  * 
  * These are app routes. Routes for getting app specific information
  */
-Route::get('/apps/manifests', function()
-{
-	$arr = array();
-	//Loop through all the apps
-	foreach(AppEntity::all() as $app)
-	{
-		$json = "";
-		try{
-			//Fetch the manifest.json content from the location
-			$json = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT']."/apps/".$app->location."/manifest.json"));
-			//add the id of the app to the manifest
-			$json->id = $app->id;
-		}catch(Exception $e){
-			continue;
-		}
-		array_push($arr,$json);
-	}
-	//Encode to json
-	return json_encode($arr);
-});
-Route::get('/app/{id}', function($id)
-{
-	//return View::make('app');
-	$app = AppEntity::find($id);
-	return View::make("apps/".$app->location."/index");
-});
-Route::get('/app/{id}/manifest', function($id)
-{
-	$app = AppEntity::find($id);
-	//return json_encode($output, 128);
-	return (file_get_contents($_SERVER['DOCUMENT_ROOT']."/apps/".$app->location."/manifest.json"));
-});
-Route::get('/app/{id}/{file}', function($id,$file)
-{
-	$app = AppEntity::find($id);
-	return Redirect::to("/apps/".$app->location."/".$file);
-});
-Route::get('/app/{id}/views/{file}', function($id,$file)
-{
-	$app = AppEntity::find($id);
-	return Redirect::to("/apps/".$app->location."/views/".$file);
-});
-Route::get('/app/{id}/controllers/{file}', function($id,$file)
-{
-	$app = AppEntity::find($id);
-	return Redirect::to("/apps/".$app->location."/controllers/".$file);
-});
+Route::get('/apps/manifests', 'AppController@getManifests');
+Route::get('/app/{id}', 'AppController@getApp');
+Route::get('/app/{id}/manifest', 'AppController@getManifest');
+Route::get('/app/{id}/{file}','AppController@getFile' );
+Route::get('/app/{id}/views/{file}', 'AppController@getView');
+Route::get('/app/{id}/controllers/{file}', 'AppController@getController');
 /*
  * These are routes to api requests
  */
 Route::get('/api/request/{tag}', 'AndroidController@processtag');
 
-Route::get('/api/offenceregistry', function()
-{
-	return OffenceRegistry::all();
-});
 
-Route::get('/api/offences', function()
-{
-	return Offence::all();
-});
+//Vehicle Controller Rooutes
+Route::get('/api/vehicle/{plate_number}', "VehicleController@getVehicle");
+Route::get('/api/vehicle/{plate_number}/offences', "VehicleController@getOffences");
+Route::get('/api/vehicle/{plate_number}/offences/paid', "VehicleController@getPaidOffences");
+Route::get('/api/vehicle/{plate_number}/offences/notpaid', "VehicleController@getNotPaidOffences");
 
-Route::get('/api/offence/{id}', function($id)
-{
-	return Offence::find($id);
-});
+//Police Controller Rooutes
+Route::get('/api/police/{rank_no}', "PoliceController@getPolice");
 
-Route::get('/model/vehicle/{plate_number}', function($plate_number)
-{
-	return Vehicle::where('plate_number','=',$plate_number)->get();
-});
+////////////////////////////////////////////////////////////////////
+///////////////////Driver Routes////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+//getting regions
+Route::get('/drivers',array('uses'=>'DriverController@index'));
 
-Route::get('/model/police/{rank_no}', function($rank_no)
-{
-	$police = Police::where('rank_no','=',$rank_no)->get();
+////////////////////////////////////////////////////////////////////
+///////////////////Administrative Unit Routes///////////////////////
+///////////////////////////////////////////////////////////////////
+//getting regions
+//getting kaya
+Route::post('/getkaya',array('uses'=>'AdministrativeUnitController@index'));
 
-    if(count($police) == 0)
-	{
-		return "[]";
-	}
-	$police->push(Station::find($police[0]['station_id']));
+//getting regions
+Route::get('/regions',array('uses'=>'AdministrativeUnitController@getRegions'));
 
-	return $police;
+//getting Districts
+Route::get('/districts',array('uses'=>'AdministrativeUnitController@getDistricts'));
 
-});
+//adding new kaya
+Route::post('/kaya',array('uses'=>'AdministrativeUnitController@store'));
 
-Route::get('/model/driver/{license_number}', function($license_number)
-{
-	return Driver::where('license_number','=',$license_number)->get();
+//updating kaya
+Route::post('/kaya/{id}',array('uses'=>'AdministrativeUnitController@update'));
 
-});
+//updating kaya distribution status
+Route::post('/kaya/{id}/distribute',array('uses'=>'AdministrativeUnitController@updateStatus'));
+
+//getting single kaya Information
+Route::get('/kaya/{id}',array('uses'=>'AdministrativeUnitController@show'));
+
+//getting  wards from specific district
+Route::get('/wards/district/{id}',array('uses'=>'AdministrativeUnitController@getwardDistricts'));
+
+//getting  villages from specific ward
+Route::get('/village/ward/{id}',array('uses'=>'AdministrativeUnitController@getVillageWard'));
+
+//deleting kaya
+Route::post('kaya/delete/{id}',array('uses'=>'AdministrativeUnitController@destroy'));
+
+//getting kaya for specific region
+Route::get('/kaya/region/{id}',array('uses'=>'AdministrativeUnitController@getregKaya'));
+
+//getting kaya for specific district
+Route::get('/kaya/district/{id}',array('uses'=>'AdministrativeUnitController@getdisKaya'));
+
+//getting districts for specific region
+Route::get('/districts/region/{id}',array('uses'=>'AdministrativeUnitController@getregDistricts'));
+
+//getting people for specific region
+Route::get('/people/region/{id}',array('uses'=>'AdministrativeUnitController@getpeopleInRegion'));
+
+//getting people for specific region
+Route::get('/people/village/{id}',array('uses'=>'AdministrativeUnitController@getpeopleInVillage'));
+
+//getting people for specific region
+Route::get('/people/ward/{id}',array('uses'=>'AdministrativeUnitController@getpeopleInWard'));
+
+//getting people for specific region
+Route::get('/people/district/{id}',array('uses'=>'AdministrativeUnitController@getpeopleInkaya'));
 
 
-Route::post('/api/offence/', function()
-{
-    $request = Request::instance();
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////adding organisation units /////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+//adding new kaya
+Route::post('/region',array('uses'=>'AdministrativeUnitController@storeRegion'));
 
-    // Now we can get the content from it
-    $content = $request->getContent();
-    $content = '{"name" : "hey",
-				"to" : "",
-				"address" : "",
-				"offences" : [],
-				"place" : "",
-				"facts" : {
-					"a" : "",
-					"b" : "",
-					"c" : "",
-					"d" : ""
-				},
-				"station" : "",
-				"a" : {
-					"name" : "",
-					"residence" : "",
-					"charges" : [],
-					"notification" : ""
-				},
-				"b" : {
-					"name" : "",
-					"residence" : "",
-					"charges" : [],
-					"amount" : ""
-				},
-				"date" : ""
-			}';
+//adding new kaya
+Route::post('/adddistrict/{id}',array('uses'=>'AdministrativeUnitController@storeDistrict'));
 
-    $json = json_decode($content,true);
+//adding new kaya
+Route::post('/ddward/{id}',array('uses'=>'AdministrativeUnitController@storeWard'));
 
-    DB::transaction(function()
-    {
-        $newOffence = Offence::create([
-            'to' => $json['name'],
-            'address' => $json['address'],
-            'offence_date' => $json['date'],
-            'place' => $json['place'],
-            'facta' => $json['facts']['a'],
-            'factb' => $json['facts']['b'],
-            'factc' => $json['facts']['c'],
-            'factd' => $json['facts']['d'],
-            'vehicle_plate_number' => $json['vehicle_plate_number'],
-            'driver_license_number' => $json['driver_license_number'],
-            'rank_no' => $json['rank_no'],
-            //'amount' => $json['amount'],
-            //'commit' => $json['commit'],
-        ]);
-        foreach($json['offences'] as $offence){
-            $offRegistry = OffenceRegistry::where('section','=',$offence)->get();
+//adding new kaya
+Route::post('/addvillage/{id}',array('uses'=>'AdministrativeUnitController@storeVillage'));
 
-        }
-        $newOffenceEvent = User::create([
-            'username' => Input::get('username'),
-            'account_id' => $newAcct->id,
-        ]);
-    });
-    return $json['name'];
-});
+//getting region details
+Route::get('/regiondetails/{id}',array('uses'=>'AdministrativeUnitController@RegionDetails'));
 
+
+//getting districts details ---- taking regionID ----
+Route::get('/districtdetails/{id}',array('uses'=>'AdministrativeUnitController@DistrictDetails'));
+
+//getting wards details ---taking district ID----
+Route::get('/warddetails/{id}',array('uses'=>'AdministrativeUnitController@WardDetails'));
+
+//getting village details ---taking ward ID----
+Route::get('/villagedetails/{id}',array('uses'=>'AdministrativeUnitController@VillageDetails'));
+
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////updating adminstative units////////////////////
+////////////////////////////////////////////////////////////////////////
+//eddit region
+Route::post('/edit/region/{id}',array('uses'=>'AdministrativeUnitController@updateRegion'));
+
+//eddit district
+Route::post('/edit/district/{id}',array('uses'=>'AdministrativeUnitController@updateDistrict'));
+
+//eddit ward
+Route::post('/edit/ward/{id}',array('uses'=>'AdministrativeUnitController@updateWard'));
+
+//eddit village
+Route::post('/edit/village/{id}',array('uses'=>'AdministrativeUnitController@updateVillage'));
+
+//Deleting region
+Route::post('/delete/region/{id}',array('uses'=>'AdministrativeUnitController@destroyRegion'));
+
+//Deleting district
+Route::post('/delete/district/{id}',array('uses'=>'AdministrativeUnitController@destroyDistrict'));
+
+//Deleting ward
+Route::post('/delete/ward/{id}',array('uses'=>'AdministrativeUnitController@destroyWard'));
+
+//Deleting village
+Route::post('/delete/village/{id}',array('uses'=>'AdministrativeUnitController@destroyVillage'));
+
+//Station Controller Rooutes
+Route::get('/api/station/{id}', "StationController@getStation");
+//Driver Controller Rooutes
+Route::get('/api/driver/{license_number}', "DriverController@getDriver");
+Route::get('/api/driver/{license_number}/offences', "DriverController@getOffences");
+Route::get('/api/driver/{license_number}/offences/paid', "DriverController@getPaidOffences");
+Route::get('/api/driver/{license_number}/offences/notpaid', "DriverController@getNotPaidOffences");
+
+//Offence Controller Rooutes
+Route::get('/api/offence/registry', "OffenceController@getOffenceRegistry");
+Route::get('/api/offence/report', "OffenceController@getReport");
+Route::post('/api/offence/stats', "OffenceController@getStats");
+Route::get('/api/offence/registry/{id}/offences', "OffenceController@getOffenceRegistryOffences");
+Route::get('/api/offence/{id}', "OffenceController@getOffence");
+
+Route::get('/api/offences', "OffenceController@getOffences");
+Route::post('/api/offence/', "OffenceController@processOffencePost");
+Route::get('/api/offence/{id}/events/', "OffenceController@getEvents");
+Route::get('/api/offence/{id}/delete/', "OffenceController@delete");
 
 Route::post('/api/accident/', array('uses' => 'AccidentController@submitAccident'));
 

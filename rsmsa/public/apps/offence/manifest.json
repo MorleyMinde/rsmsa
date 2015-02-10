@@ -1,19 +1,28 @@
 {
-	"name": "Offence App",
+	"name": "Offence Registry",
 	"description": "This extension shows a Google Image search result for the current page",
 	"version": "1.0",
 	"icons":{
 		"small":"icon16.png"
 	},
-	"home":"offencelist.html",
+	"defaultRoute":"/home",
 	"menu":[
 		{"name":"Home","route":"/home"},
-		{"name":"Report Offence","route":"/list"}
+		{"name":"Offence List","route":"/list"},
+		{"name":"Report Offence","route":"/report"},
+		{"name":"Registry","route":"/registry"},
+		{"name":"Payment Report","route":"/offence/payments"},
+		{"name":"Offence Report","route":"/offence/report"}		
 	],
 	"routes":[
-		{"route":"/home","view":"/offencelist.html"},
-		{"route":"/list","view":"/offenceForm.html","controller":"offenceListController"},
-		{"route":"/:request/:id","view":"/offenceForm.html"}
+		{"route":"/home","view":"/stats.html"},
+		{"route":"/list","view":"/offencelist.html"},
+		{"route":"/report","view":"/offenceForm.html","controller":"offenceListController"},
+		{"route":"/offence/:request/:id","view":"/offenceForm.html"},
+		{"route":"/registry","view":"/offenceReg.html"},
+		{"route":"/registry/:id/offences","view":"/offencelist.html"},
+		{"route":"/offence/report","view":"/offenceReport.html"},
+		{"route":"/offence/payments","view":"/offencePayments.html"}
 	],
 	"color":{
 		"c500":"#673AB7",

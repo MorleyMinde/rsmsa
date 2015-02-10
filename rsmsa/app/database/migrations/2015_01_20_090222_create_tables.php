@@ -11,7 +11,7 @@ class CreateTables extends Migration {
 	 * @return void
 	 */
 	public function up()
-    {
+	{
 
         Schema::create('rsmsa_persons', function ($table) {
             $table->increments('id');
@@ -88,21 +88,20 @@ class CreateTables extends Migration {
             $table->string('section');
             $table->timestamps();
         });
-        Schema::create('rsmsa_offences', function ($table) {
+        Schema::create('rsmsa_offences', function($table)
+        {
             $table->increments('id');
             $table->string('to');
             $table->string('address');
             $table->date('offence_date');
             $table->string('place');
-            $table->string('facta');
-            $table->string('factb');
-            $table->string('factc');
-            $table->string('factd');
+            $table->string('facts');
             $table->string('vehicle_plate_number');
             $table->string('driver_license_number');
             $table->string('rank_no');
-            $table->string('amount');
-            $table->string('commit');
+            $table->boolean('admit');
+            $table->boolean('paid');
+            $table->string('payment_mode');
             $table->string('latitude');
             $table->string('longitude');
             $table->foreign('vehicle_plate_number')->references('plate_number')->on('rsmsa_vehicles');

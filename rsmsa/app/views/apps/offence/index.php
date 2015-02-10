@@ -4,8 +4,13 @@
 
 <!-- Angulars Material CSS now available via Google CDN; version 0.6 used here -->
 <link rel="stylesheet" href="/angular-material/angular-material.css">
+<link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
 
 <!-- Angular Material Dependencies -->
+<script src="/js/jquery/jquery.js"></script>
+<script src="/js/jquery/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="/js/jquery/jquery-ui.min.css">
+
 <script src="/angular/angular.min.js"></script>
 <script src="/hammerjs/hammer.min.js"></script>
 <script src="/angular-animate/angular-animate.min.js"></script>
@@ -15,12 +20,16 @@
 <script src="/angular-material/angular-material.min.js"></script>
 <script src="/angular-material/angular-text.min.js"></script>
 <script src="/angular/angular-route.min.js"></script>
+<script src="/angular/ui-date/date.js"></script>
+<script src="/angular/highcharts/highcharts-custom.js"></script>
+<script src="/angular/highcharts/highcharts-ng.js"></script>
 <link rel="stylesheet"
 	href="/angular-material/angular-text.min.css">
-<link rel="stylesheet" href="/css/style.css">
+<!-- <link rel="stylesheet" href="/css/style.css"> -->
 
 <style>
 .container {
+	padding:0;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -42,7 +51,7 @@
 	min-height:500px;
 }
 .view{
-	padding:20px;
+	padding:80px;
 }
 md-card, .content {
 	padding: 0;
@@ -67,27 +76,26 @@ md-icon{
 	margin-top:0;
 }
 </style>
-
+<script src="/js/Chart.js"></script>
 <script src="controllers/offenceController.js"></script>
-<!-- <script ng-repeat="controller in appControllers" ng-src="{{getContollerUrl(controller)}}"></script> -->
+<!--<script ng-repeat="controller in appControllers" ng-src="{{getContollerUrl(controller)}}"></script>-->
+
+<script src="controllers/statsController.js"></script>
 <script src="controllers/offenceListController.js"></script>
 <script src="controllers/offenceFormController.js"></script>
+<script src="controllers/offenceRegController.js"></script>
+<script src="controllers/offenceReportController.js"></script>
+<script src="controllers/offencePaymentController.js"></script>
 </head>
-
 <body style="" >
-
 	<div class="container">
 		<md-content> <md-toolbar class="md-tall md-warn md-hue-3" style="background-color: {{app.color.c500}}  !important"> </md-toolbar>
 		
 		</md-content>
 	</div>
-
-	<md-card class="main">
-
+	<md-card class="main"> 
 	<md-card-content class="content">
-
 	<section layout="row" flex>
-
 		<md-sidenav class="md-sidenav-left md-whiteframe-z2"
 			md-component-id="left"> 
 			<md-toolbar class="md-theme-light" style="background-color:{{app.color.c200}} !important">
@@ -96,8 +104,7 @@ md-icon{
 			<md-list>
 				<md-item ng-repeat="menu in app.menu">
 					<md-item-content>
-					<a href="#{{menu.route}}" style="width:100%">
-                        <md-button class="sub-menu-button" ng-click="closeNav()">{{menu.name}}</md-button></a>
+					<a href="#{{menu.route}}" style="width:100%"><md-button class="sub-menu-button" ng-click="closeNav()">{{menu.name}}</md-button></a>
 					</md-item-content>
 				</md-item>					
 			</md-list>
@@ -120,7 +127,9 @@ md-icon{
 	<div class="view">
 		<div ng-view="#/home" />
 	</div>
+	<div>
 	
+	</div>
 	</md-card-content> </md-card>
 </body>
 </html>

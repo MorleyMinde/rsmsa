@@ -1,0 +1,17 @@
+{
+	"name": "Administrative Unit App",
+	"description": "This Module Helps you to define Administrative unit structure for the application",
+	"version": "1.0",
+	"icons":{
+		"small":"icon.jpg"
+	},
+	"home":"index.html",
+	"routes":[
+		{"name":"Home","route":"/home","view":"/index.html","controller":"offenceController"},
+		{"name":"Another","route":"/list","view":"/offencelistdialog.html"}
+	],
+	"color":{
+		"c500":"#9C27B0",
+		"c200":"#CE93D8"
+	}
+}

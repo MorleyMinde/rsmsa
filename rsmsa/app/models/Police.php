@@ -2,11 +2,9 @@
 class Police extends Eloquent{
 
 	protected $table = 'rsmsa_police';
-
-    //returns a station that a police belongs
+	
 	public function station(){
-
-		return $this->belongsTo('Station');
+		return $this->belongTo('Station');
 	}
 
     //returns a station that a police belongs

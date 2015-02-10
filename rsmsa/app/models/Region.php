@@ -1,12 +1,11 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: PAUL
- * Date: 2/10/2015
- * Time: 10:09 AM
+ * User: kelvin
+ * Date: 2/17/14
+ * Time: 9:04 PM
  */
-
-class Region extends Eloquent{
+class Region extends Eloquent {
 
     /**
      * The database table used by the model.
@@ -16,9 +15,10 @@ class Region extends Eloquent{
     protected $table = 'regions';
 
     protected  $guarded = array('id');
+    public $timestamps = false;
 
     public function district(){
         return $this->hasMany('District', 'region_id', 'id');
     }
 
-} 
+}

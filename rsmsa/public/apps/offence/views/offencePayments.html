@@ -1,0 +1,59 @@
+<div ng-controller="offencePaymentController">
+<form>
+<h1>Payment Report</h1>
+<table>
+
+<tr>
+	<th>Entity</th><th>Status</th>
+</tr>
+<tr>
+	<td>
+		<select ng-model="entity" required class="form-control" ng-options="item as item.name for item in entities">
+			<option value="?" selected="selected">Select Entity</option>
+		</select>
+	</td>
+	<td>
+		<select ng-model="status" class="form-control" ng-init="status.id" ng-options="item as item.name for item in statuses">
+			<option value="?" selected="selected">Select Entity</option>
+		</select>
+	</td>
+</tr>
+<tr>
+	<td colspan="2">
+	<md-input-container style="padding:0"> 
+		<label>{{entity.ref}}</label> 
+		<input name="name" ng-model="request.id" required> 
+	</md-input-container>
+	</td>
+</tr>
+</table>
+
+
+
+<md-button class="md-raised md-primary" ng-click="getOffence()"  style="float:right;margin-bottom:20px">
+				Populate Offences
+</md-button><br />
+</form>
+<table>
+	<thead>
+		<tr><th>#</th><th>Date</th><th>Place</th><th>Payment Mode</th><th>Amount</th><th>Status</th><th>Action</th></tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="offence in offences">
+			<td>{{$index + 1}}</td>
+			<td>{{offence.offence_date}}</td>
+			<td>{{offence.place}}</td>
+			<td>{{offence.payment_mode}}</td>
+			<td>{{offence.amount}}</td>
+			<td>{{getStatus(offence.paid)}}</td>
+			<td>
+				<a href="#/offence/view/{{offence.id}}" >
+					<md-button class="md-raised md-primary">
+						View Details
+					</md-button>
+				</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>

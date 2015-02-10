@@ -1,11 +1,23 @@
 <?php
 
-class Vehicle extends Eloquent{
+class Vehicle extends HasOffenceImpl{
 
     protected   $table = 'rsmsa_vehicles';
 
 
 	public $timestamps = false;
+	
+	//Get paid offences
+	public function offences(){
+		return $this->hasMany('Offence','vehicle_plate_number');
+	}
+	//Get paid offences
+	public function paidOffences(){
+		return $this->offences()->where('paid', '=', true);
+	}
+	public function notPaidOffences(){
+		return $this->offences()->where('paid', '=', false);
+	}
 
     //returns accidents that a vehicle is associated with
     public function accidents(){
