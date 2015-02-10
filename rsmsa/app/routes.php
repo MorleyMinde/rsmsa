@@ -11,10 +11,13 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('index')->with('apps',AppEntity::all());
-});
+
+Route::get('/', array('before' => 'auth' , 'uses' => 'LoginController@index'));
+
+Route::get('login', array('uses'=>'LoginController@getLogin'));
+Route::get('logout', array('uses'=>'LoginController@logout'));
+//process login form
+Route::post('login', array('uses'=>'LoginController@login'));
 /*
  * 
  * These are app routes. Routes for getting app specific information
@@ -177,3 +180,14 @@ Route::post('/api/offence/', "OffenceController@processOffencePost");
 Route::get('/api/offence/{id}/events/', "OffenceController@getEvents");
 Route::get('/api/offence/{id}/delete/', "OffenceController@delete");
 
+Route::post('/api/accident/', array('uses' => 'AccidentController@submitAccident'));
+
+Route::get('/api/accidents/', array('uses' => 'AccidentController@getAccidents'));
+
+Route::get('/api/accident/{accident_id}', array('uses' => 'AccidentController@viewAccident'));
+
+Route::get('/api/accident/driver/{driver_id}', array('uses' => 'AccidentController@getDriver'));
+
+Route::get('/api/accident/vehicle/{vehicle_id}', array('uses' => 'AccidentController@getVehicle'));
+
+Route::get('/accident/police/{rank_no}', array('uses' => 'AccidentController@getPoliceInfo'));

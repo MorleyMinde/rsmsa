@@ -2,20 +2,31 @@
  * Created by PAUL on 1/19/2015.
  */
 
-angular.module("rsmsaApp").config(function($routeProvider)
+angular.module("accidentApp").config(function($routeProvider)
 {
 
-    $routeProvider.when('/home' ,{
+    $routeProvider.when('/report' ,{
 
         templateUrl: 'views/index.html'
     });
 
-    $routeProvider.when('/report' ,{
+    $routeProvider.when('/reported' ,{
 
         templateUrl: 'views/accident.html'
     });
 
+    $routeProvider.when('/statistics' ,{
 
+        templateUrl: 'views/statistics.html'
+    });
+
+    $routeProvider.when('/api/accident/view/:accident_id' ,{
+        templateUrl: 'views/view_accident.html',
+        controller:'ViewAccidentController'
+    });
+    $routeProvider.otherwise({
+        templateUrl: 'views/home.html'
+    });
 
 }).controller('SideCtrl', function($scope, $timeout, $mdSidenav, $log) {
 
