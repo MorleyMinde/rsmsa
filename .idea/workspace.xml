@@ -2,242 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36aa05df-78aa-43b1-9a80-b674d274fa8c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/fonts/FontAwesome.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/fonts/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/fonts/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/fonts/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/img/tick_pic.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/app/models/Accident.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/js/controllers/AccidentChartsController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/js/controllers/AccidentController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/app/controllers/AccidentController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/app/models/AccidentDriver.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/js/controllers/AccidentListController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/app/models/AccidentPassenger.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/app/models/AccidentVehicle.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/app/models/AccidentWitness.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/js/Chart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/app/models/Insurance.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/scss/_bordered-pulled.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/scss/_core.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/scss/_fixed-width.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/scss/_icons.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/scss/_larger.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/scss/_list.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/scss/_mixins.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/scss/_path.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/scss/_rotated-flipped.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/scss/_spinning.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/scss/_stacked.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/scss/_variables.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/less/bordered-pulled.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/less/core.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/js/date.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/less/fixed-width.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/less/font-awesome.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/css/font-awesome.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/scss/font-awesome.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/fonts/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/img/ic_access_time_24px.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/img/ic_insert_drive_file_24px.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/less/icons.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/less/larger.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/less/list.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/local.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/less/mixins.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/views/one_vehicle_form.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/less/path.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/less/rotated-flipped.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/less/spinning.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/less/stacked.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/views/two_vehicle_form.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/less/variables.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/views/partials/vehicle_2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/views/view_accident.html" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\AdminLTE.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\bootstrap-slider\slider.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\bootstrap-wysihtml5\bootstrap3-wysihtml5.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\bootstrap-wysihtml5\bootstrap3-wysihtml5.min.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\colorpicker\bootstrap-colorpicker.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\colorpicker\bootstrap-colorpicker.min.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\dark.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\datatables\dataTables.bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\datatables\images\sort_asc.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\datatables\images\sort_asc_disabled.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\datatables\images\sort_both.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\datatables\images\sort_desc.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\datatables\images\sort_desc_disabled.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\datepicker\datepicker3.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\daterangepicker\daterangepicker-bs3.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\flexslider.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\font-awesome.min.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\fullcalendar\fullcalendar.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\fullcalendar\fullcalendar.print.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\all.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\_all.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\aero.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\aero.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\aero@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\blue.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\blue.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\blue@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\flat.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\flat.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\flat@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\green.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\green.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\green@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\grey.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\grey.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\grey@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\orange.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\orange.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\orange@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\pink.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\pink.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\pink@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\purple.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\purple.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\purple@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\red.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\red.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\red@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\yellow.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\yellow.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\flat\yellow@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\futurico\futurico.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\futurico\futurico.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\futurico\futurico@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\line\_all.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\line\aero.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\line\blue.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\line\green.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\line\grey.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\line\line.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\line\line.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\line\line@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\line\orange.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\line\pink.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\line\purple.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\line\red.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\line\yellow.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\_all.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\aero.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\aero.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\aero@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\blue.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\blue.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\blue@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\green.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\green.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\green@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\grey.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\grey.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\grey@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\minimal.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\minimal.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\minimal@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\orange.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\orange.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\orange@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\pink.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\pink.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\pink@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\purple.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\purple.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\purple@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\red.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\red.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\red@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\yellow.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\yellow.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\minimal\yellow@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\polaris\polaris.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\polaris\polaris.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\polaris\polaris@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\_all.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\aero.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\aero.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\aero@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\blue.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\blue.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\blue@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\green.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\green.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\green@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\grey.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\grey.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\grey@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\orange.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\orange.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\orange@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\pink.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\pink.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\pink@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\purple.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\purple.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\purple@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\red.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\red.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\red@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\square.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\square.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\square@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\yellow.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\yellow.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\iCheck\square\yellow@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\ionicons.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\ionicons.min.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\ionslider\ion.rangeSlider.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\ionslider\ion.rangeSlider.skinFlat.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\ionslider\ion.rangeSlider.skinNice.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\jQueryUI\images\animated-overlay.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\jQueryUI\images\ui-bg_flat_0_aaaaaa_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\jQueryUI\images\ui-bg_flat_100_e6e7e8_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\jQueryUI\images\ui-bg_flat_100_f56954_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\jQueryUI\images\ui-bg_flat_55_f39c12_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\jQueryUI\images\ui-bg_flat_65_ffffff_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\jQueryUI\images\ui-bg_flat_75_dadada_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\jQueryUI\images\ui-bg_flat_75_e6e6e6_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\jQueryUI\images\ui-bg_flat_75_ffffff_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\jQueryUI\images\ui-icons_222222_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\jQueryUI\images\ui-icons_454545_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\jQueryUI\images\ui-icons_888888_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\jQueryUI\images\ui-icons_ffffff_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\jQueryUI\jquery-ui-1.10.3.custom.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\jQueryUI\jquery-ui-1.10.3.custom.min.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\jvectormap\jquery-jvectormap-1.2.2.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\main.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\morris\morris.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\timepicker\bootstrap-timepicker.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\timepicker\bootstrap-timepicker.min.css" afterPath="" />
-      <change type="MOVED" beforePath="C:\xampp\htdocs\rsmsa\rsmsa\public\apps\accident\css\font-awesome.css" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/font-awesome/css/font-awesome.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php" afterPath="$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/models/Driver.php" afterPath="$PROJECT_DIR$/rsmsa/app/models/Driver.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/controllers/LoginController.php" afterPath="$PROJECT_DIR$/rsmsa/app/controllers/LoginController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/models/Person.php" afterPath="$PROJECT_DIR$/rsmsa/app/models/Person.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/models/Police.php" afterPath="$PROJECT_DIR$/rsmsa/app/models/Police.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/models/Station.php" afterPath="$PROJECT_DIR$/rsmsa/app/models/Station.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/database/seeds/StationTableSeeder.php" afterPath="$PROJECT_DIR$/rsmsa/app/database/seeds/StationTableSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/models/Vehicle.php" afterPath="$PROJECT_DIR$/rsmsa/app/models/Vehicle.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/database/seeds/VehicleTableSeeder.php" afterPath="$PROJECT_DIR$/rsmsa/app/database/seeds/VehicleTableSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/accident/views/accident.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/views/accident.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/accident/js/accident.js" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/js/accident.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/filters.php" afterPath="$PROJECT_DIR$/rsmsa/app/filters.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/accident/views/home.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/views/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/accident/views/index.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/views/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/views/index.php" afterPath="$PROJECT_DIR$/rsmsa/app/views/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/views/apps/accident/index.php" afterPath="$PROJECT_DIR$/rsmsa/app/views/apps/accident/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/views/login.blade.php" afterPath="$PROJECT_DIR$/rsmsa/app/views/login.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/material-design.css" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/css/material-design.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/offence/controllers/offenceFormController.js" afterPath="$PROJECT_DIR$/rsmsa/public/apps/offence/controllers/offenceFormController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/accident/views/partials/passenger.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/views/partials/passenger.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/routes.php" afterPath="$PROJECT_DIR$/rsmsa/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/rsmsa.iml" afterPath="$PROJECT_DIR$/.idea/rsmsa.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/accident/views/partials/two_vehicle.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/views/partials/two_vehicle.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/accident/views/partials/vehicle_1.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/views/partials/vehicle_1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/accident/views/partials/witness.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/accident/views/partials/witness.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="rsmsa.iws" />
@@ -276,8 +40,8 @@
       <file leaf-file-name="2015_01_20_090222_create_tables.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.192308" vertical-offset="4133" max-vertical-offset="4828">
-              <caret line="274" column="35" selection-start-line="274" selection-start-column="35" selection-end-line="274" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="4658" max-vertical-offset="4811">
+              <caret line="274" column="5" selection-start-line="274" selection-start-column="5" selection-end-line="274" selection-end-column="5" />
               <folding>
                 <element signature="e#7#48#0#PHP" expanded="true" />
               </folding>
@@ -288,7 +52,7 @@
       <file leaf-file-name="District.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/app/models/District.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="442">
+            <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="612">
               <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
@@ -298,8 +62,8 @@
       <file leaf-file-name="Region.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/app/models/Region.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="408">
-              <caret line="23" column="2" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="493">
+              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -308,7 +72,7 @@
       <file leaf-file-name="statistics.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/accident/views/statistics.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="3672">
+            <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="3672">
               <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
@@ -327,7 +91,7 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rsmsa/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47574627" vertical-offset="0" max-vertical-offset="3213">
+            <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="3213">
               <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
               <folding />
             </state>
@@ -347,7 +111,7 @@
       <file leaf-file-name="accident.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/accident/views/accident.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.5" vertical-offset="136" max-vertical-offset="986">
+            <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="986">
               <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
               <folding>
                 <element signature="n#style#0;n#md-icon#0;n#md-button#0;n#a#0;n#td#9;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
@@ -360,7 +124,7 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/app/views/apps/accident/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.461538" vertical-offset="2040" max-vertical-offset="4114">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2040" max-vertical-offset="4114">
               <caret line="136" column="41" selection-start-line="136" selection-start-column="41" selection-end-line="136" selection-end-column="41" />
               <folding />
             </state>
@@ -649,15 +413,15 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -676,8 +440,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -685,7 +449,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21860817" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22163388" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -718,9 +482,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21558245" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1000,7 +764,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="917" max-vertical-offset="1479">
           <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1034,7 +797,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/accident/views/accident.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5" vertical-offset="136" max-vertical-offset="986">
+        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="986">
           <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
           <folding>
             <element signature="n#style#0;n#md-icon#0;n#md-button#0;n#a#0;n#td#9;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
@@ -1047,13 +810,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="75.84615" vertical-offset="2193" max-vertical-offset="2754">
           <caret line="18" column="56" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/views/apps/accident/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538" vertical-offset="2040" max-vertical-offset="4114">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2040" max-vertical-offset="4114">
           <caret line="136" column="41" selection-start-line="136" selection-start-column="41" selection-end-line="136" selection-end-column="41" />
           <folding />
         </state>
@@ -1061,7 +823,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/accident/views/statistics.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="3672">
+        <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="3672">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
@@ -1080,7 +842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="1955">
           <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1128,8 +889,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.192308" vertical-offset="4133" max-vertical-offset="4828">
-          <caret line="274" column="35" selection-start-line="274" selection-start-column="35" selection-end-line="274" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="4658" max-vertical-offset="4811">
+          <caret line="274" column="5" selection-start-line="274" selection-start-column="5" selection-end-line="274" selection-end-column="5" />
           <folding>
             <element signature="e#7#48#0#PHP" expanded="true" />
           </folding>
@@ -1138,7 +899,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/models/District.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="442">
+        <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="612">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
@@ -1146,15 +907,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/models/Region.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="408">
-          <caret line="23" column="2" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="493">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47574627" vertical-offset="0" max-vertical-offset="3213">
+        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="3213">
           <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
           <folding />
         </state>
