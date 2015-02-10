@@ -1,1 +1,15 @@
-<h1>This is licence page</h1>
+<h3 class="text-center">Drivers Information Import</h3>
+<p style="font-size: 17px">This Functionality allows you to import the excel file containing seals information to the system  </p>
+<md-whiteframe class="md-whiteframe-z5 col-sm-12">
+    <h4>The expected file format is</h4>
+    <img src="mwema_import.png">
+    <hr>
+    <form name="upload" novalidate>
+        <input type="file" class="pull-left" name="file" required/>
+        <md-button ng-disabled="upload.$invalid" class="md-raised md-hue-3 pull-left"><i class="fa fa-upload"></i> Upload
+            <md-tooltip>
+                Upload Selected File
+            </md-tooltip></md-button>
+    </form>
+
+</md-whiteframe>
