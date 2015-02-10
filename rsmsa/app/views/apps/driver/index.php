@@ -81,6 +81,7 @@
     <script src="<?php echo asset('apps/driver/routes.js')?>"></script>
     <script src="<?php echo asset('apps/driver/controllers/driverAppCtrl.js')?>"></script>
     <script src="<?php echo asset('apps/driver/controllers/driverImportCtrl.js')?>"></script>
+    <script src="<?php echo asset('apps/driver/controllers/driverAddCtrl.js')?>"></script>
 </head>
 
 <body style="" ng-controller="driverAppCtrl">
@@ -105,6 +106,11 @@
                     </md-item-content>
                 </md-item>
 				<md-item>
+					<md-item-content>
+					<a href="#/add" style="width:100%" ng-click="closeNav()"><md-button class="sub-menu-button">Registration</md-button></a>
+					</md-item-content>
+				</md-item>
+                <md-item>
 					<md-item-content>
 					<a href="#/licence" style="width:100%" ng-click="closeNav()"><md-button class="sub-menu-button">Licences Import</md-button></a>
 					</md-item-content>

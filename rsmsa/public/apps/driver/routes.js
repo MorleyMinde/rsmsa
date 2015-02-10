@@ -9,6 +9,9 @@ angular.module("rsmsaApp").config( function($routeProvider){
     $routeProvider.when("/licence",{
         templateUrl: 'views/licence.html',
         controller: 'driverImportCtrl'
+    });$routeProvider.when("/add",{
+        templateUrl: 'views/add.html',
+        controller: 'driverAddCtrl'
     });
     $routeProvider.otherwise({
         redirectTo: '/home'
