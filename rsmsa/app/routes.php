@@ -181,7 +181,7 @@ Route::get('/api/driver/{license_number}/offences/notpaid', "DriverController@ge
 
 //Offence Controller Rooutes
 Route::get('/api/offence/registry', "OffenceController@getOffenceRegistry");
-Route::get('/api/offence/report', "OffenceController@getReport");
+Route::post('/api/offence/report', "OffenceController@getReport");
 Route::post('/api/offence/stats', "OffenceController@getStats");
 Route::get('/api/offence/registry/{id}/offences', "OffenceController@getOffenceRegistryOffences");
 Route::get('/api/offence/{id}', "OffenceController@getOffence");

@@ -43,7 +43,7 @@
 				<input name="date" ng-model="offence.offence_date" ui-date="dateOptions" required> 
 			</md-input-container><br />
 			<md-input-container class="inline-container"> 
-				<label>Place of Offence</label>
+				<label>Location of Offence</label>
 				<input name="place" ng-model="offence.place"  required> 
 			</md-input-container>
 			<md-input-container> 
@@ -60,7 +60,7 @@
 					<label>Amount payable</label>
 					<input ng-model="amountPayable" readonly/> </md-input-container><br /><br />
 				<md-input-container>
-				Is amount paid:
+				Is fine paid:
 				<md-switch ng-model="offence.paid">
 				    {{getAnswerValue(offence.paid)}}
 				</md-switch>

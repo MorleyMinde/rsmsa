@@ -1,3 +1,9 @@
+/**
+ * Offence Controller Definition
+ * 
+ * TODO Should be changed to the app main controller for all apps
+ */
+//Variable to store the angular routeProvide in order to use it outside the config function
 var routProvider = null;
 angular.module('offenceApp', [ 'ngMaterial' , "ngRoute",'ui.date'])
 	.config(function ($routeProvider) {
@@ -5,51 +11,55 @@ angular.module('offenceApp', [ 'ngMaterial' , "ngRoute",'ui.date'])
 		})
 	.controller('offenceCtrl',function($scope, $mdDialog, $http,$mdSidenav, $location) {
 			
+			//Shows the left menu
 			$scope.toggleLeft = function() {
 			    $mdSidenav('left').toggle();
 			  };
+			//Hides the left menu
+			  $scope.closeNav = function() {
+				    $mdSidenav('left').close();
+			  };
+			  //List of app controllers
 			  $scope.appControllers = [];
+			  //Gets the controller javascript file string
 			  $scope.getContollerUrl =function(controller){
 				  return "controllers/"+controller+".js";
 			  }
-			  $scope.closeNav = function() {
-				    $mdSidenav('left').close();
-				  };
+			  
+			  //App Model
 			  $scope.app = {};
+			  //Fetches the app manifest file content
 			  $http.get("manifest").success(function(app) {
 					$scope.app = app;
-					//alert(app.routes);
-					//Loop through the routes and define
+					//Loop through the routes and define the routes
 					for(var i = 0;i < app.routes.length;i++)
 					{
 						var route = app.routes[i];
 						routeProvider.when(route.route, {
 							templateUrl: "views"+route.view,
-							//controller:"offenceListController"
-							//resolve: resolveController('controllers/'+route.controller+'.js')
+							//TODO Resolve controllers with respect to views
+							
 						});
-						/*var fileref=document.createElement('script')
-						  fileref.setAttribute("type","text/javascript")
-						  fileref.setAttribute("src", 'controllers/'+route.controller+'.js')
-						//alert(route.controller);*/
+						//TODO Load javscript file for a given controller
 						if(!(route.controller == undefined))
 						{
+							//Push to the controller to app controllers
 							$scope.appControllers.push(route.controller);
 						}
 							
 					}
-					//alert("Root:"+$routeParams.path());
 					routeProvider.otherwise({redirectTo: $scope.app.defaultRoute});
-					if($location.path() == '')
+					if($location.path() == '')//If no path/route provided load the default route else load the path
 					{
 						$location.path($scope.app.defaultRoute);
 					}else
 					{
+						
 						$location.path($location.path());
 					}
 					
 				}).error(function(error) {
-					alert(error);
+					//TODO Handle error in loading manifest
 					$scope.data.error = error;
 				});
 		});
