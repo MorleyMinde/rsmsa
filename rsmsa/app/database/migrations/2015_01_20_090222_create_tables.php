@@ -223,7 +223,6 @@ class CreateTables extends Migration {
         });
 
         //the accident_witness table
-
         Schema::create('rsmsa_accident_witness', function ($table) {
             $table->increments('id');
             $table->integer('accident_id')->unsigned();

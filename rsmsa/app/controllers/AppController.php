@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 /**
  * This is the controller for apps
