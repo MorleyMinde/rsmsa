@@ -6,12 +6,14 @@
 <link rel="stylesheet" href="/angular-material/angular-material.css">
     <link href="<?php echo asset('DataTables/media/css/jquery.dataTables.css') ?>" rel="stylesheet" />
     <link href="<?php echo asset('jquery-ui/themes/cupertino/jquery-ui.css') ?>" rel="stylesheet">
+    <link href="<?php echo asset('css/angular-multi-select.css') ?>" rel="stylesheet">
     <!-- Angular Material Dependencies -->
     <script src="<?php echo asset('apps/administrative_unit/js/jquery.js') ?>"></script>
     <script src="<?php echo asset('angular/angular.min.js')?>"></script>
     <script src="<?php echo asset('jquery-ui/jquery-ui.js') ?>"></script>
     <script src="<?php echo asset('DataTables/media/js/jquery.dataTables.js') ?>"></script>
     <script src="<?php echo asset('angular-ui-date/src/date.js') ?>"></script>
+    <script src="<?php echo asset('js/angular-multi-select.js') ?>"></script>
     <script src="<?php echo asset('angular-datatables/dist/angular-datatables.js') ?>"></script>
     <script src="<?php echo asset('angular-animate/angular-animate.min.js')?>"></script>
     <script src="<?php echo asset('angular-aria/angular-aria.min.js')?>"></script>
@@ -78,7 +80,7 @@
     </style>
     <!--<script ng-repeat="app in app.routes" ng-src="{{getControllerSrc(app.controller)}}"></script>-->
     <script>
-        var mainModule = angular.module('rsmsaApp', ['ngMaterial', "ngRoute","angularFileUpload","datatables",'ui.date']);
+        var mainModule = angular.module('rsmsaApp', ['ngMaterial', "ngRoute","angularFileUpload","datatables",'ui.date','multi-select']);
         mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route) {
             //When menu button is clicked show the left menu
             $scope.toggleLeft = function() {

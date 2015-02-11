@@ -49,8 +49,14 @@ Route::get('/api/police/{rank_no}', "PoliceController@getPolice");
 //getting drivers
 Route::get('/drivers',array('uses'=>'DriverController@index'));
 
-//getting drivers
+//dealing with uploaded driver excel file
 Route::post('/driver/upload',array('uses'=>'DriverController@upload'));
+
+//saving a single driver
+Route::post('/driver',array('uses'=>'DriverController@store'));
+
+//getting drivers
+Route::get('/driving_classes',array('uses'=>'DriverController@drivingClasses'));
 
 ////////////////////////////////////////////////////////////////////
 ///////////////////Administrative Unit Routes///////////////////////

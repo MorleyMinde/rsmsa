@@ -4,7 +4,7 @@ class Driver extends Eloquent{
 	public $timestamps = false;
 
     protected $table= 'rsmsa_drivers';
-
+    protected  $guarded = array('id');
 	public function offences(){
 		return $this->hasMany('Offence','driver_license_number');
 	}

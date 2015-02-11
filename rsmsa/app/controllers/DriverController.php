@@ -41,6 +41,16 @@ class DriverController extends \BaseController {
 	}
 
     /**
+	 * Show the list of available driving classes
+	 *
+	 * @return Response
+	 */
+	public function drivingClasses()
+	{
+        return DrivingClasses::all();
+	}
+
+    /**
 	 * Uploading the drives via excel
 	 *
 	 * @return Response
@@ -58,14 +68,35 @@ class DriverController extends \BaseController {
             if($uploadSuccess ){
                 Excel::load($destinationPath ."/".$filename, function($reader) {
                     $reader->toArray();
-                    echo json_encode($reader->get(array('surname', 'other_names','national_id','phone_number','gender','date_of_birth','gender','date_of_birth','national','driving_license_id','occupation'))->toArray());
-//                    foreach( as $arr){
-//
-//                        foreach($arr as $key=>$arr1){
-//                           if($arr1 != ""){echo $key." -- ".$arr1."  ";}
-//                        }
-//
-//                    }
+                   $arr = $reader->get(array('surname', 'other_names','national_id','phone_number','physcal_adress','address_po_box','gender','date_of_birth','nationality','driving_license_id','occupation','driving_class','expiry_date'))->toArray();
+                    //json_encode($arr);exit;
+                    $duplicate = array();
+                    $newVals   = array();
+//                    echo json_encode($reader->get(array('surname', 'other_names','national_id','phone_number','gender','date_of_birth','gender','date_of_birth','national','driving_license_id','occupation','driving _class','expiry_date'))->toArray());
+                    foreach($arr as $driver){
+                        if(Driver::where('license_number',$driver['driving_license_id'])->first()){
+                            array_push($duplicate,$driver);
+                        }else{
+                            array_push($newVals,$driver);
+                            Driver::create(array(
+                                'license_number' => $driver['driving_license_id'],
+                                'first_name' =>$driver['other_names'],
+                                'last_name' =>$driver['surname'],
+                                'physical_address' =>$driver['physcal_adress'],
+                                'address' =>$driver['address_po_box'],
+                                'national_id' =>$driver['national_id'],
+                                'gender' =>$driver['gender'],
+                                'birthdate' =>$driver['date_of_birth'],
+                                'nationality' =>$driver['nationality'],
+                                'phone_number' =>$driver['phone_number'],
+                                'occupation' =>$driver['occupation'],
+                                'driving_class' => $driver['driving_class'],
+                                'expiry_date' =>$driver['expiry_date'],
+                            ));
+                        }
+                    }
+                    $retunArr = array("duplicates"=>$duplicate,"newValue"=>$newVals);
+                    echo json_encode($retunArr);
                 });
             }
         }else{
@@ -82,7 +113,21 @@ class DriverController extends \BaseController {
 	 */
 	public function store()
 	{
-		Driver::create(Input::all());
+		Driver::create(array(
+            'license_number' => Input::get('license_number'),
+            'first_name' => Input::get('first_name'),
+            'last_name' => Input::get('last_name'),
+            'physical_address' => Input::get('physical_address'),
+            'address' => Input::get('address'),
+            'national_id' => Input::get('national_id'),
+            'gender' => Input::get('gender'),
+            'birthdate' => Input::get('birthdate'),
+            'nationality' => Input::get('nationality'),
+            'phone_number' => Input::get('phone_number'),
+            'occupation' => Input::get('occupation'),
+            'driving_class' => implode ( "," , Input::get('driving_class') ),
+            'expiry_date' => Input::get('expiry_date'),
+        ));
 	}
 
 

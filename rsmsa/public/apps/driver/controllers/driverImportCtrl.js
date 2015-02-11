@@ -24,7 +24,7 @@ angular.module("rsmsaApp")
                     }).success(function (data, status, headers, config) {
                         $scope.progressParcent = 0;
                         $scope.data.toImport = data.length;
-                        $scope.data.imported = data;
+                        $scope.data.imported = data.duplicates;
                         console.log('file ' + config.file.name + 'uploaded. Response: ' +
                             JSON.stringify(data));
                     });
