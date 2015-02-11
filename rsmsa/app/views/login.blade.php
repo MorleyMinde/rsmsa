@@ -75,8 +75,6 @@
             {{ $alert }}
         </div>
         @endif
-
-
                <div class="login-wrap">
 
                     <input type="text" class="form-control" placeholder="Police Rank Number" autofocus name="rankNo" required style="margin-bottom: 15px;border: 0px;border-bottom: 1px solid">

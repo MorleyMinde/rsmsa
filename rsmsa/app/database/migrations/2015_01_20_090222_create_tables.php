@@ -65,22 +65,29 @@ class CreateTables extends Migration {
             $table->string('color');
             $table->string('yom');
             $table->string('chasis_no');
-            $table->integer('insurance_id')->usigned();
-            $table->foreign('insurance_id')->references('id')->on('rsmsa_insurance');
         });
         Schema::create('rsmsa_drivers', function ($table) {
             $table->increments('id');
-            $table->string('license_number')->unique();
+            $table->string('license_number');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('physical_address');
             $table->string('address');
             $table->string('national_id');
             $table->string('gender');
-            $table->date('birthdate');
+            $table->string('birthdate');
             $table->string('nationality');
-            $table->string('phone_number')->unique();
+            $table->string('phone_number');
             $table->string('occupation');
+            $table->string('driving_class');
+            $table->string('expiry_date');
+        });
+        Schema::create('rsmsa_licence_renewal', function ($table) {
+            $table->increments('id');
+            $table->integer('driver_id');
+            $table->string('renewal_date');
+            $table->string('expiry_date');
+            $table->timestamps();
         });
         Schema::create('rsmsa_offence_registry', function ($table) {
             $table->increments('id');
@@ -237,7 +244,6 @@ class CreateTables extends Migration {
             $table->increments('id');
             $table-> string('district');
             $table-> integer('region_id')->unsigned();
-            $table-> foreign('region_id')->references('id')->on('rsmsa_regions');
         });
 
         Schema::create('rsmsa_regions', function ($table) {

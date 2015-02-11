@@ -1,6 +1,4 @@
 <?php
-class Driver extends HasOffenceImpl{
-
 class Driver extends Eloquent{
 
 	public $timestamps = false;
@@ -15,8 +13,7 @@ class Driver extends Eloquent{
     public function accidents(){
 
         return $this-> hasMany('AccidentDriver' , 'driver_id');
-    }
-}	public function paidOffences(){
+    }	public function paidOffences(){
 		return $this->offences()->where('paid', '=', true);
 	}
 	public function notPaidOffences(){

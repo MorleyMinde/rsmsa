@@ -48,12 +48,13 @@ class Offence extends JSONPresentableImpl{
 	{
 		return $this->hasOne('Police');
 	}
+
 	/**
 	 * Returns list of offences with there amounts calculated involved in issueing an offence
 	 *
 	 * @see Driver Model
-	 *
-	 * @return Object(Police)
+	 * @param $offences
+	 * @return Object(Offence)
 	 */
 	public static function appendAmoutToOffences($offences){
 		$offencesRet = array();

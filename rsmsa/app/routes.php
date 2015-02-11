@@ -46,8 +46,11 @@ Route::get('/api/police/{rank_no}', "PoliceController@getPolice");
 ////////////////////////////////////////////////////////////////////
 ///////////////////Driver Routes////////////////////////////////////
 ///////////////////////////////////////////////////////////////////
-//getting regions
+//getting drivers
 Route::get('/drivers',array('uses'=>'DriverController@index'));
+
+//getting drivers
+Route::post('/driver/upload',array('uses'=>'DriverController@upload'));
 
 ////////////////////////////////////////////////////////////////////
 ///////////////////Administrative Unit Routes///////////////////////
@@ -58,6 +61,8 @@ Route::post('/getkaya',array('uses'=>'AdministrativeUnitController@index'));
 
 //getting regions
 Route::get('/regions',array('uses'=>'AdministrativeUnitController@getRegions'));
+
+Route::get('/countries',array('uses'=>'AdministrativeUnitController@getCountries'));
 
 //getting Districts
 Route::get('/districts',array('uses'=>'AdministrativeUnitController@getDistricts'));
