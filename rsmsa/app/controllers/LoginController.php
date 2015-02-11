@@ -9,8 +9,20 @@ class LoginController extends \BaseController {
      */
     public function index()
     {
+        return View::make('index')->with('apps',AppEntity::all());
+    }
+
+    public function getLogin()
+    {
         return View::make('login');
     }
+
+    public function logout()
+    {
+        Auth::logout(); // log the user out of our application
+        return Redirect::to('login'); // redirect the user to the login screen
+    }
+
     public function login()
     {
         // validate the info, create rules for the inputs
@@ -38,7 +50,7 @@ class LoginController extends \BaseController {
 
             if(Auth::attempt($credentials))
             {
-                return Redirect::to('apps');
+                return Redirect::to('/');
             }
             else{
 
@@ -49,11 +61,7 @@ class LoginController extends \BaseController {
 
         }
     }
-    public function logout()
-    {
-        Auth::logout(); // log the user out of our application
-        return Redirect::to('login'); // redirect the user to the login screen
-    }
+
 
 
     /**

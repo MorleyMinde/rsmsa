@@ -1,82 +1,45 @@
+<div class="row" ng-controller="AccidentChartController">
 
-<!--Header Section-->
-<div id="home" class="top">
-    <div class="container">
-        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 logo">
-            <img src="images/header/logo.png" alt=".Square">
-        </div>
-        <!--Navigation-->
-        <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 pull-right ">
-            <div class="nav">
-                <ul class="navi">
-                    <li ><a href="#features">Features</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    <md-toolbar>
+
+        <center> <h2 class="md-toolbar-tools">
+           MONTHLY ACCIDENTS SUMMARY STATISTICS
+        </h2>
+        </center>
+
+    </md-toolbar>
+
+     <center><!-- bar chart canvas element -->
+            <canvas id="income" width="600" height="400" padding-left="10px"></canvas>
+    </center>
+
+    <md-toolbar>
+
+        <center> <h2 class="md-toolbar-tools">
+            Line Chart
+        </h2>
+        </center>
+
+    </md-toolbar>
+
+
+     <center>
+        <!-- line chart canvas element -->
+        <canvas id="buyers" width="600" height="400"></canvas>
+      </center>
+    <md-toolbar>
+
+        <center> <h2 class="md-toolbar-tools">
+            Pie Chart
+        </h2>
+        </center>
+
+    </md-toolbar>
+
+    <center>
+
+        <!-- pie chart canvas element -->
+        <canvas id="countries" width="600" height="400"></canvas>
+    </center>
+
 </div>
-<section class="banner">
-    <div id="bannerSlider" class="carousel carousel-fade slide" data-ride="carousel">
-        <!-- Indicators -->
-        <div class="carousel-inner">
-            <div class="item active" style="background-image:url(/apps/accident/img/banner1.jpg);">
-                <div class="carousel-caption">
-                    <div class="container">
-                        <div class="col-md-12">
-                            <div class="content">
-                                <h1>A totally new way</h1>
-                                <h2>To publish content to your website or app.</h2>
-                                <div class="btn-orange"><a href="#">Try DotSquare for FREE</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item" style="background-image:url(/apps/accident/img/banner2.jpg);">
-                <div class="carousel-caption">
-                    <div class="container">
-                        <div class="col-md-12">
-                            <div class="content">
-                                <h1>.Square Landingpage</h1>
-                                <h2>Full responsive, works on all devices!</h2>
-                                <div class="btn-orange"><a href="#">Signup Today for FREE!</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item" style="background-image:url(/apps/accident/img/header/banner3.jpg);">
-                <div class="carousel-caption">
-                    <div class="container">
-                        <div class="col-md-12">
-                            <div class="content">
-                                <h1>Simple & Easy</h1>
-                                <h2>Clean code easy to customize.</h2>
-                                <div class="btn-orange"><a href="#">Try DotSquare for free</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <ol class="carousel-indicators">
-            <li data-target="#bannerSlider" data-slide-to="0" class="active"></li>
-            <li data-target="#bannerSlider" data-slide-to="1"></li>
-            <li data-target="#bannerSlider" data-slide-to="2"></li>
-        </ol>
-
-    </div><!-- /.carousel -->
-</section>
-
-
-
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="../../../../../ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/custom.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script defer src="js/jquery.flexslider-min.js"></script>

@@ -1,0 +1,82 @@
+<style>
+    .entry{
+        border: 0px;
+        border-bottom-style:solid ;
+        border-bottom-color:#767678;
+        border-bottom-width:1px ;
+        width: 100%;
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        background-color: #ffffff;
+        margin-bottom: 10px;
+    }.entry:focus{
+        border-bottom-width:2px ;
+    }
+    p{
+        color: #000000;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+</style>
+        <h3 class="text-center">Driver Registration</h3>
+<md-whiteframe class="md-whiteframe-z5" layout layout-align="center center" style="margin-bottom: 10px">
+<div class="col-sm-12" style="margin-top: 15px;margin-bottom: 15px;">
+    <form name="kayaForm" novalidate>
+        <div class="col-xs-12">
+            <div class="col-xs-6"><b>Licence Number:</b> <input type="text" class="entry" ng-model="currentKaya.license_number" required/></div>
+            <div class="col-xs-6"><b>First Name:</b> <input type="text" class="entry" ng-model="currentKaya.first_name" required/></div>
+
+        </div>
+        <div class="col-xs-12">
+            <div class="col-xs-6"><b>Last Name:</b> <input type="text" class="entry" ng-model="currentKaya.last_name" required/></div>
+            <div class="col-xs-6"><b>Physical Address:</b> <input type="text" class="entry" ng-model="currentKaya.physical_address" required/></div>
+
+        </div>
+        <div class="col-xs-12">
+            <div class="col-xs-6"><b>Gender</b>
+                <select class="entry" ng-model="currentKaya.gender" required ng-change="getWards(currentKaya.district)">
+                    <option value="">-- Select --</option>
+                    <option value="Male">-- Male --</option>
+                    <option value="Female">-- Femae --</option>
+                </select>
+            </div>
+            <div class="col-xs-6"><b>Nationality:</b>
+                <select class="entry" ng-model="currentKaya.countries">
+                    <option value="">-- Select --</option>
+                    <option  ng-repeat="national in data.countries" value="{{ national.name }}">{{ national.name }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="col-xs-6"><b>Postal Box:</b> <input type="text" class="entry" ng-model="currentKaya.address" required/></div>
+            <div class="col-xs-6"><b>Birth Date:</b> <input type="text" ui-date="dateOptions" class="entry" ng-model="currentKaya.birthdate" required/></div>
+        </div>
+        <div class="col-xs-12">
+            <div class="col-xs-6"><b>National Id</b> <input type="text" class="entry" ng-model="currentKaya.national_id" required/></div>
+            <div class="col-xs-6"><b>Phone Number</b> <input type="text" class="entry" ng-model="currentKaya.phone_number" required/></div>
+        </div>
+        <div class="col-xs-12">
+            <div class="col-xs-6"><b>Driving Class</b> <input type="text" class="entry" ng-model="currentKaya.national_id" required/></div>
+            <div class="col-xs-6"><b>Expiring Date</b> <input type="text" class="entry" ng-model="currentKaya.phone_number" required/></div>
+        </div>
+        <div class="col-xs-12">
+            <div class="col-xs-12"><b>Occupation</b> <input type="text" class="entry" ng-model="currentKaya.occupation"/></div>
+        </div>
+    </form>
+
+</div>
+    </md-whiteframe>
+{{ currentKaya }}
+<!--saving messages-->
+<span class="pull-left" ng-if="currentSaving"><i class='fa fa-cog fa-2x fa-spin '></i> Saving.... </span>
+<span class="pull-left text-success" ng-if="kayaSavedSuccess"><i class='fa fa-check fa-2x'></i> Saved Successful </span>
+<span class="pull-left text-danger" ng-if="kayaSavedFalue"><i class='fa fa-times fa-2x'></i> Saving Failed </span>
+
+<!--updating message-->
+<span class="pull-left" ng-if="currentUpdating"><i class='fa fa-cog fa-2x fa-spin '></i> Saving.... </span>
+<span class="pull-left text-success" ng-if="kayaUpdatedSuccess"><i class='fa fa-check fa-2x'></i> Saved Successful </span>
+<span class="pull-left text-danger" ng-if="kayaUpdateFalue"><i class='fa fa-times fa-2x'></i> Saving Failed </span>
+
+<div ng-hide="currentEditting"class="btn btn-primary btn-sm pull-right" ng-click="saveKaya(currentKaya)" ng-disabled="kayaForm.$invalid">&nbsp;&nbsp;&nbsp;<i class="fa fa-save"></i> Save&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </div>
+<div ng-show="currentEditting" class="btn btn-primary btn-sm pull-right" ng-click="updateKaya(currentKaya)">Update </div>
+<div ng-show="currentEditting" class="btn btn-warning btn-sm pull-right" ng-click="cancelEditting()">Cancel </div>

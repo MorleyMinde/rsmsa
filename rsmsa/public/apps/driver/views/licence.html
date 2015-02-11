@@ -1,0 +1,58 @@
+<style>
+.drop-box {
+background: #F8F8F8;
+border: 5px dashed #DDD;
+width: 200px;
+height: 65px;
+text-align: center;
+padding-top: 25px;
+margin: 10px;
+}
+.dragover {
+border: 5px dashed blue;
+}
+</style>
+<h3 class="text-center">Drivers Information Import</h3>
+<p style="font-size: 17px">This Functionality allows you to import the excel file containing Drivers information to the system  </p>
+<md-whiteframe class="md-whiteframe-z5 col-sm-12">
+    <h4>The expected file format is</h4>
+    <img src="/img/driver_details" style="width:100%">
+    <hr>
+   Drop File:
+    <div ng-file-drop ng-file-select ng-model="files" class="drop-box"
+         drag-over-class="dragover" ng-multiple="true" allow-dir="false">
+        Drop xlxs here or click to upload
+    </div>
+    <div class="progress" ng-if="progressParcent != 0">
+        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ progressParcent }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ progressParcent }}%">
+            <span class="sr-only">{{ progressParcent }}% Complete (success)</span>
+        </div>
+    </div>
+    <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
+    <ul>
+        <li ng-repeat="f in files" style="font:smaller">{{f.name}}</li>
+    </ul>
+
+</md-whiteframe>
+<table datatable="ng" class="row-border hover" ng-if="data.imported.length != 0">
+    <thead>
+    <tr>
+        <th>Surname</th>
+        <th>Other Name</th>
+        <th>Gender</th>
+        <th>Licence Number</th>
+        <th>Date of birth</th>
+        <th>Occupation</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="requi in data.imported">
+        <td>{{ requi.surname }}</td>
+        <td>{{ requi.other_names }}</td>
+        <td>{{ requi.gender }}</td>
+        <td>{{ requi.driving_license_id }}</td>
+        <td>{{ requi.date_of_birth }}</td>
+        <td>{{ requi.occupation }}</td>
+    </tr>
+    </tbody>
+</table>

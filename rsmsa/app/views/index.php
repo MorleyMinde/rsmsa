@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html ng-app="rsmsaApp">
 <head>
 
@@ -106,6 +107,7 @@ function DialogController($scope, $mdDialog) {
     	</div>
     	<div style="width:12.5%">
     		<div style="margin: auto;margin-top: 10px;width:100px;height:100px;border-radius:50%;border:1px solid blue">
+                <p><a href="logout" style="">Logout</a></p>
       </div>
     	</div>
     </div>
@@ -118,7 +120,6 @@ function DialogController($scope, $mdDialog) {
 	 	<div class="img" style="background-image:url(app/{{app.id}}/{{app.icons.small}})">
 	 		
 	 	</div>
-	      
 	      <md-card-content style="background-color:{{app.color.c500}}">
 	        {{app.name}}
 	      </md-card-content>
