@@ -1,5 +1,18 @@
 <?php
+/**
+ * This is the controller for apps
+ * 
+ * @author Vincent P. Minde
+ *
+ */
 class AppController extends BaseController {
+	/**
+	 * Gets the manifest data in JSON of all apps
+	 * 
+	 * Returns a json string
+	 * 
+	 * @return string 
+	 */
 	public function getManifests()
 	{
 		$arr = array();
@@ -20,28 +33,60 @@ class AppController extends BaseController {
 		//Encode to json
 		return json_encode($arr);
 	}
+	/**
+	 * Get app index file
+	 * 
+	 * @param unknown $id
+	 */
 	public function getApp($id)
 	{
 		//return View::make('app');
 		$app = AppEntity::find($id);
 		return View::make("apps/".$app->location."/index");
 	}
+	/**
+	 * Get manifest app
+	 * 
+	 * @param int|string $id
+	 * 
+	 */
 	public function getManifest($id)
 	{
 		$app = AppEntity::find($id);
 		//return json_encode($output, 128);
 		return (file_get_contents($_SERVER['DOCUMENT_ROOT']."/apps/".$app->location."/manifest.json"));
 	}
+	/**
+	 * Get a file from an app directory
+	 * 
+	 * @param int|string $id (app id)
+	 * 
+	 * @param string $file (file relative to app directory)
+	 */
 	public function getFile($id,$file)
 	{
 		$app = AppEntity::find($id);
 		return Redirect::to("/apps/".$app->location."/".$file);
 	}
+	/**
+	 * Get a view from an app directory
+	 *
+	 * @param int|string $id (app id)
+	 *
+	 * @param string $file (file relative to app view directory)
+	 */
 	public function getView($id,$file)
 	{
 		$app = AppEntity::find($id);
 		return Redirect::to("/apps/".$app->location."/views/".$file);
 	}
+	/**
+	 * Get a controller from an app directory
+	 *
+	 * @param int|string $id (app id)
+	 *
+	 * @param string $file (file relative to app controller directory)
+	 */
 	public function getController($id,$file)
 	{
 		$app = AppEntity::find($id);

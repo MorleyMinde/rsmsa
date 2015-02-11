@@ -1,4 +1,10 @@
 <?php
+/**
+ * This is the Driver Model
+ * 
+ * @author Vincent P. Minde
+ *
+ */
 class Driver extends HasOffenceImpl{
 
 	protected $primaryKey = "license_number";
