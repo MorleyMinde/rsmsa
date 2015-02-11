@@ -53,10 +53,10 @@
         <tr>
             <td class="number" style="border-width:0px">2</td>
             <td class="my_td"  style="width: 10%">District </td>
-            <td style="width: 10%"><input class="ingizo"  type="text" /></td>
+            <td style="width: 10%"><input class="ingizo" ng-model="station_district" type="text" /></td>
             <td class="my_td"  style="width: 10%">Police Officer (1) </td>
             <td style="width: 11%"><input class="ingizo" ng-model="rank_no" type="text" /></td>
-            <td style="width: 11%"><input class="ingizo"  type="text"/></td>
+            <td style="width: 11%"><input class="ingizo" ng-model="police_name" type="text"/></td>
             <td style="width: 11%"><input class="ingizo"  ng-model="sign_date" type="text"/></td>
             <td style="width: 8.5%">Fatal(n)</td>
             <td  style="width:8.5%"><input class="ingizo" ng-model="accident_fatal" type="text"/></td>
@@ -68,7 +68,7 @@
         <tr>
             <td class="number" style="border-width:0px">3</td>
             <td class="my_td" >Region</td>
-            <td><input class="ingizo"  type="text" name="region" required ></td>
+            <td><input class="ingizo" ng-model="station_region" type="text" name="region" required ></td>
             <td class="my_td" >Police Officer (2) </td>
             <td><input class="ingizo"  type="text"  name="officer_2" required/></td>
             <td><input class="ingizo"  type="text"/></td>
@@ -226,7 +226,7 @@
         <td style="width: 16.5%" class="my_td">Surname </td>
         <td style="width:16.5%"> <input class="ingizo-driver"  ng-model="first_name" type="text" /> </td>
         <td style="width: 15%" class="my_td">Vehicle Type </td>
-        <td style="width:15%"> <input class="ingizo-gari" ng-model="type" type="text" /> </td>
+        <td style="width:15%"> <input class="ingizo-gari" ng-model="make" type="text" /> </td>
         <td style="width: 17%" class="my_td">Insurance Type</td>
         <td style="width: 17%"><input class="ingizo-insurance" type="text"></td>
     </tr>

@@ -34,13 +34,13 @@ Route::get('/app/{id}/controllers/{file}', 'AppController@getController');
 Route::get('/api/request/{tag}', 'AndroidController@processtag');
 
 
-//Vehicle Controller Rooutes
+//Vehicle Controller Routes
 Route::get('/api/vehicle/{plate_number}', "VehicleController@getVehicle");
 Route::get('/api/vehicle/{plate_number}/offences', "VehicleController@getOffences");
 Route::get('/api/vehicle/{plate_number}/offences/paid', "VehicleController@getPaidOffences");
 Route::get('/api/vehicle/{plate_number}/offences/notpaid', "VehicleController@getNotPaidOffences");
 
-//Police Controller Rooutes
+//Police Controller Routes
 Route::get('/api/police/{rank_no}', "PoliceController@getPolice");
 
 ////////////////////////////////////////////////////////////////////
@@ -180,14 +180,26 @@ Route::post('/api/offence/', "OffenceController@processOffencePost");
 Route::get('/api/offence/{id}/events/', "OffenceController@getEvents");
 Route::get('/api/offence/{id}/delete/', "OffenceController@delete");
 
+//Route To Submit A New Accident To The Database
 Route::post('/api/accident/', array('uses' => 'AccidentController@submitAccident'));
 
+//Get All accidents From The Database
 Route::get('/api/accidents/', array('uses' => 'AccidentController@getAccidents'));
 
+//Get All Regions From The Database
+Route::get('/api/regions', array('uses' => 'AccidentController@getRegions'));
+
+/*Get A particular accident From The Database
+accident_id is the id for the specific accident
+*/
 Route::get('/api/accident/{accident_id}', array('uses' => 'AccidentController@viewAccident'));
+
 
 Route::get('/api/accident/driver/{driver_id}', array('uses' => 'AccidentController@getDriver'));
 
 Route::get('/api/accident/vehicle/{vehicle_id}', array('uses' => 'AccidentController@getVehicle'));
 
 Route::get('/accident/police/{rank_no}', array('uses' => 'AccidentController@getPoliceInfo'));
+
+//Get Districts given the Region Name
+Route::get('/accident/region/{name}', array('uses' => 'AccidentController@getDistricts'));

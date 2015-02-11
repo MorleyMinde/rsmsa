@@ -96,8 +96,9 @@ mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route
 <script src="<?php echo asset('apps/accident/js/controllers/AccidentController.js')?>"></script>
 <script src="<?php echo asset('apps/accident/js/controllers/AccidentListController.js')?>"></script>
 <script src="<?php echo asset('apps/accident/js/controllers/AccidentChartsController.js')?>"></script>
+<script src="<?php echo asset('apps/accident/js/controllers/AccidentReportController.js')?>"></script>
 <script src="<?php echo asset('apps/accident/js/Chart.js')?>"></script>
-    <script src="<?php echo asset('apps/accident/js/date.js')?>"></script>
+<script src="<?php echo asset('apps/accident/js/date.js')?>"></script>
 <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
 
 </head>

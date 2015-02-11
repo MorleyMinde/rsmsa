@@ -17,7 +17,8 @@ angular.module("accidentApp").config(function($routeProvider)
 
     $routeProvider.when('/statistics' ,{
 
-        templateUrl: 'views/statistics.html'
+        templateUrl: 'views/statistics.html',
+        controller: 'AccidentReportController'
     });
 
     $routeProvider.when('/api/accident/view/:accident_id' ,{

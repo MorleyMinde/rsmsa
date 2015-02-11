@@ -1,211 +1,79 @@
-<h4>Specific Indicators</h4>
+<div ng-controller="AccidentReportController">
 
+    <md-toolbar>
+        <center> <h2 class="md-toolbar-tools">ACCIDENTS STATISTICS</h2></center>
+    </md-toolbar>
 
-<div class='form-group'>
-    <div class='col-sm-2'>
-        <?php
-        $arrayy = array(
-            "General" => "General",
-        "Regions" => "Regions",
-        "Districts" => "Districts",
-        "Car type" => "Car Type",
-        "Offence Nature" => "Offence Nature",
-        "Offence Section" => "Offence Section",
-        "Offence Relating" => "Offence Relating",
-        "Amount Paid" => "Amount Paid",
-        "Licence Status" => "Licence Status",
-        "Gender" => "Gender",
-        );
-        ?>
-        Show<br>{{ Form::select('show[]',array('0'=>'General')+standard::lists('name','id'),'',array('class'=>'form-control multi')) }}
-    </div>
-    <div class='col-sm-2'>
-        Drivers Gender<br>{{ Form::select('vertical',array("All"=>"All","Male"=>"Male","Female"=>"Female"),'',array('class'=>'form-control','required'=>'requiered')) }}
-    </div>
-    <div class='col-sm-4'>
-        Horizontal<br>{{ Form::select('horizontal',array("Year"=>"Year","Years"=>"Years","Age Range"=>"Age Range","No of people"=>"No of people involved in the accident"),'',array('class'=>'form-control','required'=>'requiered')) }}
-    </div>
+    <form method="POST" accept-charset="UTF-8" class="form-horizontal" id="formms"><input name="_token" type="hidden" value="b706ikQaUK8WQWCRyblaQ63uPU9r6ucItLxfS56Y">
 
-    <div class='col-sm-4 year'>
-        Year <br>{{ Form::select('year',array_combine(range(date('Y'),1970), range(date('Y'),1970)),date('Y'),array('class'=>'form-control')) }}
-    </div>
-    <div class='col-sm-4 age'>
-        Age Range <br>{{ Form::select('age',array_combine(range(3,10), range(3,10)),'',array('class'=>'form-control')) }}
-    </div>
-    <div class='col-sm-4 years'>
-        <div class='col-sm-6'>
-            Start <br>{{ Form::select('start',array_combine(range(date('Y'),1970), range(date('Y'),1970)),date('Y')-7,array('class'=>'form-control')) }}
+        <div class="row" style="padding:5px;margin-bottom: 5px ">
+
+            <div class="col-sm-2">
+               Region<br>
+                <select class="form-control" ng-model="selected_region" ng-options="region.name for region in regions" ng-change="getDistrict()">
+                <option value="">Select Region</option>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                District<br>
+                <select class="form-control" ng-model="selected_district" ng-options="district.name for district in districts">
+                    <option value="">Select district</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                Accident Main Cause<br>
+                <select class="form-control" name="offence[]"><option value="Failing to carry reflector on a bicycle">Failing to carry reflector on a bicycle</option><option value="Riding a bicycle/tricycle which has no lights">Riding a bicycle/tricycle which has no lights</option><option value="Using a bicycle/tricycle which has no horns,bell or other prescribed instruments">Using a bicycle/tricycle which has no horns,bell or other prescribed instruments</option><option value="Riding a bicycle,which has no effective brake">Riding a bicycle,which has no effective brake</option><option value="Riding a bicycle in prohibited manner">Riding a bicycle in prohibited manner</option><option value="Failure to carry reflectors on a motor vehicle">Failure to carry reflectors on a motor vehicle</option><option value="Failure to observe instructions conveyed by traffic sign,traffic signals and road markings">Failure to observe instructions conveyed by traffic sign,traffic signals and road markings</option><option value="Offence relating to parking and standing">Offence relating to parking and standing</option><option value="Failure to observe pedestrian crossing">Failure to observe pedestrian crossing</option><option value="Taking motor vehicle without owners consent">Taking motor vehicle without owners consent</option><option value="Failure to use dipped light when approaching an oncoming traffic">Failure to use dipped light when approaching an oncoming traffic</option><option value="Offences relating to overtaking use of lanes,carriageways and conduct at intersections">Offences relating to overtaking use of lanes,carriageways and conduct at intersections</option><option value="Driving or packing a motor vehicle on a footpath">Driving or packing a motor vehicle on a footpath</option><option value="Failure to remove a vehicle from packing place">Failure to remove a vehicle from packing place</option><option value="Failure to remove broken down vehicle">Failure to remove broken down vehicle</option><option value="Failure of the owner or hirer of a motor vehicle to give identity of a driver">Failure of the owner or hirer of a motor vehicle to give identity of a driver</option><option value="Employer failing to keep record of a driver">Employer failing to keep record of a driver</option><option value="Driving or causing a motor vehicle to be driven with defective tyres">Driving or causing a motor vehicle to be driven with defective tyres</option><option value="Driving or causing a motor vehicle or trailer to be driven with a load not well secured">Driving or causing a motor vehicle or trailer to be driven with a load not well secured</option><option value="Driving a commercial vehicle;heavy duty or public service vehicle beyond speed limit">Driving a commercial vehicle;heavy duty or public service vehicle beyond speed limit</option><option value="Failing to comply with road Traffic">Failing to comply with road Traffic</option><option value="Failing to stop a vehicle">Failing to stop a vehicle</option><option value="Stopping the motor vehicle on the left or near side of the road when stopping in township">Stopping the motor vehicle on the left or near side of the road when stopping in township</option><option value="Stopping the motor vehicle within twenty-five feet from comer in township">Stopping the motor vehicle within twenty-five feet from comer in township</option><option value="Unnecessary sounding of horns etc">Unnecessary sounding of horns etc</option><option value="Failing to carry reflectors on motor vehicle">Failing to carry reflectors on motor vehicle</option><option value="Conveying on motor omnibus goods not belonging to passengers">Conveying on motor omnibus goods not belonging to passengers</option><option value="Owner of a public service vehicle failing to mark/print name and address,
+                                                                            maximum number of passenger and weight of goods on the right or off side of a vehicle">Owner of a public service vehicle failing to mark/print name and address,
+                maximum number of passenger and weight of goods on the right or off side of a vehicle</option><option value="Careless or inconsiderate use of motor vehicle">Careless or inconsiderate use of motor vehicle</option><option value="Causing damage to a motor vehicle">Causing damage to a motor vehicle</option><option value="Obstructing a driver of motor vehicle">Obstructing a driver of motor vehicle</option><option value="Restriction on pillion riding">Restriction on pillion riding</option><option value="Riding in dangerous position">Riding in dangerous position</option><option value="Driving unreasonably slowly">Driving unreasonably slowly</option><option value="Failure to stop at Railway crossing">Failure to stop at Railway crossing</option><option value="Failure to tighten a safety belt and or failure to wear a helmet">Failure to tighten a safety belt and or failure to wear a helmet</option><option value="Offences relating to condition of motor vehicle for use on a road">Offences relating to condition of motor vehicle for use on a road</option><option value="Offences relating to driving instructions">Offences relating to driving instructions</option><option value="Failure to display identification marks for vehicle used for driving lessons">Failure to display identification marks for vehicle used for driving lessons</option><option value="Driving without a valid driving license">Driving without a valid driving license</option><option value="Failure to carry certificate of registration in the vehicle">Failure to carry certificate of registration in the vehicle</option><option value="Failure to fix identification marks">Failure to fix identification marks</option><option value="use of motor vehicle without registration">use of motor vehicle without registration</option></select></span>
+            </div>
+            <div class="col-sm-2">
+                From:<br>
+                <input class="form-control" placeholder="Start Date" id="from" name="from" type="text" value="">
+            </div>
+            <div class="col-sm-2">
+                To:<br>
+                <input class="form-control" placeholder="End Date" id="to" name="to" type="text" value="">
+            </div>
+
         </div>
-        <div class='col-sm-6'>
-            End<br>{{ Form::select('end',array_combine(range(date('Y'),1970), range(date('Y'),1970)),date('Y'),array('class'=>'form-control')) }}
+
+        <div class="row" style="padding:5px;margin-bottom: 5px ">
+            <div class="col-sm-3">
+                Show<br><select class="form-control" name="show"><option value="General">General</option><option value="Regions">Regions</option><option value="Districts">Districts</option><option value="Car type">Car Type</option><option value="Offence Nature">Offence Nature</option><option value="Offence Section">Offence Section</option><option value="Offence Relating">Offence Relating</option><option value="Amount Paid">Amount Paid</option><option value="Licence Status">Licence Status</option><option value="Gender">Gender</option></select>
+            </div>
+            <div class="col-sm-3">
+                Drivers Gender<br><select class="form-control"name="vertical"><option value="All">All</option><option value="Male">Male</option><option value="Female">Female</option></select>
+            </div>
+            <div class="col-sm-3">
+                Horizontal<br><select class="form-control" name="horizontal"><option value="Year">Year</option><option value="Years">Years</option><option value="Age Range">Age Range</option></select>
+            </div>
+            <div class="col-sm-3">
+                Year <br><select class="form-control" name="year"><option value="2015" selected="selected">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option><option value="1989">1989</option><option value="1988">1988</option><option value="1987">1987</option><option value="1986">1986</option><option value="1985">1985</option><option value="1984">1984</option><option value="1983">1983</option><option value="1982">1982</option><option value="1981">1981</option><option value="1980">1980</option><option value="1979">1979</option><option value="1978">1978</option><option value="1977">1977</option><option value="1976">1976</option><option value="1975">1975</option><option value="1974">1974</option><option value="1973">1973</option><option value="1972">1972</option><option value="1971">1971</option><option value="1970">1970</option></select>
+            </div>
+
         </div>
+        <div class="col-md-12" >
+            <div class="col-md-2 btn btn-default btn-sm" id="table" ng-click="tableReport()"><img src="http://localhost/psms/public/table.png" style="height: 20px;width: 20px"> Table</div>
+            <div class="col-md-2 btn btn-default btn-sm" id="bar"><img src="http://localhost/psms/public/bar.png" style="height: 20px;width: 20px"> Bar</div>
+            <div class="col-md-2 btn btn-default btn-sm" id="line"><img src="http://localhost/psms/public/line.png" style="height: 20px;width: 20px"> Line</div>
+            <div class="col-md-2 btn btn-default btn-sm" id="column"><img src="http://localhost/psms/public/column.png" style="height: 20px;width: 20px"> Column</div>
+            <!--    <div class="col-md-2 btn btn-default" id="pie"><img src="http://localhost/psms/public/pie.png" style="height: 20px;width: 20px" /> Pie</div>-->
+            <div class="col-md-2 btn btn-default btn-sm" id="combined"><img src="http://localhost/psms/public/combined.jpg" style="height: 20px;width: 20px"> Combined</div>
+            <button type="submit" class="col-md-2 btn btn-default btn-sm" id="excel"><img src="http://localhost/psms/public/cvs.jpg" style="height: 20px;width: 20px"> Excel</button>
+        </div>
+    </form>
+    <div>
+        <table>
+            <head>
+                <tr>
+                    <th ng-repeat="date in results">{{date.time}}</th>
+                </tr>
+            </head>
+            <tbody>
+            <tr>
+                <td ng-repeat="date in results">{{date.offences}}</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </div>
-
-<div class="col-xs-12" style="margin-top: 5px">
-    <div class="col-md-2 btn btn-default btn-sm" id="table"><img src="{{ asset('table.png') }}" style="height: 20px;width: 20px" /> Table</div>
-    <div class="col-md-2 btn btn-default btn-sm" id="bar"><img src="{{ asset('bar.png') }}" style="height: 20px;width: 20px" /> Bar</div>
-    <div class="col-md-2 btn btn-default btn-sm" id="line"><img src="{{ asset('line.png') }}" style="height: 20px;width: 20px" /> Line</div>
-    <div class="col-md-2 btn btn-default btn-sm" id="column"><img src="{{ asset('column.png') }}" style="height: 20px;width: 20px" /> Column</div>
-    <!--    <div class="col-md-2 btn btn-default" id="pie"><img src="{{ asset('pie.png') }}" style="height: 20px;width: 20px" /> Pie</div>-->
-    <div class="col-md-2 btn btn-default btn-sm" id="combined"><img src="{{ asset('combined.jpg') }}" style="height: 20px;width: 20px" /> Combined</div>
-    <button type="submit" class="col-md-2 btn btn-default btn-sm" id="excel"><img src="{{ asset('cvs.jpg') }}" style="height: 20px;width: 20px" /> Excel</button>
-</div>
-{{ Form::close() }}
-
-<div id="chartarea" class="col-xs-12" style="margin-top: 10px">
-    <script>
-        $(document).ready(function (){
-//            $('.multi').multiselect();
-            $('.multi').SumoSelect();
-
-            //minimizing the size of input fields
-            $("select,input").addClass('input-sm')
-            //hidding and showing advance filters
-
-            var year = $('.year').html();
-            var years = $('.years').html();
-            var age = $('.age').html();
-            $(".years,.age").html("")
-            $( "#from" ).datepicker({
-                changeMonth: true,
-                changeYear: true,
-                dateFormat:"yy-mm-dd",
-                onClose: function( selectedDate ) {
-                    $( "#to" ).datepicker( "option", "minDate", selectedDate );
-                }
-            });
-            $( "#to" ).datepicker({
-                changeMonth: true,
-                changeYear: true,
-                dateFormat:"yy-mm-dd",
-                onClose: function( selectedDate ) {
-                    $( "#from" ).datepicker( "option", "maxDate", selectedDate );
-                    if($("#from").val() != ""){
-                        $("select[name=horizontal]").val("Age Range");
-                        $('.year').html("");
-                        $(".years").html("");
-                        $('.age').html(age);
-                    }
-                }
-            });
-
-            $("select[name=region]").change(function(){
-                $("#district-area").html("<i class='fa fa-spinner fa-spin'></i> Wait... ")
-                $.post("<?php echo url('patient/region_check1') ?>/"+$(this).val(),function(dat){
-                    $("#district-area").html(dat);
-                })
-            })
-
-
-            $("select[name=horizontal]").change(function(){
-                if($(this).val() == "Year"){
-                    $('.year').html(year);
-                    $(".years,.age").html("")
-                    $( "#from,#to").val("").datepicker( "refresh" );
-                }else if($(this).val() == "Years"){
-                    $('.year,.age').html("");
-                    $(".years").html(years);
-                    $( "#from,#to").val("").datepicker( "refresh" );
-                }else if($(this).val() == "Age Range"){
-                    $('.year,.years').html("");
-                    $('.age').html(age);
-                }
-            });
-
-            //managing chats buttons
-            $("#table").unbind("click").click(function(){
-                $(".btn").removeClass("btn-info")
-                $(this).addClass("btn-info")
-                $("#chartarea").html("<h3><i class='fa fa-spin fa-spinner '></i><span>Loading...</span><h3>");
-                $("#formms").ajaxSubmit({
-                    url:"<?php echo url('report/general/table') ?>",
-                    target: '#chartarea',
-                    data: {chat:'table'},
-                    success:  afterSuccess
-                });
-            });
-            $("#table").trigger("click");
-
-            $("#pie").unbind("click").click(function(){
-                $(".btn").removeClass("btn-info")
-                $(this).addClass("btn-info")
-                $("#chartarea").html("<h3><i class='fa fa-spin fa-spinner '></i><span>Loading...</span><h3>");
-                $("#formms").ajaxSubmit({
-                    url:"<?php echo url('report/general/pie') ?>",
-                    target: '#chartarea',
-                    data: {chat:'table'},
-                    success:  afterSuccess
-                });
-            });
-
-            $("#bar").unbind("click").click(function(){
-                $(".btn").removeClass("btn-info")
-                $(this).addClass("btn-info")
-                $("#chartarea").html("<h3><i class='fa fa-spin fa-spinner '></i><span>Loading...</span><h3>");
-                $("#formms").ajaxSubmit({
-                    url:"<?php echo url('report/general/bar') ?>",
-                    target: '#chartarea',
-                    data: {chat:'table'},
-                    success:  afterSuccess
-                });
-            });
-
-            $("#combined").unbind("click").click(function(){
-                $(".btn").removeClass("btn-info")
-                $(this).addClass("btn-info")
-                $("#chartarea").html("<h3><i class='fa fa-spin fa-spinner '></i><span>Loading...</span><h3>");
-                $("#formms").ajaxSubmit({
-                    url:"<?php echo url('report/general/combined') ?>",
-                    target: '#chartarea',
-                    data: {chat:'table'},
-                    success:  afterSuccess
-                });
-            });
-
-            $("#exceewl").unbind("click").click(function(){
-                $(".btn").removeClass("btn-info")
-                $(this).addClass("btn-info")
-                $("#chartarea").html("<h3><i class='fa fa-spin fa-spinner '></i><span>Loading...</span><h3>");
-                $("#formms").ajaxSubmit({
-                    url:"<?php echo url('reports/download') ?>",
-                    target: '#chartarea',
-                    data: {chat:'table'},
-                    success:  afterSuccess
-                });
-            });
-
-            $("#column").unbind("click").click(function(){
-                $(".btn").removeClass("btn-info")
-                $(this).addClass("btn-info")
-                $("#chartarea").html("<h3><i class='fa fa-spin fa-spinner '></i><span>Loading...</span><h3>");
-                $("#formms").ajaxSubmit({
-                    url:"<?php echo url('report/general/column') ?>",
-                    target: '#chartarea',
-                    data: {chat:'table'},
-                    success:  afterSuccess
-                });
-            });
-
-            $("#line").unbind("click").click(function(){
-                $(".btn").removeClass("btn-info")
-                $(this).addClass("btn-info")
-                $("#chartarea").html("<h3><i class='fa fa-spin fa-spinner '></i><span>Loading...</span><h3>");
-                $("#formms").ajaxSubmit({
-                    url:"<?php echo url('report/general/line') ?>",
-                    target: '#chartarea',
-                    data: {chat:'table'},
-                    success:  afterSuccess
-                });
-            });
-        });
-
-        function afterSuccess(){
-
-        }
-
-    </script>
-
-</div>
-    
-  

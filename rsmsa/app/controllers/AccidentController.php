@@ -140,12 +140,14 @@ class AccidentController extends BaseController{
  }
 
     public  function viewAccident($accident_id){
+
         $accident = DB::table('rsmsa_accidents')
             ->join('rsmsa_accident_driver', 'rsmsa_accidents.id', '=', 'rsmsa_accident_driver.accident_id')
             ->join('rsmsa_accident_vehicle', 'rsmsa_accidents.id', '=', 'rsmsa_accident_vehicle.accident_id')
             ->join('rsmsa_accident_passenger', 'rsmsa_accidents.id', '=', 'rsmsa_accident_passenger.accident_id')
             ->join('rsmsa_accident_witness', 'rsmsa_accidents.id', '=', 'rsmsa_accident_witness.accident_id')
             ->where('rsmsa_accidents.id','=',$accident_id)->get();
+
         return $accident;
     }
 
@@ -158,5 +160,20 @@ class AccidentController extends BaseController{
     public  function getVehicle($vehicle_id){
         $vehicle = Vehicle::find($vehicle_id)->get();
         return $vehicle;
+    }
+
+    public  function getRegions(){
+
+        return Region::all();
+    }
+
+
+    public  function getDistricts($name){
+
+        $districts = DB::table('regions')
+            ->join('districts', 'regions.id', '=', 'districts.region_id')
+            ->where('regions.name','=',$name)->get();
+
+        return $districts;
     }
 } 

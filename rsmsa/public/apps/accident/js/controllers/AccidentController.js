@@ -42,7 +42,7 @@ $scope.accident={
     //Fetch driver information given the license number.
     $scope.getDriver = function() {
         $license_id = 'T64747 ABB';
-        $http.get("/model/driver/" + $license_id)
+        $http.get("/api/accident/driver/" + $license_id)
             .success(function(data) {
                     console.log(data[0]);
                     $scope.driver1_surname = data[0].first_name;
@@ -66,7 +66,7 @@ $scope.accident={
     $scope.getVehicle = function() {
         $param = "T673 ABD";
         console.log($param);
-        $http.get("/model/vehicle/" + $param)
+        $http.get("/api/accident/vehicle/" + $param)
             .success(function(data) {
                 console.log(data[0]);
                 $scope.vehicle_type = data[0].make;

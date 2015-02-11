@@ -18,7 +18,6 @@ angular.module('accidentApp').controller('AccidentListController',function($scop
                     $scope.accident_no = data[0].accident_reg_number;
                     $scope.ocs_check = data[0].ocs_check;
                     $scope.supervisor_check = data[0].ocs_check;
-                    $scope.rank_no = data[0].rank_no;
                     $scope.sign_date = data[0].sign_date;
                     $scope.accident_fatal = data[0].accident_fatal;
                     $scope.accident_severe_injury = data[0].accident_severe_injury;
@@ -60,6 +59,23 @@ angular.module('accidentApp').controller('AccidentListController',function($scop
                     $scope.witness_national_id = data[0].witness_national_id;
                     $scope.witness_phone_number = data[0].witness_phone_number;
 
+                    //get police info
+
+                    $rank = data[0].rank_no;
+                    $http.get("/accident/police/" + $rank)
+                        .success(function(police) {
+                            console.log(police[0]);
+                            $scope.police_name = police[0].first_name + " " + police[0].last_name;
+                            $scope.police_station = police[0].name;
+                            $scope.station_district = police[0].district;
+                            $scope.station_region = police[0].region;
+                            $scope.rank_no = police[0].rank_no;
+
+                        }).error(function(error) {
+                            console.log(error);
+                        });
+
+
                     //driver details
                     $driver_id = data[0].driver_id;
                     $http.get("/api/accident/driver/" + $driver_id)
@@ -92,8 +108,6 @@ angular.module('accidentApp').controller('AccidentListController',function($scop
                             $scope.owner_physical_address = vehicle[0].owner_physical_address;
                             $scope.owner_address = vehicle[0].owner_address;
                             $scope.make = vehicle[0].make;
-                            $scope.type = vehicle[0].type;
-                            $scope.color = vehicle[0].color;
                             $scope.yom = vehicle[0].yom;
                             $scope.chasis_no = vehicle[0].chasis_no;
 
