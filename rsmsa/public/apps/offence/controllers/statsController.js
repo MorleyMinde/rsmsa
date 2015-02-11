@@ -28,7 +28,8 @@ angular.module('offenceApp')
 	           $http.post("/api/offence/stats",{"type": "gender"}).success(function(data){
 					//data.offence_date = convertDateToClient(data.offence_date);
 					$scope.results = data;
-					var pieData = [{
+					if(data.length != 0){
+						var pieData = [{
 					        value: data[0].offences,
 					        color:"#F7464A",
 					        highlight: "#FF5A5E",
@@ -73,6 +74,8 @@ angular.module('offenceApp')
 						};
 					var ctx1= document.getElementById("ctx1").getContext("2d");
 					var myDoughnutChart = new Chart(ctx1).Doughnut(pieData,options);
+					}
+					
 				}).error(function(error) {
 					alert(error);
 				});
