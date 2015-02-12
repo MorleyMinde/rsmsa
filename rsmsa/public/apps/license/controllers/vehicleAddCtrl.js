@@ -2,7 +2,7 @@
  * Created by kelvin on 2/10/15.
  */
 angular.module('rsmsaApp')
-    .controller('driverAddCtrl',function($scope,$http){
+    .controller('vehicleAddCtrl',function($scope,$http){
         $scope.data = {};
         $scope.currentKaya = {};
         $scope.currentSaving = false;
@@ -12,18 +12,40 @@ angular.module('rsmsaApp')
         $scope.kayaUpdatedSuccess = false;
         $scope.kayaSavedFalue = false;
         $scope.kayaUpdateFalue = false;
-        $scope.currentKaya.nationality = "Tanzania"
 
         //getting a list of countries
         $http.get('../../countries').success(function(data){
             $scope.data.countries = data;
         });
 
+        //getting a list of vehicle ownership category
+        $http.get('../../ownership_category').success(function(data){
+            $scope.data.ownership_category = data;
+        });
+
+      //getting a list of car makes
+        $http.get('../../car_make').success(function(data){
+            $scope.data.make = data;
+        });
+
+        //getting a list of car makes
+        $http.get('../../car_year').success(function(data){
+            $scope.data.yom = data;
+        });
+
+       //getting a list of car models
+        $scope.getModels = function(make){
+            $http.get('../../car_model/'+make).success(function(data){
+                $scope.data.model = data;
+            });
+        }
+
+
         //getting a list of driving classes
         $http.get('../../driving_classes').success(function(data){
             $scope.data.driving_classes = [];
-           angular.forEach(data,function(classes){
-               $scope.data.driving_classes.push({icon: "<img src='/img/"+classes.name+".jpg' />",name: classes.name, descr: classes.description,ticked: false})
+            angular.forEach(data,function(classes){
+                $scope.data.driving_classes.push({icon: "<img src='/img/"+classes.name+".jpg' />",name: classes.name, descr: classes.description,ticked: false})
             })
 
         });
@@ -34,15 +56,9 @@ angular.module('rsmsaApp')
             dateFormat: 'mm-dd-yy'
         };
 
-        $scope.saveDriver = function(driver){
-            driver.driving_class =[];
-            angular.forEach( $scope.data.driving_classes, function( value, key ) {
-                if ( value.ticked === true ) {
-                    driver.driving_class.push(value.name);
-                }
-            });
-            $scope.currentSaving = true;
-            $http.post("../../driver", driver).success(function (newDriver) {
+        $scope.saveVehicle = function(vehicle){
+           $scope.currentSaving = true;
+            $http.post("../../vehicle", vehicle).success(function (newVehicle) {
                 $scope.currentKaya = {};
                 $scope.kayaSavedSuccess = true;
                 $scope.currentSaving = false;

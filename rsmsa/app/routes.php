@@ -55,8 +55,39 @@ Route::post('/driver/upload',array('uses'=>'DriverController@upload'));
 //saving a single driver
 Route::post('/driver',array('uses'=>'DriverController@store'));
 
+//Deleting Driver
+Route::post('/driver/delete/{id}',array('uses'=>'DriverController@destroy'));
+
 //getting drivers
 Route::get('/driving_classes',array('uses'=>'DriverController@drivingClasses'));
+
+
+////////////////////////////////////////////////////////////////////
+////////////////////////////Vehicles////////////////////////////////
+////////////////////////////////////////////////////////////////////
+//getting ownership_category
+Route::get('/ownership_category',array('uses'=>'VehicleController@getOwnership'));
+
+//getting car_make
+Route::get('/car_make',array('uses'=>'VehicleController@getCarMake'));
+
+//getting car_model
+Route::get('/car_model/{make}',array('uses'=>'VehicleController@getCarModel'));
+
+//getting car_ year of manufacture
+Route::get('/car_year',array('uses'=>'VehicleController@getCarYear'));
+
+//saving a single car
+Route::post('/vehicle',array('uses'=>'VehicleController@store'));
+
+//getting list of motor vehicles
+Route::get('/vehicle',array('uses'=>'VehicleController@index'));
+
+//dealing with uploaded driver excel file
+Route::post('/vehicle/upload',array('uses'=>'VehicleController@upload'));
+
+//Deleting motor vehicle
+Route::post('/vehicle/delete/{id}',array('uses'=>'VehicleController@destroy'));
 
 ////////////////////////////////////////////////////////////////////
 ///////////////////Administrative Unit Routes///////////////////////

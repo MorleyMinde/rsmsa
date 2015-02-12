@@ -4,15 +4,18 @@
 angular.module("rsmsaApp").config( function($routeProvider){
     $routeProvider.when("/home",{
         templateUrl: 'views/home.html',
-        controller: 'driverAppCtrl'
+        controller: 'vehicleAppCtrl'
     });
     $routeProvider.when("/list",{
         templateUrl: 'views/list.html',
-        controller: 'driverAppCtrl'
+        controller: 'vehicleAppCtrl'
     });
-    $routeProvider.when("/add",{
+    $routeProvider.when("/import",{
+        templateUrl: 'views/import.html',
+        controller: 'vehicleImportCtrl'
+    });$routeProvider.when("/add",{
         templateUrl: 'views/add.html',
-        controller: 'driverAddCtrl'
+        controller: 'vehicleAddCtrl'
     });
     $routeProvider.otherwise({
         redirectTo: '/home'
