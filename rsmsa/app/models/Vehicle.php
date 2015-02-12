@@ -9,7 +9,7 @@ class Vehicle extends HasOffenceImpl{
 	
 	//Get paid offences
 	public function offences(){
-		return $this->hasMany('Offence','vehicle_plate_number');
+		return $this->hasMany('Offence','vehicle_plate_number','plate_number');
 	}
 	//Get paid offences
 	public function paidOffences(){

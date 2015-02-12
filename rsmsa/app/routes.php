@@ -179,7 +179,7 @@ Route::get('/api/driver/{license_number}/offences', "DriverController@getOffence
 Route::get('/api/driver/{license_number}/offences/paid', "DriverController@getPaidOffences");
 Route::get('/api/driver/{license_number}/offences/notpaid', "DriverController@getNotPaidOffences");
 
-//Offence Controller Rooutes
+//Offence Controller Routes
 Route::get('/api/offence/registry', "OffenceController@getOffenceRegistry");
 Route::post('/api/offence/report', "OffenceController@getReport");
 Route::post('/api/offence/stats', "OffenceController@getStats");
@@ -189,6 +189,7 @@ Route::get('/api/offence/{id}', "OffenceController@getOffence");
 Route::get('/api/offences', "OffenceController@getOffences");
 Route::post('/api/offence/', "OffenceController@processOffencePost");
 Route::get('/api/offence/{id}/events/', "OffenceController@getEvents");
+Route::get('/api/offence/{id}/payment/', "OffenceController@getPayment");
 Route::get('/api/offence/{id}/delete/', "OffenceController@delete");
 
 Route::post('/api/accident/', array('uses' => 'AccidentController@submitAccident'));

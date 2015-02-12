@@ -13,7 +13,7 @@ class VehicleController extends BaseController {
 	 */
 	public function getVehicle($plate_number)
 	{
-		return Vehicle::find($plate_number);
+		return Vehicle::where("plate_number","=",$plate_number)->first();
 	}
 	/**
 	 * Get offences made by a vehicle

@@ -12,7 +12,6 @@ class CreateTables extends Migration {
 	 */
 	public function up()
 	{
-
         Schema::create('rsmsa_persons', function ($table) {
             $table->increments('id');
             $table->string('first_name', 128);
@@ -68,7 +67,7 @@ class CreateTables extends Migration {
         });
         Schema::create('rsmsa_drivers', function ($table) {
             $table->increments('id');
-            $table->string('license_number');
+            $table->string('license_number')->unique();
             $table->string('first_name');
             $table->string('last_name');
             $table->string('physical_address');
@@ -93,7 +92,22 @@ class CreateTables extends Migration {
             $table->increments('id');
             $table->text('nature');
             $table->string('section');
+            $table->string('relating');
+            $table->string('amount');
             $table->timestamps();
+        });
+        Schema::create('rsmsa_receipts', function ($table) {
+        	$table->increments('id');
+        	$table->string('receipt_number');
+        	$table->string('amount');
+        	$table->string('payment_mode');
+        	$table->date('date');
+        	$table->timestamps();
+        });
+        Schema::create('rsmsa_offence_receipts', function ($table) {
+        	$table->integer('offence_id')->unsigned();
+            $table->integer('receipt_id')->unsigned();
+            $table->primary(array('offence_id', 'receipt_id'));
         });
         Schema::create('rsmsa_offences', function($table)
         {
@@ -267,7 +281,9 @@ class CreateTables extends Migration {
 		Schema::drop('rsmsa_vehicles');
 		Schema::drop('rsmsa_drivers');
 		Schema::drop('rsmsa_offence_registry');
+		Schema::drop('rsmsa_receipts');
 		Schema::drop('rsmsa_offences');
+		Schema::drop('rsmsa_offence_receipts');
 		Schema::drop('rsmsa_offence_events');
         Schema::drop('rsmsa_accidents');
         Schema::drop('rsmsa_accident_driver');

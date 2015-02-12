@@ -9,175 +9,14 @@
 			<div class="col-sm-2">
 				Region<br>
 				<select multiple="multiple" class="form-control multi"
-					name="region[]"><option value="1">Arusha</option>
-					<option value="2">Dar es salaam</option>
-					<option value="3">Dodoma</option>
-					<option value="4">Geita</option>
-					<option value="5">Iringa</option>
-					<option value="6">Kagera</option>
-					<option value="7">Katavi</option>
-					<option value="8">Kigoma</option>
-					<option value="9">Kilimanjaro</option>
-					<option value="10">Lindi</option>
-					<option value="11">Manyara</option>
-					<option value="12">Mara</option>
-					<option value="13">Mbeya</option>
-					<option value="14">Morogoro</option>
-					<option value="15">Mtwara</option>
-					<option value="16">Mwanza</option>
-					<option value="17">Njombe</option>
-					<option value="18">Pwani</option>
-					<option value="19">Rukwa</option>
-					<option value="20">Ruvuma</option>
-					<option value="21">Shinyanga</option>
-					<option value="22">Simiyu</option>
-					<option value="23">Singida</option>
-					<option value="24">Tabora</option>
-					<option value="25">Tanga</option></select>
+					name="region[]" ng-model="criteria.regions" ng-options="i.id as i.name for i in regions">
+					</select>
 			</div>
 			<div class="col-sm-2">
 				District<br>
-				<span id="district-area"><select multiple="multiple"
-					class="form-control multi" name="district[]"><option
-							value="1">Arusha</option>
-						<option value="2">Arumeru</option>
-						<option value="3">Karatu</option>
-						<option value="4">Longido</option>
-						<option value="5">Monduli</option>
-						<option value="6">Ngorongoro</option>
-						<option value="7">Ilala</option>
-						<option value="8">Kinondoni</option>
-						<option value="9">Temeke</option>
-						<option value="10">Bahi</option>
-						<option value="11">Dodoma</option>
-						<option value="12">Kondoa</option>
-						<option value="13">Kongwa</option>
-						<option value="14">Mpwapwa</option>
-						<option value="15">Chamwino</option>
-						<option value="16">Bukombe</option>
-						<option value="17">Chato</option>
-						<option value="18">Geita</option>
-						<option value="19">Mbongowe</option>
-						<option value="20">Nyang'hwale</option>
-						<option value="21">Iringa rural</option>
-						<option value="22">Iringa urban</option>
-						<option value="23">Kilolo</option>
-						<option value="24">Mufindi</option>
-						<option value="25">Biharamulo</option>
-						<option value="26">Bukoba urban</option>
-						<option value="27">Bukoba rural</option>
-						<option value="28">Karagwe</option>
-						<option value="29">Misenyi</option>
-						<option value="30">Muleba</option>
-						<option value="31">Ngara</option>
-						<option value="32">Mpanda</option>
-						<option value="33">Mlele</option>
-						<option value="34">Kasulu</option>
-						<option value="35">Kibondo</option>
-						<option value="36">Kigoma rural</option>
-						<option value="37">Kigoma urban</option>
-						<option value="38">Hai</option>
-						<option value="39">Moshi rural</option>
-						<option value="40">Moshi urban</option>
-						<option value="41">Mwanga</option>
-						<option value="42">Rombo</option>
-						<option value="43">Same</option>
-						<option value="44">Siha</option>
-						<option value="45">Kilwa</option>
-						<option value="46">Lindi rural</option>
-						<option value="47">Lindi urban</option>
-						<option value="48">Liwale</option>
-						<option value="49">Nachingwea</option>
-						<option value="50">Ruangwa</option>
-						<option value="51">Babati</option>
-						<option value="52">Hanang</option>
-						<option value="53">Kiteto</option>
-						<option value="54">Mbulu</option>
-						<option value="55">Simanjiro</option>
-						<option value="56">Bunda</option>
-						<option value="57">Musoma rural</option>
-						<option value="58">Musoma urban</option>
-						<option value="59">Serengeti</option>
-						<option value="60">Tarime</option>
-						<option value="61">Rolya</option>
-						<option value="62">Chunya</option>
-						<option value="63">Ileje</option>
-						<option value="64">Kyela</option>
-						<option value="65">Mbarali</option>
-						<option value="66">Mbeya rural</option>
-						<option value="67">Mbeya urban</option>
-						<option value="68">Mbozi</option>
-						<option value="69">Rungwe</option>
-						<option value="70">Kilombero</option>
-						<option value="71">Kilosa</option>
-						<option value="72">Morogoro rural</option>
-						<option value="73">Morogoro urban</option>
-						<option value="74">Mvomero</option>
-						<option value="75">Ulanga</option>
-						<option value="76">Lulindi</option>
-						<option value="77">Masasi</option>
-						<option value="78">Mtwara rural</option>
-						<option value="79">Mtwara urban</option>
-						<option value="80">Nanyumbu</option>
-						<option value="81">Newala</option>
-						<option value="82">Tandahimba</option>
-						<option value="83">Ilemela</option>
-						<option value="84">Kwimba</option>
-						<option value="85">Magu</option>
-						<option value="86">Misungwi</option>
-						<option value="87">Nyamagana</option>
-						<option value="88">Sengerema</option>
-						<option value="89">Ukerewe</option>
-						<option value="90">Ludewa</option>
-						<option value="91">Makete</option>
-						<option value="92">Njombe rural</option>
-						<option value="93">Njombe urban</option>
-						<option value="94">Wanging'ombe</option>
-						<option value="95">Bagamoyo</option>
-						<option value="96">Kibaha</option>
-						<option value="97">Kisarawe</option>
-						<option value="98">Mafia</option>
-						<option value="99">Mkuranga</option>
-						<option value="100">Rufiji</option>
-						<option value="101">Nkasi</option>
-						<option value="102">Sumbawanga rural</option>
-						<option value="103">Sumbawanga urban</option>
-						<option value="104">Mbinga</option>
-						<option value="105">Songea rural</option>
-						<option value="106">Songea urban</option>
-						<option value="107">Tunduru</option>
-						<option value="108">Namtumbo</option>
-						<option value="109">Nyasa</option>
-						<option value="110">Kahama</option>
-						<option value="111">Kishapu</option>
-						<option value="112">Shinyanga rural</option>
-						<option value="113">Shinyanga urban</option>
-						<option value="114">Bariadi</option>
-						<option value="115">Busega</option>
-						<option value="116">Itilima</option>
-						<option value="117">Maswa</option>
-						<option value="118">Meatu</option>
-						<option value="119">Iramba</option>
-						<option value="120">Manyoni</option>
-						<option value="121">Singida rural</option>
-						<option value="122">Singida urban</option>
-						<option value="123">Igunga</option>
-						<option value="124">Nzega</option>
-						<option value="125">Sikonge</option>
-						<option value="126">Uyui</option>
-						<option value="127">Tabora</option>
-						<option value="128">Urambo</option>
-						<option value="129">Handeni</option>
-						<option value="130">Kilindi</option>
-						<option value="131">Korogwe</option>
-						<option value="132">Lushoto</option>
-						<option value="133">Muheza</option>
-						<option value="134">Mkinga</option>
-						<option value="135">Pangani</option>
-						<option value="136">Tanga</option>
-						<option value="137">Busokelo</option>
-						<option value="138">Momba</option>
-						<option value="139">Kalambo</option></select></span>
+				<span id="district-area">
+					<select multiple="multiple" class="form-control multi" ng-model="criteria.districts" ng-options="i.id as i.name for i in regdistricts" name="district[]"></select>
+				</span>
 			</div>
 			<div class="col-sm-2">
 				Offence Nature<br>
@@ -357,35 +196,35 @@
 				</div>
 			</div>
 		</div>
-
 		<div class="col-xs-12" style="margin-top: 5px">
-			<div class="col-md-2 btn btn-default btn-sm" id="table"
-				ng-click="tableReport()">
+			<md-button class="md-raised col-md-2" ng-click="tableReport()">
+				
 				<img src="http://localhost/psms/public/table.png"
 					style="height: 20px; width: 20px"> Table
-			</div>
-			<div class="col-md-2 btn btn-default btn-sm" id="bar">
+			</md-button>
+			
+			<md-button class="md-raised col-md-2"  id="bar">
 				<img src="http://localhost/psms/public/bar.png"
 					style="height: 20px; width: 20px"> Bar
-			</div>
-			<div class="col-md-2 btn btn-default btn-sm" id="line">
+			</md-button>
+			<md-button class="md-raised col-md-2"  id="line">
 				<img src="http://localhost/psms/public/line.png"
 					style="height: 20px; width: 20px"> Line
-			</div>
-			<div class="col-md-2 btn btn-default btn-sm" id="column">
+			</md-button>
+			<md-button class="md-raised col-md-2"  id="column">
 				<img src="http://localhost/psms/public/column.png"
 					style="height: 20px; width: 20px"> Column
-			</div>
+			</md-button>
 			<!--    <div class="col-md-2 btn btn-default" id="pie"><img src="http://localhost/psms/public/pie.png" style="height: 20px;width: 20px" /> Pie</div>-->
-			<div class="col-md-2 btn btn-default btn-sm" id="combined">
+			<md-button class="md-raised col-md-2"  id="combined">
 				<img src="http://localhost/psms/public/combined.jpg"
 					style="height: 20px; width: 20px"> Combined
-			</div>
-			<button type="submit" class="col-md-2 btn btn-default btn-sm"
+			</md-button>
+			<md-button type="submit" class="md-raised col-md-2" 
 				id="excel">
 				<img src="http://localhost/psms/public/cvs.jpg"
 					style="height: 20px; width: 20px"> Excel
-			</button>
+			</md-button>
 		</div>
 	</form>
 	<div>

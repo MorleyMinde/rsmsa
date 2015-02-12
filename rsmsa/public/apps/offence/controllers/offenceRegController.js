@@ -1,6 +1,8 @@
 /**
  * Offence registry controller to show all the registry and enable viewing of their corresponding offences
  * 
+ * @author Vincent P. Minde
+ * 
  */
 angular.module('offenceApp').controller('offenceRegController',function($scope,$http) {
 		//Initialize offence registry

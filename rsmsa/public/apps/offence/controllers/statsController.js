@@ -34,15 +34,16 @@ angular.module('offenceApp')
 					        color:"#F7464A",
 					        highlight: "#FF5A5E",
 					        label: "Male"
-					    },
-					    {
+					    }];
+					if(data.length > 1)
+					{
+						pieData.push({
 					    	value: data[1].offences,
 					        color: "#46BFBD",
 					        highlight: "#5AD3D1",
 					        label: "Female"
-					    }
-					               
-					];
+					    });
+					}
 					var options ={
 						    //Boolean - Whether we should show a stroke on each segment
 						    segmentShowStroke : true,

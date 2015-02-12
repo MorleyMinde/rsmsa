@@ -66,8 +66,23 @@ class Offence extends JSONPresentableImpl{
 				$total += $registry->amount;
 			}
 			$offence->amount = $total;
+			//$receipt = $offence->payment();
+			$offence->paid_amount = $offence->payment();
 			array_push($offencesRet,$offence);
 		}
 		return $offencesRet;
+	}
+	/**
+	 * Returns the payment involved in the offence
+	 *
+	 * @see Receipt Model
+	 *
+	 * @return Object(Receipt)
+	 */
+	public function payment()
+	{
+		$offenceReceipt = OffenceReceipt::where("offence_id","=",$this->id)->first();
+		return Receipt::find($offenceReceipt->receipt_id);
+		//return $this->hasMany('Receipt','rsmsa_offence_receipts','offence_id','receipt_id');
 	}
 }

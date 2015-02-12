@@ -23,7 +23,7 @@ class DriverController extends BaseController {
      */
     public function getDriver($license_number)
     {
-        return Driver::find($license_number);
+        return Driver::where("license_number","=",$license_number)->first();
 
     }
 	/**
@@ -32,8 +32,9 @@ class DriverController extends BaseController {
 	 * @param string $license_number
 	 */
 	public function getOffences($license_number){
-		$driver = Driver::find($license_number);
+		$driver = $this->getDriver($license_number);
 		return $driver->getObjectOffencesJSON(Offence::appendAmoutToOffences($driver->offences));
+		
 	}
 	/**
 	 * Get offences made by a vehicle that are paid
@@ -41,7 +42,7 @@ class DriverController extends BaseController {
 	 * @param string $license_number
 	 */
 	public function getPaidOffences($license_number){
-		$driver = Driver::find($license_number);
+		$driver = $this->getDriver($license_number);
 		return $driver->getObjectOffencesJSON(Offence::appendAmoutToOffences($driver->paidOffences));
 	}
 	/**
@@ -50,7 +51,7 @@ class DriverController extends BaseController {
 	 * @param string $license_number
 	 */
 	public function getNotPaidOffences($license_number){
-		$driver = Driver::find($license_number);
+		$driver = $this->getDriver($license_number);
 		return $driver->getObjectOffencesJSON(Offence::appendAmoutToOffences($driver->notPaidOffences));
 	}
 

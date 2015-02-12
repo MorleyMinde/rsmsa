@@ -1,3 +1,9 @@
+/**
+ * Offence payment Controller
+ * 
+ * @author Vincent P. Minde
+ * 
+ */
 angular.module('offenceApp').controller('offencePaymentController',function($scope,$http) {
 	
 	//Initialize entity Model
@@ -23,10 +29,9 @@ angular.module('offenceApp').controller('offencePaymentController',function($sco
 		//Initialize offence list
 		$scope.offences = [];
 		
-		//Get offence from server
-		$scope.getOffence = function(){
-			if($scope.request.id != "")//If request id is not empty
-			{
+		//
+		$scope.$watch('request.id', function (newValue, oldValue) {
+			if(newValue != ''){
 				//Initialize url for the request
 				var url = "/api/"+$scope.entity.id+"/"+$scope.request.id+"/offences";
 				if($scope.status.id != '')//If status id is not empty
@@ -40,8 +45,16 @@ angular.module('offenceApp').controller('offencePaymentController',function($sco
 					$scope.offences = data.offences;
 				}).error(function(error) {
 					//alert(error);
+					console.log(error);
 					//TODO Handle error
 				});
+			}
+	    });
+		//Get offence from server
+		$scope.getOffence = function(){
+			if($scope.request.id != "")//If request id is not empty
+			{
+				
 			}
 		}
 		/**
