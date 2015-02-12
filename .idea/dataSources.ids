@@ -2895,6 +2895,17 @@
       <column name="region" sqlType="VARCHAR" length="30" precision="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
+    <table name="VehicleModelYear" schema="" catalog="rsmsa" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="year" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="make" sqlType="VARCHAR" length="50" precision="0" nullable="true" jdbcType="12"/>
+      <column name="model" sqlType="VARCHAR" length="50" precision="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="U_VehicleModelYear_year_make_model" unique="true" columns="year,make,model"/>
+      <index name="I_VehicleModelYear_make" unique="false" columns="make"/>
+      <index name="I_VehicleModelYear_model" unique="false" columns="model"/>
+      <index name="I_VehicleModelYear_year" unique="false" columns="year"/>
+    </table>
     <table name="countries" schema="" catalog="rsmsa" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="country_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
@@ -3088,6 +3099,15 @@
       <column name="commit" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
+    <table name="rsmsa_licence_renewal" schema="" catalog="rsmsa" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="driver_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="renewal_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="expiry_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="updated_at" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
     <table name="rsmsa_offence_events" schema="" catalog="rsmsa" type="TABLE">
       <column name="offence_id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="offence_registry_id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
@@ -3193,10 +3213,32 @@
       <column name="color" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="yom" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="chasis_no" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="vehicle_control_number" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="owner_id" sqlType="VARCHAR" length="233" precision="0" nullable="false" jdbcType="12"/>
+      <column name="ownership_category" sqlType="VARCHAR" length="233" precision="0" nullable="false" jdbcType="12"/>
+      <column name="body_type" sqlType="VARCHAR" length="233" precision="0" nullable="false" jdbcType="12"/>
+      <column name="model_number" sqlType="VARCHAR" length="233" precision="0" nullable="false" jdbcType="12"/>
+      <column name="class" sqlType="VARCHAR" length="233" precision="0" nullable="false" jdbcType="12"/>
+      <column name="engine_number" sqlType="VARCHAR" length="233" precision="0" nullable="false" jdbcType="12"/>
+      <column name="engine_capacity" sqlType="VARCHAR" length="233" precision="0" nullable="false" jdbcType="12"/>
+      <column name="fuel" sqlType="VARCHAR" length="233" precision="0" nullable="false" jdbcType="12"/>
+      <column name="number_of_axial" sqlType="VARCHAR" length="233" precision="0" nullable="false" jdbcType="12"/>
+      <column name="axial_distance" sqlType="VARCHAR" length="211" precision="0" nullable="false" jdbcType="12"/>
+      <column name="seating_capacity" sqlType="VARCHAR" length="234" precision="0" nullable="false" jdbcType="12"/>
+      <column name="tare_weight" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="gross_wheight" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="imported_from" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
       <exported-key name="rsmsa_accident_vehicle_vehicle_id_foreign" table="rsmsa_accident_vehicle" schema="" catalog="rsmsa" columns="vehicle_id"/>
       <exported-key name="rsmsa_offences_vehicle_plate_number_foreign" table="rsmsa_offences" schema="" catalog="rsmsa" columns="vehicle_plate_number"/>
       <index name="rsmsa_vehicles_plate_number_unique" unique="true" columns="plate_number"/>
+    </table>
+    <table name="vehicle_owner_category" schema="" catalog="rsmsa" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="village" schema="" catalog="rsmsa" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>

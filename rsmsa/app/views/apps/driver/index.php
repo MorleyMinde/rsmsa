@@ -119,6 +119,11 @@
                         <a href="#/home" style="width:100%" ng-click="closeNav()"><md-button class="sub-menu-button">Home</md-button></a>
                     </md-item-content>
                 </md-item>
+                <md-item>
+                    <md-item-content>
+                        <a href="#/list" style="width:100%" ng-click="closeNav()"><md-button class="sub-menu-button">List</md-button></a>
+                    </md-item-content>
+                </md-item>
 				<md-item>
 					<md-item-content>
 					<a href="#/add" style="width:100%" ng-click="closeNav()"><md-button class="sub-menu-button">Registration</md-button></a>

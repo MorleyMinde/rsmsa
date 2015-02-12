@@ -1,31 +1,30 @@
 <style>
-.drop-box {
-background: #F8F8F8;
-border: 5px dashed #DDD;
-width: 200px;
-height: 85px;
-text-align: center;
-padding-top: 25px;
-margin: 10px;
-}
-.dragover {
-border: 5px dashed blue;
-}
+    .drop-box {
+        background: #F8F8F8;
+        border: 5px dashed #DDD;
+        width: 200px;
+        height: 85px;
+        text-align: center;
+        padding-top: 25px;
+        margin: 10px;
+    }
+    .dragover {
+        border: 5px dashed blue;
+    }
 </style>
-<h3 class="text-center">Drivers Information Import</h3>
-<p style="font-size: 17px">This Functionality allows you to import the excel file containing Drivers information to the system  </p>
+<h3 class="text-center">Vehicle Information Import</h3>
+<p style="font-size: 17px">This Functionality allows you to import motor vehicle information from the excel file to the system  </p>
 <md-whiteframe class="md-whiteframe-z5 col-sm-12">
     <h4>The expected file format is</h4>
-    <img src="/img/driver_details" style="width:100%">
+    <img src="/img/vehicle.png" style="width:100%">
     <hr>
-    <h3>Make sure of the following before uploading the file</h3>
+    <h3>Make sure of the following before uploading the file <a href="/apps/license/vehicle.xlsx" title="Get sample Excel File"><i class="fa fa-download"></i>  </a> </h3>
     <ol>
-        <li>The heading columns in the excel are on the first row.</li>
-        <li>The dates formats for birth date and expiry date are mm/dd/yyyy or dd/mm/yyyy or yyyy-mm-dd</li>
+        <li>The heading columns in the excel are on the first row.(not preceded by any rows)</li>
         <li>The column names looks exactly the same as the one in the sample above</li>
-        <li>If more than one Driving classes separate classes using comma delimiter eg A,A2,D,C</li>
+        <li>Use standard names for the Make and model of cars</li>
     </ol>
-   Drop File:<span class="help-block">**The upload will start immediately  after you select or drop the file</span>
+    Drop File:<span class="help-block">**The upload will start immediately  after you select or drop the file</span>
     <div ng-file-drop ng-file-select ng-model="files" class="drop-box"
          drag-over-class="dragover" ng-multiple="true" allow-dir="false">
         Drop xlxs here or click to upload
@@ -41,9 +40,9 @@ border: 5px dashed blue;
     </ul>
 
 </md-whiteframe>
-        <div ng-if="data.imported.length != 0">
-            <h3>Import Summary</h3>
-        </div>
+<div ng-if="data.imported.length != 0">
+    <h3>Import Summary</h3>
+</div>
 <table datatable="ng" class="row-border hover" ng-if="data.imported != 0">
     <thead>
     <tr>

@@ -199,7 +199,8 @@ class DriverController extends BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$driver = Driver::find($id);
+        $driver->delete();
 	}
 
 }

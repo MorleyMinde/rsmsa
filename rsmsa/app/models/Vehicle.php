@@ -4,7 +4,7 @@ class Vehicle extends HasOffenceImpl{
 
     protected   $table = 'rsmsa_vehicles';
 
-
+    protected  $guarded = array('id');
 	public $timestamps = false;
 	
 	//Get paid offences

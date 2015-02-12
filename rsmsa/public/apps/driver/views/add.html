@@ -25,7 +25,9 @@
         margin-bottom: 0px;
         height: 22px;
         width: 42px;
-    }
+    }b{
+         color: #084646;
+     }
 </style>
         <h3 class="text-center">Driver Registration</h3>
 <md-whiteframe class="md-whiteframe-z5" layout layout-align="center center" style="margin-bottom: 10px">
@@ -76,20 +78,18 @@
                         button-label="icon name"
                         item-label="icon name descr"
                         tick-property="ticked"
-                        output-model="currentKaya.driving_class"
                         >
                 </div>
-                <select class="entry" ng-model="currentKaya.driving_class" required multiple>
-                    <option value="">-- Select --</option>
-                    <option  ng-repeat="class in data.driving_classes" value="{{ class.name }}">{{ class.name }}</option>
-                </select>
+                <!--<select class="entry" ng-model="currentKaya.driving_class" required multiple>-->
+                    <!--<option value="">-- Select --</option>-->
+                    <!--<option  ng-repeat="class in data.driving_classes" value="{{ class.name }}">{{ class.name }}</option>-->
+                <!--</select>-->
             </div>
         </div>
     </form>
 
 </div>
     </md-whiteframe>
-        {{ currentKaya }}
 <!--saving messages-->
 <span class="pull-left" ng-if="currentSaving"><i class='fa fa-cog fa-2x fa-spin '></i> Saving.... </span>
 <span class="pull-left text-success" ng-if="kayaSavedSuccess"><i class='fa fa-check fa-2x'></i> Saved Successful </span>

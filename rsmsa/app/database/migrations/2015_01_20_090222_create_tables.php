@@ -55,16 +55,31 @@ class CreateTables extends Migration {
         });
         Schema::create('rsmsa_vehicles', function ($table) {
             $table->increments('id');
-            $table->string('plate_number')->unique();
+            $table->string('vehicle_control_number');
+            $table->string('plate_number');
+            $table->string('owner_id');
             $table->string('owner_name');
             $table->string('owner_nationality');
+            $table->string('ownership_category');
             $table->string('owner_physical_address');
             $table->string('owner_address');
             $table->string('make');
             $table->string('type');
+            $table->string('body_type');
+            $table->string('model_number');
+            $table->string('class');
+            $table->string('engine_number');
+            $table->string('engine_capacity');
+            $table->string('fuel');
+            $table->string('number_of_axial');
+            $table->string('axial_distance');
+            $table->string('seating_capacity');
             $table->string('color');
             $table->string('yom');
             $table->string('chasis_no');
+            $table->string('tare_weight');
+            $table->string('gross_wheight');
+            $table->string('imported_from');
         });
         Schema::create('rsmsa_drivers', function ($table) {
             $table->increments('id');
