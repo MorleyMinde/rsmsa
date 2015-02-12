@@ -61,13 +61,14 @@ class Offence extends JSONPresentableImpl{
 		foreach($offences as $offence)
 		{
 			$total = 0;
+			//$receipt = $offence->payment();
 			foreach($offence->offenceRegistries as $registry)
 			{
 				$total += $registry->amount;
 			}
 			$offence->amount = $total;
-			//$receipt = $offence->payment();
-			$offence->paid_amount = $offence->payment();
+			//$receipt = $offence->payment;
+			$offence->paid_amount = "paid_amount";
 			array_push($offencesRet,$offence);
 		}
 		return $offencesRet;
