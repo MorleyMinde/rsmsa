@@ -5,6 +5,7 @@
 angular.module("accidentApp").config(function($routeProvider)
 {
 
+
     $routeProvider.when('/report' ,{
 
         templateUrl: 'views/index.html'
@@ -105,4 +106,6 @@ angular.module("accidentApp").config(function($routeProvider)
                 }
             }
         };
+
+
     });

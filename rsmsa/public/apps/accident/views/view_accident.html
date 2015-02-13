@@ -69,10 +69,10 @@
             <td class="number" style="border-width:0px">3</td>
             <td class="my_td" >Region</td>
             <td><input class="ingizo" ng-model="station_region" type="text" name="region" required ></td>
-            <td class="my_td" >Police Officer (2) </td>
-            <td><input class="ingizo"  type="text"  name="officer_2" required/></td>
-            <td><input class="ingizo"  type="text"/></td>
-            <td><input class="ingizo"  type="text"/></td>
+            <td class="my_td" >Accident Cause</td>
+            <td><input class="ingizo"  type="text" ng-model="cause" name="officer_2" required/></td>
+            <td class="my_td" >Weather Conditions</td>
+            <td><input class="ingizo"  type="text" ng-model="weather"/></td>
             <td class="my_td" >Severe Injury(n)</td>
             <td><input class="ingizo" ng-model="accident_severe_injury" type="text"/></td>
             <td class="my_td" >Only Damage</td>
@@ -392,27 +392,13 @@
 
         </td>
         <td style="width: 16.5%">
-            <select style="width: 100%" ng-model="pass_alcohol">
-                <option value="10">10</option>
-                <option value="20">20</option>
-                <option value="30">30</option>
-                <option value="40">40</option>
-                <option value="50">50</option>
-                <option value="60">60</option>
-                <option value="70">70</option>
-                <option value="80">80</option>
-                <option value="90">90</option>
-                <option value="100">100</option>
-            </select> </td>
+            <input class="ingizo-driver"  type="text" required ng-model="pass_alcohol"/>
+        </td>
 
-        <td style="width: 17%"  class="my_td">Seat Belt / Helmet use <input type="checkbox"  ng-true-value="'No seat belt'" ng-false-value="'No seat belt'"  style="padding: 0px;padding-left:5px; margin: 0px;border: 0px"></td>
+        <td style="width: 17%"  class="my_td">Passenger casuality </td>
         <td style="width: 17%">
-            <select style="width: 100%" ng-model="pass_casuality">
-                <option value="">Choose Passenger casuality</option>
-                <option value="Fatal">Fatal</option>
-                <option value="Severe">Severe</option>
-                <option value="Light">Light</option>
-            </select> </td>
+            <input class="ingizo-driver"  type="text" required ng-model="pass_casuality"/>
+        </td>
     </tr>
     </tbody>
 </table>

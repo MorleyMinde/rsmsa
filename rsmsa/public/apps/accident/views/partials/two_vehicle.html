@@ -2,6 +2,7 @@
     <div  ng-controller="AccidentAppCtrl" class="tabsdemoDynamicTabs">
 
         <md-tabs md-selected="selectedIndex" style="margin-top: 0px">
+
             <md-tab ng-repeat="tab in tabs" ng-disabled="tab.disabled" label="{{tab.title}}">
 
                 <div class="demo-tab tab{{$index%4}}" layout="column" >

@@ -57,6 +57,16 @@ td{
     border: 0px;
 }
 
+.statistics{
+    width: 100%;
+    border-left: 5px !important;
+    border-right: 5px !important;
+    border-top-width: 0px;
+    border-bottom-width: 1px;
+    border-bottom-style: double;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
 .ingizo-driver{
     width: 100%;border:0px;
     background-color:#d7e4bc;
@@ -110,8 +120,15 @@ td{
     background-color: #f2dddc;
 
 }
+.carddemoBasicUsage md-card {
+    min-height: 50px; }
 
 .md-tab {
+    margin: 0px;
+    padding-bottom: 0px;
+}
+
+.md-tab>label {
     margin: 0px;
     padding-bottom: 0px;
 }
@@ -210,6 +227,7 @@ TABS CSS STYLESHEET
 
 .tabsdemoDynamicTabs .md-tab {
     color: #90caf9 !important; }
+
 .tabsdemoDynamicTabs .md-tab.active, .tabsdemoDynamicTabs .md-tab:focus {
     color: white !important; }
 .tabsdemoDynamicTabs .md-tab[disabled] {

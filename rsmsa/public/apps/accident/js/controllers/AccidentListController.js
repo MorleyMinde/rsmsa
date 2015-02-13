@@ -3,8 +3,10 @@
  */
 angular.module('accidentApp').controller('AccidentListController',function($scope,$http) {
     $scope.accidents = {};
+
     $http.get("/api/accidents").success(function(data) {
         $scope.accidents = data;
+        console.log(data[0]);
     });
 }).controller('ViewAccidentController', ['$scope', '$routeParams','$http',
         function($scope, $routeParams ,$http) {
@@ -25,6 +27,8 @@ angular.module('accidentApp').controller('AccidentListController',function($scop
                     $scope.accident_only_damage = data[0].accident_only_damage;
                     $scope.latitude = data[0].latitude;
                     $scope.longitude = data[0].longitude;
+                    $scope.cause = data[0].cause;
+                    $scope.weather = data[0].weather;
                     $scope.hit_run = data[0].hit_run;
                     $scope.accident_date_time = data[0].accident_date_time;
                     $scope.accident_area = data[0].accident_area;

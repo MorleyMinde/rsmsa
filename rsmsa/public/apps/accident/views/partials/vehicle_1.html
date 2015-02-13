@@ -38,9 +38,9 @@
         <tr>
             <td class="number" style="border-width:0px">2</td>
             <td style="width: 15%" class="my_td">Driving License ID </td>
-            <td style="width: 15%"> <input class="ingizo-driver" type="text" ng-model="accident.driver1_license_id" name="driver1_license_id" ng-mouseleave="getDriver()" required/> </td>
+            <td style="width: 15%"> <input class="ingizo-driver" type="text" ng-model="driver.driver1_license_id" name="driver1_license_id" ng-mouseleave="getDriver()" required/> </td>
             <td style="width: 16.5%" class="my_td">Vehicle Registration Number</td>
-            <td style="width: 16.5%"><input class="ingizo-gari" type="text"  ng-model="accident.vehicle_reg_no" name="vehicle1_reg_no" ng-mouseleave="getVehicle()" required/></td>
+            <td style="width: 16.5%"><input class="ingizo-gari" type="text"  ng-model="vehicle.vehicle_reg_no" name="vehicle1_reg_no" ng-mouseleave="getVehicle()" required/></td>
             <td style="width: 17%" class="my_td">Insurance Company</td>
             <td style="width: 17%" class="my_td"><input class="ingizo-insurance" type="text" ng-model="insurance_company_name" name="insurance_company_name" required/></td>
 
@@ -129,7 +129,13 @@
             <td class="number" style="border-width:0px">11</td>
             <td style="width: 15%" class="my_td">Nationality </td>
             <td style="width: 15%"> <input class="ingizo-driver"  type="text"  ng-model="driver1_nationality" name="driver1_nationality" required/> </td>
-            <td style="width: 16.5%" >Drugs <span> <input style="margin-top: 0px" ng-model="accident.driver_drug" type="checkbox" ng-true-value="'Found using drugs while driving'" ng-false-value="'Not using Drugs'" ng-model="accident.driver1_drugs" name="driver1_drugs" required/> </span> </td>
+            <td style="width: 16.5%" >
+                <select style="width: 100%" ng-model="accident.driver_severity">
+                    <option value="">Choose Driver Casuality</option>
+                    <option value="Injured">Killed</option>
+                    <option value="Injured">Injured</option>
+                </select>
+            </td>
             <td style="width: 16.5%">Phone Use <span> <input  style="margin-top: 0px" ng-model="accident.driver_phone_use" type="checkbox" ng-true-value="'Found using phone while driving'" ng-false-value="'No phone use'"  ng-model="accident.driver1_phone_use" name="driver1_phone_use" required/> </span> </td>
             <td style="width: 17%" class="my_td">Infrastructure</td>
             <td style="width: 17%"><input class="ingizo-driver" type="text" required /></td>

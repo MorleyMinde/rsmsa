@@ -15,10 +15,21 @@
 
         <tr>
             <td class="my_heading" style="border-width:0px">A : SCENE OF ACCIDENT & SEVERITY</td>
-            <td style="width:11%;background-color: #ffffff">Acc Register</td>
-            <td style="width:22%"> <input class="ingizo"  type="text" ng-model="accident.accident_reg_no" name="accident_no" required/> </td>
-            <td style="width:8.5%">OCS Check</td>
-            <td style="width:8.5%"> <input class="ingizo"  type="text" ng-model="accident.ocs_check" name="ocs_check" required /> </td>
+            <td style="width:8.25%;background-color: #ffffff">Acc Register</td>
+            <td style="width:8.5%"> <input class="ingizo"  type="text" ng-model="accident.accident_reg_no" name="accident_no" required/> </td>
+            <td style="width:8.25%">Acc.Class</td>
+            <td style="width:8%">
+            <select ng-model="accident.class">
+                <option value="">Acc. Classification</option>
+                <option value="Fatal Accident">Fatal Accident</option>
+                <option value="Injure Accident">Injure Accident</option>
+                <option value="Ordinary Accident">Ordinary Accident</option>
+                <option value="Human Error Accident">Human Error Accident</option>
+                <option value="Not Human Error Accident or Unavoidable Accident">Not Human Error Accident or Unavoidable Accident</option>
+            </select>
+            </td>
+            <td  style="width:8.5%">O.C.S Check</td>
+            <td style="width:8.5%"> <input class="ingizo"  type="text" ng-model="accident.ocs_check" name="supervisor_check" required /> </td>
             <td  style="width:8.5%">S.visor Check</td>
             <td style="width:8.5%"> <input class="ingizo"  type="text" ng-model="accident.supervisor_check" name="supervisor_check" required /> </td>
         </tr>
@@ -57,17 +68,14 @@
             <td><input class="ingizo"  type="text" name="accident.station_region" ng-model="accident.station_region" required ></td><td class="my_td"  style="width: 10%">Police Officer (1) </td>
             <td style="width: 11%"><input class="ingizo" ng-model="accident.office1_rank_no" name="office1_rank_no" type="text" required  ng-mouseleave="getPolice()" /></td>
             <td style="width: 11%"><input class="ingizo" ng-model="accident.office1_name" name="office1_name" type="text"required /></td>
-            <td style="width: 11%" ng-controller="DatepickerDemoCtrl">
+            <td style="width: 11%" ng-controller="DateController">
                 <p class="input-group" style="padding: 0px;border: 0px;margin: 0px">
-                    <input placeholder="sign. date" type="text" style="height:15px !important; padding: 0px;border: 0px;margin: 0px;font-size: 11px" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="accident.dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-              <span class="input-group-btn">
-                <button  style="padding: 0px;border: 0px;margin: 0px" type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-              </span>
+                    <input ui-date="dateOptions" ng-model="accident.dt" name="Date"  placeholder="sign. date">
                 </p>
             </td>
             <td style="width: 8.5%">Fatal(n)</td>
             <td  style="width:8.5%"><input class="ingizo" ng-model="accident.fatal" name="accident_fatal"  type="text" required/></td>
-            <td  style="width: 8.5%">Simple Injured(n)</td>
+            <td  style="width: 8.5%">Simple(n)</td>
             <td style="width: 8.5%"><input class="ingizo" ng-model="accident.simple" name="accident_simple"  type="text" required/></td>
 
         </tr>
@@ -76,10 +84,34 @@
             <td class="number" style="border-width:0px">3</td>
             <td class="my_td"  style="width: 10%">District </td>
             <td style="width: 10%"><input class="ingizo"  type="text" ng-model="accident.station_district" name="station_district" required /></td>
-            <td class="my_td" >Police Officer (2) </td>
-            <td><input class="ingizo"  type="text"  ng-model="accident.office2_rank_no" name="office2_rank_no" required/></td>
-            <td><input class="ingizo"  type="text" ng-model="accident.office2_name" name="office2_name"/></td>
-            <td><input class="ingizo"  type="text"  ng-model="accident.office2_sign_date" name="office2_sign_date"/></td>
+            <td class="my_td" >Acc.Cause </td>
+            <td>
+                <select style="width: 100%" ng-model="accident.cause">
+                    <option value="">Accident Cause</option>
+                    <option value="Dangerous Driving">Dangerous Driving</option>
+                    <option value="Careless Driver">Careless Driver</option>
+                    <option value="Mechanical Defects">Mechanical Defects</option>
+                    <option value="Fire">Fire</option>
+                    <option value="Excessive Speed">Excessive Speed</option>
+                    <option value="Lights">Lights</option>
+                    <option value="Animal Stray">Animal Stray</option>
+                    <option value="Overtaking">Overtaking</option>
+                    <option value="Level Crossing">Level Crossing</option>
+                    <option value="Obstruction">Obstruction</option>
+                    <option value="Bad-Road">Bad-Road</option>
+               </select>
+            </td>
+            <td class="my_td" >Weather </td>
+            <td>
+                <select style="width: 100%" ng-model="accident.weather">
+                    <option value="">Accident Weather</option>
+                    <option value="Wet">Wet</option>
+                    <option value="Rain">Rain</option>
+                    <option value="Dry">Dry</option>
+                    <option value="Fogg">Fogg</option>
+                    <option value="Slippery">Slippery</option>
+                </select>
+            </td>
             <td class="my_td" >Severe Injury(n)</td>
             <td><input class="ingizo"  type="text" ng-model="accident.severe" name="accident_severe" required/></td>
             <td class="my_td" >Only Damage</td>
@@ -100,7 +132,7 @@
         <tr>
             <td class="my_heading" style="border-width:0px">B : TIME AND LOCATION</td>
             <td style="width:11%">Latitude</td>
-            <td style="mewidth:11%"> <input class="ingizo"  type="text" ng-model="accident.latitude" name="latitude"  required /> </td>
+            <td style="width:11%"> <input class="ingizo"  type="text" ng-model="accident.latitude" name="latitude"  required /> </td>
             <td style="width:11%">Longitude</td>
             <td style="width:8.5%"> <input class="ingizo"  type="text" ng-model="accident.longitude" name="longitude"  required /> </td>
             <td style="width:12.75%">Hit & Run</td>
@@ -121,12 +153,9 @@
 
             <tbody >
             <td class="number" style="border-width:0px">1</td>
-            <td style="width: 15%" ng-controller="DatepickerDemoCtrl">
+            <td style="width: 15%" ng-controller="DateController">
                 <p class="input-group">
-                    <input type="text" style=" height:15px !important;padding: 0px;border: 0px;margin: 0px;font-size: 11px" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="accident.dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-              <span class="input-group-btn">
-                <button  style="padding: 0px;border: 0px;margin: 0px" type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-              </span>
+                    <input ui-date="dateOptions" ng-model="accident.dt" name="Date"  placeholder="Accident date">
                 </p>
             </td>
             <td style="width: 15%">Accident Time</td>
@@ -312,7 +341,7 @@
         </div>
 
     </div>
-    <center> <md-button style="padding-top: 5px" class="md-raised md-primary" ng-click="sendAccident(accident)" ng-disabled="AccidentFormCtrl.$invalid"> Report This Accident</md-button></center>
+    <center> <md-button style="padding-top: 5px" class="md-raised md-primary" ng-click="sendAccident(accident)" ng-disabled=""> Report This Accident</md-button></center>
 </div>
 </form>
 
