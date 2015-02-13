@@ -74,7 +74,7 @@ class VehicleController extends BaseController {
 	 * @param string $plate_number
 	 */
 	public function getOffences($plate_number){
-		$vehicle = Vehicle::find($plate_number);
+		$vehicle = $this->getVehicle($plate_number);
 		return $vehicle->getObjectOffencesJSON(Offence::appendAmoutToOffences($vehicle->offences));
 	}
 	/**
@@ -83,7 +83,7 @@ class VehicleController extends BaseController {
 	 * @param string $plate_number
 	 */
 	public function getPaidOffences($plate_number){
-		$vehicle = Vehicle::find($plate_number);
+		$vehicle = $this->getVehicle($plate_number);
 		return $vehicle->getObjectOffencesJSON(Offence::appendAmoutToOffences($vehicle->paidOffences));
 	}
 	/**
@@ -92,7 +92,7 @@ class VehicleController extends BaseController {
 	 * @param string $plate_number
 	 */
 	public function getNotPaidOffences($plate_number){
-		$vehicle = Vehicle::find($plate_number);
+		$vehicle = $this->getVehicle($plate_number);
 		return $vehicle->getObjectOffencesJSON(Offence::appendAmoutToOffences($vehicle->notPaidOffences));
 	}
 

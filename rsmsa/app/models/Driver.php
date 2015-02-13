@@ -22,9 +22,9 @@ class Driver extends HasOffenceImpl{
         return $this-> hasMany('AccidentDriver' , 'driver_id');
     }	
     public function paidOffences(){
-		return $this->offences()->where('paid', '=', true);
+		return $this->offences()->whereIn("id",OffenceReceipt::get(array("offence_id"))->lists("offence_id"));
 	}
 	public function notPaidOffences(){
-		return $this->offences()->where('paid', '=', false);
+		return $this->offences()->whereNotIn("id",OffenceReceipt::get(array("offence_id"))->lists("offence_id"));
 	}
 }

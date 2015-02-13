@@ -30,16 +30,17 @@
 </form>
 <table>
 	<thead>
-		<tr><th>#</th><th>Date</th><th>Place</th><th>Payment Mode</th><th>Amount</th><th>Status</th><th>Action</th></tr>
+		<tr><th>#</th><th>Date</th><th>Place</th><th>Amount Payable</th><th>Status</th><th>Payment Mode</th><th>Paid Amount</th><th>Action</th></tr>
 	</thead>
 	<tbody>
 		<tr ng-repeat="offence in offences">
 			<td>{{$index + 1}}</td>
 			<td>{{offence.offence_date}}</td>
 			<td>{{offence.place}}</td>
-			<td>{{offence.payment_mode}}</td>
 			<td>{{offence.amount}}</td>
-			<td>{{getStatus(offence.paid)}}</td>
+			<td>{{getStatus(offence.receipt)}}</td>
+			<td>{{getPaymentMode(offence.receipt)}}</td>
+			<td>{{getAmount(offence.receipt)}}</td>
 			<td>
 				<a href="#/offence/view/{{offence.id}}" >
 					<md-button class="md-raised md-primary">
