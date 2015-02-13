@@ -42,9 +42,12 @@
 			<td>{{getPaymentMode(offence.receipt)}}</td>
 			<td>{{getAmount(offence.receipt)}}</td>
 			<td>
-				<a href="#/offence/view/{{offence.id}}" >
-					<md-button class="md-raised md-primary">
-						View Details
+				<a href="#/offence/view/{{offence.id}}">
+					<md-button class="md-hue-3 md-raised md-primary md-fab">
+							<md-tooltip>
+					          View Offence Details
+					        </md-tooltip>
+							<i class="fa fa-check" style="font-size: 20px;"></i> 
 					</md-button>
 				</a>
 			</td>
