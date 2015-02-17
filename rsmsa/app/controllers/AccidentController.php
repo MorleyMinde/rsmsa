@@ -13,6 +13,7 @@ class AccidentController extends BaseController{
     public function submitAccident(){
         $accident = new Accident;
         $accident -> accident_reg_number = Input::json()-> get('accident_reg_no');
+        $accident -> accident_class = Input::json()-> get('class');
         $accident -> ocs_check = Input::json()-> get('ocs_check');
         $accident -> supervisor_check = Input::json()-> get('supervisor_check');
         $accident -> rank_no = Input::json()-> get('office1_rank_no');
@@ -31,6 +32,8 @@ class AccidentController extends BaseController{
         $accident -> road_name = Input::json()-> get('road_name');
         $accident -> road_number = Input::json()-> get('road_no');
         $accident -> road_mark = Input::json()-> get('road_mark');
+        $accident->cause = Input::json() -> get('cause');
+        $accident->weather = Input::json() -> get('weather');
         $accident -> intersection_name = Input::json()-> get('intersection_name');
         $accident -> intersection_number = Input::json()-> get('intersection_no');
         $accident -> intersection_mark = Input::json()-> get('intersection_mark');
@@ -50,7 +53,7 @@ class AccidentController extends BaseController{
         $driver_accident-> driver_id = 1;
         //end get current driver id
 
-        $driver_accident->drugs = Input::json() -> get('driver_drug');
+        $driver_accident->severity = Input::json() -> get('driver_severity');
         $driver_accident->phone_use = Input::json() -> get('driver_phone_use');
         $driver_accident->seat_belt = Input::json() -> get('seat_belt');
         $driver_accident->alcohol = Input::json() -> get('driver1_alcohol');
@@ -100,18 +103,18 @@ class AccidentController extends BaseController{
 
         //enter witness details associated with the accident
 
-        $passenger_accident = new AccidentWitness();
+        $witness_accident = new AccidentWitness();
 
-        $passenger_accident->accident()->associate($accident);
-        $passenger_accident->witness_name = Input::json() -> get('witness_name');
-        $passenger_accident->witness_gender = Input::json() -> get('witness_gender');
-        $passenger_accident->witness_dob = Input::json() -> get('witness_dob');
-        $passenger_accident->witness_physical_address = Input::json() -> get('witness_p_address');
-        $passenger_accident->witness_address = Input::json() -> get('witness_address');
-        $passenger_accident->witness_national_id = Input::json() -> get('witness_nationality');
-        $passenger_accident->witness_phone_number = Input::json() -> get('witness_phone');
+        $witness_accident->accident()->associate($accident);
+        $witness_accident->witness_name = Input::json() -> get('witness_name');
+        $witness_accident->witness_gender = Input::json() -> get('witness_gender');
+        $witness_accident->witness_dob = Input::json() -> get('witness_dob');
+        $witness_accident->witness_physical_address = Input::json() -> get('witness_p_address');
+        $witness_accident->witness_address = Input::json() -> get('witness_address');
+        $witness_accident->witness_national_id = Input::json() -> get('witness_nationality');
+        $witness_accident->witness_phone_number = Input::json() -> get('witness_phone');
 
-        $passenger_accident->save();
+        $witness_accident->save();
 
     }
 
@@ -134,29 +137,78 @@ class AccidentController extends BaseController{
 
     }
 
+    //Get All Accidents
  public  function getAccidents(){
 
      return Accident::all();
  }
 
+    //Count All Accidents in a given class,district and year
+    //@param -> $class,$district,$year
+    public  function countAccidents($class,$district,$year)
+    {
+        $accidents = DB::table('rsmsa_accidents')
+            ->join('rsmsa_accident_driver', 'rsmsa_accidents.id', '=', 'rsmsa_accident_driver.accident_id')
+            ->join('rsmsa_accident_passenger', 'rsmsa_accidents.id', '=', 'rsmsa_accident_passenger.accident_id')
+            ->where('rsmsa_accidents.accident_class', '=', $class)
+            ->where('rsmsa_accidents.area_district', '=', $district)
+            ->where(DB::raw('YEAR(rsmsa_accidents.sign_date)'), '=', $year)->get();
+        return $accidents;
+    }
+
+
     public  function viewAccident($accident_id){
+
         $accident = DB::table('rsmsa_accidents')
             ->join('rsmsa_accident_driver', 'rsmsa_accidents.id', '=', 'rsmsa_accident_driver.accident_id')
             ->join('rsmsa_accident_vehicle', 'rsmsa_accidents.id', '=', 'rsmsa_accident_vehicle.accident_id')
             ->join('rsmsa_accident_passenger', 'rsmsa_accidents.id', '=', 'rsmsa_accident_passenger.accident_id')
             ->join('rsmsa_accident_witness', 'rsmsa_accidents.id', '=', 'rsmsa_accident_witness.accident_id')
             ->where('rsmsa_accidents.id','=',$accident_id)->get();
+
         return $accident;
     }
 
-
-    public  function getDriver($driver_id){
-        $driver = Driver::find($driver_id)->get();
+//get driver info given the driver_id
+    public  function getDriver($id){
+        $driver = Driver::find($id)->get();
         return $driver;
     }
 
-    public  function getVehicle($vehicle_id){
-        $vehicle = Vehicle::find($vehicle_id)->get();
+    //get driver info given the driver license
+    public  function getDriverDetails($license){
+        $driver = Driver::where('license_number', '=',$license)->get();
+        return $driver;
+    }
+
+    //get driver info given the vehicle_id
+    public  function getVehicle($id){
+        $vehicle = Vehicle::find($id)->get();
         return $vehicle;
     }
+
+    //get driver info given the plateNumber
+    public  function getVehicleDetails($plateNumber)
+    {
+        $vehicle = Vehicle::where('plate_number' , '=' , $plateNumber)->get();
+        return $vehicle;
+    }
+
+    //Get All Regions
+    public  function getRegions(){
+
+        return Region::all();
+    }
+
+//Get Districts by Name
+    public  function getDistricts($name){
+
+        $districts = DB::table('regions')
+            ->join('districts', 'regions.id', '=', 'districts.region_id')
+            ->where('regions.name','=',$name)->get();
+
+        return $districts;
+    }
+
+
 } 

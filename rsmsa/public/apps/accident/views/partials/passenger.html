@@ -30,7 +30,8 @@
                 </select>
             </td>
             <td style="width: 17%" class="my_td">Date of Birth </td>
-            <td style="width:17%"> <input class="ingizo-driver" ng-model="accident.passenger_dob" type="text" required/> </td>
+
+            <td style="width:17%"> <input ui-date="dateOptions" ng-model="accident.passenger_dob" name="Date"  placeholder="birthdate" required></td>
 
         <tr>
 
@@ -70,10 +71,10 @@
             <td style="width: 17%">
                 <select style="width: 100%" ng-model="accident.passenger_casuality">
                     <option value="">Choose Passenger casuality</option>
-                    <option value="Fatal">Fatal</option>
-                    <option value="Severe">Severe</option>
-                    <option value="Light">Light</option>
-                </select> </td>
+                    <option value="Injured">Killed</option>
+                    <option value="Injured">Injured</option>
+                </select>
+            </td>
         </tr>
         </tbody>
     </table>

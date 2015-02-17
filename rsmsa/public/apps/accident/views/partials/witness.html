@@ -21,9 +21,17 @@
             <td style="width: 15%" class="my_td">Name </td>
             <td style="width:15%"> <input class="ingizo-driver"  type="text" required  ng-model="accident.witness_name"/> </td>
             <td style="width: 16.5%" class="my_td">Gender</td>
-            <td style="width:16.5%"> <input class="ingizo-driver"  type="text" required  ng-model="accident.witness_gender"/> </td>
+            <td style="width:16.5%">
+                <select style="width: 100%" ng-model = "accident.witness_gender">
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </td>
             <td style="width: 17%" class="my_td">Date of Birth </td>
-            <td style="width:17%"> <input class="ingizo-driver"  type="text" required  ng-model="accident.witness_dob"/> </td>
+            <td style="width:17%">
+                <input ui-date="dateOptions" ng-model="accident.witness_dob" name="Date"  placeholder="birthdate" required>
 
         <tr>
 

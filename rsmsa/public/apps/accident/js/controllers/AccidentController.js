@@ -3,7 +3,17 @@
  */
 
 //Controller to handle accident form .
-angular.module("accidentApp").controller('AccidentFormCtrl' , function($scope,$http){
+angular.module("accidentApp")
+    .controller('DateController', function($scope) {
+
+        //options for angular date picker
+        $scope.dateOptions = {
+            changeYear: true,
+            changeMonth: true,
+            yearRange: '1900:-0'
+        }
+    })
+        .controller('AccidentFormCtrl' , function($scope,$http){
 
     //Function to handle Accident form submission
 
@@ -21,10 +31,21 @@ angular.module("accidentApp").controller('AccidentFormCtrl' , function($scope,$h
 $scope.accident={
     "office1_rank_no" : ""
 };
+
+$scope.driver = {
+    "driver1_license_id" : ""
+};
+
+
+$scope.vehicle = {
+   "vehicle_reg_no" : ""
+};
+
+
 //get police information given the rank number
     $scope.getPolice = function() {
-        $rank_no = "R111" ;
-        $http.get("/accident/police/" + $rank_no)
+
+        $http.get("/accident/police/" + $scope.accident.office1_rank_no)
             .success(function(data) {
                 console.log(data[0]);
                     $scope.accident.police_station= data[0].name;
@@ -34,15 +55,15 @@ $scope.accident={
 
 
             }).error(function(error) {
-                alert("Err:"+error);
+               // alert("Err:"+error);
                 $scope.data.error = error;
             });
     }
 
     //Fetch driver information given the license number.
     $scope.getDriver = function() {
-        $license_id = 'T64747 ABB';
-        $http.get("/model/driver/" + $license_id)
+
+        $http.get("/api/accident/driver/license/" +  $scope.driver.driver1_license_id)
             .success(function(data) {
                     console.log(data[0]);
                     $scope.driver1_surname = data[0].first_name;
@@ -64,9 +85,8 @@ $scope.accident={
 
     //Fetch vehicle information given the plate number.
     $scope.getVehicle = function() {
-        $param = "T673 ABD";
-        console.log($param);
-        $http.get("/model/vehicle/" + $param)
+
+        $http.get("/api/accident/vehicle/plate/" + $scope.vehicle.vehicle_reg_no)
             .success(function(data) {
                 console.log(data[0]);
                 $scope.vehicle_type = data[0].make;
@@ -83,27 +103,6 @@ $scope.accident={
                 console.log(error);
             });
     }
-    //fetch police information given the rank
-    $scope.police = {};
-    $scope.$watch('offence.vehicle_plate_number', function (newValue, oldValue) {
-
-        if(newValue != '')
-        {
-            $http.get("/model/police/" + $scope.police.rank).success(
-                function(data) {
-                    // alert(data[0].make);
-                    if (data.length > 0) {
-                        $scope.police.station = data[1].name;
-                    } else {
-                        $scope.police.station = "";
-                    }
-
-                }).error(function(error) {
-                    alert(error);
-                    $scope.data.error = error;
-                });
-        }
-    });
 
 });
 

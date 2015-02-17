@@ -140,9 +140,6 @@ class CreateTables extends Migration {
             $table->string('payment_mode');
             $table->string('latitude');
             $table->string('longitude');
-            $table->foreign('vehicle_plate_number')->references('plate_number')->on('rsmsa_vehicles');
-            $table->foreign('driver_license_number')->references('license_number')->on('rsmsa_drivers');
-            $table->foreign('rank_no')->references('rank_no')->on('rsmsa_police');
             $table->timestamps();
         });
 
@@ -171,6 +168,7 @@ class CreateTables extends Migration {
 
             $table->increments('id');
             $table->string('accident_reg_number');
+            $table->string('accident_class');
             $table->string('ocs_check');
             $table->string('supervisor_check');
             $table->string('rank_no');
@@ -182,6 +180,8 @@ class CreateTables extends Migration {
             $table->integer('accident_only_damage')->unsigned();
             $table->string('latitude');
             $table->string('longitude');
+            $table->string('cause');
+            $table->string('weather');
             $table->string('hit_run');
             $table->string('accident_date_time');
             $table->string('accident_area');
@@ -205,7 +205,7 @@ class CreateTables extends Migration {
             $table->foreign('accident_id')->references('id')->on('rsmsa_accidents');
             $table->integer('driver_id')->unsigned();
             $table->foreign('driver_id')->references('id')->on('rsmsa_drivers');
-            $table->string('drugs');
+            $table->string('severity');
             $table->string('phone_use');
             $table->string('seat_belt');
             $table->integer('alcohol')->unsigned();
@@ -268,16 +268,18 @@ class CreateTables extends Migration {
         });
 
 
-        Schema::create('rsmsa_districts', function ($table) {
+        Schema::create('districts', function ($table) {
             $table->increments('id');
-            $table-> string('district');
+            $table-> string('name');
             $table-> integer('region_id')->unsigned();
+            $table->timestamps();
         });
 
-        Schema::create('rsmsa_regions', function ($table) {
+        Schema::create('regions', function ($table) {
             $table->increments('id');
-            $table-> string('region');
-            $table-> string('');
+            $table-> string('name');
+            $table-> string('coordinate');
+            $table->timestamps();
         });
     }
 	/**

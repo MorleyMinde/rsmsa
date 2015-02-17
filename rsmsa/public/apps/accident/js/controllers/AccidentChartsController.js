@@ -6,7 +6,8 @@ angular.module('accidentApp').controller('AccidentChartController',function($sco
 
 
 // line chart data
-var buyerData = {
+var buyerData =
+{
     labels : ["January","February","March","April","May","June"],
     datasets : [
     {
@@ -17,7 +18,7 @@ var buyerData = {
     data : [10,9,12,8,6,15]
     }
     ]
-    }
+}
 // get line chart canvas
 var buyers = document.getElementById('buyers').getContext('2d');
 // draw line chart
@@ -67,8 +68,7 @@ var barData = {
    // strokeColor : "#48A4D1",
     //    data : [10,9,12,8,6,15]
    // },
-    {
-    fillColor : "rgba(73,188,170,0.4)",
+    {   fillColor : "rgba(73,188,170,0.4)",
     strokeColor : "rgba(72,174,209,0.4)",
         data : [10,9,12,8,6,15]
     }
