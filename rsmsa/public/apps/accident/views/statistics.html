@@ -95,11 +95,11 @@
                             <td class="my_td"><input class="statistics" ng-model="accident.rickshawers_injured_total"/></td>
                         </tr>
 
-                        <tr>
+                     <!--   <tr>
                             <td class="my_td">Total</td>
                             <td class="my_td">{{(accident|filter:{severity:'Killed'}).length}}</td>
                             <td class="my_td">{{(accident|filter:{severity:'Injured'}).length}}</td>
-                        </tr>
+                        </tr>-->
                         </tbody>
                     </table>
                 </div>
@@ -143,11 +143,11 @@
                            <td class="my_td">{{(accident|filter:{weather:'Slippery'}|filter:{pass_casuality:'Injured'}).length}}</td>
                        </tr>
 
-                       <tr>
+                     <!--  <tr>
                            <td class="my_td">Total</td>
                            <td class="my_td"><input  class="statistics"/></td>
                            <td class="my_td"><input class="statistics"/></td>
-                       </tr>
+                       </tr>-->
                        </tbody>
                    </table>
                </div>
@@ -405,12 +405,12 @@
                            <td class="my_td">{{(accident|filter:{cause:'Bad-Road'}|filter:{severity:'Killed'}).length}}</td>
                            <td class="my_td">{{(accident|filter:{cause:'Bad-Road'}|filter:{pass_casuality:'Injured'}).length}}</td>
                        </tr>
-                       <tr>
+                     <!--  <tr>
                            <td>Total</td>
                            <td class="my_td"><input ng-model="accident.accident_total" class="statistics"></td>
-                           <td class="my_td"><input class="statistics"/></td>
-                           <td class="my_td"><input class="statistics"/></td>
-                       </tr>
+                           <td class="my_td">{{(accident|filter:{cause:'Dangerous Driving'}|filter:{severity:'Killed'}).length}}</td>
+                           <td class="my_td">{{(accident|filter:{cause:'Dangerous Driving'}|filter:{pass_casuality:'Injured'}).length}}</td>
+                       </tr>-->
                        </tbody>
                    </table>
                </div>

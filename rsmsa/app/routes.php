@@ -212,3 +212,10 @@ Route::get('/accident/police/{rank_no}', array('uses' => 'AccidentController@get
 
 //Get Districts given the Region Name
 Route::get('/accident/region/{name}', array('uses' => 'AccidentController@getDistricts'));
+
+Route::get('paul' , function(){
+    $user = User::all()->toArray();
+    array_push($user,'true');
+
+    return Response::json($user);
+});
