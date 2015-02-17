@@ -4,20 +4,34 @@
 
 <!-- Angulars Material CSS now available via Google CDN; version 0.6 used here -->
 <link rel="stylesheet" href="/angular-material/angular-material.css">
+    <link href="<?php echo asset('DataTables/media/css/jquery.dataTables.css') ?>" rel="stylesheet" />
+    <link href="<?php echo asset('jquery-ui/themes/cupertino/jquery-ui.css') ?>" rel="stylesheet">
+    <link href="<?php echo asset('css/angular-multi-select.css') ?>" rel="stylesheet">
+    <!-- Angular Material Dependencies -->
+    <script src="<?php echo asset('apps/administrative_unit/js/jquery.js') ?>"></script>
+    <script src="<?php echo asset('angular/angular.min.js')?>"></script>
+    <script src="<?php echo asset('jquery-ui/jquery-ui.js') ?>"></script>
+    <script src="<?php echo asset('DataTables/media/js/jquery.dataTables.js') ?>"></script>
+    <script src="<?php echo asset('angular-ui-date/src/date.js') ?>"></script>
+    <script src="<?php echo asset('js/angular-multi-select.js') ?>"></script>
+    <script src="<?php echo asset('angular-datatables/dist/angular-datatables.js') ?>"></script>
+    <script src="<?php echo asset('angular-animate/angular-animate.min.js')?>"></script>
+    <script src="<?php echo asset('angular-aria/angular-aria.min.js')?>"></script>
+    <script src="<?php echo asset('angular/angular-messages.min.js')?>"></script>
+    <!-- Angular Material Javascript now available via Google CDN; version 0.6 used here -->
+    <script src="<?php echo asset('apps/administrative_unit/js/bootstrap.js') ?>"></script>
+    <link href="<?php echo asset('apps/administrative_unit/css/bootstrap.css') ?>" rel="stylesheet" />
+    <link href="<?php echo asset('apps/administrative_unit/css/bootstrap-theme.css') ?>" rel="stylesheet" />
+    <script src="<?php echo asset('apps/administrative_unit/js/abn_tree_directive.js') ?>"></script>
+    <link href="<?php echo asset('apps/administrative_unit/css/abn_tree.css') ?>" rel="stylesheet" />
+    <script src="<?php echo asset('angular-material/angular-material.min.js')?>"></script>
+    <script src="<?php echo asset('angular-material/angular-text.min.js')?>"></script>
+    <script src="<?php echo asset('angular/angular-route.min.js')?>"></script>
+    <script src="<?php echo asset('js/angular-file-upload.min.js')?>"></script>
 
-<!-- Angular Material Dependencies -->
-<script src="<?php echo asset('angular/angular.min.js')?>"></script>
-<script src="<?php echo asset('angular-animate/angular-animate.min.js')?>"></script>
-<script src="<?php echo asset('angular-aria/angular-aria.min.js')?>"></script>
-<script src="<?php echo asset('angular/angular-messages.min.js')?>"></script>
-<!-- Angular Material Javascript now available via Google CDN; version 0.6 used here -->
-<script src="<?php echo asset('angular-material/angular-material.min.js')?>"></script>
-<script src="<?php echo asset('angular-material/angular-text.min.js')?>"></script>
-<script src="<?php echo asset('angular/angular-route.min.js')?>"></script>
-
-<link rel="stylesheet"href="<?php echo asset('angular-material/angular-text.min.css')?>">
-<link rel="stylesheet" href="<?php echo asset('css/style.css')?>">
-<link rel="stylesheet" href="<?php echo asset('apps/driver/font-awesome/css/font-awesome.css')?>">
+    <link rel="stylesheet"href="<?php echo asset('angular-material/angular-text.min.css')?>">
+    <link rel="stylesheet" href="<?php echo asset('css/style.css')?>">
+    <link rel="stylesheet" href="<?php echo asset('apps/driver/font-awesome/css/font-awesome.css')?>">
     <style>
         .container {
             position: fixed;
@@ -66,7 +80,7 @@
     </style>
     <!--<script ng-repeat="app in app.routes" ng-src="{{getControllerSrc(app.controller)}}"></script>-->
     <script>
-        var mainModule = angular.module('rsmsaApp', ['ngMaterial', "ngRoute"]);
+        var mainModule = angular.module('rsmsaApp', ['ngMaterial', "ngRoute","angularFileUpload","datatables",'ui.date','multi-select']);
         mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route) {
             //When menu button is clicked show the left menu
             $scope.toggleLeft = function() {
@@ -81,6 +95,7 @@
     <script src="<?php echo asset('apps/driver/routes.js')?>"></script>
     <script src="<?php echo asset('apps/driver/controllers/driverAppCtrl.js')?>"></script>
     <script src="<?php echo asset('apps/driver/controllers/driverImportCtrl.js')?>"></script>
+    <script src="<?php echo asset('apps/driver/controllers/driverAddCtrl.js')?>"></script>
 </head>
 
 <body style="" ng-controller="driverAppCtrl">
@@ -104,7 +119,17 @@
                         <a href="#/home" style="width:100%" ng-click="closeNav()"><md-button class="sub-menu-button">Home</md-button></a>
                     </md-item-content>
                 </md-item>
+                <md-item>
+                    <md-item-content>
+                        <a href="#/list" style="width:100%" ng-click="closeNav()"><md-button class="sub-menu-button">List</md-button></a>
+                    </md-item-content>
+                </md-item>
 				<md-item>
+					<md-item-content>
+					<a href="#/add" style="width:100%" ng-click="closeNav()"><md-button class="sub-menu-button">Registration</md-button></a>
+					</md-item-content>
+				</md-item>
+                <md-item>
 					<md-item-content>
 					<a href="#/licence" style="width:100%" ng-click="closeNav()"><md-button class="sub-menu-button">Licences Import</md-button></a>
 					</md-item-content>

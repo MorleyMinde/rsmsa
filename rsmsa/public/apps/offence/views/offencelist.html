@@ -19,9 +19,14 @@
 			<td>{{off.address}}</td>
 			<td>{{off.place}}</td>
 			<td>
-				<a href="#/offence/view/{{off.id}}"><md-button class="md-raised">View</md-button></a>
-      			<a href="#/offence/edit/{{off.id}}"><md-button class="md-raised md-primary">Edit</md-button></a>
-      			<md-button ng-click="deleteOffence(off)" class="md-raised md-warn" ng-click="">Delete</md-button>
+				<a href="#/offence/view/{{off.id}}">
+					<md-button class="md-hue-3 md-raised md-primary md-fab">
+							<md-tooltip>
+					          View Offence Details
+					        </md-tooltip>
+							<i class="fa fa-check" style="font-size: 20px;"></i> 
+					</md-button>
+				</a>
 			</td>
 		</tr>
 	</tbody>

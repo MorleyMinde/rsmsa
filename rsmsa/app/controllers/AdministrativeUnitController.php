@@ -23,6 +23,16 @@ class AdministrativeUnitController extends \BaseController {
     }
 
     /**
+     * Display a listing of Countries
+     *
+     * @return Response
+     */
+    public function getCountries()
+    {
+        return Country::all();
+    }
+
+    /**
      * Display a listing of Districts.
      *
      * @return Response

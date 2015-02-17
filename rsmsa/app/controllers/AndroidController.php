@@ -9,14 +9,6 @@ class AndroidController extends BaseController {
 		if($tag == 'verification_tag')
 		{
 			$licence_number = $_GET['license_number'];
-			/*$arr = array();
-			//$json = json_encode(array('status' => 'error'));
-			
-			//$json->push(array('code' => '1'));
-			array_push($arr,array('status' => 'error'));
-			//push error code
-			array_push($arr,array('code' => '1'));
-			return $arr;*/
 			$driverJSON = Driver::where('license_number','=',$licence_number)->get();
 			if(count($driverJSON) == 0)// If the licence is not registered return error 1
 			{
@@ -40,6 +32,7 @@ class AndroidController extends BaseController {
 				$offenceReturn = array();
 				foreach($offences as $off)
 				{
+					$off->offence_date = strtotime($off->offence_date) * 1000;
 					$offence_events =  OffenceEvent::where('offence_id','=',$off->id)->get();
 					$events = array();
 					foreach($offence_events as $offEvent)

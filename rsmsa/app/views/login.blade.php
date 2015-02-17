@@ -47,7 +47,7 @@
 
   <div class="col-md-6" style="padding:100px;padding-top: 0px">
 
-<h4  style="color:black;font-weight: bold;line-height: 100%">Welcome to the Road Safety Management System</h4>
+<h4  style="color:black;font-weight: bold;line-height: 100%">Welcome to the Integrated Road Safety Management System(iRoad)</h4>
        <ul>
 
        <li style="list-style-image: url({{asset('img/tick_pic.jpg')}}) ">Easy Accident Report</li>
@@ -75,8 +75,6 @@
             {{ $alert }}
         </div>
         @endif
-
-
                <div class="login-wrap">
 
                     <input type="text" class="form-control" placeholder="Police Rank Number" autofocus name="rankNo" required style="margin-bottom: 15px;border: 0px;border-bottom: 1px solid">
