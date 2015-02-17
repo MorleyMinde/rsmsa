@@ -74,7 +74,7 @@ class OffenceController extends BaseController {
 			//Return error to client
 			return "{'status':'ERROR','code': 1,'message':'Message will come soon.'}";
 		}
-		return "{'status':'OK'}";
+		return '{"status":"OK"}';
 	}
 	/**
 	 * 
