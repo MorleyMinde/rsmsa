@@ -25,7 +25,11 @@ border: 5px dashed blue;
         <li>The column names looks exactly the same as the one in the sample above</li>
         <li>If more than one Driving classes separate classes using comma delimiter eg A,A2,D,C</li>
     </ol>
-   Drop File:<span class="help-block">**The upload will start immediately  after you select or drop the file</span>
+   <p> How do you want do deal with old values
+   <select ng-model="importoption">
+       <option value="skip">Skip</option>
+       <option value="update">Update</option>
+   </select></p>Drop File:<span class="help-block">**The upload will start immediately  after you select or drop the file</span>
     <div ng-file-drop ng-file-select ng-model="files" class="drop-box"
          drag-over-class="dragover" ng-multiple="true" allow-dir="false">
         Drop xlxs here or click to upload
@@ -44,7 +48,7 @@ border: 5px dashed blue;
         <div ng-if="data.imported.length != 0">
             <h3>Import Summary</h3>
         </div>
-<table datatable="ng" class="row-border hover" ng-if="data.imported != 0">
+<table datatable="ng" class="row-border hover" ng-if="data.imported.newValues && data.imported.newValues.length != 0">
     <thead>
     <tr>
         <th>Surname</th>
@@ -57,7 +61,7 @@ border: 5px dashed blue;
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="requi in data.imported.">
+    <tr ng-repeat="requi in data.imported.newValues">
         <td>{{ requi.surname }}</td>
         <td>{{ requi.other_names }}</td>
         <td>{{ requi.gender }}</td>
@@ -81,7 +85,7 @@ border: 5px dashed blue;
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="requi in data.imported">
+    <tr ng-repeat="requi in data.imported.duplicates">
         <td>{{ requi.surname }}</td>
         <td>{{ requi.other_names }}</td>
         <td>{{ requi.gender }}</td>

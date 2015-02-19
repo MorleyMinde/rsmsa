@@ -61,6 +61,8 @@ Route::post('/driver/delete/{id}',array('uses'=>'DriverController@destroy'));
 //getting drivers
 Route::get('/driving_classes',array('uses'=>'DriverController@drivingClasses'));
 
+//get number of drivers for specific  drivers licence
+Route::get('/driver/{column}/{value}',array('uses'=>'DriverController@getValue'));
 
 ////////////////////////////////////////////////////////////////////
 ////////////////////////////Vehicles////////////////////////////////
@@ -71,8 +73,12 @@ Route::get('/ownership_category',array('uses'=>'VehicleController@getOwnership')
 //getting car_make
 Route::get('/car_make',array('uses'=>'VehicleController@getCarMake'));
 
+//getting all car_model
+Route::get('/car_model',array('uses'=>'VehicleController@getAllModel'));
+
 //getting car_model
 Route::get('/car_model/{make}',array('uses'=>'VehicleController@getCarModel'));
+
 
 //getting car_ year of manufacture
 Route::get('/car_year',array('uses'=>'VehicleController@getCarYear'));
@@ -88,6 +94,9 @@ Route::post('/vehicle/upload',array('uses'=>'VehicleController@upload'));
 
 //Deleting motor vehicle
 Route::post('/vehicle/delete/{id}',array('uses'=>'VehicleController@destroy'));
+
+//get number of vehicle for specific  motor vehicle character
+Route::get('/vehicle/{column}/{value}',array('uses'=>'VehicleController@getValue'));
 
 ////////////////////////////////////////////////////////////////////
 ///////////////////Administrative Unit Routes///////////////////////

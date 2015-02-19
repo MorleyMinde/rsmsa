@@ -18,6 +18,8 @@
     <script src="<?php echo asset('angular-animate/angular-animate.min.js')?>"></script>
     <script src="<?php echo asset('angular-aria/angular-aria.min.js')?>"></script>
     <script src="<?php echo asset('angular/angular-messages.min.js')?>"></script>
+    <script src="<?php echo asset('highcharts-ng/src/highcharts-custom.js') ?>"></script>
+    <script src="<?php echo asset('highcharts-ng/src/highcharts-ng.js') ?>"></script>
     <!-- Angular Material Javascript now available via Google CDN; version 0.6 used here -->
     <script src="<?php echo asset('apps/administrative_unit/js/bootstrap.js') ?>"></script>
     <link href="<?php echo asset('apps/administrative_unit/css/bootstrap.css') ?>" rel="stylesheet" />
@@ -80,7 +82,7 @@
     </style>
     <!--<script ng-repeat="app in app.routes" ng-src="{{getControllerSrc(app.controller)}}"></script>-->
     <script>
-        var mainModule = angular.module('rsmsaApp', ['ngMaterial', "ngRoute","angularFileUpload","datatables",'ui.date','multi-select']);
+        var mainModule = angular.module('rsmsaApp', ['ngMaterial', "ngRoute","angularFileUpload","datatables",'ui.date','multi-select',"highcharts-ng"]);
         mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route) {
             //When menu button is clicked show the left menu
             $scope.toggleLeft = function() {

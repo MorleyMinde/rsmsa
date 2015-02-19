@@ -1,1 +1,92 @@
-<h1>Drivers Home Page</h1>
+<style>
+    md-buttom{
+        font-size: 0.9em;
+    }
+</style>
+<div class="container-fluid">
+    <div class="col-sm-3">
+        <div class="form-group">
+            <div
+                    multi-select
+                    input-model="data.driving_classes"
+                    button-label="icon name"
+                    item-label="icon name descr"
+                    tick-property="ticked"
+                    output-model="report.charCat"
+                    max-labels="0"
+                    max-height ="150px"
+                    on-item-click = "changeCats()"
+                    helper-elements="filter"
+                    >
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-9">
+        <md-button ng-click="changeChart('table')" class="md-hue-3 md-raised"><img src="/apps/license/img/table.png" style="height: 20px;width: 20px"> Table</md-button>
+        <md-button ng-click="changeChart('column')" class="md-hue-3 md-raised"><img src="/apps/license/img/bar.png" style="height: 20px;width: 20px"> Bar </md-button>
+        <md-button ng-click="changeChart('spline')" class="md-hue-3 md-raised"><img src="/apps/license/img/line.png" style="height: 20px;width: 20px"> Line </md-button>
+        <md-button ng-click="changeChart('bar')" class="md-hue-3 md-raised"><img src="/apps/license/img/column.png" style="height: 20px;width: 20px"> Column </md-button>
+        <!--<md-button ng-click="changeChart('combined')" class="md-hue-3 md-raised"><img src="combined.jpg" style="height: 20px;width: 20px"> Combined Chart</md-button>-->
+        <md-button ng-click="changeChart('spider')" class="md-hue-3 md-raised"><img src="/apps/license/img/spider.jpg" style="height: 20px;width: 20px"> Spider</md-button>
+        <md-button ng-click="changeChart('area')" class="md-hue-3 md-raised"><img src="/apps/license/img/table.png" style="height: 20px;width: 20px"> Area </md-button>
+        <md-button ng-click="changeChart('pie')" class="md-hue-3 md-raised"><img src="/apps/license/img/pie.png" style="height: 20px;width: 20px"> Pie </md-button>
+        <md-button ng-click="" class="md-hue-3 md-raised"><img src="/apps/license/img/cvs.jpg" style="height: 20px;width: 20px"> </md-button>
+    </div>
+
+    <highchart id="chart1" config="chartConfig" class="col-sm-12" ng-if="!displayTable"></highchart>
+    <table class="table table-condensed table-bordered table-responsive" ng-if="displayTable">
+        <tr>
+            <th ng-repeat="cats in table.headers">{{ cats.name }}</th>
+        </tr>
+        <tr>
+            <td ng-repeat="nsf in table.colums">{{ nsf.val }}</td>
+        </tr>
+    </table>
+</div>
+<div class="col-sm-12">
+    <h3>Drivers License Management App</h3>
+    <md-content>
+        <md-list>
+            <md-item>
+                <md-item-content>
+                    <div class="md-tile-left">
+                        <img src="/apps/license/img/driver.jpg" style="height: 50px;width: 50px;border-radius: 50%">
+                    </div>
+                    <div class="md-tile-content">
+                        <h3>Listing of Registered Drivers</h3>
+                        <h4>
+                            This part will help you to see the list of all registered Drivers and their details, you can remove selected vehicle and see the
+                            offences and accidents that the selected driver is involved with.
+                        </h4>
+                    </div>
+                </md-item-content>
+            </md-item>
+            <md-item>
+                <md-item-content>
+                    <div class="md-tile-left">
+                        <img src="/apps/license/img/licence.jpg" style="height: 50px;width: 50px;border-radius: 50%">
+                    </div>
+                    <div class="md-tile-content">
+                        <h3>Drivers License Registration</h3>
+                        <h4>
+                            This part will help you to make a new registration of  drivers licence, by filling in drivers information.
+                        </h4>
+                    </div>
+                </md-item-content>
+            </md-item>
+            <md-item>
+                <md-item-content>
+                    <div class="md-tile-left">
+                        <img src="/apps/license/img/cvs.jpg" style="height: 50px;width: 50px;border-radius: 50%">
+                    </div>
+                    <div class="md-tile-content">
+                        <h3>Drivers license Importation</h3>
+                        <h4>
+                            This part will help you to import drivers details from a formatted excel file.
+                        </h4>
+                    </div>
+                </md-item-content>
+            </md-item>
+        </md-list>
+    </md-content>
+</div>
