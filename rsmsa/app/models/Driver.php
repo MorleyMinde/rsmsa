@@ -13,17 +13,18 @@ class Driver extends HasOffenceImpl{
     protected  $guarded = array('id');
 	
 	public function offences(){
-		return $this->hasMany('Offence','driver_license_number');
+		return $this->hasMany('Offence','driver_license_number','license_number');
 	}
 
     //returns accidents that a driver is associated with
     public function accidents(){
 
         return $this-> hasMany('AccidentDriver' , 'driver_id');
-    }	public function paidOffences(){
-		return $this->offences()->where('paid', '=', true);
+    }	
+    public function paidOffences(){
+		return $this->offences()->whereIn("id",OffenceReceipt::get(array("offence_id"))->lists("offence_id"));
 	}
 	public function notPaidOffences(){
-		return $this->offences()->where('paid', '=', false);
+		return $this->offences()->whereNotIn("id",OffenceReceipt::get(array("offence_id"))->lists("offence_id"));
 	}
 }

@@ -12,7 +12,6 @@ class CreateTables extends Migration {
 	 */
 	public function up()
 	{
-
         Schema::create('rsmsa_persons', function ($table) {
             $table->increments('id');
             $table->string('first_name', 128);
@@ -83,7 +82,7 @@ class CreateTables extends Migration {
         });
         Schema::create('rsmsa_drivers', function ($table) {
             $table->increments('id');
-            $table->string('license_number');
+            $table->string('license_number')->unique();
             $table->string('first_name');
             $table->string('last_name');
             $table->string('physical_address');
@@ -108,7 +107,22 @@ class CreateTables extends Migration {
             $table->increments('id');
             $table->text('nature');
             $table->string('section');
+            $table->string('relating');
+            $table->string('amount');
             $table->timestamps();
+        });
+        Schema::create('rsmsa_receipts', function ($table) {
+        	$table->increments('id');
+        	$table->string('receipt_number');
+        	$table->string('amount');
+        	$table->string('payment_mode');
+        	$table->date('date');
+        	$table->timestamps();
+        });
+        Schema::create('rsmsa_offence_receipts', function ($table) {
+        	$table->integer('offence_id')->unsigned();
+            $table->integer('receipt_id')->unsigned();
+            $table->primary(array('offence_id', 'receipt_id'));
         });
         Schema::create('rsmsa_offences', function($table)
         {
@@ -126,19 +140,23 @@ class CreateTables extends Migration {
             $table->string('payment_mode');
             $table->string('latitude');
             $table->string('longitude');
-            $table->foreign('vehicle_plate_number')->references('plate_number')->on('rsmsa_vehicles');
-            $table->foreign('driver_license_number')->references('license_number')->on('rsmsa_drivers');
-            $table->foreign('rank_no')->references('rank_no')->on('rsmsa_police');
             $table->timestamps();
         });
 
         Schema::create('rsmsa_insurance', function ($table) {
             $table->increments('id');
-            $table->string('company_name');
+            $table->string('company_name')->unique();
+            $table->string('principal_officer');
             $table->string('type');
             $table->string('phone_number');
             $table->string('policy_number');
-            $table->string('commit');
+            $table->string('address');
+            $table->string('po_box');
+            $table->string('fax');
+            $table->string('email');
+            $table->string('website');
+            $table->string('phone_number');
+            $table->timestamps();
         });
         Schema::create('rsmsa_offence_events', function ($table) {
             $table->integer('offence_id')->unsigned();
@@ -157,6 +175,7 @@ class CreateTables extends Migration {
 
             $table->increments('id');
             $table->string('accident_reg_number');
+            $table->string('accident_class');
             $table->string('ocs_check');
             $table->string('supervisor_check');
             $table->string('rank_no');
@@ -168,6 +187,8 @@ class CreateTables extends Migration {
             $table->integer('accident_only_damage')->unsigned();
             $table->string('latitude');
             $table->string('longitude');
+            $table->string('cause');
+            $table->string('weather');
             $table->string('hit_run');
             $table->string('accident_date_time');
             $table->string('accident_area');
@@ -191,7 +212,7 @@ class CreateTables extends Migration {
             $table->foreign('accident_id')->references('id')->on('rsmsa_accidents');
             $table->integer('driver_id')->unsigned();
             $table->foreign('driver_id')->references('id')->on('rsmsa_drivers');
-            $table->string('drugs');
+            $table->string('severity');
             $table->string('phone_use');
             $table->string('seat_belt');
             $table->integer('alcohol')->unsigned();
@@ -254,16 +275,18 @@ class CreateTables extends Migration {
         });
 
 
-        Schema::create('rsmsa_districts', function ($table) {
+        Schema::create('districts', function ($table) {
             $table->increments('id');
-            $table-> string('district');
+            $table-> string('name');
             $table-> integer('region_id')->unsigned();
+            $table->timestamps();
         });
 
-        Schema::create('rsmsa_regions', function ($table) {
+        Schema::create('regions', function ($table) {
             $table->increments('id');
-            $table-> string('region');
-            $table-> string('');
+            $table-> string('name');
+            $table-> string('coordinate');
+            $table->timestamps();
         });
     }
 	/**
@@ -282,7 +305,9 @@ class CreateTables extends Migration {
 		Schema::drop('rsmsa_vehicles');
 		Schema::drop('rsmsa_drivers');
 		Schema::drop('rsmsa_offence_registry');
+		Schema::drop('rsmsa_receipts');
 		Schema::drop('rsmsa_offences');
+		Schema::drop('rsmsa_offence_receipts');
 		Schema::drop('rsmsa_offence_events');
         Schema::drop('rsmsa_accidents');
         Schema::drop('rsmsa_accident_driver');

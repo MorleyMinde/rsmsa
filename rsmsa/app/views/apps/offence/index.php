@@ -23,10 +23,9 @@
 <script src="/angular/ui-date/date.js"></script>
 <script src="/angular/highcharts/highcharts-custom.js"></script>
 <script src="/angular/highcharts/highcharts-ng.js"></script>
-<link rel="stylesheet"
-	href="/angular-material/angular-text.min.css">
+<link rel="stylesheet"href="/angular-material/angular-text.min.css">
 <!-- <link rel="stylesheet" href="/css/style.css"> -->
-
+<link rel="stylesheet" href="/css/font-awesome/css/font-awesome.css">
 <style>
 .container {
 	padding:0;

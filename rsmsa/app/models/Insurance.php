@@ -6,6 +6,10 @@
  * Time: 10:23 PM
  */
 
-class Insurance {
+class Insurance extends Eloquent{
+
+    protected $table = 'rsmsa_insurance';
+
+
 
 } 

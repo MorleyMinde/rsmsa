@@ -32,6 +32,7 @@ class AndroidController extends BaseController {
 				$offenceReturn = array();
 				foreach($offences as $off)
 				{
+					$off->offence_date = strtotime($off->offence_date) * 1000;
 					$offence_events =  OffenceEvent::where('offence_id','=',$off->id)->get();
 					$events = array();
 					foreach($offence_events as $offEvent)

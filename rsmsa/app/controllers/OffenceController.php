@@ -20,9 +20,10 @@ class OffenceController extends BaseController {
 		$json = json_decode($content,true);
 		$offenceJSON = $json['offence'];
 		$eventsJSON = $json['events'];
+		$receiptJSON = $json['receipt'];
 		try{
 			//Start a transaction to save an offence
-			DB::transaction(function()use ($offenceJSON,$eventsJSON)
+			DB::transaction(function()use ($offenceJSON,$eventsJSON,$receiptJSON)
 			{
 				$offence = "";
 				$hasID = false;
@@ -38,6 +39,22 @@ class OffenceController extends BaseController {
 					
 					$offence = new Offence();
 					$this->saveOffence($offence,$offenceJSON);
+				}
+				if($receiptJSON['receipt_number'] != "")
+				{
+					$receipt = new Receipt();
+					
+					$receipt->setValuesByJSON($receiptJSON);
+					if(is_numeric($receipt['date']))
+					{
+						$receipt['date'] = date("Y-m-d",$receipt['date']);
+					}
+					$receipt->save();
+					
+					$offenceReceipt = new OffenceReceipt();
+					$offenceReceipt->offence_id = $offence->id;
+					$offenceReceipt->receipt_id = $receipt['id'];
+					$offenceReceipt->save();
 				}
 				//Save the offence event to the OffenceEvent model
 				foreach($eventsJSON as $registry)
@@ -72,7 +89,7 @@ class OffenceController extends BaseController {
 		$offence->setValuesByJSON($offenceJSON);
 		if(is_numeric ($offence['offence_date']))
 		{
-			$offence['offence_date'] = date("Y-m-d",$offence['offence_date']);
+			$offence['offence_date'] = date("Y-m-d",$offence['offence_date']/1000);
 		}
 		$offence->save();
 	}
@@ -132,6 +149,10 @@ class OffenceController extends BaseController {
 	public function getOffence($id)
 	{
 		return Offence::find($id);
+	}
+	public function getPayment($id)
+	{
+		return Offence::find($id)->payment();
 	}
 	/**
 	 * Get a report in JSON format

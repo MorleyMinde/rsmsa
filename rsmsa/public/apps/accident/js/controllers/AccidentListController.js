@@ -3,10 +3,13 @@
  */
 angular.module('accidentApp').controller('AccidentListController',function($scope,$http) {
     $scope.accidents = {};
+
     $http.get("/api/accidents").success(function(data) {
         $scope.accidents = data;
+        console.log(data[0]);
     });
-}).controller('ViewAccidentController', ['$scope', '$routeParams','$http',
+})
+    .controller('ViewAccidentController', ['$scope', '$routeParams','$http',
         function($scope, $routeParams ,$http) {
             $accident_id = $routeParams.accident_id;
 
@@ -18,7 +21,6 @@ angular.module('accidentApp').controller('AccidentListController',function($scop
                     $scope.accident_no = data[0].accident_reg_number;
                     $scope.ocs_check = data[0].ocs_check;
                     $scope.supervisor_check = data[0].ocs_check;
-                    $scope.rank_no = data[0].rank_no;
                     $scope.sign_date = data[0].sign_date;
                     $scope.accident_fatal = data[0].accident_fatal;
                     $scope.accident_severe_injury = data[0].accident_severe_injury;
@@ -26,6 +28,11 @@ angular.module('accidentApp').controller('AccidentListController',function($scop
                     $scope.accident_only_damage = data[0].accident_only_damage;
                     $scope.latitude = data[0].latitude;
                     $scope.longitude = data[0].longitude;
+                    $scope.alcohol = data[0].alcohol;
+                    $scope.seat_belt = data[0].seat_belt;
+                    $scope.phone_use = data[0].phone_use;
+                    $scope.cause = data[0].cause;
+                    $scope.weather = data[0].weather;
                     $scope.hit_run = data[0].hit_run;
                     $scope.accident_date_time = data[0].accident_date_time;
                     $scope.accident_area = data[0].accident_area;
@@ -60,6 +67,23 @@ angular.module('accidentApp').controller('AccidentListController',function($scop
                     $scope.witness_national_id = data[0].witness_national_id;
                     $scope.witness_phone_number = data[0].witness_phone_number;
 
+                    //get police info
+
+                    $rank = data[0].rank_no;
+                    $http.get("/accident/police/" + $rank)
+                        .success(function(police) {
+                            console.log(police[0]);
+                            $scope.police_name = police[0].first_name + " " + police[0].last_name;
+                            $scope.police_station = police[0].name;
+                            $scope.station_district = police[0].district;
+                            $scope.station_region = police[0].region;
+                            $scope.rank_no = police[0].rank_no;
+
+                        }).error(function(error) {
+                            console.log(error);
+                        });
+
+
                     //driver details
                     $driver_id = data[0].driver_id;
                     $http.get("/api/accident/driver/" + $driver_id)
@@ -92,8 +116,6 @@ angular.module('accidentApp').controller('AccidentListController',function($scop
                             $scope.owner_physical_address = vehicle[0].owner_physical_address;
                             $scope.owner_address = vehicle[0].owner_address;
                             $scope.make = vehicle[0].make;
-                            $scope.type = vehicle[0].type;
-                            $scope.color = vehicle[0].color;
                             $scope.yom = vehicle[0].yom;
                             $scope.chasis_no = vehicle[0].chasis_no;
 

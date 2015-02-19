@@ -19,7 +19,14 @@
 			<td>{{off.relating}}</td>
 			<td>{{off.amount}}</td>
 			<td>
-				<a href="#/registry/{{off.id}}/offences"><md-button class="md-raised">Data -></md-button></a>
+				<a href="#/registry/{{off.id}}/offences">
+					<md-button class="md-hue-3 md-raised md-primary md-fab">
+						<md-tooltip>
+				          Offences
+				        </md-tooltip>
+						<i class="fa fa-info"></i> 
+					</md-button>
+				</a>
 			</td>
 		</tr>
 	</tbody>

@@ -6,6 +6,9 @@
 <link rel="stylesheet" href="<?php echo asset('angular-material/angular-material.css')?>">
 
 <!-- Angular Material Dependencies -->
+
+<script src="<?php echo asset('js/jquery/jquery.js')?>"></script>
+<script src="<?php echo asset('js/jquery/jquery-ui.js')?>"></script>
 <script src="<?php echo asset('angular/angular.min.js')?>"></script>
 <script src="<?php echo asset('angular-animate/angular-animate.min.js')?>"></script>
 <script src="<?php echo asset('angular-aria/angular-aria.min.js')?>"></script>
@@ -14,11 +17,18 @@
 <script src="<?php echo asset('angular-material/angular-material.min.js')?>"></script>
 <script src="<?php echo asset('angular-material/angular-text.min.js')?>"></script>
 <script src="<?php echo asset('angular/angular-route.min.js')?>"></script>
-<link rel="stylesheet"href="<?php echo asset('angular-material/angular-text.min.css')?>">
+<script src="<?php echo asset('js/highcharts-ng.js')?>"></script>
+<script src="<?php echo asset('angular/ui-date/date.js')?>"></script>
+
+
+    <!-- Angular Material Dependencies -->
+
+<link rel="stylesheet" href="<?php echo asset('js/jquery/jquery-ui.min.css')?>">
+<link rel="stylesheet" href="<?php echo asset('angular-material/angular-text.min.css')?>">
 <link rel="stylesheet" href="<?php echo asset('css/style.css')?>">
-<link rel="stylesheet" href="<?php echo asset('apps/accident/css/bootstrap.css')?>"
-<link rel="stylesheet" href="<?php echo asset('apps/accident/css/bootstrap-theme.css')?>">
-<link rel="stylesheet" href="<?php echo asset('apps/accident/css/material-design.css')?>">
+<link rel="stylesheet" href="<?php echo asset('apps/accident/css/bootstrap.css')?>"/>
+<link rel="stylesheet" href="<?php echo asset('apps/accident/css/bootstrap-theme.css')?>"/>
+<link rel="stylesheet" href="<?php echo asset('apps/accident/css/material-design.css')?>"/>
 
 <link rel="stylesheet" type="text/css" href="<?php echo asset('apps/accident/css/font-awesome/css/font-awesome.min.css')?>" />
 
@@ -36,13 +46,13 @@
 	background-color: #8BC34A !important;
 }
 .main {
-	position: absolute;
-	width: 75%;
-    min-height: 200px;
-	background-color: white;
-	left: 12.5%;
-	top: 20px;
-	overflow: hidden;
+    position: absolute;
+    width: 75%;
+    background-color: white;
+    min-height: 800px;
+    left: 12.5%;
+    top: 20px;
+    overflow: hidden;
 }
 
 md-card, .content {
@@ -72,7 +82,7 @@ md-icon{
 <script>
 var routeProvider = null;
 
-var mainModule = angular.module('accidentApp', ['ngMaterial', "ngRoute","ui.bootstrap"]).config(function ($routeProvider) {
+var mainModule = angular.module('accidentApp', ['ngMaterial', "ngRoute","ui.date"]).config(function ($routeProvider) {
 
 	routeProvider = $routeProvider;
 });
@@ -96,9 +106,8 @@ mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route
 <script src="<?php echo asset('apps/accident/js/controllers/AccidentController.js')?>"></script>
 <script src="<?php echo asset('apps/accident/js/controllers/AccidentListController.js')?>"></script>
 <script src="<?php echo asset('apps/accident/js/controllers/AccidentChartsController.js')?>"></script>
+<script src="<?php echo asset('apps/accident/js/controllers/AccidentReportController.js')?>"></script>
 <script src="<?php echo asset('apps/accident/js/Chart.js')?>"></script>
-    <script src="<?php echo asset('apps/accident/js/date.js')?>"></script>
-<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
 
 </head>
 

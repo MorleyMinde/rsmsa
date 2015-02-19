@@ -86,16 +86,31 @@ angular.module('offenceApp')
 			}
 		});
 	}
+	$scope.payment = {};
 	//Is there a request in the route parameters
 	if($routeParams.request){
 		//There is a request in the route parameters
 		
 		if($routeParams.request == "view" || $routeParams.request == "edit")// if the route is /view or /edit
 		{
+			$scope.isreadonly = true;
 			//Fetch the offence involved
 			$http.get("/api/offence/"+$routeParams.id).success(function(data){
 				//Set the offence
 				$scope.offence = offenceConversion(data);
+				//Fetch the payment of the offence involved
+				$http.get("/api/offence/"+$routeParams.id+"/payment/")
+					.success(
+						function(payment) {
+							//Set if payment is paid
+							$scope.offence.paid = (payment.receipt_number != undefined);
+							if($scope.offence.paid){
+								$scope.payment = payment;
+							}
+					})
+					.error(function(error) {
+						//TODO Handle error
+				});
 			}).error(function(error) {
 				//TODO Handle error
 			});
@@ -111,6 +126,15 @@ angular.module('offenceApp')
 			});
 		}
 	}
+	/**
+	 * 
+	 * Checks if the form is readonly
+	 */
+	$scope.getWriteAccess = function(){
+		if($scope.isreadonly){
+			return "readonly";
+		}
+	}
 	$scope.data = {};
 	
 	//Initialize driver as in the database
@@ -120,10 +144,14 @@ angular.module('offenceApp')
 	$scope.watchAndFetch('offence.driver_license_number',"/api/driver/",function(driver) {
 		//Set the driver
 		$scope.driver = driver;
-		//Set the full name of the driver
-		$scope.offence.to = driver.first_name +" "+ driver.last_name;
-		//Set the offence address
-		$scope.offence.address = data.address;
+		if(driver.first_name != undefined)
+		{
+			//Set the full name of the driver
+			$scope.offence.to = driver.first_name +" "+ driver.last_name;
+			//Set the offence address
+			$scope.offence.address = driver.address;
+		}
+		
 	});
 	
 	//Initialize Vehicle  mirrors the one on the database
@@ -209,6 +237,21 @@ angular.module('offenceApp')
 		}else
 		{
 			return "No";
+		}
+	};
+	/**
+	 * Get a Block or None value from a boolean value
+	 * 
+	 * @param boolean value
+	 * 
+	 */
+	$scope.getDisplayValue = function(value) {
+		if(value)
+		{
+			return "block";
+		}else
+		{
+			return "none";
 		}
 	};
 });

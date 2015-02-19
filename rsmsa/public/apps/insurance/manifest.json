@@ -1,0 +1,17 @@
+{
+	"name": "Insurance App",
+	"description": "This extension shows a Google Image search result for the current page",
+	"version": "1.0",
+	"icons":{
+		"small":"leaf.png"
+	},
+	"home":"index.html",
+	"routes":[
+		{"name":"Home","route":"/home","view":"/index.html","controller":"offenceController"},
+		{"name":"Another","route":"/list","view":"/offencelistdialog.html"}
+	],
+	"color":{
+		"c500":"#7CFC00",
+		"c200":"#308014"
+	}
+}

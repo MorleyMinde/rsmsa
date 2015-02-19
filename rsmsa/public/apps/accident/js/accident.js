@@ -5,19 +5,20 @@
 angular.module("accidentApp").config(function($routeProvider)
 {
 
+
     $routeProvider.when('/report' ,{
 
         templateUrl: 'views/index.html'
     });
 
     $routeProvider.when('/reported' ,{
-
         templateUrl: 'views/accident.html'
     });
 
     $routeProvider.when('/statistics' ,{
 
-        templateUrl: 'views/statistics.html'
+        templateUrl: 'views/statistics.html',
+        controller: 'AccidentReportController'
     });
 
     $routeProvider.when('/api/accident/view/:accident_id' ,{
@@ -104,4 +105,6 @@ angular.module("accidentApp").config(function($routeProvider)
                 }
             }
         };
+
+
     });
