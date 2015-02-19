@@ -97,7 +97,7 @@
             <td style="width:11%">Longitude</td>
             <td style="width:8.5%"> <input class="ingizo" ng-model="longitude" type="text" /> </td>
             <td style="width:12.75%">Hit & Run</td>
-            <td style="width:12.75%"> <input class="ingizo"  type="text"   ng-model="hit_run"/> </td>
+            <td style="width:12.75%"> <input class="ingizo"  type="text"   ng-model="hit_run" /> </td>
         </tr>
 
         </tbody>
@@ -305,7 +305,7 @@
         <td class="number" style="border-width:0px">11</td>
         <td style="width: 15%" class="my_td">Nationality </td>
         <td style="width: 15%"> <input class="ingizo-driver"  ng-model="nationality" type="text" /> </td>
-        <td style="width: 16.5%"> <input class="ingizo-driver"  ng-model="alcohdrugsol" type="text" /> </td>
+        <td style="width: 16.5%"> <input class="ingizo-driver"  ng-model="drugs" type="text" /> </td>
         <td style="width: 16.5%"> <input class="ingizo-driver"  ng-model="phone_use" type="text" /> </td>
         <td style="width: 17%" class="my_td">Infrastructure</td>
         <td style="width: 17%"><input class="ingizo-driver" type="text"></td>
@@ -343,11 +343,11 @@
     <tr>
         <td class="number" style="border-width:0px">1</td>
         <td style="width: 15%" class="my_td">Name </td>
-        <td style="width:15%"> <input class="ingizo-driver" ng-model="pass_name"  type="text" /> </td>
+        <td style="width:15%"> <input class="ingizo-driver" ng-model="pass_name"  type="text" required/> </td>
         <td style="width: 16.5%" class="my_td">Gender</td>
         <td style="width:16.5%"> <input class="ingizo-driver"  type="text"   ng-model="pass_gender"/> </td>
         <td style="width: 17%" class="my_td">Date of Birth </td>
-        <td style="width:17%"> <input class="ingizo-driver" ng-model="pass_dob" type="text" /> </td>
+        <td style="width:17%"> <input class="ingizo-driver" ng-model="pass_dob" type="text" required/> </td>
 
     <tr>
 
@@ -425,4 +425,9 @@
 
 </form>
 
+<div style="padding-top: 10px">
+<center>
+<a href="/export/accident/pdf"><md-button style="padding-top: 2px" class="md-raised md-primary" > Download</md-button></a>
+</center>
+</div>
 </div>

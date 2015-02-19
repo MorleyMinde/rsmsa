@@ -12,7 +12,6 @@ angular.module("accidentApp").config(function($routeProvider)
     });
 
     $routeProvider.when('/reported' ,{
-
         templateUrl: 'views/accident.html'
     });
 

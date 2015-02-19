@@ -32,6 +32,7 @@
     <link rel="stylesheet"href="<?php echo asset('angular-material/angular-text.min.css')?>">
     <link rel="stylesheet" href="<?php echo asset('css/style.css')?>">
     <link rel="stylesheet" href="<?php echo asset('apps/driver/font-awesome/css/font-awesome.css')?>">
+    <link rel="stylesheet" href="<?php echo asset('apps/accident/css/material-design.css')?>"/>
     <style>
         .container {
             position: fixed;
@@ -49,7 +50,7 @@
             position: absolute;
             width: 75%;
             background-color: white;
-            height: 1000px;
+            min-height: 1000px;
             left: 12.5%;
             top: 20px;
             overflow: hidden;
@@ -96,6 +97,7 @@
     <script src="<?php echo asset('apps/driver/controllers/driverAppCtrl.js')?>"></script>
     <script src="<?php echo asset('apps/driver/controllers/driverImportCtrl.js')?>"></script>
     <script src="<?php echo asset('apps/driver/controllers/driverAddCtrl.js')?>"></script>
+    <script src="<?php echo asset('apps/driver/controllers/accidentCtrl.js')?>"></script>
 </head>
 
 <body style="" ng-controller="driverAppCtrl">

@@ -46,13 +46,13 @@
 	background-color: #8BC34A !important;
 }
 .main {
-	position: absolute;
-	width: 75%;
-    min-height: 200px;
-	background-color: white;
-	left: 12.5%;
-	top: 20px;
-	overflow: hidden;
+    position: absolute;
+    width: 75%;
+    background-color: white;
+    min-height: 800px;
+    left: 12.5%;
+    top: 20px;
+    overflow: hidden;
 }
 
 md-card, .content {

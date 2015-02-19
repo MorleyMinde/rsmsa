@@ -145,11 +145,18 @@ class CreateTables extends Migration {
 
         Schema::create('rsmsa_insurance', function ($table) {
             $table->increments('id');
-            $table->string('company_name');
+            $table->string('company_name')->unique();
+            $table->string('principal_officer');
             $table->string('type');
             $table->string('phone_number');
             $table->string('policy_number');
-            $table->string('commit');
+            $table->string('address');
+            $table->string('po_box');
+            $table->string('fax');
+            $table->string('email');
+            $table->string('website');
+            $table->string('phone_number');
+            $table->timestamps();
         });
         Schema::create('rsmsa_offence_events', function ($table) {
             $table->integer('offence_id')->unsigned();

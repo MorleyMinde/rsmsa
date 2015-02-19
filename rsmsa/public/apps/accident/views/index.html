@@ -341,9 +341,16 @@
         </div>
 
     </div>
-    <center> <md-button style="padding-top: 5px" class="md-raised md-primary" ng-click="sendAccident(accident)" ng-disabled=""> Report This Accident</md-button></center>
+    <center>
+        <md-button style="padding-top: 5px" class="md-raised md-primary" ng-click="sendAccident(accident)" ng-disabled=""> Report This Accident</md-button>
+    </center>
 </div>
 </form>
+
+<!--saving messages-->
+<span class="pull-left" ng-if="accidentCurrentSaving"><i class='fa fa-cog fa-2x fa-spin '></i> Saving.... </span>
+<span class="pull-left text-success" ng-if="accidentSavedSuccess"><i class='fa fa-check fa-2x'></i> Saved Successful </span>
+<span class="pull-left text-danger" ng-if="accidentSavedFailure"><i class='fa fa-times fa-2x'></i> Saving Failed </span>
 
 </div>
 

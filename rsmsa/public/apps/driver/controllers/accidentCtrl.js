@@ -1,14 +1,25 @@
 /**
- * Created by PAUL on 2/5/2015.
+ * Created by kelvin on 2/10/15.
  */
-angular.module('accidentApp').controller('AccidentListController',function($scope,$http) {
-    $scope.accidents = {};
+angular.module('rsmsaApp')
+    .controller('accidentCtrl',['$scope', '$routeParams','$http',
+        function($scope, $routeParams ,$http) {
+            $license_id = $routeParams.license_id;
 
-    $http.get("/api/accidents").success(function(data) {
-        $scope.accidents = data;
-        console.log(data[0]);
-    });
-})
+            $scope.accidents = {};
+
+            $http.get("/api/accidents/driver/" + $license_id)
+                .success(function(data) {
+                    $scope.accidents = data;
+                    console.log(data[0]);
+                }).error(function(error) {
+                    console.log(error);
+                });
+
+
+
+        }])
+
     .controller('ViewAccidentController', ['$scope', '$routeParams','$http',
         function($scope, $routeParams ,$http) {
             $accident_id = $routeParams.accident_id;

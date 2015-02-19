@@ -223,6 +223,12 @@ Route::get('/api/offence/{id}/events/', "OffenceController@getEvents");
 Route::get('/api/offence/{id}/payment/', "OffenceController@getPayment");
 Route::get('/api/offence/{id}/delete/', "OffenceController@delete");
 
+
+/**
+
+ * ACCIDENT APP ROUTES START
+
+ **/
 //Route To Submit A New Accident To The Database
 Route::post('/api/accident/', array('uses' => 'AccidentController@submitAccident'));
 
@@ -258,3 +264,30 @@ Route::get('/accident/police/{rank_no}', array('uses' => 'AccidentController@get
 Route::get('/accident/region/{name}', array('uses' => 'AccidentController@getDistricts'));
 
 Route::get('/accident/police/{rank_no}', array('uses' => 'AccidentController@getPoliceInfo'));
+
+//Get All Accidents where a given driver is involved
+Route::get('/api/accidents/driver/{license_id}', array('uses' => 'AccidentController@getAccidentsByDriver'));
+
+//Get All Accidents where a given vehicle is involved
+Route::get('/accidents/vehicle/{plateNumber}', array('uses' => 'AccidentController@getAccidentsByVehicle'));
+
+//Export a reported accident in PDF
+Route::get('/export/accident/pdf', array('as'=>'pdf_download','uses' => 'AccidentController@downloadAccident'));
+
+/**
+ * ACCIDENT APP ROUTES END
+ */
+
+/**
+ * INSURANCE APP ROUTES STARTS
+ */
+
+// Get All Insurance Companies
+Route::get('/api/insurance/companies' , array('uses' => 'InsuranceController@getCompanies'));
+
+//Save A new Insurance Company
+Route::post('/api/insurance/save', array('uses' => 'InsuranceController@saveInsurance'));
+
+/*
+ * INSURANCE APP ROUTES ENDS
+ */

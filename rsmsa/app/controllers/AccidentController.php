@@ -210,5 +210,28 @@ class AccidentController extends BaseController{
         return $districts;
     }
 
+//Get All Accidents by Driver's License Id
+    public  function getAccidentsByDriver($license_id){
 
+        $accidents = DB::table('rsmsa_accidents')
+            ->join('rsmsa_accident_driver', 'rsmsa_accidents.id', '=', 'rsmsa_accident_driver.accident_id')
+            ->join('rsmsa_drivers', 'rsmsa_drivers.id', '=', 'rsmsa_accident_driver.driver_id')
+            ->where('rsmsa_drivers.license_number','=',$license_id)->get();
+
+        return $accidents;
+    }
+
+//Get All Accidents by Vehicle's Plate Number
+    public  function getAccidentsByVehicle($plateNumber){
+        $accidents = Accident::where('','=',$plateNumber)->get();
+
+        return $accidents;
+    }
+
+    //Export a reported accident in PDF
+    public function downloadAccident()
+    {
+        $pdf = PDF::loadHTML('<h1>Hello World!!</h1>');
+        return $pdf->download('accident.pdf'); //this code is used for the name pdf
+    }
 } 
