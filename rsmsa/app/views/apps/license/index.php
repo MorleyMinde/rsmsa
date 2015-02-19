@@ -133,6 +133,16 @@
                     </md-item>
                     <md-item>
                         <md-item-content>
+                            <a href="#/insurance" style="width:100%" ng-click="closeNav()"><md-button class="sub-menu-button">Insurance</md-button></a>
+                        </md-item-content>
+                    </md-item>
+                    <md-item>
+                        <md-item-content>
+                            <a href="#/inspection" style="width:100%" ng-click="closeNav()"><md-button class="sub-menu-button">Inspection</md-button></a>
+                        </md-item-content>
+                    </md-item>
+                    <md-item>
+                        <md-item-content>
                             <a href="#/import" style="width:100%" ng-click="closeNav()"><md-button class="sub-menu-button">Vehicles Import</md-button></a>
                         </md-item-content>
                     </md-item>

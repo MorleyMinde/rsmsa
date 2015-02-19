@@ -16,6 +16,12 @@ angular.module("rsmsaApp").config( function($routeProvider){
     });$routeProvider.when("/add",{
         templateUrl: 'views/add.html',
         controller: 'vehicleAddCtrl'
+    });$routeProvider.when("/insurance",{
+        templateUrl: 'views/insurance.html',
+        controller: 'vehicleAddCtrl'
+    });$routeProvider.when("/inspection",{
+        templateUrl: 'views/inspection.html',
+        controller: 'vehicleAddCtrl'
     });
     $routeProvider.otherwise({
         redirectTo: '/home'

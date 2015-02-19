@@ -1,6 +1,7 @@
 
 <div class="col-sm-12" id="listTable">
-    <table class="table table-stripped">
+    <table class="table table-stripped table-responsive" datatable="ng">
+        <thead>
         <tr>
             <th># </th>
             <th  style="text-align: left;">Company Name</th>
@@ -10,6 +11,8 @@
             <th>Address</th>
             <th style="text-align: left;"></th>
         </tr>
+        </thead>
+        <tbody>
         <tr ng-repeat="insurance in data.insurance">
             <td style="text-align: left;">{{ $index+1 }}</td>
             <td  style="text-align: left;">{{ insurance.company_name }}</td>
@@ -20,7 +23,18 @@
             <td style="text-align: left;">
                 <md-button class="md-hue-3 md-raised md-primary md-fab" style="height: 24px;width: 24px" ng-click="showAdvanced($event,insurance)"><i class="fa fa-info"></i>
                     <md-tooltip>
-                        View This
+                        View Details
+                    </md-tooltip>
+                </md-button>
+                &nbsp;&nbsp;
+                <md-button class="md-hue-3 md-raised md-accent md-fab" style="height: 24px;width: 24px" ng-click="showAdvanced($event,insurance)"><i class="fa fa-th-list"></i>
+                    <md-tooltip>
+                        View Insured Cars
+                    </md-tooltip>
+                </md-button>&nbsp;&nbsp;
+                <md-button class="md-hue-3 md-raised md-accent md-fab" style="height: 24px;width: 24px" ng-click="showAdvanced($event,insurance)"><i class="fa fa-plus-square"></i>
+                    <md-tooltip>
+                        Add Insured Cars
                     </md-tooltip>
                 </md-button>
                 <!--<md-button class="md-hue-3 md-accent md-raised md-fab" style="height: 24px;width: 24px"><i class="fa fa-edit"></i>-->
@@ -36,6 +50,7 @@
                  -->
              </td>
          </tr>
+        </tbody>
      </table>
 
  </div>

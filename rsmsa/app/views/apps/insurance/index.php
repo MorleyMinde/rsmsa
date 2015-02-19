@@ -10,6 +10,8 @@
 <script src="<?php echo asset('js/jquery/jquery.js')?>"></script>
 <script src="<?php echo asset('js/jquery/jquery-ui.js')?>"></script>
 <script src="<?php echo asset('angular/angular.min.js')?>"></script>
+    <script src="<?php echo asset('DataTables/media/js/jquery.dataTables.js') ?>"></script>
+    <script src="<?php echo asset('angular-datatables/dist/angular-datatables.js') ?>"></script>
 <script src="<?php echo asset('angular-animate/angular-animate.min.js')?>"></script>
 <script src="<?php echo asset('angular-aria/angular-aria.min.js')?>"></script>
 <script src="<?php echo asset('angular/angular-messages.min.js')?>"></script>
@@ -17,8 +19,10 @@
 <script src="<?php echo asset('angular-material/angular-material.min.js')?>"></script>
 <script src="<?php echo asset('angular-material/angular-text.min.js')?>"></script>
 <script src="<?php echo asset('angular/angular-route.min.js')?>"></script>
+    <script src="<?php echo asset('highcharts-ng/src/highcharts-custom.js') ?>"></script>
 <script src="<?php echo asset('js/highcharts-ng.js')?>"></script>
 <script src="<?php echo asset('angular/ui-date/date.js')?>"></script>
+    <script src="<?php echo asset('js/angular-file-upload.min.js')?>"></script>
 
 
     <!-- Angular Material Dependencies -->
@@ -29,6 +33,7 @@
 <link rel="stylesheet" href="<?php echo asset('apps/accident/css/bootstrap.css')?>"/>
 <link rel="stylesheet" href="<?php echo asset('apps/accident/css/bootstrap-theme.css')?>"/>
 <link rel="stylesheet" href="<?php echo asset('apps/accident/css/material-design.css')?>"/>
+<link href="<?php echo asset('DataTables/media/css/jquery.dataTables.css') ?>" rel="stylesheet" />
 
 <link rel="stylesheet" type="text/css" href="<?php echo asset('apps/accident/css/font-awesome/css/font-awesome.min.css')?>" />
 
@@ -82,7 +87,7 @@ md-icon{
 <script>
 var routeProvider = null;
 
-var mainModule = angular.module('insuranceApp', ['ngMaterial', "ngRoute","ui.date"]).config(function ($routeProvider) {
+var mainModule = angular.module('insuranceApp', ['ngMaterial', "ngRoute","ui.date","datatables","angularFileUpload"]).config(function ($routeProvider) {
 
 	routeProvider = $routeProvider;
 });

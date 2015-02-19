@@ -10,6 +10,6 @@ class Insurance extends Eloquent{
 
     protected $table = 'rsmsa_insurance';
 
-
+    protected  $guarded = array('id');
 
 } 
