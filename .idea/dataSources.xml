@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3205049214">
-    <data-source source="LOCAL" name="MySQL - rsmsa@localhost" uuid="f4e22696-0356-4684-a1bf-3c507cd91c44">
+  <component name="DataSourceManagerImpl" format="xml" hash="3922365050">
+    <data-source source="LOCAL" name="MySQL - rsmsa@localhost" uuid="eddec212-b5d2-4bc8-a3b7-ec807cf3e4e4">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/rsmsa</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>dfc1dfcfdfdcdfcedfc5dfc7</user-password>
       <driver-properties>
         <property name="zeroDateTimeBehavior" value="convertToNull" />
         <property name="tinyInt1isBit" value="false" />

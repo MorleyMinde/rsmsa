@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source source="LOCAL" name="MySQL - rsmsa@localhost" uuid="f4e22696-0356-4684-a1bf-3c507cd91c44">
+  <data-source source="LOCAL" name="MySQL - rsmsa@localhost" uuid="eddec212-b5d2-4bc8-a3b7-ec807cf3e4e4">
     <database-info product="MySQL" version="5.5.41-0ubuntu0.14.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
@@ -2959,15 +2959,15 @@
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="accident_id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="driver_id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="drugs" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="severity" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="phone_use" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="seat_belt" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="alcohol" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="rsmsa_accident_driver_accident_id_foreign" columns="accident_id" ref-table="rsmsa_accidents" ref-schema="" ref-catalog="rsmsa" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="rsmsa_accident_driver_driver_id_foreign" columns="driver_id" ref-table="rsmsa_drivers" ref-schema="" ref-catalog="rsmsa" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="rsmsa_accident_driver_accident_id_foreign" unique="false" columns="accident_id"/>
+      <index name="rsmsa_accident_driver_driver_id_foreign" unique="false" columns="driver_id"/>
     </table>
     <table name="rsmsa_accident_passenger" schema="" catalog="rsmsa" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -2985,7 +2985,7 @@
       <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="rsmsa_accident_passenger_accident_id_foreign" columns="accident_id" ref-table="rsmsa_accidents" ref-schema="" ref-catalog="rsmsa" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="rsmsa_accident_passenger_accident_id_foreign" unique="false" columns="accident_id"/>
     </table>
     <table name="rsmsa_accident_vehicle" schema="" catalog="rsmsa" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -2999,8 +2999,8 @@
       <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="rsmsa_accident_vehicle_accident_id_foreign" columns="accident_id" ref-table="rsmsa_accidents" ref-schema="" ref-catalog="rsmsa" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="rsmsa_accident_vehicle_vehicle_id_foreign" columns="vehicle_id" ref-table="rsmsa_vehicles" ref-schema="" ref-catalog="rsmsa" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="rsmsa_accident_vehicle_accident_id_foreign" unique="false" columns="accident_id"/>
+      <index name="rsmsa_accident_vehicle_vehicle_id_foreign" unique="false" columns="vehicle_id"/>
     </table>
     <table name="rsmsa_accident_witness" schema="" catalog="rsmsa" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -3015,11 +3015,12 @@
       <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="rsmsa_accident_witness_accident_id_foreign" columns="accident_id" ref-table="rsmsa_accidents" ref-schema="" ref-catalog="rsmsa" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="rsmsa_accident_witness_accident_id_foreign" unique="false" columns="accident_id"/>
     </table>
     <table name="rsmsa_accidents" schema="" catalog="rsmsa" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="accident_reg_number" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="accident_class" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="ocs_check" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="supervisor_check" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="rank_no" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
@@ -3030,6 +3031,8 @@
       <column name="accident_only_damage" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="latitude" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="longitude" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="cause" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="weather" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="hit_run" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="accident_date_time" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="accident_area" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
@@ -3044,15 +3047,22 @@
       <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="rsmsa_accidents_rank_no_foreign" columns="rank_no" ref-table="rsmsa_police" ref-schema="" ref-catalog="rsmsa" ref-columns="rank_no" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="rsmsa_accident_driver_accident_id_foreign" table="rsmsa_accident_driver" schema="" catalog="rsmsa" columns="accident_id"/>
-      <exported-key name="rsmsa_accident_passenger_accident_id_foreign" table="rsmsa_accident_passenger" schema="" catalog="rsmsa" columns="accident_id"/>
-      <exported-key name="rsmsa_accident_vehicle_accident_id_foreign" table="rsmsa_accident_vehicle" schema="" catalog="rsmsa" columns="accident_id"/>
-      <exported-key name="rsmsa_accident_witness_accident_id_foreign" table="rsmsa_accident_witness" schema="" catalog="rsmsa" columns="accident_id"/>
+      <index name="rsmsa_accidents_rank_no_foreign" unique="false" columns="rank_no"/>
     </table>
     <table name="rsmsa_apps" schema="" catalog="rsmsa" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="location" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="rsmsa_car_insurance" schema="" catalog="rsmsa" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="company_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="car_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="insurance_type" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="start_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="end_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="rsmsa_districts" schema="" catalog="rsmsa" type="TABLE">
@@ -3077,7 +3087,6 @@
       <column name="driving_class" sqlType="VARCHAR" length="25" precision="0" nullable="false" jdbcType="12"/>
       <column name="expiry_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <exported-key name="rsmsa_accident_driver_driver_id_foreign" table="rsmsa_accident_driver" schema="" catalog="rsmsa" columns="driver_id"/>
       <exported-key name="rsmsa_offences_driver_license_number_foreign" table="rsmsa_offences" schema="" catalog="rsmsa" columns="driver_license_number"/>
       <index name="rsmsa_drivers_license_number_unique" unique="true" columns="license_number"/>
       <index name="rsmsa_drivers_phone_number_unique" unique="true" columns="phone_number"/>
@@ -3093,11 +3102,20 @@
     <table name="rsmsa_insurance" schema="" catalog="rsmsa" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="company_name" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="principal_officer" sqlType="VARCHAR" length="128" precision="0" nullable="false" jdbcType="12"/>
       <column name="type" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="phone_number" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="policy_number" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
-      <column name="commit" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="address" sqlType="VARCHAR" length="128" precision="0" nullable="false" jdbcType="12"/>
+      <column name="po_box" sqlType="VARCHAR" length="128" precision="0" nullable="false" jdbcType="12"/>
+      <column name="fax" sqlType="VARCHAR" length="128" precision="0" nullable="true" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" length="128" precision="0" nullable="false" jdbcType="12"/>
+      <column name="website" sqlType="VARCHAR" length="128" precision="0" nullable="true" jdbcType="12"/>
+      <column name="policy_period" sqlType="VARCHAR" length="128" precision="0" nullable="false" jdbcType="12"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
+      <index name="company_name" unique="true" columns="company_name"/>
     </table>
     <table name="rsmsa_licence_renewal" schema="" catalog="rsmsa" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -3174,7 +3192,6 @@
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="rsmsa_police_person_id_foreign" columns="person_id" ref-table="rsmsa_persons" ref-schema="" ref-catalog="rsmsa" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
       <foreign-key name="rsmsa_police_station_id_foreign" columns="station_id" ref-table="rsmsa_stations" ref-schema="" ref-catalog="rsmsa" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
-      <exported-key name="rsmsa_accidents_rank_no_foreign" table="rsmsa_accidents" schema="" catalog="rsmsa" columns="rank_no"/>
       <exported-key name="rsmsa_offences_rank_no_foreign" table="rsmsa_offences" schema="" catalog="rsmsa" columns="rank_no"/>
       <index name="rsmsa_police_rank_no_unique" unique="true" columns="rank_no"/>
     </table>
@@ -3229,7 +3246,6 @@
       <column name="gross_wheight" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="imported_from" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <exported-key name="rsmsa_accident_vehicle_vehicle_id_foreign" table="rsmsa_accident_vehicle" schema="" catalog="rsmsa" columns="vehicle_id"/>
       <exported-key name="rsmsa_offences_vehicle_plate_number_foreign" table="rsmsa_offences" schema="" catalog="rsmsa" columns="vehicle_plate_number"/>
       <index name="rsmsa_vehicles_plate_number_unique" unique="true" columns="plate_number"/>
     </table>

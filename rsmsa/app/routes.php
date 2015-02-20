@@ -98,6 +98,9 @@ Route::post('/vehicle/delete/{id}',array('uses'=>'VehicleController@destroy'));
 //get number of vehicle for specific  motor vehicle character
 Route::get('/vehicle/{column}/{value}',array('uses'=>'VehicleController@getValue'));
 
+//save insurance details to a vehicle
+Route::post('vehicle/insurance',array('uses'=>'VehicleController@saveInsurance'));
+
 ////////////////////////////////////////////////////////////////////
 ///////////////////Administrative Unit Routes///////////////////////
 ///////////////////////////////////////////////////////////////////

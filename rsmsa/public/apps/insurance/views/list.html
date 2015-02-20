@@ -5,7 +5,7 @@
         <tr>
             <th># </th>
             <th  style="text-align: left;">Company Name</th>
-            <th  style="text-align: left;">Insurance Type</th>
+            <th  style="text-align: left;">Company Type</th>
             <th style="text-align: left;">Phone Number</th>
             <th style="text-align: left;">Policy Period</th>
             <th>Address</th>
@@ -20,18 +20,17 @@
             <td style="text-align: left;">{{ insurance.phone_number }}</td>
             <td style="text-align: left;">{{ insurance.policy_period }}</td>
             <td style="text-align: left;">{{ insurance.address }}</td>
-            <td style="text-align: left;">
+            <td style="text-align: left; width: 10%">
                 <md-button class="md-hue-3 md-raised md-primary md-fab" style="height: 24px;width: 24px" ng-click="showAdvanced($event,insurance)"><i class="fa fa-info"></i>
                     <md-tooltip>
                         View Details
                     </md-tooltip>
                 </md-button>
-                &nbsp;&nbsp;
                 <md-button class="md-hue-3 md-raised md-accent md-fab" style="height: 24px;width: 24px" ng-click="showAdvanced($event,insurance)"><i class="fa fa-th-list"></i>
                     <md-tooltip>
                         View Insured Cars
                     </md-tooltip>
-                </md-button>&nbsp;&nbsp;
+                </md-button>
                 <md-button class="md-hue-3 md-raised md-accent md-fab" style="height: 24px;width: 24px" ng-click="showAdvanced($event,insurance)"><i class="fa fa-plus-square"></i>
                     <md-tooltip>
                         Add Insured Cars

@@ -180,6 +180,16 @@ class VehicleController extends BaseController {
     }
 
     /**
+     * Remove the specified resource from storage.
+     *
+     * @return Response
+     */
+    public function saveInsurance()
+    {
+        CarInsurance::create(Input::all());
+    }
+
+    /**
      * Uploading the drives via excel
      *
      * @return Response

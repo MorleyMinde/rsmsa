@@ -30,9 +30,11 @@
     <script src="<?php echo asset('angular-material/angular-text.min.js')?>"></script>
     <script src="<?php echo asset('angular/angular-route.min.js')?>"></script>
     <script src="<?php echo asset('js/angular-file-upload.min.js')?>"></script>
+    <script src="<?php echo asset('js/autocomplete.js')?>"></script>
 
     <link rel="stylesheet"href="<?php echo asset('angular-material/angular-text.min.css')?>">
     <link rel="stylesheet" href="<?php echo asset('css/style.css')?>">
+    <link rel="stylesheet" href="<?php echo asset('css/autocomplete.css')?>">
     <link rel="stylesheet" href="<?php echo asset('apps/driver/font-awesome/css/font-awesome.css')?>">
     <style>
         .container {
@@ -82,7 +84,7 @@
     </style>
     <!--<script ng-repeat="app in app.routes" ng-src="{{getControllerSrc(app.controller)}}"></script>-->
     <script>
-        var mainModule = angular.module('rsmsaApp', ['ngMaterial', "ngRoute","angularFileUpload","datatables",'ui.date','multi-select',"highcharts-ng"]);
+        var mainModule = angular.module('rsmsaApp', ['ngMaterial', "ngRoute","angularFileUpload","datatables",'ui.date','multi-select',"highcharts-ng",'autocomplete']);
         mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route) {
             //When menu button is clicked show the left menu
             $scope.toggleLeft = function() {
@@ -98,6 +100,7 @@
     <script src="<?php echo asset('apps/license/controllers/vehicleAppCtrl.js')?>"></script>
     <script src="<?php echo asset('apps/license/controllers/vehicleImportCtrl.js')?>"></script>
     <script src="<?php echo asset('apps/license/controllers/vehicleAddCtrl.js')?>"></script>
+    <script src="<?php echo asset('apps/license/controllers/insuranceAddCtrl.js')?>"></script>
 </head>
 
 <body style="" ng-controller="vehicleAppCtrl">

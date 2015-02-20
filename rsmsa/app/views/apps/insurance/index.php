@@ -32,7 +32,6 @@
 <link rel="stylesheet" href="<?php echo asset('css/style.css')?>">
 <link rel="stylesheet" href="<?php echo asset('apps/accident/css/bootstrap.css')?>"/>
 <link rel="stylesheet" href="<?php echo asset('apps/accident/css/bootstrap-theme.css')?>"/>
-<link rel="stylesheet" href="<?php echo asset('apps/accident/css/material-design.css')?>"/>
 <link href="<?php echo asset('DataTables/media/css/jquery.dataTables.css') ?>" rel="stylesheet" />
 
 <link rel="stylesheet" type="text/css" href="<?php echo asset('apps/accident/css/font-awesome/css/font-awesome.min.css')?>" />

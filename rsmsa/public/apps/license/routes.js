@@ -18,7 +18,7 @@ angular.module("rsmsaApp").config( function($routeProvider){
         controller: 'vehicleAddCtrl'
     });$routeProvider.when("/insurance",{
         templateUrl: 'views/insurance.html',
-        controller: 'vehicleAddCtrl'
+        controller: 'insuranceAddCtrl'
     });$routeProvider.when("/inspection",{
         templateUrl: 'views/inspection.html',
         controller: 'vehicleAddCtrl'
