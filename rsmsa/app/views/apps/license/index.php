@@ -49,7 +49,7 @@
             position: absolute;
             width: 75%;
             background-color: white;
-            height: 1000px;
+            min-height: 00px;
             left: 12.5%;
             top: 20px;
             overflow: hidden;
@@ -96,6 +96,8 @@
     <script src="<?php echo asset('apps/license/controllers/vehicleAppCtrl.js')?>"></script>
     <script src="<?php echo asset('apps/license/controllers/vehicleImportCtrl.js')?>"></script>
     <script src="<?php echo asset('apps/license/controllers/vehicleAddCtrl.js')?>"></script>
+    <script src="<?php echo asset('app/offence/controllers/offenceListController.js')?>"></script>
+    <script src="<?php echo asset('app/offence/controllers/offenceFormController.js')?>"></script>
 </head>
 
 <body style="" ng-controller="vehicleAppCtrl">

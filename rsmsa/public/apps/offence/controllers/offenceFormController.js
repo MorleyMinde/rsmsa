@@ -1,4 +1,4 @@
-angular.module('offenceApp')
+angular.module('rsmsaApp')
 .controller('offenceFormController',
 	function($scope,$http, $mdDialog,$rootScope, $scope, $routeParams, $route) {
 	//Initialize readonly value for the offence form. View is readonly
@@ -87,12 +87,14 @@ angular.module('offenceApp')
 		});
 	}
 	$scope.payment = {};
+	$scope.formTitle = "Report Offence";
 	//Is there a request in the route parameters
 	if($routeParams.request){
 		//There is a request in the route parameters
 		
 		if($routeParams.request == "view" || $routeParams.request == "edit")// if the route is /view or /edit
 		{
+			$scope.formTitle = "Offence Details";
 			$scope.isreadonly = true;
 			//Fetch the offence involved
 			$http.get("/api/offence/"+$routeParams.id).success(function(data){
@@ -102,11 +104,7 @@ angular.module('offenceApp')
 				$http.get("/api/offence/"+$routeParams.id+"/payment/")
 					.success(
 						function(payment) {
-							//Set if payment is paid
-							$scope.offence.paid = (payment.receipt_number != undefined);
-							if($scope.offence.paid){
-								$scope.payment = payment;
-							}
+							$scope.setPayment(payment);
 					})
 					.error(function(error) {
 						//TODO Handle error
@@ -124,6 +122,17 @@ angular.module('offenceApp')
 				.error(function(error) {
 					//TODO Handle error
 			});
+		}
+	}
+	/**
+	 * 
+	 * Sets payment
+	 */
+	$scope.setPayment = function(receipt){
+		//Set paid if payment is made
+		$scope.offence.paid = (receipt.receipt_number != undefined);
+		if($scope.offence.paid){
+			$scope.payment = receipt;
 		}
 	}
 	/**
@@ -169,6 +178,11 @@ angular.module('offenceApp')
 	$scope.watchAndFetch('offence.rank_no',"/api/police/",function(police) {
 		//Set Police
 		$scope.police = police;
+		
+		$scope.watchAndFetch('police.person_id',"/api/person/",function(person) {
+			//Set Police
+			$scope.police.person = person;
+		});
 	});
 	
 	//Initialize Station  mirrors the one on the database
@@ -219,7 +233,7 @@ angular.module('offenceApp')
 		};
 		//Show dialog box with a list of offences to choose from
 		$mdDialog.show({
-			controller : DialogController,
+			controller : OffenceDialogController,
 			templateUrl : 'views/offencelistdialog.html',
 			targetEvent : ev,
 		});
@@ -254,6 +268,18 @@ angular.module('offenceApp')
 			return "none";
 		}
 	};
+	//Show a dialog box of offence registry
+	$scope.openPaymentForm = function(ev) {
+		$mdDialog.setPayment = function(receipt){
+			$scope.setPayment(receipt);
+		};
+		//Show dialog box with a list of offences to choose from
+		$mdDialog.show({
+			controller : PaymentDialogController,
+			templateUrl : 'views/paymentForm.html',
+			targetEvent : ev,
+		});
+	};
 });
 /**
  * Converts 1 or 0 to true or false in an offence object
@@ -281,7 +307,7 @@ function offenceConversion(offence){
 /**
  * Dialog box to select offences from list of offences
  */
-function DialogController($scope, $mdDialog,$http) {
+function OffenceDialogController($scope, $mdDialog,$http) {
 	//Initialize offenceRegistry list
 	$scope.offenceRegistry = [];
 	//Hide the dialog box
@@ -304,4 +330,15 @@ function DialogController($scope, $mdDialog,$http) {
 	}).error(function(error) {
 		//TODO Handle error
 	});
+}
+/**
+ * Dialog box to make payments
+ */
+function PaymentDialogController($scope, $mdDialog,$http) {
+	//Hide the dialog box
+	$scope.hide = function() {
+		//Set payment to parent scope
+		$mdDialog.setPayment($scope.receipt);
+		$mdDialog.hide();
+	};
 }

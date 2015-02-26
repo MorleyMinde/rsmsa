@@ -9,7 +9,7 @@ angular.module('rsmsaApp', [ 'ngMaterial' , "ngRoute",'ui.date',"highcharts-ng"]
 	.config(function ($routeProvider) {
 			routeProvider = $routeProvider;
 		})
-	.controller('offenceCtrl',function($scope, $mdDialog, $http,$mdSidenav, $location) {
+	.controller('rsmsaAppController',function($scope, $mdDialog, $http,$mdSidenav, $location) {
 			
 			//Shows the left menu
 			$scope.toggleLeft = function() {
@@ -37,6 +37,7 @@ angular.module('rsmsaApp', [ 'ngMaterial' , "ngRoute",'ui.date',"highcharts-ng"]
 						var route = app.routes[i];
 						routeProvider.when(route.route, {
 							templateUrl: "views"+route.view,
+							controller:route.controller
 							//TODO Resolve controllers with respect to views
 							
 						});

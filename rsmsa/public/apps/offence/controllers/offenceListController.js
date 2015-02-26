@@ -1,4 +1,4 @@
-angular.module('offenceApp').controller('offenceListController',function($scope,$http,$routeParams) {
+angular.module('rsmsaApp').controller('offenceListController',function($scope,$http,$routeParams) {
 		//Initialize offence list
 		$scope.offenceList = {};
 		if($routeParams.id){//If there is an id on the route
@@ -6,6 +6,14 @@ angular.module('offenceApp').controller('offenceListController',function($scope,
 			//Fetch
 			$http.get("/api/offence/registry/"+$routeParams.id+"/offences").success(function(data) {
 				$scope.offenceList = data;
+			});
+		}else if($routeParams.license){
+			$http.get("/api/driver/"+$routeParams.license+"/offences").success(function(data) {
+				$scope.offenceList = data.offences;
+			});
+		}else if($routeParams.plate_number){
+			$http.get("/api/vehicle/"+$routeParams.plate_number+"/offences").success(function(data) {
+				$scope.offenceList = data.offences;
 			});
 		}else
 		{

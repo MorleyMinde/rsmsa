@@ -14,6 +14,14 @@ angular.module("rsmsaApp").config( function($routeProvider){
         templateUrl: 'views/add.html',
         controller: 'driverAddCtrl'
     });
+    $routeProvider.when("/driver/:license/offences",{
+        templateUrl: '/app/offence/views/offencelist.html',
+        controller: 'offenceListController'
+    });
+    $routeProvider.when("/offence/:request/:id",{
+        templateUrl: '/app/offence/views/offenceForm.html',
+        controller: 'offenceFormController'
+    });
     $routeProvider.otherwise({
         redirectTo: '/home'
     });

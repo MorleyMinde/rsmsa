@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="rsmsaApp" ng-controller="offenceCtrl">
+<html ng-app="rsmsaApp" ng-controller="rsmsaAppController">
 <head>
 
 <!-- Angulars Material CSS now available via Google CDN; version 0.6 used here -->
@@ -76,16 +76,11 @@ md-icon{
 }
 </style>
 <script src="/js/Chart.js"></script>
-<script src="controllers/offenceController.js"></script>
+<script src="controllers/rsmsaAppController.js"></script>
 <!--<script ng-repeat="controller in appControllers" ng-src="{{getContollerUrl(controller)}}"></script>-->
 
-<script src="controllers/statsController.js"></script>
-<script src="controllers/offenceListController.js"></script>
-<script src="controllers/offenceFormController.js"></script>
-<script src="controllers/offenceRegController.js"></script>
-<script src="controllers/offenceReportController.js"></script>
-<script src="controllers/offencePaymentController.js"></script>
-<script src="<?php echo asset('app/payment/controllers/receiptController.js')?>"></script>
+<script src="controllers/paymentModeController.js"></script>
+<script src="controllers/receiptController.js"></script>
 </head>
 <body style="" >
 	<div class="container">

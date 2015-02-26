@@ -11,7 +11,7 @@
 		{"name":"Offence List","route":"/list"},
 		{"name":"Report Offence","route":"/report"},
 		{"name":"Registry","route":"/registry"},
-		{"name":"Payment Report","route":"/offence/payments"},
+		{"name":"Payment","route":"/offence/payments"},
 		{"name":"Offence Report","route":"/offence/report"}		
 	],
 	"routes":[
