@@ -180,7 +180,7 @@ class OffenceController extends BaseController {
 		$offences = new Offence();
 		//Add column to query
 		$column = array(DB::raw('count(*) as offences'));
-		
+		//return count($json['offences']);
 		if($json['horizontal'] == 'year'){//Query by specific year
 			//Add month column to the table query as time
 			array_push($column,DB::raw("DATE_FORMAT(offence_date,'%M') as time"));
@@ -218,6 +218,19 @@ class OffenceController extends BaseController {
 				$offences = $offences->join('rsmsa_drivers', 'rsmsa_drivers.license_number', '=', 'rsmsa_offences.driver_license_number');
 			}
 			$offences = $offences->where("gender","=",$json['gender']);
+		}
+		if(count($json['offences']) > 0){
+			$offences = $offences->join("rsmsa_offence_events","rsmsa_offence_events.offence_id","=","rsmsa_offences.id")->whereIn("rsmsa_offence_events.offence_registry_id",$json['offences']);
+		}
+		//return count($json['regions']);
+		if(count($json['regions']) > 0){
+			$offences = $offences->join("rsmsa_police","rsmsa_police.rank_no","=","rsmsa_offences.rank_no")
+				->join("rsmsa_stations","rsmsa_stations.id","=","rsmsa_police.station_id")
+				->whereIn("rsmsa_stations.region_id",$json['regions']);
+			if(count($json['districts']) > 0){
+				$offences = $offences->whereIn("rsmsa_stations.district_id",$json['districts']);
+			}
+				
 		}
 		return $offences->select($column)->groupBy("time")->orderBy("offence_date", 'DESC')->get();	
 	}

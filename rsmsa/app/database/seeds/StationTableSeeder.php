@@ -5,8 +5,8 @@ class StationTableSeeder extends Seeder{
 	{
 		$arrays = array(
 				array('name' => 'Kijitonyama',
-                      'district' => 'Kinondoni',
-                      'region' => 'Dar Es Salaam')
+                      'district_id' => '8',
+                      'region_id' => '2')
 		);
 		DB::table('rsmsa_stations')->delete();
 

@@ -41,7 +41,7 @@ class AppController extends BaseController {
 	public function getApp($id)
 	{
 		//return View::make('app');
-		$app = AppEntity::find($id);
+		$app = $this->getAppByExp($id);
 		return View::make("apps/".$app->location."/index");
 	}
 	/**
@@ -52,7 +52,7 @@ class AppController extends BaseController {
 	 */
 	public function getManifest($id)
 	{
-		$app = AppEntity::find($id);
+		$app = $this->getAppByExp($id);
 		//return json_encode($output, 128);
 		return (file_get_contents($_SERVER['DOCUMENT_ROOT']."/apps/".$app->location."/manifest.json"));
 	}
@@ -65,7 +65,7 @@ class AppController extends BaseController {
 	 */
 	public function getFile($id,$file)
 	{
-		$app = AppEntity::find($id);
+		$app = $this->getAppByExp($id);
 		return Redirect::to("/apps/".$app->location."/".$file);
 	}
 	/**
@@ -77,7 +77,7 @@ class AppController extends BaseController {
 	 */
 	public function getView($id,$file)
 	{
-		$app = AppEntity::find($id);
+		$app = $this->getAppByExp($id);
 		return Redirect::to("/apps/".$app->location."/views/".$file);
 	}
 	/**
@@ -89,7 +89,15 @@ class AppController extends BaseController {
 	 */
 	public function getController($id,$file)
 	{
-		$app = AppEntity::find($id);
+		$app = $this->getAppByExp($id);
 		return Redirect::to("/apps/".$app->location."/controllers/".$file);
+	}
+	private function getAppByExp($id){
+		if(is_numeric($id))
+		{
+			return AppEntity::find($id);
+		}else{
+			return AppEntity::where("location","=",$id)->first();
+		}
 	}
 }
