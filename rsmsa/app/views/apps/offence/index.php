@@ -23,6 +23,8 @@
 <script src="/angular/ui-date/date.js"></script>
 <script src="/angular/highcharts/highcharts-custom.js"></script>
 <script src="/angular/highcharts/highcharts-ng.js"></script>
+<script src="<?php echo asset('js/angular-multi-select.js') ?>"></script>
+<link href="<?php echo asset('css/angular-multi-select.css') ?>" rel="stylesheet">
 <link rel="stylesheet"href="/angular-material/angular-text.min.css">
 <!-- <link rel="stylesheet" href="/css/style.css"> -->
 <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.css">
@@ -85,6 +87,7 @@ md-icon{
 <script src="controllers/offenceRegController.js"></script>
 <script src="controllers/offenceReportController.js"></script>
 <script src="controllers/offencePaymentController.js"></script>
+<script src="controllers/statisticsController.js"></script>
 <script src="<?php echo asset('app/payment/controllers/receiptController.js')?>"></script>
 </head>
 <body style="" >
