@@ -5,7 +5,7 @@
  */
 //Variable to store the angular routeProvide in order to use it outside the config function
 var routProvider = null;
-angular.module('rsmsaApp', [ 'ngMaterial' , "ngRoute",'ui.date',"highcharts-ng"])
+angular.module('rsmsaApp', [ 'ngMaterial' , "ngRoute",'ui.date',"highcharts-ng",'multi-select'])
 	.config(function ($routeProvider) {
 			routeProvider = $routeProvider;
 		})
