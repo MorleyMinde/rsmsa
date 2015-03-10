@@ -12,7 +12,8 @@
 		{"name":"Report Offence","route":"/report"},
 		{"name":"Registry","route":"/registry"},
 		{"name":"Payment","route":"/offence/payments"},
-		{"name":"Offence Report","route":"/offence/report"}		
+		{"name":"Offence Report","route":"/offence/report"},
+		{"name":"Statistics","route":"/offence/statistics"}	
 	],
 	"routes":[
 		{"route":"/home","view":"/stats.html"},
@@ -22,7 +23,8 @@
 		{"route":"/registry","view":"/offenceReg.html"},
 		{"route":"/registry/:id/offences","view":"/offencelist.html"},
 		{"route":"/offence/report","view":"/offenceReport.html"},
-		{"route":"/offence/payments","view":"/offencePayments.html"}
+		{"route":"/offence/payments","view":"/offencePayments.html"},
+		{"route":"/offence/statistics","view":"/statistics.html","controller":"statisticsController"}
 	],
 	"color":{
 		"c500":"#673AB7",
