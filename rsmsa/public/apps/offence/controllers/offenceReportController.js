@@ -144,6 +144,9 @@ angular.module('rsmsaApp')
 				districts:[],
 				offences:[]
 		};
+		$scope.$watchCollection('criteria', function(newNames, oldNames) {
+			$scope.tableReport();
+		});
 		//Initialize results which will be shown on the charts 
 		$scope.results = null;
 		/**
@@ -156,12 +159,33 @@ angular.module('rsmsaApp')
 				$scope.results = data;
 				$scope.chartConfig.xAxis.categories = [];
 				$scope.chartConfig.series = [];
-				var seriesData = {data:[]};
+				var seriesData = {name:"Offence",data:[]};
 				for(i = 0;i < data.length;i++){
-					$scope.chartConfig.xAxis.categories.push(data[i].time);
+					if(!$scope.contains($scope.chartConfig.xAxis.categories,data[i].time))
+					{
+						$scope.chartConfig.xAxis.categories.push(data[i].time);
+					}
 					seriesData.data.push(data[i].offences)
 				}
-				$scope.chartConfig.series.push(seriesData);
+				var series = [];
+				cont:
+				for(i = 0;i < data.length;i++){
+					if(!$scope.contains($scope.chartConfig.xAxis.categories,data[i].time))
+					{
+						$scope.chartConfig.xAxis.categories.push(data[i].time);
+					}
+					for(j = 0;j < $scope.chartConfig.series.length;j++){
+						if($scope.chartConfig.series[j].name == data.name){
+							$scope.chartConfig.series[j].data.push(data[i].offences);
+							continue cont;
+						}
+					}
+					var seriesObj = {name:"offence",data:[]};
+					seriesObj.name = data.name;
+					seriesObj.data.push(data[i].offences);
+					$scope.chartConfig.series.push(seriesObj);
+				}
+				
 			}).error(function(error) {
 				alert(error);
 			});
@@ -225,4 +249,20 @@ angular.module('rsmsaApp')
 				return "none";
 			}
 		};
+		/**
+		 * Checks if an array contains a value
+		 * 
+		 * @param array arr
+		 * 
+		 * @param Object obj
+		 */
+		$scope.contains = function contains(arr, obj) {
+		    var i = arr.length;
+		    while (i--) {
+		       if (arr[i] === obj) {
+		           return true;
+		       }
+		    }
+		    return false;
+		}
 });
