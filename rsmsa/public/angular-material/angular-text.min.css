@@ -6190,7 +6190,8 @@ md-tabs[center] .md-header:not(.md-paginating) .md-header-items {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
     height: 100%;
-    width: 99999px; }
+    /*width: 99999px;*/
+  }
 
 .md-tabs-content {
   overflow: hidden;

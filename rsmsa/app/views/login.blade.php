@@ -84,7 +84,7 @@
                     <label class="checkbox">
                         <input type="checkbox" value="remember-me"> Remember me
                         <span class="pull-right">
-                            <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
+                            <a data-toggle="modal" href="{{ url('password/remind/') }}"> Forgot Password?</a>
 
                         </span>
                     </label>

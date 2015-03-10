@@ -6,6 +6,7 @@
 <!-- Angulars Material CSS now available via Google CDN; version 0.6 used here -->
 <link rel="stylesheet" href="../angular-material/angular-material.css">
 
+    <script src="<?php echo asset('apps/administrative_unit/js/jquery.js') ?>"></script>
 <!-- Angular Material Dependencies -->
 <script src="angular/angular.min.js"></script>
 <script src="hammerjs/hammer.min.js"></script>
@@ -17,6 +18,8 @@
 <script src="angular-material/angular-text.min.js"></script>
 <link rel="stylesheet" href="angular-material/angular-text.min.css">
 <link rel="stylesheet" href="css/style.css">
+    <script src="<?php echo asset('apps/administrative_unit/js/bootstrap.js') ?>"></script>
+    <link href="<?php echo asset('apps/administrative_unit/css/bootstrap.css') ?>" rel="stylesheet" />
 </head>
 <style>
 md-card{
@@ -107,7 +110,18 @@ function DialogController($scope, $mdDialog) {
     	</div>
     	<div style="width:12.5%">
     		<div style="margin: auto;margin-top: 10px;width:100px;height:100px;border-radius:50%;border:1px solid blue">
-                <p><a href="logout" style="">Logout</a></p>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        User <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">profile</a></li>
+                        <li><a href="#">Change Password</a></li>
+                        <li class="divider"></li>
+                        <li><a href="logout" style="">Logout</a></li>
+                    </ul>
+                </div>
+
       </div>
     	</div>
     </div>

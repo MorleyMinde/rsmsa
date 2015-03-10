@@ -284,6 +284,68 @@ angular.module('rsmsaApp')
             }]
         };
         $scope.prepareDropdown('category');
+
+
+    //business dropdown
+        //get the dropdown ready use and change the series of chart
+        $scope.prepareBusinessDropdown = function(value){
+            $scope.data.businesCat = [];
+            if(value == 'Nature of application'){
+                var i = 0;
+                $scope.businescolumn = 'application_nature';
+                $scope.chartConfig.title.text = 'Nature of Motor Vehicle Registration Period';
+                $scope.data.businesCat = [{name:'New',ticked: true},{name:'Renewal',ticked: true},{name:'Renewal',ticked: true},{name:'Replacement',ticked: true}]
+
+            }if(value == 'Period applied for'){
+                var i = 0;
+                $scope.businescolumn = 'period';
+                $scope.chartConfig.title.text = 'Period of Motor Vehicle Registration';
+                $scope.data.businesCat = [{name:'One year',ticked: true},{name:'Short-term',ticked: true}]
+            }if(value == 'Body type'){
+                var i = 0;
+                $scope.businescolumn = 'body_type';
+                $scope.chartConfig.title.text = 'Body Type For Motor Vehicle Registration';
+                $scope.data.businesCat = [{name:'Micro bus',ticked: true},{name:'Mini bus',ticked: true},{name:'Large bus',ticked: true},{name:'Other',ticked: true}]
+            }if(value == 'Classes of services'){
+                var i = 0;
+                $scope.businescolumn = 'class_of_service';
+                $scope.chartConfig.title.text = 'Classes of Services Motor Vehicle Year of Manufacture';
+                $scope.data.businesCat = [{name:'Ordinary',ticked: true},{name:'Semi luxury',ticked: true},{name:'Luxury',ticked: true},{name:'Others',ticked: true}]
+            }if(value == 'Nature/Type of service'){
+                var i = 0;
+                $scope.businescolumn = 'nature_of_service';
+                $scope.chartConfig.title.text = 'Nature Of Services for Motor Vehicle Registration';
+                $scope.data.businesCat = [{name:'Local Operator',ticked: true},{name:'Tour operator',ticked: true},{name:'Others',ticked: true}]
+            }
+            $scope.changeBusinessCats();
+        }
+
+        $scope.changeBusinessCats = function(){
+            $scope.chartConfig.xAxis.categories = [];
+            angular.forEach( $scope.data.businesCat, function( value, key ) {
+                if ( value.ticked === true ) {
+                    $scope.chartConfig.xAxis.categories.push(value.name);
+                }
+            });
+            $scope.getbusinessData();
+        }
+
+        $scope.getbusinessData = function(){
+            $scope.chartConfig.series = [{
+                name: 'Motor Vehicle',
+                data: []
+            }];
+            $scope.table.headers = [];
+            $scope.table.colums = [];
+            angular.forEach($scope.chartConfig.xAxis.categories,function(value){
+                $scope.table.headers.push({name:value});
+//                $scope.chartConfig.series[0].data.push(Math.floor(Math.random() * 30))
+                $http.get('../../businessvehicle/'+$scope.businescolumn+'/'+value).success(function(data){
+                    $scope.table.colums.push({val:data});
+                    $scope.chartConfig.series[0].data.push(parseInt(data));
+                });
+            })
+        }
     });
 
 function DialogController($scope, $mdDialog) {

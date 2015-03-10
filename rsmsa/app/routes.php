@@ -10,7 +10,7 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
+Route::controller('password', 'RemindersController');
 
 Route::get('/', array('before' => 'auth' , 'uses' => 'LoginController@index'));
 
@@ -18,6 +18,34 @@ Route::get('login', array('uses'=>'LoginController@getLogin'));
 Route::get('logout', array('uses'=>'LoginController@logout'));
 //process login form
 Route::post('login', array('uses'=>'LoginController@login'));
+
+/**
+ * Users
+ */
+//getting users
+Route::get('/users',array('uses'=>'UserController@index'));
+
+//getting users
+Route::get('/user/apps/{id}',array('uses'=>'UserController@apps'));
+
+//getting users
+Route::get('/user/areas/{id}',array('uses'=>'UserController@areas'));
+
+//getting users
+Route::get('/user/logs/{id}',array('uses'=>'UserController@logs'));
+
+//saving new user
+Route::post('/users',array('uses'=>'UserController@store'));
+
+//Deleting user
+Route::post('/delete/user/{id}',array('uses'=>'UserController@destroy'));
+
+//Updating  user
+Route::post('/user/{id}',array('uses'=>'UserController@update'));
+
+//details of the logged in user
+Route::get('/loggenInuser',array('as'=>'logout', 'uses'=>'UserController@show'));
+
 /*
  * 
  * These are app routes. Routes for getting app specific information
@@ -98,8 +126,17 @@ Route::post('/vehicle/delete/{id}',array('uses'=>'VehicleController@destroy'));
 //get number of vehicle for specific  motor vehicle character
 Route::get('/vehicle/{column}/{value}',array('uses'=>'VehicleController@getValue'));
 
+//get number of vehicle for specific  motor vehicle character
+Route::get('/businessvehicle/{column}/{value}',array('uses'=>'VehicleController@getBusinessValue'));
+
 //save insurance details to a vehicle
 Route::post('vehicle/insurance',array('uses'=>'VehicleController@saveInsurance'));
+
+//save road_license details to a vehicle
+Route::post('vehicle/road_licence',array('uses'=>'VehicleController@saveRoadLicence'));
+
+//save business_licence details to a vehicle
+Route::post('vehicle/business_licence',array('uses'=>'VehicleController@saveBusinessLicence'));
 
 ////////////////////////////////////////////////////////////////////
 ///////////////////Administrative Unit Routes///////////////////////

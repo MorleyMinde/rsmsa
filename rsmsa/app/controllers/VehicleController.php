@@ -182,11 +182,43 @@ class VehicleController extends BaseController {
     /**
      * Remove the specified resource from storage.
      *
+     * @param  int  column
+     * @param  int  value
+     * @return Response
+     */
+    public function getBusinessValue($column,$value)
+    {
+        return BusinessLicence::where($column,$value)->get()->count();
+    }
+
+    /**
+     * Save vehicle insurance information.
+     *
      * @return Response
      */
     public function saveInsurance()
     {
         CarInsurance::create(Input::all());
+    }
+
+    /**
+     * Save vehicle road license information.
+     *
+     * @return Response
+     */
+    public function saveRoadLicence()
+    {
+        RoadLicence::create(Input::all());
+    }
+
+    /**
+     * Save vehicle business license information.
+     *
+     * @return Response
+     */
+    public function saveBusinessLicence()
+    {
+        BusinessLicence::create(Input::all());
     }
 
     /**

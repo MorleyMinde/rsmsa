@@ -83,6 +83,7 @@ class CreateTables extends Migration {
         Schema::create('rsmsa_drivers', function ($table) {
             $table->increments('id');
             $table->string('license_number')->unique();
+            $table->string('TIN_NO');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('physical_address');
@@ -161,8 +162,26 @@ class CreateTables extends Migration {
         Schema::create('rsmsa_car_insurance', function ($table) {
             $table->increments('id');
             $table->integer('company_id');
-            $table->integer('car_id');
+            $table->string('car_id');
             $table->string('insurance_type');
+            $table->string('insurance_no');
+            $table->string('car_value');
+            $table->string('start_date');
+            $table->string('end_date');
+            $table->timestamps();
+        });
+        Schema::create('rsmsa_road_license', function ($table) {
+            $table->increments('id');
+            $table->string('car_id');
+            $table->string('license_no');
+            $table->string('start_date');
+            $table->string('end_date');
+            $table->timestamps();
+        });
+        Schema::create('rsmsa_business_license', function ($table) {
+            $table->increments('id');
+            $table->string('car_id');
+            $table->string('license_no');
             $table->string('start_date');
             $table->string('end_date');
             $table->timestamps();
@@ -171,8 +190,8 @@ class CreateTables extends Migration {
             $table->integer('offence_id')->unsigned();
             $table->integer('offence_registry_id')->unsigned();
             $table->primary(array('offence_id', 'offence_registry_id'));
-            $table->foreign('offence_id')->references('id')->on('rsmsa_offences');
-            $table->foreign('offence_registry_id')->references('id')->on('rsmsa_offence_registry');
+            $table->foreign('offence_id');
+            $table->foreign('offence_registry_id');
         });
         Schema::create('rsmsa_apps', function ($table) {
             $table->increments('id');
@@ -188,7 +207,7 @@ class CreateTables extends Migration {
             $table->string('ocs_check');
             $table->string('supervisor_check');
             $table->string('rank_no');
-            $table->foreign('rank_no')->references('rank_no')->on('rsmsa_police');
+            $table->foreign('rank_no');
             $table->string('sign_date');
             $table->integer('accident_fatal')->unsigned();
             $table->integer('accident_severe_injury')->unsigned();
@@ -218,9 +237,9 @@ class CreateTables extends Migration {
         Schema::create('rsmsa_accident_driver', function ($table) {
             $table->increments('id');
             $table->integer('accident_id')->unsigned();
-            $table->foreign('accident_id')->references('id')->on('rsmsa_accidents');
+            $table->foreign('accident_id');
             $table->integer('driver_id')->unsigned();
-            $table->foreign('driver_id')->references('id')->on('rsmsa_drivers');
+            $table->foreign('driver_id');
             $table->string('severity');
             $table->string('phone_use');
             $table->string('seat_belt');
@@ -234,9 +253,9 @@ class CreateTables extends Migration {
         Schema::create('rsmsa_accident_vehicle', function ($table) {
             $table->increments('id');
             $table->integer('accident_id')->unsigned();
-            $table->foreign('accident_id')->references('id')->on('rsmsa_accidents');
+            $table->foreign('accident_id');
             $table->integer('vehicle_id')->unsigned();
-            $table->foreign('vehicle_id')->references('id')->on('rsmsa_vehicles');
+            $table->foreign('vehicle_id');
             $table->string('vehicle_damage');
             $table->integer('vehicle_fatal')->unsigned();
             $table->integer('vehicle_severe_injury')->unsigned();
@@ -252,7 +271,7 @@ class CreateTables extends Migration {
         Schema::create('rsmsa_accident_passenger', function ($table) {
             $table->increments('id');
             $table->integer('accident_id')->unsigned();
-            $table->foreign('accident_id')->references('id')->on('rsmsa_accidents');
+            $table->foreign('accident_id');
             $table->string('pass_name');
             $table->string('pass_gender');
             $table->string('pass_dob');
@@ -271,7 +290,7 @@ class CreateTables extends Migration {
         Schema::create('rsmsa_accident_witness', function ($table) {
             $table->increments('id');
             $table->integer('accident_id')->unsigned();
-            $table->foreign('accident_id')->references('id')->on('rsmsa_accidents');
+            $table->foreign('accident_id');
             $table->string('witness_name');
             $table->string('witness_gender');
             $table->string('witness_dob');
@@ -317,8 +336,12 @@ class CreateTables extends Migration {
 		Schema::drop('rsmsa_receipts');
 		Schema::drop('rsmsa_offences');
 		Schema::drop('rsmsa_offence_receipts');
+		Schema::drop('rsmsa_road_license');
+		Schema::drop('rsmsa_business_license');
+		Schema::drop('rsmsa_car_insurance');
 		Schema::drop('rsmsa_offence_events');
         Schema::drop('rsmsa_accidents');
+        Schema::drop('rsmsa_insurance');
         Schema::drop('rsmsa_accident_driver');
         Schema::drop('rsmsa_accident_vehicle');
         Schema::drop('rsmsa_accident_passenger');
