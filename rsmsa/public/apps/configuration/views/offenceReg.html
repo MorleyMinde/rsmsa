@@ -1,0 +1,41 @@
+<div ng-controller="offenceRegController">
+<md-button class="md-hue-3 md-raised md-primary" ng-click="editRegistry($event)">
+Create New Offence Registry
+				</md-button>
+<h2>List of Offencces Committed</h2>
+<table>
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Section</th>
+			<th>Nature</th>
+			<th>Relating</th>
+			<th>Amount</th>
+			<th colspan="2">Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="off in offenceRegs">
+			<td>{{$index + 1}}</td>
+			<td>{{off.section}}</td>
+			<td>{{off.nature}}</td>
+			<td>{{off.relating}}</td>
+			<td>{{off.amount}}</td>
+			<td style="width: 200px;">
+				<md-button class="md-hue-3 md-raised md-primary md-fab" ng-click="editRegistry($event)">
+						<md-tooltip>
+				          Edit
+				        </md-tooltip>
+						<i class="fa fa-check"></i> 
+				</md-button>
+				<md-button class="md-hue-3 md-raised md-warn md-fab" ng-click="editRegistry($event)">
+						<md-tooltip>
+				          Delete
+				        </md-tooltip>
+						<i class="fa fa-trash-o"></i> 
+				</md-button>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>

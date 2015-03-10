@@ -1,0 +1,19 @@
+<md-dialog aria-label="Mango (Fruit)"
+	ng-controller="offenceRegController"> <md-toolbar
+	class="md-theme-light" style="background-color:#B39DDB !important">
+<h1 class="md-toolbar-tools">Offence Registry</h1>
+</md-toolbar> <md-content> 
+<md-input-container class="col-sm-4">
+	<label>Nature.</label> <input ng-model="registry.nature" required /> 
+</md-input-container> <md-input-container
+	class="col-sm-4"> <label>Section</label> <input
+	ng-model="registry.section" required /> </md-input-container> <md-input-container
+	class="col-sm-4"> <label>Relating</label> <input
+	ng-model="registry.relating" required /> </md-input-container> <md-input-container
+	class="col-sm-4"> <label>Amount</label> <input
+	ng-model="registry.amount" required /> </md-input-container> </md-content>
+<div class="md-actions" layout="row">
+	<md-button ng-click="save()" class="md-primary"> Save </md-button>
+	<md-button ng-click="hide()" class="md-primary"> Cancel </md-button>
+</div>
+</md-dialog>
