@@ -18,6 +18,8 @@
     <script src="<?php echo asset('angular-animate/angular-animate.min.js')?>"></script>
     <script src="<?php echo asset('angular-aria/angular-aria.min.js')?>"></script>
     <script src="<?php echo asset('angular/angular-messages.min.js')?>"></script>
+    <script src="<?php echo asset('highcharts-ng/src/highcharts-custom.js') ?>"></script>
+    <script src="<?php echo asset('highcharts-ng/src/highcharts-ng.js') ?>"></script>
     <!-- Angular Material Javascript now available via Google CDN; version 0.6 used here -->
     <script src="<?php echo asset('apps/administrative_unit/js/bootstrap.js') ?>"></script>
     <link href="<?php echo asset('apps/administrative_unit/css/bootstrap.css') ?>" rel="stylesheet" />
@@ -32,6 +34,7 @@
     <link rel="stylesheet"href="<?php echo asset('angular-material/angular-text.min.css')?>">
     <link rel="stylesheet" href="<?php echo asset('css/style.css')?>">
     <link rel="stylesheet" href="<?php echo asset('apps/driver/font-awesome/css/font-awesome.css')?>">
+    <link rel="stylesheet" href="<?php echo asset('apps/accident/css/material-design.css')?>"/>
     <style>
         .container {
             position: fixed;
@@ -80,7 +83,7 @@
     </style>
     <!--<script ng-repeat="app in app.routes" ng-src="{{getControllerSrc(app.controller)}}"></script>-->
     <script>
-        var mainModule = angular.module('rsmsaApp', ['ngMaterial', "ngRoute","angularFileUpload","datatables",'ui.date','multi-select']);
+        var mainModule = angular.module('rsmsaApp', ['ngMaterial', "ngRoute","angularFileUpload","datatables",'ui.date','multi-select',"highcharts-ng"]);
         mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route) {
             //When menu button is clicked show the left menu
             $scope.toggleLeft = function() {
@@ -96,8 +99,9 @@
     <script src="<?php echo asset('apps/driver/controllers/driverAppCtrl.js')?>"></script>
     <script src="<?php echo asset('apps/driver/controllers/driverImportCtrl.js')?>"></script>
     <script src="<?php echo asset('apps/driver/controllers/driverAddCtrl.js')?>"></script>
-    <script src="<?php echo asset('app/offence/controllers/offenceListController.js')?>"></script>
+	<script src="<?php echo asset('app/offence/controllers/offenceListController.js')?>"></script>
     <script src="<?php echo asset('app/offence/controllers/offenceFormController.js')?>"></script>
+	<script src="<?php echo asset('apps/driver/controllers/accidentCtrl.js')?>"></script>
 </head>
 
 <body style="" ng-controller="driverAppCtrl">

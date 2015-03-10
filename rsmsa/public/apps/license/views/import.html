@@ -43,51 +43,51 @@
 <div ng-if="data.imported.length != 0">
     <h3>Import Summary</h3>
 </div>
-<table datatable="ng" class="row-border hover" ng-if="data.imported != 0">
+<table datatable="ng" class="row-border hover" ng-if="data.imported.newValues && data.imported.newValues.length">
     <thead>
     <tr>
-        <th>Surname</th>
-        <th>Other Name</th>
-        <th>Gender</th>
-        <th>Licence Number</th>
-        <th>Date of birth</th>
-        <th>Occupation</th>
+        <th>Plate Number</th>
+        <th>Model</th>
+        <th>Make</th>
+        <th>YOM</th>
+        <th>Color</th>
+        <th>Class</th>
         <th></th>
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="requi in data.imported.">
-        <td>{{ requi.surname }}</td>
-        <td>{{ requi.other_names }}</td>
-        <td>{{ requi.gender }}</td>
-        <td>{{ requi.driving_license_id }}</td>
-        <td>{{ requi.date_of_birth }}</td>
-        <td>{{ requi.occupation }}</td>
+    <tr ng-repeat="requi in data.imported.newValues">
+        <td>{{ requi.registration_number }}</td>
+        <td>{{ requi.car_model }}</td>
+        <td>{{ requi.car_make }}</td>
+        <td>{{ requi.year_of_manufacture }}</td>
+        <td>{{ requi.color }}</td>
+        <td>{{ requi.class }}</td>
         <td>New Value</td>
     </tr>
     </tbody>
 </table>
-<table datatable="ng" class="row-border hover" ng-if="data.imported.duplicates && data.imported.length != 0">
+<table datatable="ng" class="row-border hover" ng-if="data.imported.duplicates && data.imported.duplicates.length != 0">
     <thead>
     <tr>
-        <th>Surname</th>
-        <th>Other Name</th>
-        <th>Gender</th>
-        <th>Licence Number</th>
-        <th>Date of birth</th>
-        <th>Occupation</th>
+        <th>Plate Number</th>
+        <th>Model</th>
+        <th>Make</th>
+        <th>YOM</th>
+        <th>Color</th>
+        <th>Class</th>
         <th></th>
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="requi in data.imported">
-        <td>{{ requi.surname }}</td>
-        <td>{{ requi.other_names }}</td>
-        <td>{{ requi.gender }}</td>
-        <td>{{ requi.driving_license_id }}</td>
-        <td>{{ requi.date_of_birth }}</td>
-        <td>{{ requi.occupation }}</td>
-        <td>Updated</td>
+    <tr ng-repeat="requi in data.imported.duplicates">
+        <td>{{ requi.registration_number }}</td>
+        <td>{{ requi.car_model }}</td>
+        <td>{{ requi.car_make }}</td>
+        <td>{{ requi.year_of_manufacture }}</td>
+        <td>{{ requi.color }}</td>
+        <td>{{ requi.class }}</td>
+        <td>Updates</td>
     </tr>
     </tbody>
 </table>

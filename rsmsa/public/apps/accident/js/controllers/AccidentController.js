@@ -4,6 +4,7 @@
 
 //Controller to handle accident form .
 angular.module("accidentApp")
+
     .controller('DateController', function($scope) {
 
         //options for angular date picker
@@ -13,17 +14,27 @@ angular.module("accidentApp")
             yearRange: '1900:-0'
         }
     })
-        .controller('AccidentFormCtrl' , function($scope,$http){
+    .controller('AccidentFormCtrl' , function($scope,$http){
+
+        $scope.accidentCurrentSaving = false;
+        $scope.accidentSavedSuccess = false;
+        $scope.accidentSavedFalue = false;
 
     //Function to handle Accident form submission
 
     $scope.sendAccident = function(accident){
+
+        $scope.accidentCurrentSaving = true;
         $http.post('/api/accident' ,accident).success(function(data){
         console.log(data);
-        alert('Accident Reported successfully.');
+            $scope.accidentCurrentSaving = false;
+            $scope.accidentSavedSuccess = true;
+            $scope.accidentSavedFalue = false;
 
         }).error(function(error) {
-            alert('Please fill all contents.');
+            $scope.accidentCurrentSaving = false;
+            $scope.accidentSavedSuccess = false;
+            $scope.accidentSavedFailure = true;
             console.log(error);
         });
     }

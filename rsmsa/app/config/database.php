@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'rsmsa',
 			'username'  => 'root',
-			'password'  => '',
+			'password'  => 'kevdom',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

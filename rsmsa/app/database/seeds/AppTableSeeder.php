@@ -11,6 +11,7 @@ class AppTableSeeder extends Seeder{
 				array('location' => 'police'),
 				array('location' => 'education'),
 				array('location' => 'vehicle'),
+                array('location' => 'accident'),
 				array('location' => 'insurance'),
 				array('location' => 'account'),
 				array('location' => 'payment'),

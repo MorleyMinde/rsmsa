@@ -63,6 +63,8 @@ Route::post('/driver/delete/{id}',array('uses'=>'DriverController@destroy'));
 //getting drivers
 Route::get('/driving_classes',array('uses'=>'DriverController@drivingClasses'));
 
+//get number of drivers for specific  drivers licence
+Route::get('/driver/{column}/{value}',array('uses'=>'DriverController@getValue'));
 
 ////////////////////////////////////////////////////////////////////
 ////////////////////////////Vehicles////////////////////////////////
@@ -73,8 +75,12 @@ Route::get('/ownership_category',array('uses'=>'VehicleController@getOwnership')
 //getting car_make
 Route::get('/car_make',array('uses'=>'VehicleController@getCarMake'));
 
+//getting all car_model
+Route::get('/car_model',array('uses'=>'VehicleController@getAllModel'));
+
 //getting car_model
 Route::get('/car_model/{make}',array('uses'=>'VehicleController@getCarModel'));
+
 
 //getting car_ year of manufacture
 Route::get('/car_year',array('uses'=>'VehicleController@getCarYear'));
@@ -90,6 +96,12 @@ Route::post('/vehicle/upload',array('uses'=>'VehicleController@upload'));
 
 //Deleting motor vehicle
 Route::post('/vehicle/delete/{id}',array('uses'=>'VehicleController@destroy'));
+
+//get number of vehicle for specific  motor vehicle character
+Route::get('/vehicle/{column}/{value}',array('uses'=>'VehicleController@getValue'));
+
+//save insurance details to a vehicle
+Route::post('vehicle/insurance',array('uses'=>'VehicleController@saveInsurance'));
 
 ////////////////////////////////////////////////////////////////////
 ///////////////////Administrative Unit Routes///////////////////////
@@ -232,6 +244,7 @@ Route::get('/api/offence/{id}/events/', "OffenceController@getEvents");
 Route::get('/api/offence/{id}/payment/', "OffenceController@getPayment");
 Route::get('/api/offence/{id}/delete/', "OffenceController@delete");
 
+<<<<<<< HEAD
 ////////////////////////////////////////////////////////////////////
 ///////////////////Person Routes ///////////////////////////////////
 ////////////////////////////////////////////////////////////////////
@@ -254,6 +267,14 @@ Route::post('/api/payment/receipt', "PaymentController@saveReceipt");
 Route::get('/recieve/sms/', "SMSController@recieveSMS");
 
 
+=======
+
+/**
+
+ * ACCIDENT APP ROUTES START
+
+ **/
+>>>>>>> branch 'master' of https://github.com/RSMSA/rsmsa.git
 //Route To Submit A New Accident To The Database
 Route::post('/api/accident/', array('uses' => 'AccidentController@submitAccident'));
 
@@ -289,3 +310,30 @@ Route::get('/accident/police/{rank_no}', array('uses' => 'AccidentController@get
 Route::get('/accident/region/{name}', array('uses' => 'AccidentController@getDistricts'));
 
 Route::get('/accident/police/{rank_no}', array('uses' => 'AccidentController@getPoliceInfo'));
+
+//Get All Accidents where a given driver is involved
+Route::get('/api/accidents/driver/{license_id}', array('uses' => 'AccidentController@getAccidentsByDriver'));
+
+//Get All Accidents where a given vehicle is involved
+Route::get('/accidents/vehicle/{plateNumber}', array('uses' => 'AccidentController@getAccidentsByVehicle'));
+
+//Export a reported accident in PDF
+Route::get('/export/accident/pdf', array('as'=>'pdf_download','uses' => 'AccidentController@downloadAccident'));
+
+/**
+ * ACCIDENT APP ROUTES END
+ */
+
+/**
+ * INSURANCE APP ROUTES STARTS
+ */
+
+// Get All Insurance Companies
+Route::get('/api/insurance/companies' , array('uses' => 'InsuranceController@getCompanies'));
+
+//Save A new Insurance Company
+Route::post('/api/insurance/save', array('uses' => 'InsuranceController@saveInsurance'));
+
+/*
+ * INSURANCE APP ROUTES ENDS
+ */

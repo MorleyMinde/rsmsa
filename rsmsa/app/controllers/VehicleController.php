@@ -60,6 +60,18 @@ class VehicleController extends BaseController {
     }
 
     /**
+     * Display a listing of CarMake
+     *
+     * @param make
+     * @return Response list of category
+     */
+
+    public function getAllModel()
+    {
+        return VehicleModelYear::distinct()->get(array('model'));
+    }
+
+    /**
 	 * Gets the vehicle
 	 * 
 	 * @param string $plate_number
@@ -153,6 +165,28 @@ class VehicleController extends BaseController {
     {
         $vehicle = Vehicle::find($id);
         $vehicle->delete();
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  column
+     * @param  int  value
+     * @return Response
+     */
+    public function getValue($column,$value)
+    {
+        return Vehicle::where($column,$value)->get()->count();
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @return Response
+     */
+    public function saveInsurance()
+    {
+        CarInsurance::create(Input::all());
     }
 
     /**

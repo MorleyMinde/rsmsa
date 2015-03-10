@@ -76,12 +76,32 @@ class DriverController extends BaseController {
 	}
 
     /**
+     * get the specified number of resource
+     *
+     * @param  int  column
+     * @param  int  value
+     * @return Response
+     */
+    public function getValue($column,$value)
+    {
+        $count = 0;
+        foreach(Driver::all() as $vehicle){
+            $arr = explode(",",$vehicle->driving_class);
+            if (in_array($value, $arr)){
+                $count++;
+            }
+        }
+        return $count;
+    }
+
+    /**
 	 * Uploading the drives via excel
 	 *
 	 * @return Response
 	 */
 	public function upload()
 	{
+
         if (Input::hasFile('file'))
         {
             $file = Input::file('file'); // your file upload input field in the form should be named 'file'
@@ -100,6 +120,25 @@ class DriverController extends BaseController {
 //                    echo json_encode($reader->get(array('surname', 'other_names','national_id','phone_number','gender','date_of_birth','gender','date_of_birth','national','driving_license_id','occupation','driving _class','expiry_date'))->toArray());
                     foreach($arr as $driver){
                         if(Driver::where('license_number',$driver['driving_license_id'])->first()){
+                            if(Input::get('data') == 'skip'){
+
+                            }elseif(Input::get('data') == 'update'){
+                                $driv = Driver::where('license_number',$driver['driving_license_id'])->first();
+                                $driv->license_number = $driver['driving_license_id'];
+                                $driv->first_name >$driver['other_names'];
+                                $driv->last_name =$driver['surname'];
+                                $driv->physical_address =$driver['physcal_adress'];
+                                $driv->address =$driver['address_po_box'];
+                                $driv->national_id =$driver['national_id'];
+                                $driv->gender = $driver['gender'];
+                                $driv->birthdate =$driver['date_of_birth'];
+                                $driv->nationality =$driver['nationality'];
+                                $driv->phone_number =$driver['phone_number'];
+                                $driv->occupation =$driver['occupation'];
+                                $driv->driving_class = $driver['driving_class'];
+                                $driv->expiry_date = $driver['expiry_date'];
+                                $driv->save();
+                            }
                             array_push($duplicate,$driver);
                         }else{
                             array_push($newVals,$driver);

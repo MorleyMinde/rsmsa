@@ -8,7 +8,8 @@ angular.module('accidentApp').controller('AccidentListController',function($scop
         $scope.accidents = data;
         console.log(data[0]);
     });
-}).controller('ViewAccidentController', ['$scope', '$routeParams','$http',
+})
+    .controller('ViewAccidentController', ['$scope', '$routeParams','$http',
         function($scope, $routeParams ,$http) {
             $accident_id = $routeParams.accident_id;
 
@@ -27,6 +28,9 @@ angular.module('accidentApp').controller('AccidentListController',function($scop
                     $scope.accident_only_damage = data[0].accident_only_damage;
                     $scope.latitude = data[0].latitude;
                     $scope.longitude = data[0].longitude;
+                    $scope.alcohol = data[0].alcohol;
+                    $scope.seat_belt = data[0].seat_belt;
+                    $scope.phone_use = data[0].phone_use;
                     $scope.cause = data[0].cause;
                     $scope.weather = data[0].weather;
                     $scope.hit_run = data[0].hit_run;
