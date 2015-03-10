@@ -16,6 +16,7 @@ class AppTableSeeder extends Seeder{
 				array('location' => 'payment'),
 				array('location' => 'administrative_unit'),
 				array('location' => 'user'),
+				array('location' => 'configuration'),
 		);
 		DB::table('rsmsa_apps')->delete();
 
