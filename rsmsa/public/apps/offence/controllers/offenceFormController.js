@@ -262,10 +262,39 @@ angular.module('rsmsaApp')
 	$scope.getDisplayValue = function(value) {
 		if(value)
 		{
-			return "block";
+			return "inline-block";
 		}else
 		{
 			return "none";
+		}
+	};
+	$scope.isExpired = function(date1) {
+		var date2 = new Date();
+		var timestamp=Date.parse(date1)
+		if (isNaN(timestamp)==false)
+		{
+			var d=new Date(timestamp);
+			if((date2.getDate() - d.getDate()) <= 0){
+				return true;
+			}
+		}
+		return false;
+	};
+	/**
+	 * Get a Block or None value from a boolean value
+	 * 
+	 * @param boolean value
+	 * 
+	 */
+	$scope.showDetails = function(id,e) {
+		var elem = e.currentTarget;
+		var display = document.getElementById(id).style.display;
+		if(display == 'none'){
+			document.getElementById(id).style.display = 'inline-block';
+			elem.innerHTML = 'Hide Details';
+		}else{
+			document.getElementById(id).style.display = 'none';
+			elem.innerHTML = 'Show Details';
 		}
 	};
 	//Show a dialog box of offence registry

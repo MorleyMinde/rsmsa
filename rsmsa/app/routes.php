@@ -244,7 +244,7 @@ Route::get('/api/offence/{id}/events/', "OffenceController@getEvents");
 Route::get('/api/offence/{id}/payment/', "OffenceController@getPayment");
 Route::get('/api/offence/{id}/delete/', "OffenceController@delete");
 
-<<<<<<< HEAD
+
 ////////////////////////////////////////////////////////////////////
 ///////////////////Person Routes ///////////////////////////////////
 ////////////////////////////////////////////////////////////////////
@@ -267,14 +267,11 @@ Route::post('/api/payment/receipt', "PaymentController@saveReceipt");
 Route::get('/recieve/sms/', "SMSController@recieveSMS");
 
 
-=======
-
 /**
 
  * ACCIDENT APP ROUTES START
 
  **/
->>>>>>> branch 'master' of https://github.com/RSMSA/rsmsa.git
 //Route To Submit A New Accident To The Database
 Route::post('/api/accident/', array('uses' => 'AccidentController@submitAccident'));
 
