@@ -21,7 +21,10 @@ angular.module("rsmsaApp").config( function($routeProvider){
         controller: 'insuranceAddCtrl'
     });$routeProvider.when("/inspection",{
         templateUrl: 'views/inspection.html',
-        controller: 'vehicleAddCtrl'
+        controller: 'inspectionCtrl'
+    });$routeProvider.when("/licencing",{
+        templateUrl: 'views/car_licence.html',
+        controller: 'licenceCtrl'
     });
     $routeProvider.when("/vehicle/:plate_number/offences",{
         templateUrl: '/app/offence/views/offencelist.html',

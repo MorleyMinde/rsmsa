@@ -17,14 +17,10 @@ class CarInsurance extends Eloquent {
     protected  $guarded = array('id');
 
     public function car(){
-        return $this->belongsTo('Vehicle', 'car_id', 'id');
+        return $this->belongsTo('Vehicle', 'car_id', 'plate_number');
     }
 
     public function insurance_company(){
         return $this->belongsTo('Insurance', 'company_id', 'id');
-    }
-
-    public function village(){
-        return $this->hasMany('Village', 'district_id', 'id');
     }
 }

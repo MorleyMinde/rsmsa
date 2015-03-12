@@ -6,7 +6,6 @@
 <!-- Angulars Material CSS now available via Google CDN; version 0.6 used here -->
 <link rel="stylesheet" href="../angular-material/angular-material.css">
 <script src="/js/jquery/jquery.js"></script>
-
 <!-- Angular Material Dependencies -->
 <script src="angular/angular.min.js"></script>
 <script src="hammerjs/hammer.min.js"></script>
@@ -127,6 +126,7 @@ md-input-container{
     </md-toolbar>
     
     <div layout="row" layout-wrap style="margin:auto;width:75%;">
+<<<<<<< HEAD
 	   
 		    <div ng-if="dashboard" class="highcharts-class">
 		    	<highchart id="chart1" config="chartConfig"></highchart>
@@ -138,6 +138,10 @@ md-input-container{
 		    	<highchart id="chart1" config="chartConfig"></highchart>
 		    </div>
   	<md-card class="app" ng-if="showApp" ng-repeat="app in apps" ng-click="openApp($event,app.id)" style="background-color:{{app.color.c200}}">
+=======
+
+  	<md-card ng-repeat="app in apps" ng-click="openApp($event,app.id)" style="background-color:{{app.color.c200}}">
+>>>>>>> branch 'master' of https://github.com/MorleyMinde/rsmsa.git
 	 	<div class="img" style="background-image:url(app/{{app.id}}/{{app.icons.small}})">
 	 		
 	 	</div>

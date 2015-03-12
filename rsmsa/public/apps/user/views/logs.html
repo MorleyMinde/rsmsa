@@ -1,0 +1,29 @@
+
+<md-dialog aria-label="Driver Details" style="width: 90%;top:10%">
+    <md-content>
+        <h3>Logs For {{ currUser.first_name }} {{ currUser.last_name }}</h3>
+        <div class="col-sm-5">
+            Owner Details
+            <table class="table">
+                <tr>
+                    <th>Action</th>
+                </tr>
+                <tr data-ng-repeat="curr in currUser.logs">
+                    <th>{{ curr.action }}</th>
+                    <th>{{ curr.created_at }}</th>
+                </tr>
+
+            </table>
+
+        </div>
+        </md-content>
+    <div class="md-actions" layout="row">
+        <md-button href="http://en.wikipedia.org/wiki/Mango" target="_blank" hide show-md>
+            More on Wikipedia
+        </md-button>
+        <span flex></span>
+        <md-button ng-click="answer('not useful')">
+            Close
+        </md-button>
+    </div>
+    </md-dialog>

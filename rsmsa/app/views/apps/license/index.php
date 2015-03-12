@@ -30,7 +30,6 @@
     <script src="<?php echo asset('angular-material/angular-text.min.js')?>"></script>
     <script src="<?php echo asset('angular/angular-route.min.js')?>"></script>
     <script src="<?php echo asset('js/angular-file-upload.min.js')?>"></script>
-    <script src="<?php echo asset('js/autocomplete.js')?>"></script>
 
     <link rel="stylesheet"href="<?php echo asset('angular-material/angular-text.min.css')?>">
     <link rel="stylesheet" href="<?php echo asset('css/style.css')?>">
@@ -53,7 +52,7 @@
             position: absolute;
             width: 75%;
             background-color: white;
-            min-height: 500px;
+            min-height: 1000px;
             left: 12.5%;
             top: 20px;
             overflow: hidden;
@@ -84,7 +83,7 @@
     </style>
     <!--<script ng-repeat="app in app.routes" ng-src="{{getControllerSrc(app.controller)}}"></script>-->
     <script>
-        var mainModule = angular.module('rsmsaApp', ['ngMaterial', "ngRoute","angularFileUpload","datatables",'ui.date','multi-select',"highcharts-ng",'autocomplete']);
+        var mainModule = angular.module('rsmsaApp', ['ngMaterial', "ngRoute","angularFileUpload","datatables",'ui.date','multi-select',"highcharts-ng"]);
         mainModule.controller('AppCtrl', function($scope, $http, $mdSidenav, $log,$route) {
             //When menu button is clicked show the left menu
             $scope.toggleLeft = function() {
@@ -102,6 +101,9 @@
     <script src="<?php echo asset('apps/license/controllers/vehicleAddCtrl.js')?>"></script>
 	<script src="<?php echo asset('app/offence/controllers/offenceListController.js')?>"></script>
     <script src="<?php echo asset('app/offence/controllers/offenceFormController.js')?>"></script>
+    <script src="<?php echo asset('apps/license/controllers/insuranceAddCtrl.js')?>"></script>
+    <script src="<?php echo asset('apps/license/controllers/inspectionCtrl.js')?>"></script>
+    <script src="<?php echo asset('apps/license/controllers/licenceCtrl.js')?>"></script>
 </head>
 
 <body style="" ng-controller="vehicleAppCtrl">
@@ -138,6 +140,11 @@
                     <md-item>
                         <md-item-content>
                             <a href="#/insurance" style="width:100%" ng-click="closeNav()"><md-button class="sub-menu-button">Insurance</md-button></a>
+                        </md-item-content>
+                    </md-item>
+                    <md-item>
+                        <md-item-content>
+                            <a href="#/licencing" style="width:100%" ng-click="closeNav()"><md-button class="sub-menu-button">Licencing</md-button></a>
                         </md-item-content>
                     </md-item>
                     <md-item>
