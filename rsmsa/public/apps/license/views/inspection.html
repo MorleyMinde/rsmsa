@@ -53,8 +53,8 @@
                    </select>
                </div>
                <div class="col-sm-6">
-                   <i ng-if="currentKaya.gas_rom_automobile == 'Passed'" class="fa fa-check text-success"></i><i ng-if="currentKaya.gas_from_automobile == 'Failed'" class="fa fa-times text-danger"></i> Exhaust gas from automobile
-                   <select class="entry" ng-model="currentKaya.gas_rom_automobile" ng-change="countInspection(currentKaya)">
+                   <i ng-if="currentKaya.gas_from_automobile == 'Passed'" class="fa fa-check text-success"></i><i ng-if="currentKaya.gas_from_automobile == 'Failed'" class="fa fa-times text-danger"></i> Exhaust gas from automobile
+                   <select class="entry" ng-model="currentKaya.gas_from_automobile" ng-change="countInspection(currentKaya)">
                        <option value="">-- Select --</option>
                        <option value="Passed">Passed</option>
                        <option value="Failed">Failed</option>
