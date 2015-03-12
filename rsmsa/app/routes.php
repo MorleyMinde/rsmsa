@@ -15,6 +15,8 @@ Route::controller('password', 'RemindersController');
 Route::get('/', array('before' => 'auth' , 'uses' => 'LoginController@index'));
 
 Route::get('login', array('uses'=>'LoginController@getLogin'));
+Route::get('/logged/user/', array('uses'=>'LoginController@getLoggedUser'));
+Route::post('/change/password/', array('uses'=>'LoginController@changePassword'));
 Route::get('logout', array('uses'=>'LoginController@logout'));
 //process login form
 Route::post('login', array('uses'=>'LoginController@login'));

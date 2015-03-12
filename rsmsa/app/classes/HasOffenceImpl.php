@@ -21,7 +21,7 @@ class HasOffenceImpl extends Eloquent implements HasOffence
 		
 		//Convert class name to lower case to
 		array_push($arr,array(strtolower(get_class($this))=>$this));
-		array_push($arr,array('offences'=>$offences));
+		//array_push($arr,array('offences'=>$offences));
 		return $this->getJSON($arr);
 	}
 	/**

@@ -22,7 +22,28 @@ class LoginController extends \BaseController {
         Auth::logout(); // log the user out of our application
         return Redirect::to('login'); // redirect the user to the login screen
     }
-
+    public function getLoggedUser()
+    {
+    	$user = Auth::user();
+    	return Person::find($user->person_id);
+    }
+    public function changePassword()
+    {
+    	$request = Request::instance();
+    	$content = $request->getContent();
+    	$json = json_decode($content,true);
+    	
+    	$user = Auth::user();
+    	if(Hash::check($json['current_password'],$user->password))
+    	{
+    		$user->password = Hash::make($json['new_password']);
+    		$user->save();
+    		return "{'Status':'OK'}";
+    	}else{
+    		throw new Exception("Current password is not correct.");
+    	}
+    	
+    }
     public function login()
     {
         // validate the info, create rules for the inputs

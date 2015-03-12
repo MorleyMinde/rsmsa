@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <style>
-md-card{
+.app{
 	background-color:#3F51B5;
 	padding:0;
 	height:300px;
@@ -27,14 +27,14 @@ md-card{
 	margin:0.66%;
 	cursor:pointer;
 }
-md-card:hover{
+.app:hover{
 	box-shadow:0px 0px 5px #888888;
 }
 md-card-content{
 	background-color:#1A237E;
 	color:white;
 }
-md-card .img{
+.app .img{
 	width: 70%;
 	
 	height: 200px;
@@ -44,128 +44,57 @@ md-card .img{
 background-position: center;
 background-size: 40%;
 }
-md-card{
+.app{
 	width:24%;
 }
-md-card:nth-child(4n - 3){
+.app:nth-child(4n - 3){
     width:48%;
 }
 .highcharts-class{width: 48.6824%;margin:0.66%;}
 .highcharts-container{width:100% !important; height:100% !important;}
+.menu{
+	display:inline;
+	padding: 10px;
+	cursor:pointer;
+}
+.menu:hover{
+	background-color: #33691E;
+	color:white;
+}
+.menu>div{
+	display:none;
+	background-color: #33691E;
+	margin-top: -15px;
+}
+.menu>div .li{
+	padding: 10px;
+}
+.menu>div a{
+	color:white;
+	text-decoration:none;
+}
+.menu>div .li:hover{
+	background-color: #558B2F;
+}
+.menu:hover>div{
+	display: block;
+position: absolute;
+right: 0;
+width: 240px;
+top: 43px;
+}
+.profile{
+	background:white;
+	width:100%;
+	padding:0;
+}
+md-input-container{
+	margin-bottom:10px;
+}
 </style>
 <script src="<?php echo asset('highcharts-ng/src/highcharts-custom.js') ?>"></script>
 <script src="<?php echo asset('highcharts-ng/src/highcharts-ng.js') ?>"></script>
-<script>
-angular.module('rsmsaApp', ['ngMaterial',"highcharts-ng"])
-.controller('AppCtrl', function($scope, $http, $mdDialog) {
-	$scope.apps = {};
-	//Gets manifests of all apps registered
-	$http.get("/apps/manifests").success(function(data) {
-		$scope.apps = data;
-	}).error(function(error) {
-		alert(error);
-		$scope.data.error = error;
-	});
-	//drawing some charts
-    $scope.chartConfig = {
-        title: {
-            text: 'Combination chart'
-        },
-        xAxis: {
-            categories: ['Apples', 'Oranges', 'Pears', 'Bananas', 'Plums']
-        },
-        labels: {
-            items: [{
-                html: 'Total fruit consumption',
-                style: {
-                    left: '50px',
-                    top: '18px',
-                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
-                }
-            }]
-        },
-        series: [{
-            type: 'column',
-            name: 'Jane',
-            data: [3, 2, 1, 3, 4]
-        }, {
-            type: 'column',
-            name: 'John',
-            data: [2, 3, 5, 7, 6]
-        }, {
-            type: 'column',
-            name: 'Joe',
-            data: [4, 3, 3, 9, 0]
-        }, {
-            type: 'spline',
-            name: 'Average',
-            data: [3, 2.67, 3, 6.33, 3.33],
-            marker: {
-                lineWidth: 2,
-                lineColor: Highcharts.getOptions().colors[3],
-                fillColor: 'white'
-            }
-        }, {
-            type: 'pie',
-            name: 'Total consumption',
-            data: [{
-                name: 'Jane',
-                y: 13,
-                color: Highcharts.getOptions().colors[0] // Jane's color
-            }, {
-                name: 'John',
-                y: 23,
-                color: Highcharts.getOptions().colors[1] // John's color
-            }, {
-                name: 'Joe',
-                y: 19,
-                color: Highcharts.getOptions().colors[2] // Joe's color
-            }],
-            center: [100, 80],
-            size: 100,
-            showInLegend: false,
-            dataLabels: {
-                enabled: false
-            }
-        	
-        }],
-        chart: {
-            backgroundColor: '#FCFFC5',
-            polar: true,
-            type: 'line'
-        }
-    };
-	//Open the app with a dialog animation
-	$scope.openApp = function(ev,appId){
-		
-		$mdDialog.appId = appId;
-		$mdDialog.show({
-		      controller: DialogController,
-		      templateUrl: '/views/app.html',
-		      targetEvent: ev,
-		    })
-		    .then(function(answer) {
-		      $scope.alert = 'You said the information was "' + answer + '".';
-		    }, function() {
-		      $scope.alert = 'You cancelled the dialog.';
-		    });
-	}
-});
-function DialogController($scope, $mdDialog) {
-	$scope.getIframeSrc = function () {
-		  return '/app/' + $mdDialog.appId +"/";
-	};
-	  $scope.hide = function() {
-	    $mdDialog.hide();
-	  };
-	  $scope.cancel = function() {
-	    $mdDialog.cancel();
-	  };
-	  $scope.back = function() {
-	    $mdDialog.hide();
-	  };
-	}
-</script>
+<script src="<?php echo asset('controllers/rsmsaController.js') ?>"></script>
 <body>
 <div ng-controller="AppCtrl" style="height:100%">
   <md-content style="height:100%;background: url(img/background.jpg);background-size: cover;background-repeat: no-repeat;">
@@ -179,9 +108,17 @@ function DialogController($scope, $mdDialog) {
       		</h2>
     	</div>
     	<div style="width:12.5%">
-    		<div style="margin: auto;margin-top: 10px;width:100px;height:100px;border-radius:50%;border:1px solid blue">
-                <p><a href="logout" style="">Logout</a></p>
-      </div>
+    	<div style="margin-top:100px;position: absolute;right: 0;width:240px;">
+	      	<div class="menu" ng-click="showPanel('app')">Apps</div>	
+	      	<div class="menu" ng-click="showPanel('dashboard')">Dashboard</div>	 
+	      	<div class="menu">User
+	      		<div>
+	      			<div class="li" ng-click="showPanel('profile')">Profile</div>
+	      			<div class="li" ng-click="showPanel('password')">Change Password</div>
+	      			<a href="logout" style=""><div class="li">Logout</div></a>
+	      		</div>
+	      	</div>
+      	</div>
     	</div>
     </div>
       
@@ -189,8 +126,22 @@ function DialogController($scope, $mdDialog) {
     </md-toolbar>
     
     <div layout="row" layout-wrap style="margin:auto;width:75%;">
+<<<<<<< HEAD
+	   
+		    <div ng-if="dashboard" class="highcharts-class">
+		    	<highchart id="chart1" config="chartConfig"></highchart>
+		    </div>
+		    <div ng-if="dashboard" class="highcharts-class">
+		    	<highchart id="chart1" config="chartConfig"></highchart>
+		    </div>
+		    <div ng-if="dashboard" class="highcharts-class" style="width:100%">
+		    	<highchart id="chart1" config="chartConfig"></highchart>
+		    </div>
+  	<md-card class="app" ng-if="showApp" ng-repeat="app in apps" ng-click="openApp($event,app.id)" style="background-color:{{app.color.c200}}">
+=======
 
   	<md-card ng-repeat="app in apps" ng-click="openApp($event,app.id)" style="background-color:{{app.color.c200}}">
+>>>>>>> branch 'master' of https://github.com/MorleyMinde/rsmsa.git
 	 	<div class="img" style="background-image:url(app/{{app.id}}/{{app.icons.small}})">
 	 		
 	 	</div>
@@ -198,7 +149,115 @@ function DialogController($scope, $mdDialog) {
 	        {{app.name}}
 	      </md-card-content>
 	</md-card>
-
+	<md-card class="profile" ng-if="profile">
+		<md-toolbar class="md-warn" style="background-color:#689F38 !important">
+	    <div class="md-toolbar-tools">
+	      <span class="md-flex">Your Profile</span>
+	    </div>
+	  </md-toolbar>
+	  <md-content class="md-padding" style="height: 600px;padding: 24px;">
+	  	<md-item-content>
+	  	<table>
+	  		<tr>
+	  			<td>
+	  				<div class="md-tile-content">
+		            <h4>First Name</h4>
+		            <h2>{{user.first_name}}</h2>
+		            
+		          </div>
+	  			</td>
+	  			<td>
+	  				<div class="md-tile-content">
+		            <h4>Last Name</h4>
+		            <h2>{{user.last_name}}</h2>
+		            
+		          </div>
+	  			</td>
+	  		</tr>
+          
+          </table>
+        </md-item-content>
+	  <md-divider ng-if="!$last"></md-divider>
+	  <md-item-content>
+	  	<table>
+	  		<tr>
+	  			<td>
+	  				<div class="md-tile-content">
+		            <h4>Gender</h4>
+		            <h2>{{user.gender}}</h2>
+		            
+		          </div>
+	  			</td>
+	  			<td>
+	  				<div class="md-tile-content">
+		            <h4>Birth Date</h4>
+		            <h2>{{user.birthdate}}</h2>
+		            
+		          </div>
+	  			</td>
+	  		</tr>
+          
+          </table>
+        </md-item-content>
+	  <md-divider ng-if="!$last"></md-divider>
+	  <md-item-content>
+	  	<table>
+	  		<tr>
+	  			<td>
+	  				<div class="md-tile-content">
+		            <h4>Phone Number</h4>
+		            <h2>{{user.phone_number}}</h2>
+		            
+		          </div>
+	  			</td>
+	  			<td>
+	  				<div class="md-tile-content">
+		            <h4>Email</h4>
+		            <h2>{{user.email}}</h2>
+		            
+		          </div>
+	  			</td>
+	  		</tr>
+          
+          </table>
+        </md-item-content>
+	  <md-divider ng-if="!$last"></md-divider>
+	  </md-content>
+	</md-card>
+	<md-card class="profile" ng-if="password">
+		<md-toolbar class="md-warn" style="background-color:#689F38 !important">
+	    <div class="md-toolbar-tools">
+	      <span class="md-flex">Change Your Password</span>
+	    </div>
+	  </md-toolbar>
+	  <md-content class="md-padding" style="height: 600px;padding: 24px;">
+	  
+	  <md-item-content>
+	  	{{passwordState}}
+        </md-item-content>
+        <md-item-content>
+	  	<md-input-container class="col-sm-4"> 
+			<label>Current Password</label> 
+			<input ng-model="cpassword.current_password"/> 
+		</md-input-container>
+        </md-item-content>
+	  <md-item-content>
+	  	<md-input-container class="col-sm-4"> 
+			<label>New Password</label> 
+			<input ng-model="cpassword.new_password" required/> 
+		</md-input-container>
+        </md-item-content>
+	  <md-item-content>
+	  	<md-input-container class="col-sm-4"> 
+			<label>Repeat New Password</label> 
+			<input ng-model="cpassword.repeat_new_password" required/> 
+		</md-input-container>
+        </md-item-content>
+       <md-button class="md-raised md-primary" ng-click="changePassword()">
+				Submit
+			</md-button>
+	  </md-content>
+	</md-card>
     </div>
 </body>
 </html>
