@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="44897c0c-e8d9-4e4c-aedb-3340e6857d69" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php" afterPath="$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/config/mail.php" afterPath="$PROJECT_DIR$/rsmsa/app/config/mail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/configuration/views/offenceReg.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/configuration/views/offenceReg.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/offence/views/paymentForm.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/offence/views/paymentForm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/payment/controllers/paymentModeController.js" afterPath="$PROJECT_DIR$/rsmsa/public/apps/payment/controllers/paymentModeController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/payment/views/paymentModes.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/payment/views/paymentModes.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/payment/views/receipt.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/payment/views/receipt.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/payment/controllers/receiptController.js" afterPath="$PROJECT_DIR$/rsmsa/public/apps/payment/controllers/receiptController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/configuration/views/registryFormDialog.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/configuration/views/registryFormDialog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/offence/views/statistics.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/offence/views/statistics.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/offence/controllers/statisticsController.js" afterPath="$PROJECT_DIR$/rsmsa/public/apps/offence/controllers/statisticsController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/offence/controllers/statsController.js" afterPath="$PROJECT_DIR$/rsmsa/public/apps/offence/controllers/statsController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/css/style.css" afterPath="$PROJECT_DIR$/rsmsa/public/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="44897c0c-e8d9-4e4c-aedb-3340e6857d69" name="Default" comment="" />
     <ignored path="rsmsa.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -135,7 +120,7 @@
       <file leaf-file-name="2015_01_20_090222_create_tables.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="143" column="38" selection-start="5854" selection-end="5854" vertical-scroll-proportion="0.6756757" vertical-offset="2256" max-vertical-offset="7740">
+            <state line="143" column="38" selection-start="5854" selection-end="5854" vertical-scroll-proportion="-6.0135136" vertical-offset="5226" max-vertical-offset="7740">
               <folding />
             </state>
           </provider>
@@ -1052,7 +1037,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="38" selection-start="5854" selection-end="5854" vertical-scroll-proportion="0.6756757" vertical-offset="2256" max-vertical-offset="7740">
+        <state line="143" column="38" selection-start="5854" selection-end="5854" vertical-scroll-proportion="-6.0135136" vertical-offset="5226" max-vertical-offset="7740">
           <folding />
         </state>
       </provider>
