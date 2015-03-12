@@ -51,7 +51,7 @@ background-size: 40%;
 .app:nth-child(4n - 3){
     width:48%;
 }
-.highcharts-class{width: 48.6824%;margin:0.66%;}
+.highcharts-class{width: 48.6%;margin:0.66%;}
 .highcharts-container{width:100% !important; height:100% !important;}
 .menu{
 	display:inline;
@@ -110,8 +110,8 @@ md-input-container{
     	</div>
     	<div style="width:12.5%">
     	<div style="margin-top:100px;position: absolute;right: 0;width:240px;">
-	      	<div class="menu" ng-click="showPanel('app')">Apps</div>	
-	      	<div class="menu" ng-click="showPanel('dashboard')">Dashboard</div>	 
+    		<div class="menu" ng-click="showPanel('dashboard')">Dashboard</div>	
+	      	<div class="menu" ng-click="showPanel('app')">Apps</div>
 	      	<div class="menu">User
 	      		<div>
 	      			<div class="li" ng-click="showPanel('profile')">Profile</div>

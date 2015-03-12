@@ -6,7 +6,6 @@ class AppTableSeeder extends Seeder{
 		$arrays = array(
 				array('location' => 'offence'),
 				array('location' => 'driver'),
-				array('location' => 'accident'),
 				array('location' => 'license'),
 				array('location' => 'police'),
 				array('location' => 'education'),

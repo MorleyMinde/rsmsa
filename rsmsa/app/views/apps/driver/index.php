@@ -52,10 +52,9 @@
             position: absolute;
             width: 75%;
             background-color: white;
-            min-height: 500px;
+            min-height: 1000px;
             left: 12.5%;
             top: 20px;
-            overflow: hidden;
         }
 
         md-card, .content {
