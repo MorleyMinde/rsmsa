@@ -1,4 +1,10 @@
 <?php
+/**
+ * This is the Driver Model
+ *
+ * @author Vincent P. Minde
+ *
+ */
 
 class Vehicle extends HasOffenceImpl{
 
@@ -27,5 +33,15 @@ class Vehicle extends HasOffenceImpl{
 
     public function insurance(){
         return $this->belongsTo('Insurance');
+    }
+    public function appendInsurance(){
+    	$this->insurance = CarInsurance::where("car_id","=",$this->plate_number)->first();
+    	$this->insurance->company = Insurance::find($this->insurance->company_id);
+    }
+    public function appendRoadLicense(){
+    	$this->road_license = RoadLicence::where("car_id","=",$this->plate_number)->first();
+    }
+    public function appendInspection(){
+    	$this->inspection = Inspection::where("car_id","=",$this->plate_number)->first();
     }
 }
