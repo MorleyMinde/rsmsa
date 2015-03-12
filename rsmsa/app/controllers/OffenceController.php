@@ -238,7 +238,6 @@ class OffenceController extends BaseController {
 		$request = Request::instance();
 		$content = $request->getContent();
 		$json = json_decode($content,true);
-		//return $json;
 		$result = array();
 		foreach($json as $req){
 			array_push($result, $this->getReportResult($req));

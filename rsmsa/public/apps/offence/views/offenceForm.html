@@ -27,9 +27,13 @@
 	<center>
 		<h2>{{formTitle}}</h2>
 	</center>
+		<div  ng-if="offenceAdded">
+			The offence was saved successfully
+		</div>
 		<md-content> 
 			<div style="padding:50px;padding-top:0">
-			<form  name="offenceForm" class="form-inline">
+			
+			<form ng-if="!offenceAdded" name="offenceForm" class="form-inline">
 			<div style="display:inline-block;width: 100%;">
 				<h3>Driver Information</h3>
 				<md-input-container class="col-sm-4"> 
@@ -312,9 +316,7 @@
 		      </div>
 			
 			<md-button class="md-raised md-primary" ng-click="submitOffence()"  
-				ng-disabled="offenceForm.name.$invalid || offenceForm.address.$invalid || 
-				offenceForm.place.$invalid || offenceForm.station.$invalid
-				|| offenceForm.date.$invalid || (offenceEvents.length == 0) || isreadonly">
+				>
 				Submit
 			</md-button>
 		</form>
