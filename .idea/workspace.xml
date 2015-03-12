@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="44897c0c-e8d9-4e4c-aedb-3340e6857d69" name="Default" comment="" />
+    <list default="true" id="44897c0c-e8d9-4e4c-aedb-3340e6857d69" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="rsmsa.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,21 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rsmsa/app/views/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="192" column="12" selection-start="5633" selection-end="5633" vertical-scroll-proportion="-15.296296" vertical-offset="3043" max-vertical-offset="3762">
-              <folding>
-                <marker date="1426154508418" expanded="true" signature="47:205" placeholder="..." />
-                <marker date="1426154508418" expanded="true" signature="911:1020" placeholder="{...}" />
-                <marker date="1426154508418" expanded="true" signature="1034:1070" placeholder="{...}" />
-                <marker date="1426154508418" expanded="true" signature="1086:1130" placeholder="{...}" />
-                <marker date="1426154508418" expanded="true" signature="1783:4375" placeholder="{...}" />
-                <marker date="1426154508418" expanded="true" signature="4020:4373" placeholder="{...}" />
-                <marker date="1426154508418" expanded="true" signature="4069:4181" placeholder="{&quot;templateUrl&quot;: '/views/app.html'...}" />
-                <marker date="1426154508418" expanded="true" signature="4212:4294" placeholder="{...}" />
-                <marker date="1426154508418" expanded="true" signature="4307:4368" placeholder="{...}" />
-              </folding>
+            <state line="188" column="12" selection-start="5358" selection-end="5358" vertical-scroll-proportion="5.658416" vertical-offset="1098" max-vertical-offset="4752">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -45,7 +37,7 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/app/views/apps/license/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="74" selection-start="4949" selection-end="4949" vertical-scroll-proportion="-10.0" vertical-offset="1530" max-vertical-offset="3366">
+            <state line="100" column="74" selection-start="4949" selection-end="4949" vertical-scroll-proportion="0.0" vertical-offset="1530" max-vertical-offset="3366">
               <folding>
                 <marker date="1426154589286" expanded="true" signature="2630:2975" placeholder="{...}" />
                 <marker date="1426154589286" expanded="true" signature="3033:3075" placeholder="{...}" />
@@ -73,7 +65,7 @@
       <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="137" column="80" selection-start="5187" selection-end="5187" vertical-scroll-proportion="-13.333333" vertical-offset="2106" max-vertical-offset="6876">
+            <state line="137" column="0" selection-start="5228" selection-end="5228" vertical-scroll-proportion="0.0" vertical-offset="2466" max-vertical-offset="6912">
               <folding />
             </state>
           </provider>
@@ -82,7 +74,7 @@
       <file leaf-file-name="VehicleController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/app/controllers/VehicleController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="210" column="18" selection-start="4393" selection-end="4393" vertical-scroll-proportion="-11.444445" vertical-offset="3471" max-vertical-offset="5598">
+            <state line="210" column="18" selection-start="4393" selection-end="4393" vertical-scroll-proportion="0.0" vertical-offset="3471" max-vertical-offset="5598">
               <folding />
             </state>
           </provider>
@@ -91,10 +83,8 @@
       <file leaf-file-name="Inspection.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/app/models/Inspection.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="16" selection-start="96" selection-end="106" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="360">
-              <folding>
-                <element signature="e#6#88#0" expanded="true" />
-              </folding>
+            <state line="8" column="16" selection-start="96" selection-end="106" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="360">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -102,7 +92,7 @@
       <file leaf-file-name="Insurance.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/app/models/Insurance.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="88" selection-end="209" vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="270">
+            <state line="7" column="0" selection-start="88" selection-end="209" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="360">
               <folding />
             </state>
           </provider>
@@ -111,16 +101,16 @@
       <file leaf-file-name="mail.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/app/config/mail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="107" column="0" selection-start="3830" selection-end="3840" vertical-scroll-proportion="2.0" vertical-offset="1980" max-vertical-offset="2538">
+            <state line="107" column="0" selection-start="3830" selection-end="3840" vertical-scroll-proportion="0.0" vertical-offset="1926" max-vertical-offset="2538">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2015_01_20_090222_create_tables.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="2015_01_20_090222_create_tables.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="143" column="38" selection-start="5854" selection-end="5854" vertical-scroll-proportion="-6.0135136" vertical-offset="5226" max-vertical-offset="7740">
+            <state line="143" column="38" selection-start="5854" selection-end="5854" vertical-scroll-proportion="0.6666667" vertical-offset="2574" max-vertical-offset="7740">
               <folding />
             </state>
           </provider>
@@ -129,7 +119,7 @@
       <file leaf-file-name="inspection.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/inspection.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="62" selection-start="7244" selection-end="7255" vertical-scroll-proportion="-8.0" vertical-offset="1836" max-vertical-offset="7470">
+            <state line="114" column="62" selection-start="7244" selection-end="7255" vertical-scroll-proportion="0.0" vertical-offset="1836" max-vertical-offset="7470">
               <folding />
             </state>
           </provider>
@@ -614,6 +604,119 @@
       <recent name="$PROJECT_DIR$/rsmsa/public/apps/license/views" />
     </key>
   </component>
+  <component name="RestoreUpdateTree">
+    <UpdateInfo date="Moments ago" ActionInfo="_Update">
+      <UpdatedFiles>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated from server" />
+          <option name="myStatusName" value="Changed on server" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CHANGED_ON_SERVER" />
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Updated" />
+            <option name="myStatusName" value="Changed" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="UPDATED" />
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/rsmsa/app/views/index.php</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/rsmsa/public/controllers/rsmsaController.js</PATH>
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Created" />
+            <option name="myStatusName" value="Created" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="CREATED" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Deleted" />
+            <option name="myStatusName" value="Deleted" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="true" />
+            <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Restored" />
+            <option name="myStatusName" value="Will be restored" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="RESTORED" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Modified" />
+          <option name="myStatusName" value="Modified" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MODIFIED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Skipped" />
+          <option name="myStatusName" value="Skipped" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="SKIPPED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged with conflicts" />
+          <option name="myStatusName" value="Will be merged with conflicts" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED_WITH_CONFLICTS" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged with tree conflicts" />
+          <option name="myStatusName" value="Merged with tree conflicts" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged with property conflicts" />
+          <option name="myStatusName" value="Will be merged with property conflicts" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged" />
+          <option name="myStatusName" value="Will be merged" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Not in repository" />
+          <option name="myStatusName" value="Not in repository" />
+          <option name="mySupportsDeletion" value="true" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UNKNOWN" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Locally added" />
+          <option name="myStatusName" value="Locally added" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="LOCALLY_ADDED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Locally removed" />
+          <option name="myStatusName" value="Locally removed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="LOCALLY_REMOVED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Switched" />
+          <option name="myStatusName" value="Switched" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="SWITCHED" />
+        </FILE-GROUP>
+      </UpdatedFiles>
+    </UpdateInfo>
+  </component>
   <component name="RunManager" selected="JavaScript Debug.routes.php">
     <configuration default="false" name="routes.php" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" temporary="true" uri="http://localhost:63342/rsmsa/rsmsa/app/routes.php">
       <RunnerSettings RunnerId="JavascriptDebugRunner" />
@@ -676,17 +779,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1602" height="874" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.027962716" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20667523" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20924261" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4165597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2143774" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19573902" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3408788" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -854,44 +957,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/user/controllers/userAppCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="247" column="40" selection-start="9141" selection-end="9141" vertical-scroll-proportion="0.0" vertical-offset="4235" max-vertical-offset="5166">
-          <folding />
-        </state>
+        <state line="247" column="40" selection-start="9141" selection-end="9141" vertical-scroll-proportion="0.0" vertical-offset="4235" max-vertical-offset="5166" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/user/views/dialog.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="12" selection-start="4677" selection-end="4998" vertical-scroll-proportion="0.0" vertical-offset="2156" max-vertical-offset="2790">
-          <folding />
-        </state>
+        <state line="149" column="12" selection-start="4677" selection-end="4998" vertical-scroll-proportion="0.0" vertical-offset="2156" max-vertical-offset="2790" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/user/views/logs.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="54" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="612">
-          <folding />
-        </state>
+        <state line="1" column="54" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="612" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/database/seeds/AppTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="17" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="576">
-          <folding />
-        </state>
+        <state line="7" column="17" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="576" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/.gitattributes">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="454">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="454" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="9" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="306">
-          <folding />
-        </state>
+        <state line="10" column="9" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="306" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/phpunit.xml">
@@ -903,56 +994,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/readme.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/controllers/licenceCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="54" selection-start="1872" selection-end="1896" vertical-scroll-proportion="0.0" vertical-offset="644" max-vertical-offset="1332">
-          <folding />
-        </state>
+        <state line="55" column="54" selection-start="1872" selection-end="1896" vertical-scroll-proportion="0.0" vertical-offset="644" max-vertical-offset="1332" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2014_06_27_013352_create_password_reminders_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="702">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="702" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2014_03_20_091329_create_logs_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.4" vertical-offset="192" max-vertical-offset="720">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.4" vertical-offset="192" max-vertical-offset="720" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2015_02_11_051414_create_driving_classes_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.10735586" vertical-offset="54" max-vertical-offset="702">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.10735586" vertical-offset="54" max-vertical-offset="702" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="160" column="114" selection-start="8650" selection-end="9857" vertical-scroll-proportion="-15.0" vertical-offset="2475" max-vertical-offset="2988">
-          <folding />
-        </state>
+        <state line="160" column="114" selection-start="8650" selection-end="9857" vertical-scroll-proportion="-15.0" vertical-offset="2475" max-vertical-offset="2988" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/insurance.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="126" selection-start="2541" selection-end="3920" vertical-scroll-proportion="-10.666667" vertical-offset="756" max-vertical-offset="2574">
-          <folding />
-        </state>
+        <state line="58" column="126" selection-start="2541" selection-end="3920" vertical-scroll-proportion="-10.666667" vertical-offset="756" max-vertical-offset="2574" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/views/apps/license/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="74" selection-start="4949" selection-end="4949" vertical-scroll-proportion="-10.0" vertical-offset="1530" max-vertical-offset="3366">
+        <state line="100" column="74" selection-start="4949" selection-end="4949" vertical-scroll-proportion="0.0" vertical-offset="1530" max-vertical-offset="3366">
           <folding>
             <marker date="1426154589286" expanded="true" signature="2630:2975" placeholder="{...}" />
             <marker date="1426154589286" expanded="true" signature="3033:3075" placeholder="{...}" />
@@ -967,26 +1044,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/views/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="192" column="12" selection-start="5633" selection-end="5633" vertical-scroll-proportion="-15.296296" vertical-offset="3043" max-vertical-offset="3762">
-          <folding>
-            <marker date="1426154508418" expanded="true" signature="47:205" placeholder="..." />
-            <marker date="1426154508418" expanded="true" signature="911:1020" placeholder="{...}" />
-            <marker date="1426154508418" expanded="true" signature="1034:1070" placeholder="{...}" />
-            <marker date="1426154508418" expanded="true" signature="1086:1130" placeholder="{...}" />
-            <marker date="1426154508418" expanded="true" signature="1783:4375" placeholder="{...}" />
-            <marker date="1426154508418" expanded="true" signature="4020:4373" placeholder="{...}" />
-            <marker date="1426154508418" expanded="true" signature="4069:4181" placeholder="{&quot;templateUrl&quot;: '/views/app.html'...}" />
-            <marker date="1426154508418" expanded="true" signature="4212:4294" placeholder="{...}" />
-            <marker date="1426154508418" expanded="true" signature="4307:4368" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/inspection.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="62" selection-start="7244" selection-end="7255" vertical-scroll-proportion="-8.0" vertical-offset="1836" max-vertical-offset="7470">
+        <state line="114" column="62" selection-start="7244" selection-end="7255" vertical-scroll-proportion="0.0" vertical-offset="1836" max-vertical-offset="7470">
           <folding />
         </state>
       </provider>
@@ -1000,44 +1060,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="80" selection-start="5187" selection-end="5187" vertical-scroll-proportion="-13.333333" vertical-offset="2106" max-vertical-offset="6876">
+        <state line="137" column="0" selection-start="5228" selection-end="5228" vertical-scroll-proportion="0.0" vertical-offset="2466" max-vertical-offset="6912">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/models/Insurance.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="88" selection-end="209" vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="270">
+        <state line="7" column="0" selection-start="88" selection-end="209" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="360">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/models/Inspection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="16" selection-start="96" selection-end="106" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="360">
-          <folding>
-            <element signature="e#6#88#0" expanded="true" />
-          </folding>
+        <state line="8" column="16" selection-start="96" selection-end="106" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="360">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/controllers/VehicleController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="210" column="18" selection-start="4393" selection-end="4393" vertical-scroll-proportion="-11.444445" vertical-offset="3471" max-vertical-offset="5598">
+        <state line="210" column="18" selection-start="4393" selection-end="4393" vertical-scroll-proportion="0.0" vertical-offset="3471" max-vertical-offset="5598">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/config/mail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="0" selection-start="3830" selection-end="3840" vertical-scroll-proportion="2.0" vertical-offset="1980" max-vertical-offset="2538">
+        <state line="107" column="0" selection-start="3830" selection-end="3840" vertical-scroll-proportion="0.0" vertical-offset="1926" max-vertical-offset="2538">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="38" selection-start="5854" selection-end="5854" vertical-scroll-proportion="-6.0135136" vertical-offset="5226" max-vertical-offset="7740">
+        <state line="143" column="38" selection-start="5854" selection-end="5854" vertical-scroll-proportion="0.6666667" vertical-offset="2574" max-vertical-offset="7740">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/app/views/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="188" column="12" selection-start="5358" selection-end="5358" vertical-scroll-proportion="5.658416" vertical-offset="1098" max-vertical-offset="4752">
           <folding />
         </state>
       </provider>
