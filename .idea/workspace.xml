@@ -2,16 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44897c0c-e8d9-4e4c-aedb-3340e6857d69" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsmsa/app/models/Inspection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php" afterPath="$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/controllers/VehicleController.php" afterPath="$PROJECT_DIR$/rsmsa/app/controllers/VehicleController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/views/index.php" afterPath="$PROJECT_DIR$/rsmsa/app/views/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/license/views/inspection.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/license/views/inspection.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/license/controllers/inspectionCtrl.js" afterPath="$PROJECT_DIR$/rsmsa/public/apps/license/controllers/inspectionCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/config/mail.php" afterPath="$PROJECT_DIR$/rsmsa/app/config/mail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/routes.php" afterPath="$PROJECT_DIR$/rsmsa/app/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/configuration/views/offenceReg.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/configuration/views/offenceReg.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/offence/views/paymentForm.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/offence/views/paymentForm.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/payment/controllers/paymentModeController.js" afterPath="$PROJECT_DIR$/rsmsa/public/apps/payment/controllers/paymentModeController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/payment/views/paymentModes.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/payment/views/paymentModes.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/payment/views/receipt.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/payment/views/receipt.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/payment/controllers/receiptController.js" afterPath="$PROJECT_DIR$/rsmsa/public/apps/payment/controllers/receiptController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/configuration/views/registryFormDialog.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/configuration/views/registryFormDialog.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/offence/views/statistics.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/offence/views/statistics.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/offence/controllers/statisticsController.js" afterPath="$PROJECT_DIR$/rsmsa/public/apps/offence/controllers/statisticsController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/offence/controllers/statsController.js" afterPath="$PROJECT_DIR$/rsmsa/public/apps/offence/controllers/statsController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/css/style.css" afterPath="$PROJECT_DIR$/rsmsa/public/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="rsmsa.iws" />
@@ -38,8 +41,18 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/app/views/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="140" column="12" selection-start="4281" selection-end="4281" vertical-scroll-proportion="-15.296296" vertical-offset="2107" max-vertical-offset="2826">
-              <folding />
+            <state line="192" column="12" selection-start="5633" selection-end="5633" vertical-scroll-proportion="-15.296296" vertical-offset="3043" max-vertical-offset="3762">
+              <folding>
+                <marker date="1426154508418" expanded="true" signature="47:205" placeholder="..." />
+                <marker date="1426154508418" expanded="true" signature="911:1020" placeholder="{...}" />
+                <marker date="1426154508418" expanded="true" signature="1034:1070" placeholder="{...}" />
+                <marker date="1426154508418" expanded="true" signature="1086:1130" placeholder="{...}" />
+                <marker date="1426154508418" expanded="true" signature="1783:4375" placeholder="{...}" />
+                <marker date="1426154508418" expanded="true" signature="4020:4373" placeholder="{...}" />
+                <marker date="1426154508418" expanded="true" signature="4069:4181" placeholder="{&quot;templateUrl&quot;: '/views/app.html'...}" />
+                <marker date="1426154508418" expanded="true" signature="4212:4294" placeholder="{...}" />
+                <marker date="1426154508418" expanded="true" signature="4307:4368" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -47,8 +60,18 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/app/views/apps/license/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="74" selection-start="5123" selection-end="5137" vertical-scroll-proportion="-10.0" vertical-offset="1566" max-vertical-offset="3330">
-              <folding />
+            <state line="100" column="74" selection-start="4949" selection-end="4949" vertical-scroll-proportion="-10.0" vertical-offset="1530" max-vertical-offset="3366">
+              <folding>
+                <marker date="1426154589286" expanded="true" signature="2630:2975" placeholder="{...}" />
+                <marker date="1426154589286" expanded="true" signature="3033:3075" placeholder="{...}" />
+                <marker date="1426154589286" expanded="true" signature="3361:3507" placeholder="{...}" />
+                <marker date="1426154589286" expanded="true" signature="3546:3564" placeholder="{...}" />
+                <marker date="1426154589286" expanded="true" signature="3650:3793" placeholder="{...}" />
+                <marker date="1426154589286" expanded="true" signature="3831:3869" placeholder="{...}" />
+                <marker date="1426154589286" expanded="true" signature="4121:4552" placeholder="{...}" />
+                <marker date="1426154589286" expanded="true" signature="4241:4364" placeholder="{...}" />
+                <marker date="1426154589286" expanded="true" signature="4437:4469" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -65,7 +88,7 @@
       <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="135" column="80" selection-start="4994" selection-end="5008" vertical-scroll-proportion="-13.333333" vertical-offset="2070" max-vertical-offset="6318">
+            <state line="137" column="80" selection-start="5187" selection-end="5187" vertical-scroll-proportion="-13.333333" vertical-offset="2106" max-vertical-offset="6876">
               <folding />
             </state>
           </provider>
@@ -100,19 +123,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mail.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="mail.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/app/config/mail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="106" column="29" selection-start="3830" selection-end="3840" vertical-scroll-proportion="0.80701756" vertical-offset="1494" max-vertical-offset="2538">
+            <state line="107" column="0" selection-start="3830" selection-end="3840" vertical-scroll-proportion="2.0" vertical-offset="1980" max-vertical-offset="2538">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="insurance.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/insurance.html">
+      <file leaf-file-name="2015_01_20_090222_create_tables.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="126" selection-start="2541" selection-end="3920" vertical-scroll-proportion="-10.666667" vertical-offset="756" max-vertical-offset="2574">
+            <state line="143" column="38" selection-start="5854" selection-end="5854" vertical-scroll-proportion="0.6756757" vertical-offset="2256" max-vertical-offset="7740">
               <folding />
             </state>
           </provider>
@@ -184,14 +207,14 @@
         <option value="$PROJECT_DIR$/rsmsa/public/apps/user/controllers/userAppCtrl.js" />
         <option value="$PROJECT_DIR$/rsmsa/public/apps/user/views/logs.html" />
         <option value="$PROJECT_DIR$/rsmsa/app/views/index.php" />
-        <option value="$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php" />
         <option value="$PROJECT_DIR$/rsmsa/app/views/apps/license/index.php" />
         <option value="$PROJECT_DIR$/rsmsa/public/apps/license/views/inspection.html" />
-        <option value="$PROJECT_DIR$/rsmsa/app/config/mail.php" />
         <option value="$PROJECT_DIR$/rsmsa/public/apps/license/controllers/inspectionCtrl.js" />
         <option value="$PROJECT_DIR$/rsmsa/app/routes.php" />
         <option value="$PROJECT_DIR$/rsmsa/app/models/Inspection.php" />
         <option value="$PROJECT_DIR$/rsmsa/app/controllers/VehicleController.php" />
+        <option value="$PROJECT_DIR$/rsmsa/app/config/mail.php" />
+        <option value="$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php" />
       </list>
     </option>
   </component>
@@ -530,7 +553,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
+              <option name="myItemId" value="database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -552,7 +575,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -670,7 +697,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20667523" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2143774" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4165597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -924,13 +951,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="40" selection-start="4183" selection-end="4183" vertical-scroll-proportion="-6.2909093" vertical-offset="1544" max-vertical-offset="7056">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/add.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="160" column="114" selection-start="8650" selection-end="9857" vertical-scroll-proportion="-15.0" vertical-offset="2475" max-vertical-offset="2988">
@@ -947,15 +967,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/views/apps/license/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="74" selection-start="5123" selection-end="5137" vertical-scroll-proportion="-10.0" vertical-offset="1566" max-vertical-offset="3330">
-          <folding />
+        <state line="100" column="74" selection-start="4949" selection-end="4949" vertical-scroll-proportion="-10.0" vertical-offset="1530" max-vertical-offset="3366">
+          <folding>
+            <marker date="1426154589286" expanded="true" signature="2630:2975" placeholder="{...}" />
+            <marker date="1426154589286" expanded="true" signature="3033:3075" placeholder="{...}" />
+            <marker date="1426154589286" expanded="true" signature="3361:3507" placeholder="{...}" />
+            <marker date="1426154589286" expanded="true" signature="3546:3564" placeholder="{...}" />
+            <marker date="1426154589286" expanded="true" signature="3650:3793" placeholder="{...}" />
+            <marker date="1426154589286" expanded="true" signature="3831:3869" placeholder="{...}" />
+            <marker date="1426154589286" expanded="true" signature="4121:4552" placeholder="{...}" />
+            <marker date="1426154589286" expanded="true" signature="4241:4364" placeholder="{...}" />
+            <marker date="1426154589286" expanded="true" signature="4437:4469" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/views/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="12" selection-start="4281" selection-end="4281" vertical-scroll-proportion="-15.296296" vertical-offset="2107" max-vertical-offset="2826">
-          <folding />
+        <state line="192" column="12" selection-start="5633" selection-end="5633" vertical-scroll-proportion="-15.296296" vertical-offset="3043" max-vertical-offset="3762">
+          <folding>
+            <marker date="1426154508418" expanded="true" signature="47:205" placeholder="..." />
+            <marker date="1426154508418" expanded="true" signature="911:1020" placeholder="{...}" />
+            <marker date="1426154508418" expanded="true" signature="1034:1070" placeholder="{...}" />
+            <marker date="1426154508418" expanded="true" signature="1086:1130" placeholder="{...}" />
+            <marker date="1426154508418" expanded="true" signature="1783:4375" placeholder="{...}" />
+            <marker date="1426154508418" expanded="true" signature="4020:4373" placeholder="{...}" />
+            <marker date="1426154508418" expanded="true" signature="4069:4181" placeholder="{&quot;templateUrl&quot;: '/views/app.html'...}" />
+            <marker date="1426154508418" expanded="true" signature="4212:4294" placeholder="{...}" />
+            <marker date="1426154508418" expanded="true" signature="4307:4368" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -975,7 +1015,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="135" column="80" selection-start="4994" selection-end="5008" vertical-scroll-proportion="-13.333333" vertical-offset="2070" max-vertical-offset="6318">
+        <state line="137" column="80" selection-start="5187" selection-end="5187" vertical-scroll-proportion="-13.333333" vertical-offset="2106" max-vertical-offset="6876">
           <folding />
         </state>
       </provider>
@@ -1005,7 +1045,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/config/mail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="29" selection-start="3830" selection-end="3840" vertical-scroll-proportion="0.80701756" vertical-offset="1494" max-vertical-offset="2538">
+        <state line="107" column="0" selection-start="3830" selection-end="3840" vertical-scroll-proportion="2.0" vertical-offset="1980" max-vertical-offset="2538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="143" column="38" selection-start="5854" selection-end="5854" vertical-scroll-proportion="0.6756757" vertical-offset="2256" max-vertical-offset="7740">
           <folding />
         </state>
       </provider>
