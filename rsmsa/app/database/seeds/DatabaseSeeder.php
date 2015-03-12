@@ -26,10 +26,13 @@ class DatabaseSeeder extends Seeder {
 
 		$this->call('AppTableSeeder');*/
 
+		/*$this->call('UsersTableSeeder');
 		$this->call('AppTableSeeder');
 		$this->call('VehicleOwnershipSeeder');
-		$this->call('VehicleOwnershipSeeder');
-		$this->call('LicenceClassesSeeder');
+		$this->call('LicenceClassesSeeder');*/
+		
+		$this->call('PoliceTableSeeder');
+		$this->call('OffenceRegistryTableSeeder');
 	}
 
 }
