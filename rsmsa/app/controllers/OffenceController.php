@@ -74,7 +74,7 @@ class OffenceController extends BaseController {
 			//Return error to client
 			return "{'status':'ERROR','code': 1,'message':'Message will come soon.'}";
 		}
-		return "{'status':'OK'}";
+		return '{"status":"OK"}';
 	}
 	/**
 	 * 
@@ -173,14 +173,14 @@ class OffenceController extends BaseController {
 	 */
 	public function getReport()
 	{
-		//return Offence::groupBy('offence_date')->get();
+		/*//return Offence::groupBy('offence_date')->get();
 		$request = Request::instance();
 		$content = $request->getContent();
 		$json = json_decode($content,true);
 		$offences = new Offence();
 		//Add column to query
 		$column = array(DB::raw('count(*) as offences'));
-		
+		//return count($json['offences']);
 		if($json['horizontal'] == 'year'){//Query by specific year
 			//Add month column to the table query as time
 			array_push($column,DB::raw("DATE_FORMAT(offence_date,'%M') as time"));
@@ -212,14 +212,54 @@ class OffenceController extends BaseController {
 		}else{
 			array_push($column,DB::raw("DATE_FORMAT(offence_date,'%M') as time"));
 		}
-		if($json['gender'] == 'M' || $json['gender'] == 'F'){//Query by gender
+		/*if($json['gender'] == 'M' || $json['gender'] == 'F'){//Query by gender
 			if($json['horizontal'] != 'age')//Checks to ensure driver join is not made twice
 			{
 				$offences = $offences->join('rsmsa_drivers', 'rsmsa_drivers.license_number', '=', 'rsmsa_offences.driver_license_number');
 			}
-			$offences = $offences->where("gender","=",$json['gender']);
+			$offences = $offences->where("gender","=",$json['gender'])->groupBy("gender");
 		}
-		return $offences->select($column)->groupBy("time")->orderBy("offence_date", 'DESC')->get();	
+		array_push($column,DB::raw("gender as name"));
+		$offences = $offences->join('rsmsa_drivers', 'rsmsa_drivers.license_number', '=', 'rsmsa_offences.driver_license_number')->groupBy("gender");
+		if(count($json['offences']) > 0){
+			$offences = $offences->join("rsmsa_offence_events","rsmsa_offence_events.offence_id","=","rsmsa_offences.id")->whereIn("rsmsa_offence_events.offence_registry_id",$json['offences']);
+		}
+		//return count($json['regions']);
+		if(count($json['regions']) > 0){
+			$offences = $offences->join("rsmsa_police","rsmsa_police.rank_no","=","rsmsa_offences.rank_no")
+				->join("rsmsa_stations","rsmsa_stations.id","=","rsmsa_police.station_id")
+				->whereIn("rsmsa_stations.region_id",$json['regions']);
+			if(count($json['districts']) > 0){
+				$offences = $offences->whereIn("rsmsa_stations.district_id",$json['districts']);
+			}
+				
+		}
+		return $offences->select($column)->groupBy("time")->orderBy("offence_date", 'ASC')->get();*/
+		$request = Request::instance();
+		$content = $request->getContent();
+		$json = json_decode($content,true);
+		//return $json;
+		$result = array();
+		foreach($json as $req){
+			array_push($result, $this->getReportResult($req));
+		}
+		return $result;	
+	}
+	public function getReportResult($request){
+		$offences = new Offence();
+		if($request['reportType'] == 'Gender')
+		{
+			$offences = $offences->join('rsmsa_drivers', 'rsmsa_drivers.license_number', '=', 'rsmsa_offences.driver_license_number');
+			$offences = $offences->where("gender","=",$request['reportTypeValue'][0]);
+		}
+		if($request['category'] == 'Regions')
+		{
+			$offences = $offences->join("rsmsa_police","rsmsa_police.rank_no","=","rsmsa_offences.rank_no")
+			->join("rsmsa_stations","rsmsa_stations.id","=","rsmsa_police.station_id")
+			->whereIn("rsmsa_stations.region_id",array($request['categoryValue']));
+		}
+		$result = $offences->select(array(DB::raw('count(*) as offences')))->get()->first();
+		return $result['offences'];
 	}
 	/**
 	 * 

@@ -39,8 +39,8 @@ class CreateTables extends Migration {
         Schema::create('rsmsa_stations', function ($table) {
             $table->increments('id');
             $table->string('name', 128);
-            $table->string('district', 128);
-            $table->string('region', 128);
+            $table->integer('district_id');
+            $table->integer('region_id');
             $table->timestamps();
         });
         Schema::create('rsmsa_police', function ($table) {
@@ -62,6 +62,7 @@ class CreateTables extends Migration {
             $table->string('ownership_category');
             $table->string('owner_physical_address');
             $table->string('owner_address');
+            $table->string('owner_phone_number');
             $table->string('make');
             $table->string('type');
             $table->string('body_type');
@@ -119,6 +120,11 @@ class CreateTables extends Migration {
             $table->string('amount');
             $table->timestamps();
         });
+        	Schema::create('rsmsa_payments', function ($table) {
+        		$table->increments('id');
+        		$table->string('mode');
+        		$table->timestamps();
+        	});
         Schema::create('rsmsa_receipts', function ($table) {
         	$table->increments('id');
         	$table->string('receipt_number');
@@ -228,7 +234,7 @@ class CreateTables extends Migration {
         });
         Schema::create('rsmsa_apps', function ($table) {
             $table->increments('id');
-            $table->string('location');
+            $table->string('location')->unique();
         });
 
         //The Accident Table

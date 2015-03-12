@@ -99,6 +99,8 @@
     <script src="<?php echo asset('apps/license/controllers/vehicleAppCtrl.js')?>"></script>
     <script src="<?php echo asset('apps/license/controllers/vehicleImportCtrl.js')?>"></script>
     <script src="<?php echo asset('apps/license/controllers/vehicleAddCtrl.js')?>"></script>
+	<script src="<?php echo asset('app/offence/controllers/offenceListController.js')?>"></script>
+    <script src="<?php echo asset('app/offence/controllers/offenceFormController.js')?>"></script>
     <script src="<?php echo asset('apps/license/controllers/insuranceAddCtrl.js')?>"></script>
     <script src="<?php echo asset('apps/license/controllers/inspectionCtrl.js')?>"></script>
     <script src="<?php echo asset('apps/license/controllers/licenceCtrl.js')?>"></script>

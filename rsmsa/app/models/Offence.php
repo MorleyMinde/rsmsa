@@ -89,6 +89,8 @@ class Offence extends JSONPresentableImpl{
 	public function payment()
 	{
 		$offenceReceipt = OffenceReceipt::where("offence_id","=",$this->id)->first();
+		if(empty($offenceReceipt))
+			return;
 		return Receipt::find($offenceReceipt->receipt_id);
 		//return $this->hasMany('Receipt','rsmsa_offence_receipts','offence_id','receipt_id');
 	}

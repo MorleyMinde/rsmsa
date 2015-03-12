@@ -5,34 +5,11 @@
  */
 //Variable to store the angular routeProvide in order to use it outside the config function
 var routProvider = null;
-angular.module('rsmsaApp', [ 'ngMaterial' , "ngRoute",'ui.date',"highcharts-ng",'multi-select'])
+angular.module('rsmsaApp', [ 'ngMaterial' , "ngRoute",'ui.date',"highcharts-ng"])
 	.config(function ($routeProvider) {
-			$routeProvider.when("/home",{
-		        templateUrl: 'views/stats.html'
-		    });
-		    $routeProvider.when("/list",{
-		        templateUrl: 'views/offencelist.html'
-		    });
-		    $routeProvider.when("/report",{
-		        templateUrl: 'views/offenceForm.html'
-		    });
-		    $routeProvider.when("/offence/:request/:id",{
-		        templateUrl: 'views/offenceForm.html'
-		    });
-		    $routeProvider.when("/registry",{
-		        templateUrl: 'views/offenceReg.html'
-		    });
-		    $routeProvider.when("/registry/:id/offences",{
-		        templateUrl: 'views/offencelist.html'
-		    });
-		    $routeProvider.when("/offence/report",{
-		        templateUrl: 'views/offenceReport.html'
-		    });
-		    $routeProvider.when("/offence/statistics",{
-		        templateUrl: 'views/statistics.html'
-		    });
+			routeProvider = $routeProvider;
 		})
-	.controller('offenceCtrl',function($scope, $mdDialog, $http,$mdSidenav, $location) {
+	.controller('rsmsaAppController',function($scope, $mdDialog, $http,$mdSidenav, $location) {
 			
 			//Shows the left menu
 			$scope.toggleLeft = function() {
@@ -57,9 +34,10 @@ angular.module('rsmsaApp', [ 'ngMaterial' , "ngRoute",'ui.date',"highcharts-ng",
 					//Loop through the routes and define the routes
 					for(var i = 0;i < app.routes.length;i++)
 					{
-						/*var route = app.routes[i];
+						var route = app.routes[i];
 						routeProvider.when(route.route, {
 							templateUrl: "views"+route.view,
+							controller:route.controller
 							//TODO Resolve controllers with respect to views
 							
 						});
@@ -68,10 +46,10 @@ angular.module('rsmsaApp', [ 'ngMaterial' , "ngRoute",'ui.date',"highcharts-ng",
 						{
 							//Push to the controller to app controllers
 							$scope.appControllers.push(route.controller);
-						}*/
+						}
 							
 					}
-					//routeProvider.otherwise({redirectTo: $scope.app.defaultRoute});
+					routeProvider.otherwise({redirectTo: $scope.app.defaultRoute});
 					if($location.path() == '')//If no path/route provided load the default route else load the path
 					{
 						$location.path($scope.app.defaultRoute);

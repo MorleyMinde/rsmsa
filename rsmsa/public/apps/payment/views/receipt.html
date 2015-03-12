@@ -1,0 +1,16 @@
+<h3>Receipt Details</h3>
+	<md-input-container> 
+		<label>Reciept Number/Refference Number</label>
+		<input ng-model="receipt.receipt_number" required />
+	</md-input-container>
+	<select ng-model="receipt.payment_mode" class="form-control" required 
+		ng-options="i.id as i.mode for i in payments">
+		<option style="display:none" value="">Select a Payment Mode</option>
+	</select>
+	<md-input-container> 
+		<label>Amount Paid</label>
+		<input ng-model="receipt.amount" required />
+	</md-input-container>
+<md-button class="md-raised md-primary" ng-click="submitReceipt()">
+				Submit
+</md-button>

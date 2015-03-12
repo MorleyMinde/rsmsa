@@ -4,7 +4,7 @@
  * @author Vincent P. Minde
  * 
  */
-angular.module('offenceApp').controller('offenceRegController',function($scope,$http) {
+angular.module('rsmsaApp').controller('offenceRegController',function($scope,$http) {
 		//Initialize offence registry
 		$scope.offenceRegs = {};
 		//Fetch offence registry

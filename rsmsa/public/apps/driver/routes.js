@@ -17,6 +17,14 @@ angular.module("rsmsaApp").config( function($routeProvider){
         templateUrl: 'views/licence.html',
         controller: 'driverImportCtrl'
     });
+    $routeProvider.when("/driver/:license/offences",{
+        templateUrl: '/app/offence/views/offencelist.html',
+        controller: 'offenceListController'
+    });
+    $routeProvider.when("/offence/:request/:id",{
+        templateUrl: '/app/offence/views/offenceForm.html',
+        controller: 'offenceFormController'
+    });
     $routeProvider.when("/offence",{
         templateUrl: 'views/offences.html',
         controller: 'driverOffCtrl'
@@ -35,6 +43,7 @@ angular.module("rsmsaApp").config( function($routeProvider){
         templateUrl: 'views/view_accident.html',
         controller:'ViewAccidentController'
     });
+
 
     $routeProvider.otherwise({
         redirectTo: '/home'

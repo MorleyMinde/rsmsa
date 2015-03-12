@@ -5,8 +5,7 @@
 
 <!-- Angulars Material CSS now available via Google CDN; version 0.6 used here -->
 <link rel="stylesheet" href="../angular-material/angular-material.css">
-
-    <script src="<?php echo asset('apps/administrative_unit/js/jquery.js') ?>"></script>
+<script src="/js/jquery/jquery.js"></script>
 <!-- Angular Material Dependencies -->
 <script src="angular/angular.min.js"></script>
 <script src="hammerjs/hammer.min.js"></script>
@@ -18,14 +17,13 @@
 <script src="angular-material/angular-text.min.js"></script>
 <link rel="stylesheet" href="angular-material/angular-text.min.css">
 <link rel="stylesheet" href="css/style.css">
-    <script src="<?php echo asset('apps/administrative_unit/js/bootstrap.js') ?>"></script>
-    <link href="<?php echo asset('apps/administrative_unit/css/bootstrap.css') ?>" rel="stylesheet" />
 </head>
 <style>
 md-card{
 	background-color:#3F51B5;
 	padding:0;
 	height:300px;
+	max-height: 300px;
 	margin:0.66%;
 	cursor:pointer;
 }
@@ -38,6 +36,7 @@ md-card-content{
 }
 md-card .img{
 	width: 70%;
+	
 	height: 200px;
 	margin:auto;
 	border-radius:50%;
@@ -51,25 +50,91 @@ md-card{
 md-card:nth-child(4n - 3){
     width:48%;
 }
-
-
+.highcharts-class{width: 48.6824%;margin:0.66%;}
+.highcharts-container{width:100% !important; height:100% !important;}
 </style>
+<script src="<?php echo asset('highcharts-ng/src/highcharts-custom.js') ?>"></script>
+<script src="<?php echo asset('highcharts-ng/src/highcharts-ng.js') ?>"></script>
 <script>
-angular.module('rsmsaApp', ['ngMaterial'])
+angular.module('rsmsaApp', ['ngMaterial',"highcharts-ng"])
 .controller('AppCtrl', function($scope, $http, $mdDialog) {
 	$scope.apps = {};
-	//Gets manifests of all files registered
+	//Gets manifests of all apps registered
 	$http.get("/apps/manifests").success(function(data) {
 		$scope.apps = data;
 	}).error(function(error) {
 		alert(error);
 		$scope.data.error = error;
 	});
-
-    $scope.showApps = false;
-    $scope.displayApps = function(){
-        $scope.showApps = true;
-    }
+	//drawing some charts
+    $scope.chartConfig = {
+        title: {
+            text: 'Combination chart'
+        },
+        xAxis: {
+            categories: ['Apples', 'Oranges', 'Pears', 'Bananas', 'Plums']
+        },
+        labels: {
+            items: [{
+                html: 'Total fruit consumption',
+                style: {
+                    left: '50px',
+                    top: '18px',
+                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+                }
+            }]
+        },
+        series: [{
+            type: 'column',
+            name: 'Jane',
+            data: [3, 2, 1, 3, 4]
+        }, {
+            type: 'column',
+            name: 'John',
+            data: [2, 3, 5, 7, 6]
+        }, {
+            type: 'column',
+            name: 'Joe',
+            data: [4, 3, 3, 9, 0]
+        }, {
+            type: 'spline',
+            name: 'Average',
+            data: [3, 2.67, 3, 6.33, 3.33],
+            marker: {
+                lineWidth: 2,
+                lineColor: Highcharts.getOptions().colors[3],
+                fillColor: 'white'
+            }
+        }, {
+            type: 'pie',
+            name: 'Total consumption',
+            data: [{
+                name: 'Jane',
+                y: 13,
+                color: Highcharts.getOptions().colors[0] // Jane's color
+            }, {
+                name: 'John',
+                y: 23,
+                color: Highcharts.getOptions().colors[1] // John's color
+            }, {
+                name: 'Joe',
+                y: 19,
+                color: Highcharts.getOptions().colors[2] // Joe's color
+            }],
+            center: [100, 80],
+            size: 100,
+            showInLegend: false,
+            dataLabels: {
+                enabled: false
+            }
+        	
+        }],
+        chart: {
+            backgroundColor: '#FCFFC5',
+            polar: true,
+            type: 'line'
+        }
+    };
 	//Open the app with a dialog animation
 	$scope.openApp = function(ev,appId){
 		
@@ -115,28 +180,15 @@ function DialogController($scope, $mdDialog) {
     	</div>
     	<div style="width:12.5%">
     		<div style="margin: auto;margin-top: 10px;width:100px;height:100px;border-radius:50%;border:1px solid blue">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        User <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#" ng-click="displayApps()">profile</a></li>
-                        <li><a href="#">Change Password</a></li>
-                        <li class="divider"></li>
-                        <li><a href="logout" style="">Logout</a></li>
-                    </ul>
-                </div>
-
+                <p><a href="logout" style="">Logout</a></p>
       </div>
     	</div>
     </div>
       
       
     </md-toolbar>
+    
     <div layout="row" layout-wrap style="margin:auto;width:75%;">
-
-
-
 
   	<md-card ng-repeat="app in apps" ng-click="openApp($event,app.id)" style="background-color:{{app.color.c200}}">
 	 	<div class="img" style="background-image:url(app/{{app.id}}/{{app.icons.small}})">

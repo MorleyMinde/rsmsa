@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="rsmsaApp" ng-controller="offenceCtrl">
+<html ng-app="rsmsaApp" ng-controller="rsmsaAppController">
 <head>
 
 <!-- Angulars Material CSS now available via Google CDN; version 0.6 used here -->
@@ -23,8 +23,6 @@
 <script src="/angular/ui-date/date.js"></script>
 <script src="/angular/highcharts/highcharts-custom.js"></script>
 <script src="/angular/highcharts/highcharts-ng.js"></script>
-<script src="<?php echo asset('js/angular-multi-select.js') ?>"></script>
-<link href="<?php echo asset('css/angular-multi-select.css') ?>" rel="stylesheet">
 <link rel="stylesheet"href="/angular-material/angular-text.min.css">
 <!-- <link rel="stylesheet" href="/css/style.css"> -->
 <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.css">
@@ -78,17 +76,10 @@ md-icon{
 }
 </style>
 <script src="/js/Chart.js"></script>
-<script src="controllers/offenceController.js"></script>
+<script src="controllers/rsmsaAppController.js"></script>
 <!--<script ng-repeat="controller in appControllers" ng-src="{{getContollerUrl(controller)}}"></script>-->
 
-<script src="controllers/statsController.js"></script>
-<script src="controllers/offenceListController.js"></script>
-<script src="controllers/offenceFormController.js"></script>
 <script src="controllers/offenceRegController.js"></script>
-<script src="controllers/offenceReportController.js"></script>
-<script src="controllers/offencePaymentController.js"></script>
-<script src="controllers/statisticsController.js"></script>
-<script src="<?php echo asset('app/payment/controllers/receiptController.js')?>"></script>
 </head>
 <body style="" >
 	<div class="container">

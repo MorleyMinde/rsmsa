@@ -52,7 +52,7 @@
             position: absolute;
             width: 75%;
             background-color: white;
-            min-height: 1000px;
+            min-height: 500px;
             left: 12.5%;
             top: 20px;
             overflow: hidden;
@@ -99,7 +99,9 @@
     <script src="<?php echo asset('apps/driver/controllers/driverAppCtrl.js')?>"></script>
     <script src="<?php echo asset('apps/driver/controllers/driverImportCtrl.js')?>"></script>
     <script src="<?php echo asset('apps/driver/controllers/driverAddCtrl.js')?>"></script>
-    <script src="<?php echo asset('apps/driver/controllers/accidentCtrl.js')?>"></script>
+	<script src="<?php echo asset('app/offence/controllers/offenceListController.js')?>"></script>
+    <script src="<?php echo asset('app/offence/controllers/offenceFormController.js')?>"></script>
+	<script src="<?php echo asset('apps/driver/controllers/accidentCtrl.js')?>"></script>
 </head>
 
 <body style="" ng-controller="driverAppCtrl">

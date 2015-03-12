@@ -62,7 +62,9 @@ Route::get('/app/{id}/controllers/{file}', 'AppController@getController');
 Route::get('/api/request/{tag}', 'AndroidController@processtag');
 
 
-//Vehicle Controller Routes
+////////////////////////////////////////////////////////////////////
+///////////////////Vehicle Routes////////////////////////////////////
+///////////////////////////////////////////////////////////////////
 Route::get('/api/vehicle/{plate_number}', "VehicleController@getVehicle");
 Route::get('/api/vehicle/{plate_number}/offences', "VehicleController@getOffences");
 Route::get('/api/vehicle/{plate_number}/offences/paid', "VehicleController@getPaidOffences");
@@ -256,13 +258,20 @@ Route::post('/delete/village/{id}',array('uses'=>'AdministrativeUnitController@d
 
 //Station Controller Rooutes
 Route::get('/api/station/{id}', "StationController@getStation");
-//Driver Controller Rooutes
+
+////////////////////////////////////////////////////////////////////
+///////////////////Driver Routes //////////////////////////////////
+///////////////////////////////////////////////////////////////////
+
 Route::get('/api/driver/{license_number}', "DriverController@getDriver");
 Route::get('/api/driver/{license_number}/offences', "DriverController@getOffences");
 Route::get('/api/driver/{license_number}/offences/paid', "DriverController@getPaidOffences");
 Route::get('/api/driver/{license_number}/offences/notpaid', "DriverController@getNotPaidOffences");
 
-//Offence Controller Routes
+////////////////////////////////////////////////////////////////////
+/////////////////// Offence Routes /////////////////////////////////
+///////////////////////////////////////////////////////////////////
+
 Route::get('/api/offence/registry', "OffenceController@getOffenceRegistry");
 Route::post('/api/offence/report', "OffenceController@getReport");
 Route::post('/api/offence/stats', "OffenceController@getStats");
@@ -274,6 +283,28 @@ Route::post('/api/offence/', "OffenceController@processOffencePost");
 Route::get('/api/offence/{id}/events/', "OffenceController@getEvents");
 Route::get('/api/offence/{id}/payment/', "OffenceController@getPayment");
 Route::get('/api/offence/{id}/delete/', "OffenceController@delete");
+
+
+////////////////////////////////////////////////////////////////////
+///////////////////Person Routes ///////////////////////////////////
+////////////////////////////////////////////////////////////////////
+
+Route::get('/api/person/{id}', "PersonController@getPerson");
+
+////////////////////////////////////////////////////////////////////
+///////////////////Payment Routes ///////////////////////////////////
+////////////////////////////////////////////////////////////////////
+
+Route::get('/api/payment/{id}', "PaymentController@getPayment");
+Route::get('/api/payment', "PaymentController@index");
+//Save a new receipt
+Route::post('/api/payment/receipt', "PaymentController@saveReceipt");
+
+////////////////////////////////////////////////////////////////////
+///////////////////SMS Routes //////////////////////////////////////
+////////////////////////////////////////////////////////////////////
+
+Route::get('/recieve/sms/', "SMSController@recieveSMS");
 
 
 /**

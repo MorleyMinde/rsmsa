@@ -3,56 +3,245 @@
 		position: fixed;
 		height: 100%;
 	}
+	.show-details{
+		/* float: right; */
+		cursor: pointer;
+		padding: 20px;
+		color: blue;
+	}
+	.show-details:hover{
+		text-decoration: underline;
+	}
+	.expiry{
+		border: 2px solid #F44336;
+		background: #E57373;
+		height: 40px;
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+		/* vertical-align: middle; */
+		font-size: 24px;
+	}
 </style>
 	<div ng-controller="offenceFormController">
 	<center>
-		<h2>Report an Offence</h2>
+		<h2>{{formTitle}}</h2>
 	</center>
 		<md-content> 
 			<div style="padding:50px;padding-top:0">
 			<form  name="offenceForm" class="form-inline">
-			<h3>Driver Details</h3>
-			<md-input-container> 
-				<label>Licence No.</label> 
-				<input ng-model="offence.driver_license_number" required ng-readonly="isreadonly" /> 
-			</md-input-container>
-			<md-input-container> 
-				<label>Full Name of offender</label> 
-				<input name="name" ng-model="offence.to" readonly required> 
-			</md-input-container> 
-			<md-input-container>
-				<label>Residencial or Bussiness address</label> 
-				<input name="address" ng-model="offence.address" readonly required> 
-			</md-input-container>
-			<h3>Vehicle Details</h3>
-			<md-input-container class="inline-container" ng-keyup="getVehicle()"> 
-				<label>Plate Number.</label>
-				<input name="vehicle" ng-model="offence.vehicle_plate_number"  ng-readonly="isreadonly" required>
-			</md-input-container>
-			<md-input-container class="inline-container"> 
-				<label>Make.</label>
-				<input ng-model="vehicle.make" readonly> 
-			</md-input-container>
-			<md-input-container class="inline-container"> 
-				<label>Type.</label>
-				<input ng-model="vehicle.type" readonly> 
-			</md-input-container>
+			<div style="display:inline-block;width: 100%;">
+				<h3>Driver Information</h3>
+				<md-input-container class="col-sm-4"> 
+					<label>Licence No.</label> 
+					<input ng-model="offence.driver_license_number" required ng-readonly="isreadonly" /> 
+				</md-input-container>
+				<md-input-container  class="col-sm-4"> 
+					<label>Full Name of offender</label> 
+					<input name="name" ng-model="offence.to" readonly required> 
+				</md-input-container> 
+				<md-input-container  class="col-sm-4">
+					<label>Postal Address</label> 
+					<input name="address" ng-model="offence.address" readonly required> 
+				</md-input-container>
+				<div class="expiry" style="display:{{getDisplayValue(isExpired(offence.offence_date))}}">License of this driver has expired</div>
+				<div class="show-details" ng-click="showDetails('driverDetails',$event)">Show Details</div>
+				<div id="driverDetails" style="display:none">
+					<md-input-container  class="col-sm-4">
+						<label>Physical Address</label> 
+						<input name="address" ng-model="offence.physical_address" readonly required> 
+					</md-input-container>
+					<md-input-container  class="col-sm-4">
+						<label>Gender</label> 
+						<input ng-model="offence.gender" readonly> 
+					</md-input-container>
+					<md-input-container  class="col-sm-4">
+						<label>Birth Date</label> 
+						<input ng-model="offence.birthdate" readonly ui-date="dateOptions"> 
+					</md-input-container>
+					<md-input-container  class="col-sm-4">
+						<label>Nationality</label> 
+						<input ng-model="offence.nationality" readonly> 
+					</md-input-container>
+					<md-input-container  class="col-sm-4">
+						<label>Phone Number</label> 
+						<input ng-model="offence.phone_number" readonly> 
+					</md-input-container>
+					<md-input-container  class="col-sm-4">
+						<label>Occupation</label> 
+						<input ng-model="offence.occupation" readonly> 
+					</md-input-container>
+					<md-input-container  class="col-sm-4">
+						<label>Driving Class</label> 
+						<input ng-model="offence.driving_class" readonly> 
+					</md-input-container>
+					<md-input-container  class="col-sm-4">
+						<label>License Expiry Date</label> 
+						<input ng-model="offence.expiry_date" readonly ui-date="dateOptions"> 
+					</md-input-container>
+				</div>
+			</div>
+			<div style="display:inline-block;width: 100%;">
+				<h3>Vehicle Details</h3>
+				<md-input-container  class="col-sm-4" ng-keyup="getVehicle()"> 
+					<label>Plate Number</label>
+					<input name="vehicle" ng-model="offence.vehicle_plate_number"  ng-readonly="isreadonly" required>
+				</md-input-container>
+				<div class="show-details" ng-click="showDetails('vehicleDetails',$event)">Show Details</div>
+				<div id="vehicleDetails" style="display:none">
+				<div style="display:inline-block;width: 100%;">
+				<h4>Vehicle Apearance</h4>
+				<md-input-container  class="col-sm-4"> 
+					<label>Make</label>
+					<input ng-model="vehicle.make" readonly> 
+				</md-input-container>
+				<md-input-container  class="col-sm-4"> 
+					<label>Type</label>
+					<input ng-model="vehicle.type" readonly> 
+				</md-input-container>
+				<md-input-container  class="col-sm-4"> 
+					<label>Color</label>
+					<input ng-model="vehicle.color" readonly> 
+				</md-input-container>
+				<md-input-container  class="col-sm-4"> 
+					<label>Vehicle Control Number</label>
+					<input ng-model="vehicle.vehicle_control_number" readonly> 
+				</md-input-container>
+				<md-input-container  class="col-sm-4"> 
+					<label>Body Type</label>
+					<input ng-model="vehicle.body_type" readonly> 
+				</md-input-container>
+				<md-input-container  class="col-sm-4"> 
+					<label>Model Number</label>
+					<input ng-model="vehicle.model_number" readonly> 
+				</md-input-container>
+				<md-input-container  class="col-sm-4"> 
+					<label>Class</label>
+					<input ng-model="vehicle.class" readonly> 
+				</md-input-container>
+				<md-input-container  class="col-sm-4"> 
+					<label>Engine Number</label>
+					<input ng-model="vehicle.engine_number" readonly> 
+				</md-input-container>
+				<md-input-container  class="col-sm-4"> 
+					<label>Engine Capacity</label>
+					<input ng-model="vehicle.engine_capacity" readonly> 
+				</md-input-container>
+				<md-input-container  class="col-sm-4"> 
+					<label>Fuel</label>
+					<input ng-model="vehicle.fuel" readonly> 
+				</md-input-container>
+				<md-input-container  class="col-sm-4"> 
+					<label>Number of Axial</label>
+					<input ng-model="vehicle.number_of_axial" readonly> 
+				</md-input-container>
+				<md-input-container  class="col-sm-4"> 
+					<label>Axial Distance</label>
+					<input ng-model="vehicle.axial_distance" readonly> 
+				</md-input-container>
+				<md-input-container  class="col-sm-4"> 
+					<label>Seating Capacity</label>
+					<input ng-model="vehicle.seating_capacity" readonly> 
+				</md-input-container>
+				<md-input-container  class="col-sm-4"> 
+					<label>Year of Manufacture</label>
+					<input ng-model="vehicle.yom" readonly> 
+				</md-input-container>
+				<md-input-container  class="col-sm-4"> 
+					<label>Chasis Number</label>
+					<input ng-model="vehicle.chasis_no" readonly> 
+				</md-input-container>
+				<md-input-container  class="col-sm-4"> 
+					<label>Tare Weight</label>
+					<input ng-model="vehicle.tare_weight" readonly> 
+				</md-input-container>
+				<md-input-container  class="col-sm-4"> 
+					<label>Gross Wheight</label>
+					<input ng-model="vehicle.gross_wheight" readonly> 
+				</md-input-container>
+				<md-input-container  class="col-sm-4"> 
+					<label>Imported From</label>
+					<input ng-model="vehicle.imported_from" readonly> 
+				</md-input-container>
+				</div>
+				<div style="display:inline-block;width: 100%;">
+				<h4>Owner Details</h4>
+				<md-input-container  class="col-sm-4"> 
+					<label>Owner Id</label>
+					<input ng-model="vehicle.owner_id" readonly> 
+				</md-input-container>
+				<md-input-container  class="col-sm-4"> 
+					<label>Name</label>
+					<input ng-model="vehicle.owner_name" readonly> 
+				</md-input-container>
+				<md-input-container  class="col-sm-4"> 
+					<label>Nationality</label>
+					<input ng-model="vehicle.owner_nationality" readonly> 
+				</md-input-container>
+				<md-input-container  class="col-sm-4"> 
+					<label>Ownership Category</label>
+					<input ng-model="vehicle.ownership_category" readonly> 
+				</md-input-container>
+				<md-input-container  class="col-sm-4"> 
+					<label>Physical Address</label>
+					<input ng-model="vehicle.owner_physical_address" readonly> 
+				</md-input-container>
+				<md-input-container  class="col-sm-4"> 
+					<label>Postal Address</label>
+					<input ng-model="vehicle.owner_address" readonly> 
+				</md-input-container>
+				<md-input-container  class="col-sm-4"> 
+					<label>Phone Number</label>
+					<input ng-model="vehicle.owner_phone_number" readonly> 
+				</md-input-container>
+				</div>
+			</div>
+			</div>
+			<div style="display:inline-block;width: 100%;">
 			<h3>Police Details</h3>
-			<md-input-container class="inline-container" ng-keyup="getPolice()"> 
-				<label>No. Rank</label>
-				<input ng-model="offence.rank_no"  ng-readonly="isreadonly"> 
-			</md-input-container>
-			<md-input-container class="inline-container"> 
-				<label>Station</label>
-				<input ng-model="station.name" readonly> 
-			</md-input-container>
-			<md-input-container class="inline-container"> 
-				<label>Date.</label>
-				<input ng-model="offence.offence_date" ui-date="dateOptions" ng-readonly="isreadonly"> 
-			</md-input-container>
-			<h3>Police Details</h3>
+				<md-input-container class="col-sm-4" ng-keyup="getPolice()"> 
+					<label>No. Rank</label>
+					<input ng-model="offence.rank_no"  ng-readonly="isreadonly"> 
+				</md-input-container>
+				<md-input-container class="col-sm-4"> 
+					<label>First Name</label>
+					<input ng-model="police.person.first_name" readonly> 
+				</md-input-container>
+				<md-input-container class="col-sm-4"> 
+					<label>Last Name</label>
+					<input ng-model="police.person.last_name" readonly> 
+				</md-input-container>
+				<div class="show-details" ng-click="showDetails('policeDetails',$event)">Show Details</div>
+				<div id="policeDetails" style="display:none">
+					<md-input-container class="col-sm-4"> 
+						<label>Postal Address</label>
+						<input ng-model="police.person.address" readonly> 
+					</md-input-container>
+					<md-input-container class="col-sm-4"> 
+						<label>Gender</label>
+						<input ng-model="police.person.gender" readonly> 
+					</md-input-container>
+					<md-input-container class="col-sm-4"> 
+						<label>Birth Date</label>
+						<input ui-date="dateOptions" ng-model="police.person.birthdate" readonly> 
+					</md-input-container>
+					<md-input-container class="col-sm-4"> 
+						<label>Phone Number</label>
+						<input ng-model="police.person.phone_number" readonly> 
+					</md-input-container>
+					<md-input-container class="col-sm-4"> 
+						<label>Email</label>
+						<input ng-model="police.person.email" readonly> 
+					</md-input-container>
+					<md-input-container class="col-sm-4"> 
+						<label>Station</label>
+						<input ng-model="station.name" readonly> 
+					</md-input-container>
+				</div>
+			</div>
+			<h3>Offence Details</h3>
 			Charged Offences:
-			<div style="height:200px;overflow-y: scroll;overflow-x: hidden;border:1px solid black;margin:10px 0 10px 0">
+			<div style="height:200px;overflow-y: scroll;overflow-x: hidden;border:1px solid rgba(0,0,0,0.12);margin:10px 0 10px 0">
 			<table>
 				<thead><tr><th>Section</th><th>Nature</th><th>Action</th></tr></thead>
 				<tbody>
@@ -73,18 +262,20 @@
 			
 			</div>
 			<md-button ng-click="showOffences($event)" class="md-raised md-primary" ng-click="" ng-disabled="isreadonly">Add Offence</md-button>
-			<md-input-container class="inline-container"> 
-				<label>Date of offence</label>
-				<input name="date" ng-model="offence.offence_date" ui-date="dateOptions" required  ng-readonly="isreadonly"> 
-			</md-input-container><br />
-			<md-input-container class="inline-container"> 
-				<label>Location of Offence</label>
-				<input name="place" ng-model="offence.place"  required  ng-readonly="isreadonly"> 
-			</md-input-container>
-			<md-input-container> 
-				<label>Brief facts about the offence</label>
-				<textarea ng-model="offence.facts" ng-readonly="isreadonly"> </textarea>
-			</md-input-container>
+			<div style="display:inline-block;width: 100%;">
+				<md-input-container class="col-sm-4"> 
+					<label>Date of offence</label>
+					<input name="date" ng-model="offence.offence_date" ui-date="dateOptions" required  ng-readonly="isreadonly"> 
+				</md-input-container>
+				<md-input-container class="col-sm-4"> 
+					<label>Location of Offence</label>
+					<input name="place" ng-model="offence.place"  required  ng-readonly="isreadonly"> 
+				</md-input-container><br />
+				<md-input-container  class="col-sm-12"> 
+					<label>Brief facts about the offence</label>
+					<textarea ng-model="offence.facts" ng-readonly="isreadonly"> </textarea>
+				</md-input-container>
+			</div>
 		<div class="demo-tab tab" layout="column" layout-fill>
 		    <div >
 		        Is offence admited:
@@ -99,6 +290,9 @@
 				<md-switch ng-model="offence.paid" ng-disabled="isreadonly">
 				    {{getAnswerValue(offence.paid)}}
 				</md-switch>
+				<md-button class="col-sm-2 md-raised md-primary" ng-click="openPaymentForm($event)">
+					Payment Form
+				</md-button>
 				<div style="display:{{getDisplayValue(offence.paid)}}">
 					<h3>Receipt Details</h3>
 					<md-input-container> 

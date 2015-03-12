@@ -4,7 +4,7 @@
  * @author Vincent P. Minde
  * 
  */
-angular.module('offenceApp').controller('offencePaymentController',function($scope,$http) {
+angular.module('rsmsaApp').controller('offencePaymentController',function($scope,$http) {
 	
 	//Initialize entity Model
 	$scope.entity = { id: 'driver', name: 'Driver' , ref :'License No.'};

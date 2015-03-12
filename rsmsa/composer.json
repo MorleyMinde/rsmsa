@@ -9,6 +9,9 @@
         "maatwebsite/excel": "1.3.*@dev",
         "barryvdh/laravel-dompdf": "*"
 	},
+	"require-dev": {
+        "phpunit/phpunit": "4.5.*"
+    },
 	"autoload": {
 		"classmap": [
 			"app/commands",

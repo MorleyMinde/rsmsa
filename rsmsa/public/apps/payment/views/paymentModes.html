@@ -1,0 +1,25 @@
+<table>
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Payment Mode</th>
+			<th colspan="2">Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="payment in payments">
+			<td>{{$index + 1}}</td>
+			<td>{{payment.mode}}</td>
+			<td>
+				<a href="#/offence/view/{{off.id}}">
+					<md-button class="md-hue-3 md-raised md-primary md-fab">
+							<md-tooltip>
+					          View Offence Details
+					        </md-tooltip>
+							<i class="fa fa-check" style="font-size: 20px;"></i> 
+					</md-button>
+				</a>
+			</td>
+		</tr>
+	</tbody>
+</table>

@@ -1,4 +1,4 @@
-angular.module('offenceApp')
+angular.module('rsmsaApp')
 .controller('statsController',function($scope,$http,$routeParams) {	           
 	           $http.post("/api/offence/stats").success(function(data){
 					//data.offence_date = convertDateToClient(data.offence_date);

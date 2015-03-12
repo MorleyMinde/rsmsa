@@ -1,150 +1,8 @@
 <div ng-controller="offenceReportController">
-	<form method="POST"
-		action="http://localhost/psms/public/index.php/reports/download"
-		accept-charset="UTF-8" class="form-horizontal" id="formms">
+	<form  accept-charset="UTF-8" class="form-horizontal" id="formms">
 		<input name="_token" type="hidden"
 			value="b706ikQaUK8WQWCRyblaQ63uPU9r6ucItLxfS56Y">
-		<div class="form-group" style="margin-bottom: 5px">
-
-			<div class="col-sm-2">
-				Region<br>
-				<select multiple="multiple" class="form-control multi"
-					name="region[]" ng-model="criteria.regions" ng-options="i.id as i.name for i in regions">
-					</select>
-			</div>
-			<div class="col-sm-2">
-				District<br>
-				<span id="district-area">
-					<select multiple="multiple" class="form-control multi" ng-model="criteria.districts" ng-options="i.id as i.name for i in regdistricts" name="district[]"></select>
-				</span>
-			</div>
-			<div class="col-sm-2">
-				Offence Nature<br>
-				<span id="district-area"><select multiple="multiple"
-					class="form-control multi" name="offence[]"><option
-							value="Failing to carry reflector on a bicycle">Failing
-							to carry reflector on a bicycle</option>
-						<option value="Riding a bicycle/tricycle which has no lights">Riding
-							a bicycle/tricycle which has no lights</option>
-						<option
-							value="Using a bicycle/tricycle which has no horns,bell or other prescribed instruments">Using
-							a bicycle/tricycle which has no horns,bell or other prescribed
-							instruments</option>
-						<option value="Riding a bicycle,which has no effective brake">Riding
-							a bicycle,which has no effective brake</option>
-						<option value="Riding a bicycle in prohibited manner">Riding
-							a bicycle in prohibited manner</option>
-						<option value="Failure to carry reflectors on a motor vehicle">Failure
-							to carry reflectors on a motor vehicle</option>
-						<option
-							value="Failure to observe instructions conveyed by traffic sign,traffic signals and road markings">Failure
-							to observe instructions conveyed by traffic sign,traffic signals
-							and road markings</option>
-						<option value="Offence relating to parking and standing">Offence
-							relating to parking and standing</option>
-						<option value="Failure to observe pedestrian crossing">Failure
-							to observe pedestrian crossing</option>
-						<option value="Taking motor vehicle without owners consent">Taking
-							motor vehicle without owners consent</option>
-						<option
-							value="Failure to use dipped light when approaching an oncoming traffic">Failure
-							to use dipped light when approaching an oncoming traffic</option>
-						<option
-							value="Offences relating to overtaking use of lanes,carriageways and conduct at intersections">Offences
-							relating to overtaking use of lanes,carriageways and conduct at
-							intersections</option>
-						<option value="Driving or packing a motor vehicle on a footpath">Driving
-							or packing a motor vehicle on a footpath</option>
-						<option value="Failure to remove a vehicle from packing place">Failure
-							to remove a vehicle from packing place</option>
-						<option value="Failure to remove broken down vehicle">Failure
-							to remove broken down vehicle</option>
-						<option
-							value="Failure of the owner or hirer of a motor vehicle to give identity of a driver">Failure
-							of the owner or hirer of a motor vehicle to give identity of a
-							driver</option>
-						<option value="Employer failing to keep record of a driver">Employer
-							failing to keep record of a driver</option>
-						<option
-							value="Driving or causing a motor vehicle to be driven with defective tyres">Driving
-							or causing a motor vehicle to be driven with defective tyres</option>
-						<option
-							value="Driving or causing a motor vehicle or trailer to be driven with a load not well secured">Driving
-							or causing a motor vehicle or trailer to be driven with a load
-							not well secured</option>
-						<option
-							value="Driving a commercial vehicle;heavy duty or public service vehicle beyond speed limit">Driving
-							a commercial vehicle;heavy duty or public service vehicle beyond
-							speed limit</option>
-						<option value="Failing to comply with road Traffic">Failing
-							to comply with road Traffic</option>
-						<option value="Failing to stop a vehicle">Failing to stop
-							a vehicle</option>
-						<option
-							value="Stopping the motor vehicle on the left or near side of the road when stopping in township">Stopping
-							the motor vehicle on the left or near side of the road when
-							stopping in township</option>
-						<option
-							value="Stopping the motor vehicle within twenty-five feet from comer in township">Stopping
-							the motor vehicle within twenty-five feet from comer in township</option>
-						<option value="Unnecessary sounding of horns etc">Unnecessary
-							sounding of horns etc</option>
-						<option value="Failing to carry reflectors on motor vehicle">Failing
-							to carry reflectors on motor vehicle</option>
-						<option
-							value="Conveying on motor omnibus goods not belonging to passengers">Conveying
-							on motor omnibus goods not belonging to passengers</option>
-						<option
-							value="Owner of a public service vehicle failing to mark/print name and address,
-                                                                            maximum number of passenger and weight of goods on the right or off side of a vehicle">Owner
-							of a public service vehicle failing to mark/print name and
-							address, maximum number of passenger and weight of goods on the
-							right or off side of a vehicle</option>
-						<option value="Careless or inconsiderate use of motor vehicle">Careless
-							or inconsiderate use of motor vehicle</option>
-						<option value="Causing damage to a motor vehicle">Causing
-							damage to a motor vehicle</option>
-						<option value="Obstructing a driver of motor vehicle">Obstructing
-							a driver of motor vehicle</option>
-						<option value="Restriction on pillion riding">Restriction
-							on pillion riding</option>
-						<option value="Riding in dangerous position">Riding in
-							dangerous position</option>
-						<option value="Driving unreasonably slowly">Driving
-							unreasonably slowly</option>
-						<option value="Failure to stop at Railway crossing">Failure
-							to stop at Railway crossing</option>
-						<option
-							value="Failure to tighten a safety belt and or failure to wear a helmet">Failure
-							to tighten a safety belt and or failure to wear a helmet</option>
-						<option
-							value="Offences relating to condition of motor vehicle for use on a road">Offences
-							relating to condition of motor vehicle for use on a road</option>
-						<option value="Offences relating to driving instructions">Offences
-							relating to driving instructions</option>
-						<option
-							value="Failure to display identification marks for vehicle used for driving lessons">Failure
-							to display identification marks for vehicle used for driving
-							lessons</option>
-						<option value="Driving without a valid driving license">Driving
-							without a valid driving license</option>
-						<option
-							value="Failure to carry certificate of registration in the vehicle">Failure
-							to carry certificate of registration in the vehicle</option>
-						<option value="Failure to fix identification marks">Failure
-							to fix identification marks</option>
-						<option value="use of motor vehicle without registration">use
-							of motor vehicle without registration</option></select></span>
-			</div>
-			<div class="col-sm-2">
-				Offence Section<br>
-				<select multiple="multiple" class="form-control multi"
-					name="section[]"><option value="R.44">R.44</option>
-					<option value="R.43">R.43</option>
-					<option value="S.107">S.107</option>
-					<option value="R.32">R.32</option></select>
-			</div>
-		</div>
+		
 		<div class="form-group">
 			<div class="col-sm-2">
 				Show<br>
@@ -154,13 +12,10 @@
 			</div>
 			<div class="col-sm-2">
 				Drivers Gender<br>
-				<select ng-model="criteria.gender" class="form-control" required name="vertical" ng-options="i.id as i.name for i in genders">
+				<select ng-model="criteria.gender" class="form-control" required name="vertical" 
+					ng-options="i.id as i.name for i in genders">
 					<option style="display:none" value="">Select a Gender</option>
 				</select>
-				<!-- <option
-						value="All">All</option>
-					<option value="Male">Male</option>
-					<option value="Female">Female</option> -->
 			</div>
 			<div class="col-sm-4">
 				Horizontal<br />
@@ -196,6 +51,31 @@
 				</div>
 			</div>
 		</div>
+		<div class="form-group" style="margin-bottom: 5px">
+
+			<div class="col-sm-2">
+				Region<br>
+				<select multiple="multiple" class="form-control multi"
+					name="region[]" ng-model="criteria.regions" ng-options="i.id as i.name for i in regions">
+					</select>
+			</div>
+			<div class="col-sm-2">
+				District<br>
+				<span id="district-area">
+					<select multiple="multiple" class="form-control multi" ng-model="criteria.districts" ng-options="i.id as i.name for i in regdistricts" name="district[]"></select>
+				</span>
+			</div>
+			<div class="col-sm-6">
+				Offence Nature<br>
+				<span>
+					<select multiple="multiple"
+							class="form-control multi" name="offence[]" 
+							ng-model="criteria.offences" 
+							ng-options="i.id as (i.section + ' ' +i.nature) for i in offences">
+					</select>
+				</span>
+			</div>
+		</div>
 		<div class="col-xs-12" style="margin-top: 5px">
 			<md-button class="md-raised col-md-2" ng-click="tableReport()">
 				
@@ -203,15 +83,15 @@
 					style="height: 20px; width: 20px"> Table
 			</md-button>
 			
-			<md-button class="md-raised col-md-2"  id="bar">
+			<md-button class="md-raised col-md-2"  id="bar" ng-click="setChartType('column')">
 				<img src="http://localhost/psms/public/bar.png"
 					style="height: 20px; width: 20px"> Bar
 			</md-button>
-			<md-button class="md-raised col-md-2"  id="line">
+			<md-button class="md-raised col-md-2"  id="line" ng-click="setChartType('line')">
 				<img src="http://localhost/psms/public/line.png"
 					style="height: 20px; width: 20px"> Line
 			</md-button>
-			<md-button class="md-raised col-md-2"  id="column">
+			<md-button class="md-raised col-md-2"  id="column"  ng-click="setChartType('bar')">
 				<img src="http://localhost/psms/public/column.png"
 					style="height: 20px; width: 20px"> Column
 			</md-button>
@@ -223,12 +103,12 @@
 			<md-button type="submit" class="md-raised col-md-2" 
 				id="excel">
 				<img src="http://localhost/psms/public/cvs.jpg"
-					style="height: 20px; width: 20px"> Excel
+					style="height: 20px; width: 20px" ng-click="setChartType('pie')"> Pie
 			</md-button>
 		</div>
 	</form>
 	<div>
-		<table>
+		<!-- <table>
 			<head>
 			<tr>
 				<th ng-repeat="date in results">{{date.time}}</th>
@@ -239,6 +119,7 @@
 					<td ng-repeat="date in results">{{date.offences}}</td>
 				</tr>
 			</tbody>
-		</table>
+		</table> -->
 	</div>
+	<highchart id="chart1" config="chartConfig"></highchart>
 </div>

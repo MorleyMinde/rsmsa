@@ -1,0 +1,21 @@
+{
+	"name": "System Configuration",
+	"description": "This extension shows a Google Image search result for the current page",
+	"version": "1.0",
+	"icons":{
+		"small":"icon16.png"
+	},
+	"defaultRoute":"/home",
+	"menu":[
+		{"name":"Offence Registry","route":"/registry"},
+		{"name":"Receipt Form","route":"/receiptForm"}	
+	],
+	"routes":[
+		{"route":"/registry","view":"/offenceReg.html"},
+		{"route":"/receiptForm","view":"/receipt.html","controller":"receiptController"}
+	],
+	"color":{
+		"c500":"#607D8B",
+		"c200":"#B0BEC5"
+	}
+}

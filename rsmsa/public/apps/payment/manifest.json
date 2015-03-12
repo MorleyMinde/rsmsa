@@ -1,0 +1,21 @@
+{
+	"name": "Payment Management",
+	"description": "This extension shows a Google Image search result for the current page",
+	"version": "1.0",
+	"icons":{
+		"small":"icon16.png"
+	},
+	"defaultRoute":"/home",
+	"menu":[
+		{"name":"Payment Modes","route":"/paymentmodes"},
+		{"name":"Receipt Form","route":"/receiptForm"}	
+	],
+	"routes":[
+		{"route":"/paymentmodes","view":"/paymentModes.html","controller":"paymentModeController"},
+		{"route":"/receiptForm","view":"/receipt.html","controller":"receiptController"}
+	],
+	"color":{
+		"c500":"#607D8B",
+		"c200":"#B0BEC5"
+	}
+}
