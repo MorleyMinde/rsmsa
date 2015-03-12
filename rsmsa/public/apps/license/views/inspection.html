@@ -16,18 +16,14 @@
          border-bottom-color:#000000;
      }
 </style>
-<h1 class="text-center">Car Inspection <md-button class="md-hue-3 md-raised md-primary md-fab" style="height: 24px;width: 24px" ng-click="showAdvanced($event)"><i class="fa fa-info"></i>
-    <md-tooltip>
-        View Details
-    </md-tooltip></md-button></h1>
+<h1 class="text-center">Car Inspection</h1>
 
    <div class="col-sm-12">
        <div class="col-sm-9">
            <div class="col-xs-6"><b>Car Plate Number:</b> <input ng-keyUp="checkCar(currentKaya.car_id,data.vehicles)" type="text" class="entry" ng-model="currentKaya.car_id" required/></div>
-           <div class="col-xs-6"><b>Inspection Date:</b> <input type="text" ui-date="dateOptions" class="entry" ng-model="currentKaya.start_date" required/></div>
+           <div class="col-xs-6"><b>Inspection Date:</b> <input type="text" ui-date="dateOptions" class="entry" ng-model="currentKaya.inspection_date" required/></div>
            <div ng-if="currCar">
-           <h3>Inspection for the performance characteristics
-           </h3>
+           <h3 class="text-warning">Inspection for the performance characteristics </h3>
            <div class="row">
                <div class="col-sm-6">
                    <i ng-if="currentKaya.wheel_alignment == 'Passed'" class="fa fa-check text-success"></i><i ng-if="currentKaya.wheel_alignment == 'Failed'" class="fa fa-times text-danger"></i> Inspection of steering wheel alignment
@@ -57,7 +53,7 @@
                    </select>
                </div>
                <div class="col-sm-6">
-                   <i ng-if="currentKaya.gas_rom_automobile == 'Passed'" class="fa fa-check text-success"></i><i ng-if="currentKaya.gas_rom_automobile == 'Failed'" class="fa fa-times text-danger"></i> Exhaust gas from automobile
+                   <i ng-if="currentKaya.gas_rom_automobile == 'Passed'" class="fa fa-check text-success"></i><i ng-if="currentKaya.gas_from_automobile == 'Failed'" class="fa fa-times text-danger"></i> Exhaust gas from automobile
                    <select class="entry" ng-model="currentKaya.gas_rom_automobile" ng-change="countInspection(currentKaya)">
                        <option value="">-- Select --</option>
                        <option value="Passed">Passed</option>
@@ -104,7 +100,7 @@
                </div>
 
            </div>
-           <h3>Inspection for the operational requirements</h3>
+           <h3 class="text-warning">Inspection for the operational requirements</h3>
            <div class="row">
                <div class="col-sm-6">
                    <i ng-if="currentKaya.inspection_for_engine == 'Passed'" class="fa fa-check text-success"></i><i ng-if="currentKaya.inspection_for_engine == 'Failed'" class="fa fa-times text-danger"></i> Inspection for engine
@@ -163,7 +159,7 @@
 
            </div>
 
-           <h3>Inspection of axles, wheels, and tyres</h3>
+           <h3 class="text-warning">Inspection of axles, wheels, and tyres</h3>
            <div class="row">
                <div class="col-sm-6">
                    <i ng-if="currentKaya.axles == 'Passed'" class="fa fa-check text-success"></i><i ng-if="currentKaya.axles == 'Failed'" class="fa fa-times text-danger"></i> Axles
@@ -232,7 +228,7 @@
                </div>
                <div class="col-sm-6">
                   <i ng-if="currentKaya.other_instruments == 'Passed'" class="fa fa-check text-success"></i><i ng-if="currentKaya.other_instruments == 'Failed'" class="fa fa-times text-danger"></i>  Mileage meter and other instruments
-                   <select class="entry" ng-model="currentKaya. other_instruments" ng-change="countInspection(currentKaya)">
+                   <select class="entry" ng-model="currentKaya.other_instruments" ng-change="countInspection(currentKaya)">
                        <option value="">-- Select --</option>
                        <option value="Passed">Passed</option>
                        <option value="Failed">Failed</option>
@@ -315,6 +311,20 @@
                        <option value="Failed">Failed</option>
                    </select>
                </div>
+
+               <!--saving messages-->
+               <span class="pull-left" ng-if="currentSaving"><i class='fa fa-cog fa-2x fa-spin '></i> Saving.... </span>
+               <span class="pull-left text-success" ng-if="kayaSavedSuccess"><i class='fa fa-check fa-2x'></i> Saved Successful </span>
+               <span class="pull-left text-danger" ng-if="kayaSavedFalue"><i class='fa fa-times fa-2x'></i> Saving Failed </span>
+
+               <!--updating message-->
+               <span class="pull-left" ng-if="currentUpdating"><i class='fa fa-cog fa-2x fa-spin '></i> Saving.... </span>
+               <span class="pull-left text-success" ng-if="kayaUpdatedSuccess"><i class='fa fa-check fa-2x'></i> Saved Successful </span>
+               <span class="pull-left text-danger" ng-if="kayaUpdateFalue"><i class='fa fa-times fa-2x'></i> Saving Failed </span>
+
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div ng-hide="currentEditting"class="btn btn-primary btn-sm pull-right" ng-click="saveVehicleInspection(currentKaya)" ng-disabled="kayaForm.$invalid">&nbsp;&nbsp;&nbsp;<i class="fa fa-save"></i> Save&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </div>
+               <div ng-show="currentEditting" class="btn btn-primary btn-sm pull-right" ng-click="updateKaya(currentKaya)">Update </div>
+               <div ng-show="currentEditting" class="btn btn-warning btn-sm pull-right" ng-click="cancelEditting()">Cancel </div>
 
            </div>
        </div>

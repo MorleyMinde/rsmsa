@@ -104,6 +104,13 @@ class CreateTables extends Migration {
             $table->string('expiry_date');
             $table->timestamps();
         });
+        Schema::create('rsmsa_inspection', function ($table) {
+            $table->increments('id');
+            $table->integer('driver_id');
+            $table->string('renewal_date');
+            $table->string('expiry_date');
+            $table->timestamps();
+        });
         Schema::create('rsmsa_offence_registry', function ($table) {
             $table->increments('id');
             $table->text('nature');
@@ -181,6 +188,32 @@ class CreateTables extends Migration {
         Schema::create('rsmsa_business_license', function ($table) {
             $table->increments('id');
             $table->string('car_id');
+            $table->string('application_nature');
+            $table->string('period');
+            $table->string('business_name');
+            $table->string('postal_address');
+            $table->string('pysical_address');
+            $table->string('tel');
+            $table->string('fax');
+            $table->string('email');
+            $table->string('prev_license');
+            $table->string('prev_license_no');
+            $table->string('prev_expiry');
+            $table->string('prev_issued');
+            $table->string('prev_refusal');
+            $table->string('prev_refusal_reason');
+            $table->string('prev_refusal_place');
+            $table->string('prev_refusal_date');
+            $table->string('body_type');
+            $table->string('class_of_service');
+            $table->string('passenger_capacity');
+            $table->string('route');
+            $table->string('nature_of_service');
+            $table->string('outward_departure');
+            $table->string('return_departure');
+            $table->string('outward_arrival');
+            $table->string('return_arrival');
+            $table->string('fare');
             $table->string('license_no');
             $table->string('start_date');
             $table->string('end_date');

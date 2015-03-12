@@ -202,6 +202,16 @@ class VehicleController extends BaseController {
     }
 
     /**
+     * Save vehicle inspection information.
+     *
+     * @return Response
+     */
+    public function saveInspection()
+    {
+        Inspection::create(Input::all());
+    }
+
+    /**
      * Save vehicle road license information.
      *
      * @return Response

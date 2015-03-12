@@ -3212,6 +3212,45 @@
       <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
+    <table name="rsmsa_inspection" schema="" catalog="rsmsa" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="car_id" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="inspection_date" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="wheel_alignment" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="braking_force" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="noise_produced" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="gas_from_automobile" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="optical_axis" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="horn" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="speedometer" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="background_radiation" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="inspection_for_engine" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="exhaust_pipe" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="cooling_system" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="fuel_system" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="transmission_system" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="suspension_system" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="axles" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="steering_system" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="brake_system" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="tyres" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="window_glass" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="reflectors" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="ensuring_vision" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="other_instruments" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="warning_system" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="carrying_equipment" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="vehicle_body" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="vehicle_dimensions" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="coupling_device" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="seating_arrangement" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="appearance" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="overhang" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="pass" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="fail" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <column name="parcent" sqlType="VARCHAR" length="55" precision="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
     <table name="rsmsa_insurance" schema="" catalog="rsmsa" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="company_name" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>

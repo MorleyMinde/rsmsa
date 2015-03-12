@@ -65,6 +65,11 @@ angular.module('rsmsaApp', ['ngMaterial'])
 		alert(error);
 		$scope.data.error = error;
 	});
+
+    $scope.showApps = false;
+    $scope.displayApps = function(){
+        $scope.showApps = true;
+    }
 	//Open the app with a dialog animation
 	$scope.openApp = function(ev,appId){
 		
@@ -115,7 +120,7 @@ function DialogController($scope, $mdDialog) {
                         User <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">profile</a></li>
+                        <li><a href="#" ng-click="displayApps()">profile</a></li>
                         <li><a href="#">Change Password</a></li>
                         <li class="divider"></li>
                         <li><a href="logout" style="">Logout</a></li>
@@ -129,6 +134,9 @@ function DialogController($scope, $mdDialog) {
       
     </md-toolbar>
     <div layout="row" layout-wrap style="margin:auto;width:75%;">
+
+
+
 
   	<md-card ng-repeat="app in apps" ng-click="openApp($event,app.id)" style="background-color:{{app.color.c200}}">
 	 	<div class="img" style="background-image:url(app/{{app.id}}/{{app.icons.small}})">

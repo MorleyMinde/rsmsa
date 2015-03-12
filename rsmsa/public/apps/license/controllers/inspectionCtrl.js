@@ -2,7 +2,7 @@
  * Created by kelvin on 2/20/15.
  */
 angular.module('rsmsaApp')
-    .controller('userAppCtrl',function($scope,$http,$mdDialog){
+    .controller('inspectionCtrl',function($scope,$http,$mdDialog){
         $scope.data = {};
         $scope.currentKaya = {};
         $scope.currentSaving = false;
@@ -58,9 +58,12 @@ angular.module('rsmsaApp')
         };
 
 
-        $scope.saveVehicleInsurance = function(Insurance){
+        $scope.saveVehicleInspection = function(Inspection){
             $scope.currentSaving = true;
-            $http.post("../../vehicle/insurance", Insurance).success(function (newVehicle) {
+            $scope.currentKaya.pass     =   $scope.passed;
+            $scope.currentKaya.fail     =   $scope.failed;
+            $scope.currentKaya.parcent  =   (parseInt($scope.passed)/30)*100;
+            $http.post("../../vehicle/inspection", Inspection).success(function (newVehicle) {
                 $scope.currentKaya = {};
                 $scope.kayaSavedSuccess = true;
                 $scope.currentSaving = false;

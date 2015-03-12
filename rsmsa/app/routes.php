@@ -132,6 +132,9 @@ Route::get('/businessvehicle/{column}/{value}',array('uses'=>'VehicleController@
 //save insurance details to a vehicle
 Route::post('vehicle/insurance',array('uses'=>'VehicleController@saveInsurance'));
 
+//save insurance details to a vehicle
+Route::post('vehicle/inspection',array('uses'=>'VehicleController@saveInspection'));
+
 //save road_license details to a vehicle
 Route::post('vehicle/road_licence',array('uses'=>'VehicleController@saveRoadLicence'));
 
