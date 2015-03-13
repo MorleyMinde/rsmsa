@@ -145,6 +145,7 @@ md-input-container{
 	        {{app.name}}
 	      </md-card-content>
 	</md-card>
+	<!-- Profile view -->
 	<md-card class="profile" ng-if="profile">
 		<md-toolbar class="md-warn" style="background-color:#689F38 !important">
 	    <div class="md-toolbar-tools">
@@ -220,6 +221,7 @@ md-input-container{
 	  <md-divider ng-if="!$last"></md-divider>
 	  </md-content>
 	</md-card>
+	<!-- Change Password view -->
 	<md-card class="profile" ng-if="password">
 		<md-toolbar class="md-warn" style="background-color:#689F38 !important">
 	    <div class="md-toolbar-tools">
@@ -227,31 +229,46 @@ md-input-container{
 	    </div>
 	  </md-toolbar>
 	  <md-content class="md-padding" style="height: 600px;padding: 24px;">
-	  
-	  <md-item-content>
+	  <table>
+	  	<tr>
+	  		<td>
+	  		
+	  		<table>
+	  			<thead><tr><th colspan="2"><h3>Basic Information</h3></th></tr>
+	  			<tr><td>First Name:</td><td>{{user.first_name}}</td></tr>
+	  			<tr><td>Last Name:</td><td>{{user.last_name}}</td></tr>
+	  			<tr><td>Phone Number:</td><td>{{user.phone_number}}</td></tr>
+	  			<tr><td>Email:</td><td>{{user.email}}</td></tr>
+	  		</table>
+	  		</td>
+	  		<td>
+	  			<md-item-content>
 	  	{{passwordState}}
         </md-item-content>
-        <md-item-content>
 	  	<md-input-container class="col-sm-4"> 
 			<label>Current Password</label> 
-			<input ng-model="cpassword.current_password"/> 
+			<input type="password" ng-model="cpassword.current_password"/> 
 		</md-input-container>
-        </md-item-content>
-	  <md-item-content>
+       <br />
 	  	<md-input-container class="col-sm-4"> 
 			<label>New Password</label> 
-			<input ng-model="cpassword.new_password" required/> 
+			<input type="password" ng-model="cpassword.new_password" required/> 
 		</md-input-container>
-        </md-item-content>
-	  <md-item-content>
+        <br />
 	  	<md-input-container class="col-sm-4"> 
 			<label>Repeat New Password</label> 
-			<input ng-model="cpassword.repeat_new_password" required/> 
+			<input type="password" ng-model="cpassword.repeat_new_password" required/> 
 		</md-input-container>
-        </md-item-content>
-       <md-button class="md-raised md-primary" ng-click="changePassword()">
+		<br />
+        
+        <md-button class="md-raised md-primary" ng-click="changePassword()">
 				Submit
 			</md-button>
+	  		</td>
+	  	</tr>
+	  	</table>
+	  
+       
 	  </md-content>
 	</md-card>
     </div>

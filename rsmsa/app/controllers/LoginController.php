@@ -38,7 +38,7 @@ class LoginController extends \BaseController {
     	{
     		$user->password = Hash::make($json['new_password']);
     		$user->save();
-    		return "{'Status':'OK'}";
+    		return '{"status":"OK"}';
     	}else{
     		throw new Exception("Current password is not correct.");
     	}
