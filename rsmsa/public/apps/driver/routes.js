@@ -21,6 +21,10 @@ angular.module("rsmsaApp").config( function($routeProvider){
         templateUrl: '/app/offence/views/offencelist.html',
         controller: 'offenceListController'
     });
+    $routeProvider.when("/driver/:id",{
+        templateUrl: 'views/driver.html',
+        controller: 'singleDriverController'
+    });
     $routeProvider.when("/offence/:request/:id",{
         templateUrl: '/app/offence/views/offenceForm.html',
         controller: 'offenceFormController'

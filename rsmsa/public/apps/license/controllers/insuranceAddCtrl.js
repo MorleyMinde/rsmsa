@@ -36,6 +36,19 @@ angular.module('rsmsaApp')
                     angular.forEach(cars,function(value){
                         if(value.plate_number == car){
                             $scope.currCar = value;
+                            //getting insurance
+                            $http.get("/vehicle/insurance/"+value.plate_number).success(function(data) {
+                                $scope.currCar.insurance = data;
+                                if($scope.currCar.insurance.length != 0){
+                                    $scope.dateOptions.minDate =  new Date(data[0].end_date);
+                                    $scope.currentKaya.start_date =  data[0].end_date;
+                                }
+                            });
+
+                            //getting insurance
+                            $http.get("/vehicle/road_license/"+value.plate_number).success(function(data) {
+
+                            });
                         }
                     })
                 }

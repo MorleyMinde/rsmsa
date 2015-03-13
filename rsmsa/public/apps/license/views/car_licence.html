@@ -44,6 +44,27 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div ng-hide="currentEditting"class="btn btn-primary btn-sm" ng-click="saveVehicleLicence(currentKaya)" ng-disabled="kayaForm.$invalid">&nbsp;&nbsp;&nbsp;<i class="fa fa-save"></i> Save&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </div>
                     <div ng-show="currentEditting" class="btn btn-primary btn-sm pull-right" ng-click="updateKaya(currentKaya)">Update </div>
                     <div ng-show="currentEditting" class="btn btn-warning btn-sm pull-right" ng-click="cancelEditting()">Cancel </div>
+
+                    <table class="table table-striped " ng-show="currCar" >
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>License Number</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="road in currCar.roadLicence">
+                            <td>{{$index + 1}}</td>
+                            <td>{{road.license_no}}</td>
+                            <td>{{road.start_date | date:'yyyy MMM dd' }}</td>
+                            <td>{{road.end_date | date:'yyyy MMM dd'}}</td>
+
+
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="col-sm-4">
                     <h4>Vehicle Details</h4>
@@ -121,6 +142,7 @@
                 </div>
             </div>
 </form>
+
         </div>
     </md-tab>
     <md-tab label="Business License"  style="width: 300px">

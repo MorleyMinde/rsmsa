@@ -127,7 +127,7 @@ class VehicleController extends BaseController {
      */
     public function show($id)
     {
-        return Driver::find($id);
+        return Vehicle::find($id);
     }
 
 
@@ -180,7 +180,7 @@ class VehicleController extends BaseController {
     }
 
     /**
-     * Remove the specified resource from storage.
+     * get number of vehicle for specific  motor vehicle character
      *
      * @param  int  column
      * @param  int  value
@@ -202,6 +202,17 @@ class VehicleController extends BaseController {
     }
 
     /**
+     * Get vehicle insurance information.
+     *
+     * @param plate_number
+     * @return Response
+     */
+    public function getInsurance($plate_number)
+    {
+        return CarInsurance::where('car_id',$plate_number)->orderBy('created_at','DESC')->get();
+    }
+
+    /**
      * Save vehicle inspection information.
      *
      * @return Response
@@ -212,13 +223,47 @@ class VehicleController extends BaseController {
     }
 
     /**
+     * Get vehicle inspection information.
+     *
+     * @param plate_number
+     * @return Response
+     */
+    public function getInspection($plate_number)
+    {
+        return Inspection::where('car_id',$plate_number)->orderBy('created_at','DESC')->get();
+    }
+
+    /**
+     * Get vehicle inspection information.
+     *
+     * @param plate_number
+     * @return Response
+     */
+    public function getSingleInspection($id)
+    {
+        return Inspection::find($id);
+    }
+
+    /**
      * Save vehicle road license information.
+     *
      *
      * @return Response
      */
     public function saveRoadLicence()
     {
         RoadLicence::create(Input::all());
+    }
+
+    /**
+     * Get vehicle road license information.
+     *
+     * @param plate_number
+     * @return Response
+     */
+    public function getRoadLicence($plate_number)
+    {
+        return RoadLicence::where('car_id',$plate_number)->orderBy('created_at','DESC')->get();
     }
 
     /**
@@ -229,6 +274,28 @@ class VehicleController extends BaseController {
     public function saveBusinessLicence()
     {
         BusinessLicence::create(Input::all());
+    }
+
+    /**
+     * Get vehicle business license information.
+     *
+     * @param plate_number
+     * @return Response
+     */
+    public function getBusinessLicence($plate_number)
+    {
+        return BusinessLicence::where('car_id',$plate_number)->orderBy('created_at','DESC')->get();
+    }
+
+    /**
+     * Get vehicle business license information.
+     *
+     * @param plate_number
+     * @return Response
+     */
+    public function getSingleBusinessLicence($id)
+    {
+        return BusinessLicence::find($id);
     }
 
     /**

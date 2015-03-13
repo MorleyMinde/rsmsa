@@ -1,0 +1,197 @@
+<h1>Driver Information</h1>
+<div class="container-fluid">
+    <md-tabs md-selected="selectedIndex" flex>
+        <md-tab label="Basic Information" class="col-md-6">
+            <div class="demo-tab tab1" layout="column" layout-align="space-around left">
+                <md-content class="md-padding" style="padding: 24px;">
+                    <md-item-content>
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="width: 50%">
+                                    <div class="md-tile-content">
+                                        <h4>License Number</h4>
+                                        <h2>{{driver.license_number}}</h2>
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="md-tile-content">
+                                        <h4>TIN NO</h4>
+                                        <h2>{{driver.TIN_NO}}</h2>
+
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </md-item-content>
+                    <md-divider ng-if="!$last"></md-divider>
+                    <md-item-content>
+                        <table  style="width: 100%">
+                            <tr>
+                                <td  style="width: 50%">
+                                    <div class="md-tile-content">
+                                        <h4>First Name</h4>
+                                        <h2>{{driver.first_name}}</h2>
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="md-tile-content">
+                                        <h4>Last Name</h4>
+                                        <h2>{{driver.last_name}}</h2>
+
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </md-item-content>
+                    <md-divider ng-if="!$last"></md-divider>
+                    <md-item-content>
+                        <table  style="width: 100%">
+                            <tr>
+                                <td  style="width: 50%">
+                                    <div class="md-tile-content">
+                                        <h4>Gender</h4>
+                                        <h2>{{driver.gender}}</h2>
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="md-tile-content">
+                                        <h4>Birth Date</h4>
+                                        <h2>{{driver.birthdate }}</h2>
+
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </md-item-content>
+                    <md-divider ng-if="!$last"></md-divider>
+                    <md-item-content>
+                        <table  style="width: 100%">
+                            <tr>
+                                <td  style="width: 50%">
+                                    <div class="md-tile-content">
+                                        <h4>Phone Number</h4>
+                                        <h2>{{driver.phone_number}}</h2>
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="md-tile-content">
+                                        <h4>Address</h4>
+                                        <h2>{{driver.address}}</h2>
+
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </md-item-content>
+                    <md-divider ng-if="!$last"></md-divider>
+                    <md-item-content>
+                        <table  style="width: 100%">
+                            <tr>
+                                <td  style="width: 50%">
+                                    <div class="md-tile-content">
+                                        <h4>Driving Class</h4>
+                                        <h2>{{driver.driving_class}}</h2>
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="md-tile-content">
+                                        <h4>Expiry Date</h4>
+                                        <h2>{{driver.expiry_date}}</h2>
+
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </md-item-content>
+
+                </md-content>
+            </div>
+        </md-tab>
+        <md-tab label="Offences"  style="width: 300px">
+            <div class="demo-tab tab2" layout="column" layout-align="space-around center">
+                <h2>List of Offencces Committed by {{ driver.first_name }} {{ driver.last_name }}</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>License</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Place</th>
+                        <th colspan="2">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="off in diver.offences">
+                        <td>{{$index + 1}}</td>
+                        <td>{{off.driver_license_number}}</td>
+                        <td>{{off.to}}</td>
+                        <td>{{off.address}}</td>
+                        <td>{{off.place}}</td>
+                        <td>
+                            <a href="#/offence/view/{{off.id}}">
+                                <md-button class="md-hue-3 md-raised md-primary md-fab">
+                                    <md-tooltip>
+                                        View Offence Details
+                                    </md-tooltip>
+                                    <i class="fa fa-check" style="font-size: 20px;"></i>
+                                </md-button>
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </md-tab>
+        <md-tab label="Accidents"  style="width: 300px">
+            <div class="demo-tab tab3" layout="column" layout-align="space-around center">
+                <h2>List of Accidents Where {{ driver.first_name }} {{ driver.last_name }} Was Involved</h2>
+                <table class="table table-striped " >
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>ACCIDENT REG.NUMBER</th>
+                        <th>POLICE RANK NO.</th>
+                        <th>AREA </th>
+                        <th>CAUSE</th>
+                        <th>WEATHER</th>
+                        <th>FATALITIES</th>
+                        <th>INJURIES</th>
+                        <th>ACTIONS</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="accident in driver.accidents | filter:query ">
+                        <td>{{$index + 1}}</td>
+                        <td>{{accident.accident_reg_number}}</td>
+                        <td>{{accident.rank_no}}</td>
+                        <td>{{accident.accident_area}}</td>
+                        <td>{{accident.cause}}</td>
+                        <td>{{accident.weather}}</td>
+                        <td>{{accident.accident_fatal}}</td>
+                        <td>{{accident.accident_simple_injury}}</td>
+                        <td>
+                            <a href="#/api/accident/view/{{accident.accident_id}}" title="View Accident." >
+                                <md-button class="md-fab" aria-label="Time" style="width: 26px; height: 26px;">
+                                    <md-icon icon="/img/navigation/2x_web/ic_menu_black_48dp.png" style="width: 16px; height: 16px;"></md-icon>
+                                </md-button>
+                            </a>
+                        </td>
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </md-tab>
+    </md-tabs>
+</div>

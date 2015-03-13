@@ -57,8 +57,35 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div ng-hide="currentEditting"class="btn btn-primary btn-sm" ng-click="saveVehicleInsurance(currentKaya)" ng-disabled="kayaForm.$invalid">&nbsp;&nbsp;&nbsp;<i class="fa fa-save"></i> Save&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </div>
             <div ng-show="currentEditting" class="btn btn-primary btn-sm pull-right" ng-click="updateKaya(currentKaya)">Update </div>
             <div ng-show="currentEditting" class="btn btn-warning btn-sm pull-right" ng-click="cancelEditting()">Cancel </div>
+
+            <table class="table table-striped " ng-show="currCar">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Company Name</th>
+                    <th>Insurance Number</th>
+                    <th>Insurance Type</th>
+                    <th>Car Value</th>
+                    <th>Start Date </th>
+                    <th>End Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="insure in currCar.insurance">
+                    <td>{{$index + 1}}</td>
+                    <td>{{insure.company_id}}</td>
+                    <td>{{insure.insurance_no}}</td>
+                    <td>{{insure.insurance_type}}</td>
+                    <td>{{insure.car_value}}</td>
+                    <td>{{insure.start_date | date:'yyyy MMM dd' }}</td>
+                    <td>{{insure.end_date | date:'yyyy MMM dd'}}</td>
+
+
+                </tr>
+                </tbody>
+                </table>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4" ng-show="currCar">
             <h4>Vehicle Details</h4>
             <table class="table" ng-show="currCar">
                 <tr>

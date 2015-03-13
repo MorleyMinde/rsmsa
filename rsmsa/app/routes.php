@@ -81,6 +81,9 @@ Route::get('/api/police/{rank_no}', "PoliceController@getPolice");
 //getting drivers
 Route::get('/drivers',array('uses'=>'DriverController@index'));
 
+//getting drivers
+Route::get('/driver/{id}',array('uses'=>'DriverController@show'));
+
 //dealing with uploaded driver excel file
 Route::post('/driver/upload',array('uses'=>'DriverController@upload'));
 
@@ -120,6 +123,27 @@ Route::post('/vehicle',array('uses'=>'VehicleController@store'));
 
 //getting list of motor vehicles
 Route::get('/vehicle',array('uses'=>'VehicleController@index'));
+
+//getting single motor vehicles
+Route::get('/vehicle/{id}',array('uses'=>'VehicleController@show'));
+
+//getting single motor vehicles
+Route::get('/vehicle/insurance/{id}',array('uses'=>'VehicleController@getInsurance'));
+
+//getting single motor vehicles
+Route::get('/vehicle/road_license/{id}',array('uses'=>'VehicleController@getRoadLicence'));
+
+//getting single motor vehicles
+Route::get('/vehicle/bus_license/{id}',array('uses'=>'VehicleController@getBusinessLicence'));
+
+//getting single motor vehicles
+Route::get('/bus_license/{id}',array('uses'=>'VehicleController@getSingleBusinessLicence'));
+
+//getting single motor vehicles
+Route::get('/vehicle/inspection/{id}',array('uses'=>'VehicleController@getInspection'));
+
+//getting single motor vehicles
+Route::get('/inspection/{id}',array('uses'=>'VehicleController@getSingleInspection'));
 
 //dealing with uploaded driver excel file
 Route::post('/vehicle/upload',array('uses'=>'VehicleController@upload'));

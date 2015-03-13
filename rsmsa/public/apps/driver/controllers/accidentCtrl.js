@@ -23,10 +23,9 @@ angular.module('rsmsaApp')
     .controller('ViewAccidentController', ['$scope', '$routeParams','$http',
         function($scope, $routeParams ,$http) {
             $accident_id = $routeParams.accident_id;
-
             $scope.accidents = {};
 
-            $http.get("/api/accident/" + $accident_id)
+            $http.get("/api/accident/" + $routeParams.accident_id)
                 .success(function(data) {
                     console.log(data[0]);
                     $scope.accident_no = data[0].accident_reg_number;
@@ -97,6 +96,7 @@ angular.module('rsmsaApp')
 
                     //driver details
                     $driver_id = data[0].driver_id;
+                    $scope.drivers_id = $driver_id;
                     $http.get("/api/accident/driver/" + $driver_id)
                         .success(function(driver) {
                             console.log(driver[0]);
@@ -111,6 +111,7 @@ angular.module('rsmsaApp')
                             $scope.nationality = driver[0].nationality;
                             $scope.phone_number = driver[0].phone_number;
                             $scope.occupation = driver[0].occupation;
+
 
                         }).error(function(error) {
                             console.log(error);

@@ -223,7 +223,11 @@ class AccidentController extends BaseController{
 
 //Get All Accidents by Vehicle's Plate Number
     public  function getAccidentsByVehicle($plateNumber){
-        $accidents = Accident::where('','=',$plateNumber)->get();
+        $accidents = DB::table('rsmsa_accidents')
+            ->join('rsmsa_accident_vehicle', 'rsmsa_accidents.id', '=', 'rsmsa_accident_vehicle.accident_id')
+            ->join('rsmsa_vehicles', 'rsmsa_vehicles.id', '=', 'rsmsa_accident_vehicle.vehicle_id')
+            ->where('rsmsa_vehicles.plate_number','=',$plateNumber)->get();
+
 
         return $accidents;
     }
