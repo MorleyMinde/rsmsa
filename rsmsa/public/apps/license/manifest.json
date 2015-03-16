@@ -3,7 +3,7 @@
 	"description": "This extension shows a Google Image search result for the current page",
 	"version": "1.0",
 	"icons":{
-		"small":"icon16.png"
+		"small":"mini_crossover_08_4.png"
 	},
 	"home":"index.html",
 	"routes":[
@@ -12,6 +12,6 @@
 	],
 	"color":{
 		"c500":"#795548",
-		"c200":"#BCAAA4"
+		"c200":"#ffffff"
 	}
 }

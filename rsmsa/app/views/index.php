@@ -36,7 +36,7 @@ md-card-content{
 	color:white;
 }
 .app .img{
-	width: 70%;
+	width: 100%;
 	
 	height: 200px;
 	margin:auto;
@@ -47,6 +47,17 @@ background-size: 40%;
 }
 .app{
 	width:23.5%;
+	box-shadow:3px 3px 20px black;
+}
+.app:hover{
+	box-shadow:8px 8px 20px black;
+}
+.app:hover .img{
+	width:300px;
+}
+.app:hover md-card-content{
+	font-size:20px;
+	color:black;
 }
 .app:nth-child(4n - 3){
     /*width:48%;*/
