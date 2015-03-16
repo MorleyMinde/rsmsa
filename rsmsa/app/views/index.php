@@ -46,10 +46,10 @@ background-position: center;
 background-size: 40%;
 }
 .app{
-	width:24%;
+	width:23.5%;
 }
 .app:nth-child(4n - 3){
-    width:48%;
+    /*width:48%;*/
 }
 .highcharts-class{width: 48.6%;margin:0.66%;}
 .highcharts-container{width:100% !important; height:100% !important;}
@@ -59,12 +59,12 @@ background-size: 40%;
 	cursor:pointer;
 }
 .menu:hover{
-	background-color: #33691E;
+	background-color: #5C6BC0;
 	color:white;
 }
 .menu>div{
 	display:none;
-	background-color: #33691E;
+	background-color: #5C6BC0;
 	margin-top: -15px;
 }
 .menu>div .li{
@@ -75,7 +75,7 @@ background-size: 40%;
 	text-decoration:none;
 }
 .menu>div .li:hover{
-	background-color: #558B2F;
+	background-color: #7986CB;
 }
 .menu:hover>div{
 	display: block;
@@ -99,13 +99,13 @@ md-input-container{
 <body>
 <div ng-controller="AppCtrl" style="height:100%">
   <md-content style="height:100%;background: url(img/background.jpg);background-size: cover;background-repeat: no-repeat;">
-    <md-toolbar class="md-tall md-warn md-hue-3" style="background-color: #8BC34A  !important">
+    <md-toolbar class="md-tall md-warn md-hue-3" style="background-color: #3F51B5  !important">
     <div layout="row" style="height: 100%">
     	<div style="width:12.5%">
     	</div>
     	<div style="width:75%">
-    		<h2 class="md-toolbar-tools" style="padding-top: 60px;;font-size:20px;color:white">
-                Integrated Road Safety Management System(iRoad)
+    		<h2 class="md-toolbar-tools" style="padding-top: 60px;;font-size:40px;color:white">
+                <img src="img/logo.png" style="height:100px"/>IRoad(Integrated Road Safety Management System)
       		</h2>
     	</div>
     	<div style="width:12.5%">
@@ -147,7 +147,7 @@ md-input-container{
 	</md-card>
 	<!-- Profile view -->
 	<md-card class="profile" ng-if="profile">
-		<md-toolbar class="md-warn" style="background-color:#689F38 !important">
+		<md-toolbar class="md-warn" style="background-color:#5C6BC0 !important">
 	    <div class="md-toolbar-tools">
 	      <span class="md-flex">Your Profile</span>
 	    </div>
@@ -223,7 +223,7 @@ md-input-container{
 	</md-card>
 	<!-- Change Password view -->
 	<md-card class="profile" ng-if="password">
-		<md-toolbar class="md-warn" style="background-color:#689F38 !important">
+		<md-toolbar class="md-warn" style="background-color:#5C6BC0 !important">
 	    <div class="md-toolbar-tools">
 	      <span class="md-flex">Change Your Password</span>
 	    </div>
@@ -231,7 +231,7 @@ md-input-container{
 	  <md-content class="md-padding" style="height: 600px;padding: 24px;">
 	  <table>
 	  	<tr>
-	  		<td>
+	  		<td style="width:50%">
 	  		
 	  		<table>
 	  			<thead><tr><th colspan="2"><h3>Basic Information</h3></th></tr>
