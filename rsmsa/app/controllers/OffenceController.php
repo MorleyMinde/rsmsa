@@ -123,7 +123,7 @@ class OffenceController extends BaseController {
 	 * Get all offences
 	 */
 	public function getOffences(){
-		return Offence::all();
+		return Offence::appendDriver(Offence::all());
 	}
 	/**
 	 * Get all offence registries

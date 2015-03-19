@@ -8,11 +8,21 @@ class AndroidController extends BaseController {
 	{
 		if($tag == 'verification_tag')
 		{
-			$licence_number = $_GET['license_number'];
-			$plate_no = $_GET['plate_number'];
-			$driverJSON = Driver::where('license_number','=',$licence_number)->first();
-			$vehicleJSON = Vehicle::where('plate_number','=',$plate_no)->first();
-			if(count($driverJSON) == 0)// If the licence is not registered return error 1
+			$licence_number = null;
+			$plate_no = null;
+			$driverJSON = null;
+			$vehicleJSON = null;
+			if(isset($_GET['license_number'])){
+				$licence_number = $_GET['license_number'];
+				$driverJSON = Driver::where('license_number','=',$licence_number)->first();
+			}
+			
+			if(isset($_GET['plate_number'])){
+				$plate_no = $_GET['plate_number'];
+				$vehicleJSON = Vehicle::where('plate_number','=',$plate_no)->first();
+			}
+			
+			if($driverJSON === null && $vehicleJSON === null)// If the licence is not registered return error 1
 			{
 				//Initiate the error status array
 				$arr = array();
@@ -27,37 +37,52 @@ class AndroidController extends BaseController {
 				$arr = array();
 				//Initiate the success status array
 				array_push($arr,array('status'=>'ok'));
-				//push the driver information array
-				array_push($arr,array('driver'=>$driverJSON));
-				//Append insuraence infromation
-				$vehicleJSON->appendInsurance();
-				
-				//Append road license infromation
-				$vehicleJSON->appendRoadLicense();
-				
-				//Append inspection infromation
-				$vehicleJSON->appendInspection();
-				
-				//push the vehicle information array
-				
-				array_push($arr,array('vehicle'=>$vehicleJSON));
 				//push the offences made by the driver
-				$offences = Offence::where('driver_license_number','=',$licence_number)->get();
-				$offenceReturn = array();
-				foreach($offences as $off)
+				$offences = new Offence();
+				if($licence_number != null)
 				{
-					$off->offence_date = strtotime($off->offence_date) * 1000;
-					$offence_events =  OffenceEvent::where('offence_id','=',$off->id)->get();
-					$events = array();
-					foreach($offence_events as $offEvent)
-					{
-						$offence_registry = OffenceRegistry::where('id','=',$offEvent->offence_registry_id)->get();
-						array_push($events,$offence_registry);
-					}
-					$off->events = $events;
-					array_push($offenceReturn,$off);
+					//push the driver information array
+					array_push($arr,array('driver'=>$driverJSON));
+					
+					$offences->where('driver_license_number','=',$licence_number);
 				}
-				array_push($arr,array('offences' => $offenceReturn));
+				if($plate_no != null)
+				{
+					
+					//Append insuraence infromation
+					$vehicleJSON->appendInsurance();
+						
+					//Append road license infromation
+					$vehicleJSON->appendRoadLicense();
+						
+					//Append inspection infromation
+					$vehicleJSON->appendInspection();
+					
+					//push the vehicle information array
+					array_push($arr,array('vehicle'=>$vehicleJSON));
+					$offences->where('vehicle_plate_number','=',$plate_no);
+				}
+				
+				//push the offences made by the driver
+				if($plate_no != null || $licence_number != null){
+					$offences = $offences->get();
+					$offenceReturn = array();
+					foreach($offences as $off)
+					{
+						$off->offence_date = strtotime($off->offence_date) * 1000;
+						$offence_events =  OffenceEvent::where('offence_id','=',$off->id)->get();
+						$events = array();
+						foreach($offence_events as $offEvent)
+						{
+							$offence_registry = OffenceRegistry::where('id','=',$offEvent->offence_registry_id)->get();
+							array_push($events,$offence_registry);
+						}
+						$off->events = $events;
+						array_push($offenceReturn,$off);
+					}
+					array_push($arr,array('offences' => $offenceReturn));
+				}
+				
 				return $this->getJSON($arr);
 			}
 		}

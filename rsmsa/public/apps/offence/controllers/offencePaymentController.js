@@ -62,7 +62,14 @@ angular.module('rsmsaApp').controller('offencePaymentController',function($scope
 			//Fetch offences from server
 			$http.get(url).success(function(data){
 				//set offences
-				$scope.offences = data.offences;
+				var offencestatus = "offences";
+				if($scope.status.id == "paid"){
+					offencestatus = "paid_"+offencestatus;
+				}else if($scope.status.id == "notpaid")
+				{
+					offencestatus = "not_paid_"+offencestatus;
+				}
+				$scope.offences = data[$scope.entity.id][offencestatus];
 			}).error(function(error) {
 				//alert(error);
 				console.log(error);

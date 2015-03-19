@@ -34,7 +34,7 @@ class Offence extends JSONPresentableImpl{
 	 */
 	public function driver()
 	{
-		return $this->hasOne('Driver');
+		return $this->hasOne('Driver','license_number','driver_license_number');
 	}
 	
 	/**
@@ -93,5 +93,15 @@ class Offence extends JSONPresentableImpl{
 			return;
 		return Receipt::find($offenceReceipt->receipt_id);
 		//return $this->hasMany('Receipt','rsmsa_offence_receipts','offence_id','receipt_id');
+	}
+	public static function appendDriver($offences){
+		$offencesRet = array();
+		foreach($offences as $offence){
+			$driver = $offence->driver;
+			$offence->to = $driver->first_name;//." ".$driver->last_name;
+			$offence->address = $driver->address;
+			array_push($offencesRet,$offence);
+		}
+		return $offencesRet;
 	}
 }

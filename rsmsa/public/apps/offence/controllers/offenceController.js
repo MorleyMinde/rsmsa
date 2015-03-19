@@ -28,6 +28,9 @@ angular.module('rsmsaApp', [ 'ngMaterial' , "ngRoute",'ui.date',"highcharts-ng",
 		    $routeProvider.when("/offence/report",{
 		        templateUrl: 'views/offenceReport.html'
 		    });
+		    $routeProvider.when("/offence/payments",{
+		        templateUrl: 'views/offencePayments.html'
+		    });
 		    $routeProvider.when("/offence/statistics",{
 		        templateUrl: 'views/statistics.html'
 		    });
