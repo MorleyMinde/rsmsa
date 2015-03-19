@@ -5,7 +5,6 @@ angular.module('rsmsaApp', ['ngMaterial',"highcharts-ng"])
 	$http.get("/apps/manifests").success(function(data) {
 		$scope.apps = data;
 	}).error(function(error) {
-		alert(error);
 		$scope.data.error = error;
 	});
 	//Initialize user model
@@ -14,7 +13,6 @@ angular.module('rsmsaApp', ['ngMaterial',"highcharts-ng"])
 	$http.get("/logged/user/").success(function(data) {
 		$scope.user = data;
 	}).error(function(error) {
-		alert(error);
 		$scope.data.error = error;
 	});
 	
@@ -28,7 +26,6 @@ angular.module('rsmsaApp', ['ngMaterial',"highcharts-ng"])
 	//Change the user password
 	$scope.changePassword = function(){
 		$http.post("/change/password",$scope.cpassword).success(function(data) {
-			alert(data);
 			$scope.passwordState = "Password was change successfully";
 			$scope.cpassword.current_password = "";
 			$scope.cpassword.new_password = "";

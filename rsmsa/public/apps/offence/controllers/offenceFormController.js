@@ -194,6 +194,7 @@ angular.module('rsmsaApp')
 		$scope.station = station;
 	});
 	
+	$scope.offenceAdded = false;
 	//submit the offence object to the server
 	$scope.submitOffence = function() {
 		$http({
@@ -203,12 +204,14 @@ angular.module('rsmsaApp')
 		    responseType: "json",
 		    data: {
 		    	offence:$scope.offence,
-		    	events:$scope.offenceEvents
+		    	events:$scope.offenceEvents,
+		    	receipt:$scope.payment
 		    }
 		})
 		.then(
 				function(data) {
 					alert("Task added."+data.status);
+					$scope.offenceAdded = true;
 				}, 
 				function(data) { 
 					//TODO Handle Error
@@ -274,9 +277,7 @@ angular.module('rsmsaApp')
 		if (isNaN(timestamp)==false)
 		{
 			var d=new Date(timestamp);
-			if((date2.getDate() - d.getDate()) <= 0){
-				return true;
-			}
+			return ((date2.getDate() - d.getDate()) > 0);
 		}
 		return false;
 	};

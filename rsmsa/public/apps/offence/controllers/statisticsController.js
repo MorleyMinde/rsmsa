@@ -197,7 +197,7 @@ angular.module('rsmsaApp')
             	   var request = [];
             	   var series = [];
             	   angular.forEach($scope.area1,function(categoryValue){ 
-            		   var json = {"reportType":$scope.subCategory,"reportTypeValue":reportTypeValue,"category":$scope.data.category,"categoryValue":categoryValue.id};
+            		   var json = {"reportType":$scope.data.report_type,"reportTypeValue":reportTypeValue,"category":$scope.data.category,"categoryValue":categoryValue.id};
                 	   request.push(json);
                    });
             	   $http.post("/api/offence/report",request).success(function(data){

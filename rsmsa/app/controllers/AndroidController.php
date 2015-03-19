@@ -10,8 +10,8 @@ class AndroidController extends BaseController {
 		{
 			$licence_number = $_GET['license_number'];
 			$plate_no = $_GET['plate_number'];
-			$driverJSON = Driver::where('license_number','=',$licence_number)->get();
-			$vehicleJSON = Vehicle::where('plate_number','=',$plate_no)->get();
+			$driverJSON = Driver::where('license_number','=',$licence_number)->first();
+			$vehicleJSON = Vehicle::where('plate_number','=',$plate_no)->first();
 			if(count($driverJSON) == 0)// If the licence is not registered return error 1
 			{
 				//Initiate the error status array
@@ -29,7 +29,17 @@ class AndroidController extends BaseController {
 				array_push($arr,array('status'=>'ok'));
 				//push the driver information array
 				array_push($arr,array('driver'=>$driverJSON));
+				//Append insuraence infromation
+				$vehicleJSON->appendInsurance();
+				
+				//Append road license infromation
+				$vehicleJSON->appendRoadLicense();
+				
+				//Append inspection infromation
+				$vehicleJSON->appendInspection();
+				
 				//push the vehicle information array
+				
 				array_push($arr,array('vehicle'=>$vehicleJSON));
 				//push the offences made by the driver
 				$offences = Offence::where('driver_license_number','=',$licence_number)->get();

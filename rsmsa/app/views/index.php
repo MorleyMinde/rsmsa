@@ -36,7 +36,7 @@ md-card-content{
 	color:white;
 }
 .app .img{
-	width: 70%;
+	width: 100%;
 	
 	height: 200px;
 	margin:auto;
@@ -46,10 +46,21 @@ background-position: center;
 background-size: 40%;
 }
 .app{
-	width:24%;
+	width:23.5%;
+	box-shadow:3px 3px 20px black;
+}
+.app:hover{
+	box-shadow:8px 8px 20px black;
+}
+.app:hover .img{
+	width:300px;
+}
+.app:hover md-card-content{
+	font-size:20px;
+	color:black;
 }
 .app:nth-child(4n - 3){
-    width:48%;
+    /*width:48%;*/
 }
 .highcharts-class{width: 48.6%;margin:0.66%;}
 .highcharts-container{width:100% !important; height:100% !important;}
@@ -59,12 +70,12 @@ background-size: 40%;
 	cursor:pointer;
 }
 .menu:hover{
-	background-color: #33691E;
+	background-color: #5C6BC0;
 	color:white;
 }
 .menu>div{
 	display:none;
-	background-color: #33691E;
+	background-color: #5C6BC0;
 	margin-top: -15px;
 }
 .menu>div .li{
@@ -75,7 +86,7 @@ background-size: 40%;
 	text-decoration:none;
 }
 .menu>div .li:hover{
-	background-color: #558B2F;
+	background-color: #7986CB;
 }
 .menu:hover>div{
 	display: block;
@@ -99,13 +110,13 @@ md-input-container{
 <body>
 <div ng-controller="AppCtrl" style="height:100%">
   <md-content style="height:100%;background: url(img/background.jpg);background-size: cover;background-repeat: no-repeat;">
-    <md-toolbar class="md-tall md-warn md-hue-3" style="background-color: #8BC34A  !important">
+    <md-toolbar class="md-tall md-warn md-hue-3" style="background-color: #3F51B5  !important">
     <div layout="row" style="height: 100%">
     	<div style="width:12.5%">
     	</div>
     	<div style="width:75%">
-    		<h2 class="md-toolbar-tools" style="padding-top: 60px;;font-size:20px;color:white">
-                Integrated Road Safety Management System(iRoad)
+    		<h2 class="md-toolbar-tools" style="padding-top: 60px;;font-size:40px;color:white">
+                <img src="img/logo.png" style="height:100px"/>IRoad(Integrated Road Safety Management System)
       		</h2>
     	</div>
     	<div style="width:12.5%">
@@ -145,8 +156,9 @@ md-input-container{
 	        {{app.name}}
 	      </md-card-content>
 	</md-card>
+	<!-- Profile view -->
 	<md-card class="profile" ng-if="profile">
-		<md-toolbar class="md-warn" style="background-color:#689F38 !important">
+		<md-toolbar class="md-warn" style="background-color:#5C6BC0 !important">
 	    <div class="md-toolbar-tools">
 	      <span class="md-flex">Your Profile</span>
 	    </div>
@@ -220,38 +232,54 @@ md-input-container{
 	  <md-divider ng-if="!$last"></md-divider>
 	  </md-content>
 	</md-card>
+	<!-- Change Password view -->
 	<md-card class="profile" ng-if="password">
-		<md-toolbar class="md-warn" style="background-color:#689F38 !important">
+		<md-toolbar class="md-warn" style="background-color:#5C6BC0 !important">
 	    <div class="md-toolbar-tools">
 	      <span class="md-flex">Change Your Password</span>
 	    </div>
 	  </md-toolbar>
 	  <md-content class="md-padding" style="height: 600px;padding: 24px;">
-	  
-	  <md-item-content>
+	  <table>
+	  	<tr>
+	  		<td style="width:50%">
+	  		
+	  		<table>
+	  			<thead><tr><th colspan="2"><h3>Basic Information</h3></th></tr>
+	  			<tr><td>First Name:</td><td>{{user.first_name}}</td></tr>
+	  			<tr><td>Last Name:</td><td>{{user.last_name}}</td></tr>
+	  			<tr><td>Phone Number:</td><td>{{user.phone_number}}</td></tr>
+	  			<tr><td>Email:</td><td>{{user.email}}</td></tr>
+	  		</table>
+	  		</td>
+	  		<td>
+	  			<md-item-content>
 	  	{{passwordState}}
         </md-item-content>
-        <md-item-content>
 	  	<md-input-container class="col-sm-4"> 
 			<label>Current Password</label> 
-			<input ng-model="cpassword.current_password"/> 
+			<input type="password" ng-model="cpassword.current_password"/> 
 		</md-input-container>
-        </md-item-content>
-	  <md-item-content>
+       <br />
 	  	<md-input-container class="col-sm-4"> 
 			<label>New Password</label> 
-			<input ng-model="cpassword.new_password" required/> 
+			<input type="password" ng-model="cpassword.new_password" required/> 
 		</md-input-container>
-        </md-item-content>
-	  <md-item-content>
+        <br />
 	  	<md-input-container class="col-sm-4"> 
 			<label>Repeat New Password</label> 
-			<input ng-model="cpassword.repeat_new_password" required/> 
+			<input type="password" ng-model="cpassword.repeat_new_password" required/> 
 		</md-input-container>
-        </md-item-content>
-       <md-button class="md-raised md-primary" ng-click="changePassword()">
+		<br />
+        
+        <md-button class="md-raised md-primary" ng-click="changePassword()">
 				Submit
 			</md-button>
+	  		</td>
+	  	</tr>
+	  	</table>
+	  
+       
 	  </md-content>
 	</md-card>
     </div>

@@ -3,7 +3,7 @@
 	"description": "This Module Helps you to define Administrative unit structure for the application",
 	"version": "1.0",
 	"icons":{
-		"small":"icon.jpg"
+		"small":"icon16.png"
 	},
 	"home":"index.html",
 	"routes":[
