@@ -86,7 +86,35 @@ angular.module('rsmsaApp')
                 }, function() {
                 });
         };
-    });
+    }).controller('ViewInspectionController', ['$scope', '$routeParams','$http',
+        function($scope, $routeParams ,$http) {
+            $inspection_id = $routeParams.inspe_id;
+            $scope.currentKaya = {};
+            $scope.countInspection = function(inspections){
+                $scope.passed=0;
+                $scope.failed = 0
+                angular.forEach(inspections,function(value,key){
+                    if(value == "Passed"){
+                        $scope.passed = $scope.passed + 1;
+                    }else if(value == "Failed"){
+                        $scope.failed = $scope.failed + 1;
+                    }
+                })
+            }
+            $http.get("/inspection/" + $routeParams.inspe_id)
+                .success(function(data) {
+                    $scope.currentKaya = data;
+                    $scope.countInspection(data);
+                    $http.get('../../vehicle').success(function(data1){
+                        angular.forEach(data1,function(value){
+                            if(value.plate_number == data.car_id){
+                                $scope.currCar = value;
+                            }
+                        })
+                    });
+                });
+
+        }]);
 
 function DialogController($scope, $mdDialog) {
 

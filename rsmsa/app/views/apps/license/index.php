@@ -103,6 +103,7 @@
     <script src="<?php echo asset('apps/license/controllers/insuranceAddCtrl.js')?>"></script>
     <script src="<?php echo asset('apps/license/controllers/inspectionCtrl.js')?>"></script>
     <script src="<?php echo asset('apps/license/controllers/licenceCtrl.js')?>"></script>
+    <script src="<?php echo asset('apps/license/controllers/singleCarController.js')?>"></script>
 </head>
 
 <body style="" ng-controller="vehicleAppCtrl">

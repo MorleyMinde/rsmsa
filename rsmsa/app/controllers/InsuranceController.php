@@ -30,4 +30,5 @@ class InsuranceController extends BaseController{
 
         return Insurance::all();
     }
-} 
+
+}

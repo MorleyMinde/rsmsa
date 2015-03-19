@@ -2,19 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44897c0c-e8d9-4e4c-aedb-3340e6857d69" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php" afterPath="$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/app/config/mail.php" afterPath="$PROJECT_DIR$/rsmsa/app/config/mail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/configuration/views/offenceReg.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/configuration/views/offenceReg.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/offence/views/paymentForm.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/offence/views/paymentForm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/payment/controllers/paymentModeController.js" afterPath="$PROJECT_DIR$/rsmsa/public/apps/payment/controllers/paymentModeController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/payment/views/paymentModes.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/payment/views/paymentModes.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/payment/views/receipt.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/payment/views/receipt.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/payment/controllers/receiptController.js" afterPath="$PROJECT_DIR$/rsmsa/public/apps/payment/controllers/receiptController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/configuration/views/registryFormDialog.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/configuration/views/registryFormDialog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/offence/views/statistics.html" afterPath="$PROJECT_DIR$/rsmsa/public/apps/offence/views/statistics.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/offence/controllers/statisticsController.js" afterPath="$PROJECT_DIR$/rsmsa/public/apps/offence/controllers/statisticsController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/apps/offence/controllers/statsController.js" afterPath="$PROJECT_DIR$/rsmsa/public/apps/offence/controllers/statsController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsmsa/public/css/style.css" afterPath="$PROJECT_DIR$/rsmsa/public/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="rsmsa.iws" />
@@ -38,39 +25,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rsmsa/app/views/index.php">
+      <file leaf-file-name="view_busines.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/view_busines.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="192" column="12" selection-start="5633" selection-end="5633" vertical-scroll-proportion="-15.296296" vertical-offset="3043" max-vertical-offset="3762">
+            <state line="12" column="94" selection-start="417" selection-end="417" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="4266">
               <folding>
-                <marker date="1426154508418" expanded="true" signature="47:205" placeholder="..." />
-                <marker date="1426154508418" expanded="true" signature="911:1020" placeholder="{...}" />
-                <marker date="1426154508418" expanded="true" signature="1034:1070" placeholder="{...}" />
-                <marker date="1426154508418" expanded="true" signature="1086:1130" placeholder="{...}" />
-                <marker date="1426154508418" expanded="true" signature="1783:4375" placeholder="{...}" />
-                <marker date="1426154508418" expanded="true" signature="4020:4373" placeholder="{...}" />
-                <marker date="1426154508418" expanded="true" signature="4069:4181" placeholder="{&quot;templateUrl&quot;: '/views/app.html'...}" />
-                <marker date="1426154508418" expanded="true" signature="4212:4294" placeholder="{...}" />
-                <marker date="1426154508418" expanded="true" signature="4307:4368" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rsmsa/app/views/apps/license/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="74" selection-start="4949" selection-end="4949" vertical-scroll-proportion="-10.0" vertical-offset="1530" max-vertical-offset="3366">
-              <folding>
-                <marker date="1426154589286" expanded="true" signature="2630:2975" placeholder="{...}" />
-                <marker date="1426154589286" expanded="true" signature="3033:3075" placeholder="{...}" />
-                <marker date="1426154589286" expanded="true" signature="3361:3507" placeholder="{...}" />
-                <marker date="1426154589286" expanded="true" signature="3546:3564" placeholder="{...}" />
-                <marker date="1426154589286" expanded="true" signature="3650:3793" placeholder="{...}" />
-                <marker date="1426154589286" expanded="true" signature="3831:3869" placeholder="{...}" />
-                <marker date="1426154589286" expanded="true" signature="4121:4552" placeholder="{...}" />
-                <marker date="1426154589286" expanded="true" signature="4241:4364" placeholder="{...}" />
-                <marker date="1426154589286" expanded="true" signature="4437:4469" placeholder="{...}" />
+                <marker date="1426219246561" expanded="true" signature="6:321" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -79,72 +39,79 @@
       <file leaf-file-name="inspectionCtrl.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/controllers/inspectionCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="48" selection-start="2195" selection-end="2213" vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="1926">
+            <state line="106" column="49" selection-start="3838" selection-end="3838" vertical-scroll-proportion="0.0" vertical-offset="1908" max-vertical-offset="2430">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rsmsa/app/routes.php">
+      <file leaf-file-name="singleCarController.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/controllers/singleCarController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="137" column="80" selection-start="5187" selection-end="5187" vertical-scroll-proportion="-13.333333" vertical-offset="2106" max-vertical-offset="6876">
+            <state line="23" column="19" selection-start="594" selection-end="975" vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="846">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VehicleController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rsmsa/app/controllers/VehicleController.php">
+      <file leaf-file-name="car.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/car.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="210" column="18" selection-start="4393" selection-end="4393" vertical-scroll-proportion="-11.444445" vertical-offset="3471" max-vertical-offset="5598">
+            <state line="187" column="28" selection-start="7685" selection-end="8709" vertical-scroll-proportion="0.0" vertical-offset="2805" max-vertical-offset="5256">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Inspection.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rsmsa/app/models/Inspection.php">
+      <file leaf-file-name="insurance.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/insurance.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="16" selection-start="96" selection-end="106" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="360">
-              <folding>
-                <element signature="e#6#88#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Insurance.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rsmsa/app/models/Insurance.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="88" selection-end="209" vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="270">
+            <state line="65" column="45" selection-start="4152" selection-end="4152" vertical-scroll-proportion="0.0" vertical-offset="1041" max-vertical-offset="3060">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mail.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rsmsa/app/config/mail.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="107" column="0" selection-start="3830" selection-end="3840" vertical-scroll-proportion="2.0" vertical-offset="1980" max-vertical-offset="2538">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2015_01_20_090222_create_tables.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="2015_01_20_090222_create_tables.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="143" column="38" selection-start="5854" selection-end="5854" vertical-scroll-proportion="0.6756757" vertical-offset="2256" max-vertical-offset="7740">
+            <state line="260" column="34" selection-start="10391" selection-end="10395" vertical-scroll-proportion="0.0" vertical-offset="4680" max-vertical-offset="7524">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="inspection.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/inspection.html">
+      <file leaf-file-name="AppTableSeeder.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/rsmsa/app/database/seeds/AppTableSeeder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="62" selection-start="7244" selection-end="7255" vertical-scroll-proportion="-8.0" vertical-offset="1836" max-vertical-offset="7470">
+            <state line="11" column="44" selection-start="294" selection-end="301" vertical-scroll-proportion="0.3920792" vertical-offset="0" max-vertical-offset="612">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="licenceCtrl.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/controllers/licenceCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="31" selection-start="930" selection-end="1580" vertical-scroll-proportion="0.0" vertical-offset="353" max-vertical-offset="4032">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="insuranceAddCtrl.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/controllers/insuranceAddCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="53" selection-start="1525" selection-end="1525" vertical-scroll-proportion="0.0" vertical-offset="317" max-vertical-offset="1530">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="car_licence.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/car_licence.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="153" selection-start="1468" selection-end="1490" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="7038">
               <folding />
             </state>
           </provider>
@@ -164,34 +131,12 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/rsmsa/public/apps/driver/controllers/driverAccCtrl.js" />
-        <option value="$PROJECT_DIR$/rsmsa/public/apps/driver/views/accidents.html" />
-        <option value="$PROJECT_DIR$/rsmsa/public/apps/driver/views/offences.html" />
-        <option value="$PROJECT_DIR$/rsmsa/public/apps/driver/controllers/driverOffCtrl.js" />
-        <option value="$PROJECT_DIR$/rsmsa/public/apps/driver/routes.js" />
-        <option value="$PROJECT_DIR$/rsmsa/public/apps/driver/controllers/driverImportCtrl.js" />
-        <option value="$PROJECT_DIR$/rsmsa/public/apps/driver/views/licence.html" />
-        <option value="$PROJECT_DIR$/rsmsa/app/controllers/DriverController.php" />
-        <option value="$PROJECT_DIR$/rsmsa/public/apps/license/views/import.html" />
-        <option value="$PROJECT_DIR$/rsmsa/app/config/database.php" />
-        <option value="$PROJECT_DIR$/rsmsa/app/models/Insurance.php" />
-        <option value="$PROJECT_DIR$/rsmsa/public/apps/license/views/add.html" />
-        <option value="$PROJECT_DIR$/rsmsa/app/views/apps/insurance/index.php" />
-        <option value="$PROJECT_DIR$/rsmsa/public/apps/license/views/dialog.html" />
-        <option value="$PROJECT_DIR$/rsmsa/public/apps/license/controllers/insuranceAddCtrl.js" />
-        <option value="$PROJECT_DIR$/rsmsa/public/apps/insurance/views/list.html" />
-        <option value="$PROJECT_DIR$/rsmsa/public/apps/insurance/views/help.html" />
         <option value="$PROJECT_DIR$/rsmsa/public/apps/license/views/help.html" />
-        <option value="$PROJECT_DIR$/rsmsa/public/apps/license/routes.js" />
         <option value="$PROJECT_DIR$/rsmsa/public/angular-material/angular-text.min.css" />
-        <option value="$PROJECT_DIR$/rsmsa/public/apps/license/views/insurance.html" />
-        <option value="$PROJECT_DIR$/rsmsa/public/apps/license/controllers/licenceCtrl.js" />
         <option value="$PROJECT_DIR$/rsmsa/app/models/BusinessLicence.php" />
         <option value="$PROJECT_DIR$/rsmsa/app/models/CarInsurance.php" />
         <option value="$PROJECT_DIR$/rsmsa/app/models/RoadLicence.php" />
         <option value="$PROJECT_DIR$/rsmsa/public/apps/driver/views/add.html" />
-        <option value="$PROJECT_DIR$/rsmsa/public/apps/driver/views/list.html" />
-        <option value="$PROJECT_DIR$/rsmsa/public/apps/license/views/car_licence.html" />
         <option value="$PROJECT_DIR$/rsmsa/public/apps/license/views/home.html" />
         <option value="$PROJECT_DIR$/rsmsa/public/apps/license/controllers/vehicleAppCtrl.js" />
         <option value="$PROJECT_DIR$/rsmsa/app/models/UserAreas.php" />
@@ -206,15 +151,37 @@
         <option value="$PROJECT_DIR$/rsmsa/public/apps/user/views/home.html" />
         <option value="$PROJECT_DIR$/rsmsa/public/apps/user/controllers/userAppCtrl.js" />
         <option value="$PROJECT_DIR$/rsmsa/public/apps/user/views/logs.html" />
-        <option value="$PROJECT_DIR$/rsmsa/app/views/index.php" />
-        <option value="$PROJECT_DIR$/rsmsa/app/views/apps/license/index.php" />
-        <option value="$PROJECT_DIR$/rsmsa/public/apps/license/views/inspection.html" />
-        <option value="$PROJECT_DIR$/rsmsa/public/apps/license/controllers/inspectionCtrl.js" />
-        <option value="$PROJECT_DIR$/rsmsa/app/routes.php" />
         <option value="$PROJECT_DIR$/rsmsa/app/models/Inspection.php" />
-        <option value="$PROJECT_DIR$/rsmsa/app/controllers/VehicleController.php" />
         <option value="$PROJECT_DIR$/rsmsa/app/config/mail.php" />
         <option value="$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php" />
+        <option value="$PROJECT_DIR$/rsmsa/app/config/database.php" />
+        <option value="$PROJECT_DIR$/rsmsa/app/controllers/AppController.php" />
+        <option value="$PROJECT_DIR$/rsmsa/app/views/index.php" />
+        <option value="$PROJECT_DIR$/rsmsa/app/views/apps/driver/index.php" />
+        <option value="$PROJECT_DIR$/rsmsa/public/apps/driver/routes.js" />
+        <option value="$PROJECT_DIR$/rsmsa/public/apps/driver/controllers/singleDriverController.js" />
+        <option value="$PROJECT_DIR$/rsmsa/public/apps/driver/views/view_accident.html" />
+        <option value="$PROJECT_DIR$/rsmsa/public/apps/driver/controllers/accidentCtrl.js" />
+        <option value="$PROJECT_DIR$/rsmsa/app/views/apps/license/index.php" />
+        <option value="$PROJECT_DIR$/rsmsa/public/apps/driver/views/list.html" />
+        <option value="$PROJECT_DIR$/rsmsa/public/apps/license/views/list.html" />
+        <option value="$PROJECT_DIR$/rsmsa/app/controllers/AccidentController.php" />
+        <option value="$PROJECT_DIR$/rsmsa/public/apps/license/views/view_accident.html" />
+        <option value="$PROJECT_DIR$/rsmsa/app/controllers/InsuranceController.php" />
+        <option value="$PROJECT_DIR$/rsmsa/public/apps/license/views/inspection.html" />
+        <option value="$PROJECT_DIR$/rsmsa/public/apps/license/controllers/singleCarController.js" />
+        <option value="$PROJECT_DIR$/rsmsa/public/apps/driver/views/driver.html" />
+        <option value="$PROJECT_DIR$/rsmsa/public/apps/license/views/view_inspection.html" />
+        <option value="$PROJECT_DIR$/rsmsa/public/apps/license/views/car.html" />
+        <option value="$PROJECT_DIR$/rsmsa/public/apps/license/routes.js" />
+        <option value="$PROJECT_DIR$/rsmsa/app/routes.php" />
+        <option value="$PROJECT_DIR$/rsmsa/app/controllers/VehicleController.php" />
+        <option value="$PROJECT_DIR$/rsmsa/public/apps/license/views/view_busines.html" />
+        <option value="$PROJECT_DIR$/rsmsa/public/apps/license/controllers/inspectionCtrl.js" />
+        <option value="$PROJECT_DIR$/rsmsa/public/apps/license/views/car_licence.html" />
+        <option value="$PROJECT_DIR$/rsmsa/public/apps/license/controllers/licenceCtrl.js" />
+        <option value="$PROJECT_DIR$/rsmsa/public/apps/license/controllers/insuranceAddCtrl.js" />
+        <option value="$PROJECT_DIR$/rsmsa/public/apps/license/views/insurance.html" />
       </list>
     </option>
   </component>
@@ -251,6 +218,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -337,259 +305,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="license" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="license" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="license" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="emails" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="license" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rsmsa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TICS" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
     <property name="options.lastSelected" value="appearance" />
@@ -618,9 +343,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/rsmsa/public/apps/license/views" />
       <recent name="$PROJECT_DIR$/rsmsa/public/apps/user/views" />
       <recent name="$PROJECT_DIR$/rsmsa/public/apps/user" />
-      <recent name="$PROJECT_DIR$/rsmsa/public/apps/license/views" />
       <recent name="$PROJECT_DIR$/rsmsa/public/apps/license" />
       <recent name="$PROJECT_DIR$/rsmsa/app/models" />
     </key>
@@ -691,19 +416,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1602" height="874" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.027962716" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20667523" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20875" sideWeight="0.4974271" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4165597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.150625" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32669324" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19573902" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24677002" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20875" sideWeight="0.50085765" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -727,332 +452,284 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/insurance/views/list.html">
+    <entry file="file://$PROJECT_DIR$/rsmsa/app/models/Inspection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="28" selection-start="1087" selection-end="1377" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1080" />
+        <state line="8" column="16" selection-start="96" selection-end="106" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="360" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/insurance/js/InsuranceAppCtrl.js">
+    <entry file="file://$PROJECT_DIR$/rsmsa/app/config/mail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="66" selection-start="129" selection-end="138" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1620" />
+        <state line="107" column="0" selection-start="3830" selection-end="3840" vertical-scroll-proportion="0.0" vertical-offset="1926" max-vertical-offset="2538" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/dialog.html">
+    <entry file="file://$PROJECT_DIR$/rsmsa/app/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="23" selection-start="12" selection-end="86" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="2790" />
+        <state line="59" column="34" selection-start="1821" selection-end="1821" vertical-scroll-proportion="0.0" vertical-offset="756" max-vertical-offset="2340" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/help.html">
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/controllers/rsmsaController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="7" selection-start="78" selection-end="78" vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="14832" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5274" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/routes.js">
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/accident/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="38" selection-start="851" selection-end="860" vertical-scroll-proportion="0.0" vertical-offset="98" max-vertical-offset="666" />
+        <state line="2" column="16" selection-start="36" selection-end="47" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="396" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/public/angular-material/angular-text.min.css">
+    <entry file="file://$PROJECT_DIR$/rsmsa/app/controllers/AppController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6193" column="3" selection-start="200718" selection-end="200718" vertical-scroll-proportion="0.0" vertical-offset="111111" max-vertical-offset="131562" />
+        <state line="27" column="41" selection-start="655" selection-end="655" vertical-scroll-proportion="-8.666667" vertical-offset="252" max-vertical-offset="1962" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/controllers/insuranceAddCtrl.js">
+    <entry file="file://$PROJECT_DIR$/rsmsa/app/views/apps/driver/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="9" selection-start="1353" selection-end="2059" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="1296" />
+        <state line="103" column="81" selection-start="5301" selection-end="5301" vertical-scroll-proportion="-6.6666665" vertical-offset="1674" max-vertical-offset="3060" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/models/CarInsurance.php">
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/driver/controllers/driverAddCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="66" selection-start="394" selection-end="394" vertical-scroll-proportion="-12.037037" vertical-offset="17" max-vertical-offset="558" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1152" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/driver/views/add.html">
+    <entry file="file://$PROJECT_DIR$/rsmsa/app/controllers/OffenceController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="112" selection-start="1358" selection-end="1358" vertical-scroll-proportion="-5.3333335" vertical-offset="540" max-vertical-offset="1998" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="72.96296" vertical-offset="1970" max-vertical-offset="2592" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/driver/views/list.html">
+    <entry file="file://$PROJECT_DIR$/rsmsa/app/controllers/DriverController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="19" selection-start="168" selection-end="168" vertical-scroll-proportion="-4.0" vertical-offset="0" max-vertical-offset="972" />
+        <state line="33" column="31" selection-start="595" selection-end="606" vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="4536" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/car_licence.html">
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/accident/js/controllers/AccidentReportController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="234" column="65" selection-start="15269" selection-end="15275" vertical-scroll-proportion="0.0" vertical-offset="3889" max-vertical-offset="6642" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1584" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/models/BusinessLicence.php">
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/accident/js/controllers/AccidentController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="21" selection-start="94" selection-end="109" vertical-scroll-proportion="0.23551401" vertical-offset="0" max-vertical-offset="535" />
+        <state line="76" column="51" selection-start="2113" selection-end="2146" vertical-scroll-proportion="0.0" vertical-offset="1210" max-vertical-offset="2250" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/accident/js/controllers/AccidentListController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="294" selection-end="504" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2466" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/driver/controllers/driverOffCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="5" selection-start="170" selection-end="422" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="972" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/driver/controllers/driverAppCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3402" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/driver/controllers/driverAccCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="126" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="90" selection-start="4113" selection-end="4136" vertical-scroll-proportion="1.3333334" vertical-offset="1296" max-vertical-offset="3222" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="2.0" vertical-offset="54" max-vertical-offset="594" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/models/RoadLicence.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="88" selection-end="402" vertical-scroll-proportion="-10.666667" vertical-offset="90" max-vertical-offset="504" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/database/seeds/UsersTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="41" selection-start="312" selection-end="323" vertical-scroll-proportion="-3.3333333" vertical-offset="108" max-vertical-offset="918" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/user/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/views/password/reset.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="89" selection-start="1275" selection-end="1275" vertical-scroll-proportion="-18.0" vertical-offset="0" max-vertical-offset="630" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/views/password/remind.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="107" selection-start="1148" selection-end="1148" vertical-scroll-proportion="0.5813953" vertical-offset="189" max-vertical-offset="576" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/views/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="87" selection-start="1086" selection-end="1169" vertical-scroll-proportion="-4.6666665" vertical-offset="324" max-vertical-offset="2160" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/public/css/angular-multi-select.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="15" selection-start="793" selection-end="793" vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="4896" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/models/UserAreas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="15" selection-start="93" selection-end="102" vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="504" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/models/UserApps.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="14" selection-start="93" selection-end="101" vertical-scroll-proportion="0.19873817" vertical-offset="0" max-vertical-offset="634" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/controllers/vehicleAppCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="361" column="1" selection-start="14582" selection-end="14916" vertical-scroll-proportion="0.0" vertical-offset="4860" max-vertical-offset="5508">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/views/apps/user/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="42" selection-start="566" selection-end="655" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="2700" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="166" column="32" selection-start="3725" selection-end="3725" vertical-scroll-proportion="0.0" vertical-offset="2988" max-vertical-offset="3186" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/user/views/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="178" column="11" selection-start="9113" selection-end="9113" vertical-scroll-proportion="0.0" vertical-offset="3204" max-vertical-offset="4176" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/user/controllers/userAppCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="247" column="40" selection-start="9141" selection-end="9141" vertical-scroll-proportion="0.0" vertical-offset="4235" max-vertical-offset="5166">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/user/views/dialog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="12" selection-start="4677" selection-end="4998" vertical-scroll-proportion="0.0" vertical-offset="2156" max-vertical-offset="2790">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/user/views/logs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="54" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="612">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/database/seeds/AppTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="17" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="576">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/.gitattributes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="454">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="9" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="306">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/phpunit.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="454">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/readme.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/controllers/licenceCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="54" selection-start="1872" selection-end="1896" vertical-scroll-proportion="0.0" vertical-offset="644" max-vertical-offset="1332">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2014_06_27_013352_create_password_reminders_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="702">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2014_03_20_091329_create_logs_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.4" vertical-offset="192" max-vertical-offset="720">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2015_02_11_051414_create_driving_classes_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.10735586" vertical-offset="54" max-vertical-offset="702">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="160" column="114" selection-start="8650" selection-end="9857" vertical-scroll-proportion="-15.0" vertical-offset="2475" max-vertical-offset="2988">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/insurance.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="126" selection-start="2541" selection-end="3920" vertical-scroll-proportion="-10.666667" vertical-offset="756" max-vertical-offset="2574">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/views/apps/license/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="74" selection-start="4949" selection-end="4949" vertical-scroll-proportion="-10.0" vertical-offset="1530" max-vertical-offset="3366">
-          <folding>
-            <marker date="1426154589286" expanded="true" signature="2630:2975" placeholder="{...}" />
-            <marker date="1426154589286" expanded="true" signature="3033:3075" placeholder="{...}" />
-            <marker date="1426154589286" expanded="true" signature="3361:3507" placeholder="{...}" />
-            <marker date="1426154589286" expanded="true" signature="3546:3564" placeholder="{...}" />
-            <marker date="1426154589286" expanded="true" signature="3650:3793" placeholder="{...}" />
-            <marker date="1426154589286" expanded="true" signature="3831:3869" placeholder="{...}" />
-            <marker date="1426154589286" expanded="true" signature="4121:4552" placeholder="{...}" />
-            <marker date="1426154589286" expanded="true" signature="4241:4364" placeholder="{...}" />
-            <marker date="1426154589286" expanded="true" signature="4437:4469" placeholder="{...}" />
-          </folding>
-        </state>
+        <state line="126" column="6" selection-start="64" selection-end="7646" vertical-scroll-proportion="-4.0" vertical-offset="2160" max-vertical-offset="3222" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/views/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="192" column="12" selection-start="5633" selection-end="5633" vertical-scroll-proportion="-15.296296" vertical-offset="3043" max-vertical-offset="3762">
-          <folding>
-            <marker date="1426154508418" expanded="true" signature="47:205" placeholder="..." />
-            <marker date="1426154508418" expanded="true" signature="911:1020" placeholder="{...}" />
-            <marker date="1426154508418" expanded="true" signature="1034:1070" placeholder="{...}" />
-            <marker date="1426154508418" expanded="true" signature="1086:1130" placeholder="{...}" />
-            <marker date="1426154508418" expanded="true" signature="1783:4375" placeholder="{...}" />
-            <marker date="1426154508418" expanded="true" signature="4020:4373" placeholder="{...}" />
-            <marker date="1426154508418" expanded="true" signature="4069:4181" placeholder="{&quot;templateUrl&quot;: '/views/app.html'...}" />
-            <marker date="1426154508418" expanded="true" signature="4212:4294" placeholder="{...}" />
-            <marker date="1426154508418" expanded="true" signature="4307:4368" placeholder="{...}" />
-          </folding>
-        </state>
+        <state line="153" column="74" selection-start="4526" selection-end="4594" vertical-scroll-proportion="-5.5185184" vertical-offset="2605" max-vertical-offset="4752" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/offence/views/offencelist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="8" selection-start="44" selection-end="754" vertical-scroll-proportion="-21.333334" vertical-offset="0" max-vertical-offset="702" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/accident/views/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="12.0" vertical-offset="324" max-vertical-offset="6516" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/accident/views/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="2.0" vertical-offset="54" max-vertical-offset="900" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/accident/views/accident.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="44" selection-start="917" selection-end="926" vertical-scroll-proportion="-10.666667" vertical-offset="216" max-vertical-offset="990" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/driver/views/view_accident.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="66" selection-start="374" selection-end="374" vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="7902" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/app/views/apps/license/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="105" column="79" selection-start="5490" selection-end="5490" vertical-scroll-proportion="-4.0" vertical-offset="1782" max-vertical-offset="3366" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/driver/controllers/singleDriverController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="11" selection-start="41" selection-end="1122" vertical-scroll-proportion="0.0" vertical-offset="22" max-vertical-offset="540" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/offence/controllers/offenceListController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="15" selection-start="565" selection-end="701" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="1044" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/driver/views/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="57" selection-start="1176" selection-end="1206" vertical-scroll-proportion="0.37777779" vertical-offset="423" max-vertical-offset="882" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="126" selection-start="1272" selection-end="1272" vertical-scroll-proportion="-8.333333" vertical-offset="333" max-vertical-offset="846" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/app/controllers/AdministrativeUnitController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10908" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/app/controllers/AccidentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="228" column="66" selection-start="9620" selection-end="9620" vertical-scroll-proportion="-10.148149" vertical-offset="986" max-vertical-offset="1584" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/driver/controllers/accidentCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="143" column="12" selection-start="584" selection-end="7089" vertical-scroll-proportion="0.0" vertical-offset="59" max-vertical-offset="504" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/driver/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="7" selection-start="1443" selection-end="1600" vertical-scroll-proportion="0.0" vertical-offset="652" max-vertical-offset="1098" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/app/controllers/InsuranceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="0" selection-start="1060" selection-end="1060" vertical-scroll-proportion="-12.148149" vertical-offset="176" max-vertical-offset="612" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/driver/views/licence.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-3.4666667" vertical-offset="1404" max-vertical-offset="1854" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/driver/views/driver.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="63" selection-start="2887" selection-end="2887" vertical-scroll-proportion="0.3512195" vertical-offset="918" max-vertical-offset="3636" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/inspection.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="62" selection-start="7244" selection-end="7255" vertical-scroll-proportion="-8.0" vertical-offset="1836" max-vertical-offset="7470">
+        <state line="56" column="68" selection-start="0" selection-end="24411" vertical-scroll-proportion="-7.6666665" vertical-offset="801" max-vertical-offset="7470" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/view_accident.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="95" selection-start="312" selection-end="403" vertical-scroll-proportion="-4.6666665" vertical-offset="36" max-vertical-offset="7902" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="42" selection-start="1862" selection-end="1884" vertical-scroll-proportion="0.0" vertical-offset="317" max-vertical-offset="1116" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/app/controllers/VehicleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="296" column="5" selection-start="6341" selection-end="6341" vertical-scroll-proportion="-14.333333" vertical-offset="4941" max-vertical-offset="6804" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="139" column="24" selection-start="5178" selection-end="5189" vertical-scroll-proportion="-10.62963" vertical-offset="2215" max-vertical-offset="7344" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/view_inspection.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="107" selection-start="1493" selection-end="1504" vertical-scroll-proportion="-9.333333" vertical-offset="270" max-vertical-offset="7200" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/view_busines.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="94" selection-start="417" selection-end="417" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="4266">
+          <folding>
+            <marker date="1426219246561" expanded="true" signature="6:321" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/controllers/singleCarController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="19" selection-start="594" selection-end="975" vertical-scroll-proportion="0.0" vertical-offset="59" max-vertical-offset="810">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/controllers/inspectionCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="48" selection-start="2195" selection-end="2213" vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="1926">
+        <state line="106" column="49" selection-start="3838" selection-end="3838" vertical-scroll-proportion="0.0" vertical-offset="1512" max-vertical-offset="2430">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/routes.php">
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/controllers/licenceCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="80" selection-start="5187" selection-end="5187" vertical-scroll-proportion="-13.333333" vertical-offset="2106" max-vertical-offset="6876">
+        <state line="36" column="31" selection-start="930" selection-end="1580" vertical-scroll-proportion="0.0" vertical-offset="353" max-vertical-offset="4032">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/models/Insurance.php">
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/controllers/insuranceAddCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="88" selection-end="209" vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="270">
+        <state line="41" column="53" selection-start="1525" selection-end="1525" vertical-scroll-proportion="0.0" vertical-offset="317" max-vertical-offset="1530">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/models/Inspection.php">
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/car.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="16" selection-start="96" selection-end="106" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="360">
-          <folding>
-            <element signature="e#6#88#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/controllers/VehicleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="210" column="18" selection-start="4393" selection-end="4393" vertical-scroll-proportion="-11.444445" vertical-offset="3471" max-vertical-offset="5598">
+        <state line="187" column="28" selection-start="7685" selection-end="8709" vertical-scroll-proportion="0.0" vertical-offset="2805" max-vertical-offset="5256">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rsmsa/app/config/mail.php">
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/insurance.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="0" selection-start="3830" selection-end="3840" vertical-scroll-proportion="2.0" vertical-offset="1980" max-vertical-offset="2538">
+        <state line="65" column="45" selection-start="4152" selection-end="4152" vertical-scroll-proportion="0.0" vertical-offset="1041" max-vertical-offset="3060">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rsmsa/app/database/migrations/2015_01_20_090222_create_tables.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="38" selection-start="5854" selection-end="5854" vertical-scroll-proportion="0.6756757" vertical-offset="2256" max-vertical-offset="7740">
+        <state line="260" column="34" selection-start="10391" selection-end="10395" vertical-scroll-proportion="0.0" vertical-offset="4680" max-vertical-offset="7524">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/app/database/seeds/AppTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="44" selection-start="294" selection-end="301" vertical-scroll-proportion="0.3920792" vertical-offset="0" max-vertical-offset="612">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsmsa/public/apps/license/views/car_licence.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="153" selection-start="1468" selection-end="1490" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="7038">
           <folding />
         </state>
       </provider>

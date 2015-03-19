@@ -34,6 +34,22 @@ angular.module("rsmsaApp").config( function($routeProvider){
         templateUrl: '/app/offence/views/offenceForm.html',
         controller: 'offenceFormController'
     });
+    $routeProvider.when("/car/:id",{
+        templateUrl: 'views/car.html',
+        controller: 'singleCarController'
+    });
+    $routeProvider.when('/api/accident/view/:accident_id' ,{
+        templateUrl: 'views/view_accident.html',
+        controller:'ViewAccidentController'
+    });
+    $routeProvider.when('/api/inspection/view/:inspe_id' ,{
+        templateUrl: 'views/view_inspection.html',
+        controller:'ViewInspectionController'
+    });
+    $routeProvider.when('/buslicence/view/:bus_id' ,{
+        templateUrl: 'views/view_busines.html',
+        controller:'ViewBusinessController'
+    });
     $routeProvider.otherwise({
         redirectTo: '/home'
     });

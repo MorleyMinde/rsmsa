@@ -101,6 +101,7 @@
 	<script src="<?php echo asset('app/offence/controllers/offenceListController.js')?>"></script>
     <script src="<?php echo asset('app/offence/controllers/offenceFormController.js')?>"></script>
 	<script src="<?php echo asset('apps/driver/controllers/accidentCtrl.js')?>"></script>
+	<script src="<?php echo asset('apps/driver/controllers/singleDriverController.js')?>"></script>
 </head>
 
 <body style="" ng-controller="driverAppCtrl">
