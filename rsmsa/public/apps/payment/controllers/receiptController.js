@@ -25,8 +25,8 @@ angular.module('rsmsaApp').controller('receiptController',function($scope,$http)
 			
 			$http.post("/api/payment/receipt",$scope.receipt).success(function(data) {
 				//$scope.payments = data;
-				if($scope.hide != undefined){
-					$scope.hide();
+				if($scope.complete != undefined){
+					$scope.complete($scope.receipt);
 				}
 			}).error(function(error) {
 				//TODO Handle Error

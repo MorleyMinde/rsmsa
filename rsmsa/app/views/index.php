@@ -121,8 +121,8 @@ md-input-container{
     	</div>
     	<div style="width:12.5%">
     	<div style="margin-top:100px;position: absolute;right: 0;width:240px;">
-    		<div class="menu" ng-click="showPanel('dashboard')">Dashboard</div>	
-	      	<div class="menu" ng-click="showPanel('app')">Apps</div>
+    		<div class="menu" ng-click="showPanel('dashboard')">Home</div>	
+	      	<div class="menu" ng-click="showPanel('app')">Services</div>
 	      	<div class="menu">User
 	      		<div>
 	      			<div class="li" ng-click="showPanel('profile')">Profile</div>

@@ -48,7 +48,7 @@
 					<label>Postal Address</label> 
 					<input name="address" ng-model="offence.address" readonly required> 
 				</md-input-container>
-				<div class="expiry" style="display:{{getDisplayValue(isExpired(offence.offence_date))}}">License of this driver has expired</div>
+				<div class="expiry" ng-if="isExpired(offence.offence_date)">License of this driver has expired</div>
 				<div class="show-details" ng-click="showDetails('driverDetails',$event)">Show Details</div>
 				<div id="driverDetails" style="display:none">
 					<md-input-container  class="col-sm-4">
@@ -294,7 +294,7 @@
 				<md-switch ng-model="offence.paid" ng-disabled="isreadonly">
 				    {{getAnswerValue(offence.paid)}}
 				</md-switch>
-				<md-button class="col-sm-2 md-raised md-primary" ng-click="openPaymentForm($event)">
+				<md-button class="col-sm-2 md-raised md-primary" ng-click="openPaymentForm($event)" ng-if="!offence.paid">
 					Payment Form
 				</md-button>
 				<div style="display:{{getDisplayValue(offence.paid)}}">

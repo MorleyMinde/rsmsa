@@ -12,7 +12,6 @@
 		{"name":"Report Offence","route":"/report"},
 		{"name":"Registry","route":"/registry"},
 		{"name":"Payment","route":"/offence/payments"},
-		{"name":"Offence Report","route":"/offence/report"},
 		{"name":"Statistics","route":"/offence/statistics"}	
 	],
 	"routes":[

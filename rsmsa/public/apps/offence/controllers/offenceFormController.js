@@ -91,37 +91,37 @@ angular.module('rsmsaApp')
 	//Is there a request in the route parameters
 	if($routeParams.request){
 		//There is a request in the route parameters
-		
-		if($routeParams.request == "view" || $routeParams.request == "edit")// if the route is /view or /edit
-		{
-			$scope.formTitle = "Offence Details";
-			$scope.isreadonly = true;
-			//Fetch the offence involved
-			$http.get("/api/offence/"+$routeParams.id).success(function(data){
-				//Set the offence
-				$scope.offence = offenceConversion(data);
-				//Fetch the payment of the offence involved
-				$http.get("/api/offence/"+$routeParams.id+"/payment/")
-					.success(
-						function(payment) {
-							$scope.setPayment(payment);
-					})
-					.error(function(error) {
-						//TODO Handle error
-				});
-			}).error(function(error) {
-				//TODO Handle error
-			});
-			//Fetch the events of the offence involved
-			$http.get("/api/offence/"+$routeParams.id+"/events/")
+		$scope.formTitle = "Offence Details";
+		$scope.isreadonly = true;
+		//Fetch the offence involved
+		$http.get("/api/offence/"+$routeParams.id).success(function(data){
+			//Set the offence
+			$scope.offence = offenceConversion(data);
+			//Fetch the payment of the offence involved
+			$http.get("/api/offence/"+$routeParams.id+"/payment/")
 				.success(
-					function(offenceEvents) {
-						//Set the offenceEvents array
-						$scope.offenceEvents = offenceEvents;
+					function(payment) {
+						$scope.setPayment(payment);
 				})
 				.error(function(error) {
 					//TODO Handle error
 			});
+		}).error(function(error) {
+			//TODO Handle error
+		});
+		//Fetch the events of the offence involved
+		$http.get("/api/offence/"+$routeParams.id+"/events/")
+			.success(
+				function(offenceEvents) {
+					//Set the offenceEvents array
+					$scope.offenceEvents = offenceEvents;
+			})
+			.error(function(error) {
+				//TODO Handle error
+		});
+		if($routeParams.request == "view" || $routeParams.request == "edit")// if the route is /view or /edit
+		{
+			
 		}
 	}
 	/**
@@ -133,6 +133,7 @@ angular.module('rsmsaApp')
 		$scope.offence.paid = (receipt.receipt_number != undefined);
 		if($scope.offence.paid){
 			$scope.payment = receipt;
+			
 		}
 	}
 	/**
@@ -277,7 +278,7 @@ angular.module('rsmsaApp')
 		if (isNaN(timestamp)==false)
 		{
 			var d=new Date(timestamp);
-			return ((date2.getDate() - d.getDate()) > 0);
+			return ((date2.getDate() - d.getDate()) <= 0);
 		}
 		return false;
 	};
@@ -302,6 +303,7 @@ angular.module('rsmsaApp')
 	$scope.openPaymentForm = function(ev) {
 		$mdDialog.setPayment = function(receipt){
 			$scope.setPayment(receipt);
+			$scope.submitOffence();
 		};
 		//Show dialog box with a list of offences to choose from
 		$mdDialog.show({
@@ -366,9 +368,9 @@ function OffenceDialogController($scope, $mdDialog,$http) {
  */
 function PaymentDialogController($scope, $mdDialog,$http) {
 	//Hide the dialog box
-	$scope.hide = function() {
+	$scope.complete = function(receipt) {
 		//Set payment to parent scope
-		$mdDialog.setPayment($scope.receipt);
+		$mdDialog.setPayment(receipt);
 		$mdDialog.hide();
 	};
 }
