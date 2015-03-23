@@ -52,7 +52,7 @@ angular.module('rsmsaApp', ['ngMaterial',"highcharts-ng"])
             text: 'Offence Summary Chart'
         },
         xAxis: {
-            categories: ['Apples', 'Oranges', 'Pears', 'Bananas', 'Plums']
+            categories: ['Arusha', 'Dar-es-salaam', 'Mbeya', 'Tanga', 'Mwanza']
         },
         labels: {
             items: [{
@@ -66,16 +66,16 @@ angular.module('rsmsaApp', ['ngMaterial',"highcharts-ng"])
         },
         series: [{
             type: 'column',
-            name: 'Jane',
+            name: '10-20',
             data: [3, 2, 1, 3, 4]
         }, {
             type: 'column',
-            name: 'John',
-            data: [2, 3, 5, 7, 6]
+            name: '21-30',
+            data: [4, 3, 5, 9, 6]
         }, {
             type: 'column',
-            name: 'Joe',
-            data: [4, 3, 3, 9, 0]
+            name: '31-40',
+            data: [2, 3, 3, 7, 0]
         }, {
             type: 'spline',
             name: 'Average',
@@ -89,15 +89,15 @@ angular.module('rsmsaApp', ['ngMaterial',"highcharts-ng"])
             type: 'pie',
             name: 'Total consumption',
             data: [{
-                name: 'Jane',
+                name: '10-20',
                 y: 13,
                 color: Highcharts.getOptions().colors[0] // Jane's color
             }, {
-                name: 'John',
+                name: '21-30',
                 y: 23,
                 color: Highcharts.getOptions().colors[1] // John's color
             }, {
-                name: 'Joe',
+                name: '31-40',
                 y: 19,
                 color: Highcharts.getOptions().colors[2] // Joe's color
             }],
@@ -121,11 +121,11 @@ angular.module('rsmsaApp', ['ngMaterial',"highcharts-ng"])
             text: 'Male Female Offence Summary Chart'
         },
         xAxis: {
-            categories: ['Apples', 'Oranges', 'Pears', 'Bananas', 'Plums']
+            categories: ['Arusha', 'Dar-es-salaam', 'Mbeya', 'Mwanza', 'Tanga']
         },
         labels: {
             items: [{
-                html: 'Total fruit consumption',
+                html: 'Total Gender Offences',
                 style: {
                     left: '50px',
                     top: '18px',
@@ -135,16 +135,12 @@ angular.module('rsmsaApp', ['ngMaterial',"highcharts-ng"])
         },
         series: [{
             type: 'column',
-            name: 'Jane',
-            data: [3, 2, 1, 3, 4]
-        }, {
-            type: 'column',
-            name: 'John',
+            name: 'Male',
             data: [2, 3, 5, 7, 6]
         }, {
             type: 'column',
-            name: 'Joe',
-            data: [4, 3, 3, 9, 0]
+            name: 'Female',
+            data: [3, 2, 1, 3, 4]
         }, {
             type: 'spline',
             name: 'Average',
@@ -156,19 +152,15 @@ angular.module('rsmsaApp', ['ngMaterial',"highcharts-ng"])
             }
         }, {
             type: 'pie',
-            name: 'Total consumption',
+            name: 'Total Gender Offences',
             data: [{
-                name: 'Jane',
-                y: 13,
+                name: 'Male',
+                y: 23,
                 color: Highcharts.getOptions().colors[0] // Jane's color
             }, {
-                name: 'John',
-                y: 23,
+                name: 'Female',
+                y: 13,
                 color: Highcharts.getOptions().colors[1] // John's color
-            }, {
-                name: 'Joe',
-                y: 19,
-                color: Highcharts.getOptions().colors[2] // Joe's color
             }],
             center: [100, 80],
             size: 100,
@@ -190,11 +182,11 @@ angular.module('rsmsaApp', ['ngMaterial',"highcharts-ng"])
             text: 'Accident Summary Chart'
         },
         xAxis: {
-            categories: ['Apples', 'Oranges', 'Pears', 'Bananas', 'Plums']
+            categories: ['Arusha', 'Dar-es-salaam', 'Mbeya', 'Mwanza', 'Tanga']
         },
         labels: {
             items: [{
-                html: 'Total fruit consumption',
+                html: 'Total Region Offences',
                 style: {
                     left: '50px',
                     top: '18px',
@@ -204,20 +196,24 @@ angular.module('rsmsaApp', ['ngMaterial',"highcharts-ng"])
         },
         series: [{
             type: 'column',
-            name: 'Jane',
+            name: '0-10',
             data: [3, 2, 1, 3, 4]
         }, {
             type: 'column',
-            name: 'John',
+            name: '11-20',
             data: [2, 3, 5, 7, 6]
         }, {
             type: 'column',
-            name: 'Joe',
-            data: [4, 3, 3, 9, 0]
+            name: '21-30',
+            data: [4, 2, 3, 9, 0]
+        }, {
+            type: 'column',
+            name: '31-40',
+            data: [5, 3, 4, 8, 4]
         }, {
             type: 'spline',
             name: 'Average',
-            data: [3, 2.67, 3, 6.33, 3.33],
+            data: [3.5, 2.5, 3.25, 6.75, 3.5],
             marker: {
                 lineWidth: 2,
                 lineColor: Highcharts.getOptions().colors[3],
@@ -225,19 +221,23 @@ angular.module('rsmsaApp', ['ngMaterial',"highcharts-ng"])
             }
         }, {
             type: 'pie',
-            name: 'Total consumption',
+            name: 'Total Accidents',
             data: [{
-                name: 'Jane',
+                name: '0-10',
                 y: 13,
                 color: Highcharts.getOptions().colors[0] // Jane's color
             }, {
-                name: 'John',
+                name: '11-20',
                 y: 23,
                 color: Highcharts.getOptions().colors[1] // John's color
             }, {
-                name: 'Joe',
-                y: 19,
+                name: '21-30',
+                y: 18,
                 color: Highcharts.getOptions().colors[2] // Joe's color
+            }, {
+                name: '31-40',
+                y: 24,
+                color: Highcharts.getOptions().colors[3] // Joe's color
             }],
             center: [100, 80],
             size: 100,

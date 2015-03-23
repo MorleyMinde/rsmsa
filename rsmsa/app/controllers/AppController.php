@@ -25,7 +25,7 @@ class AppController extends BaseController {
 				$json = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT']."/apps/".$app->location."/manifest.json"));
 				//add the id of the app to the manifest
 				$json->id = $app->id;
-				$json->name = $app->name;
+				//$json->name = $app->name;
 			}catch(Exception $e){
 				continue;
 			}

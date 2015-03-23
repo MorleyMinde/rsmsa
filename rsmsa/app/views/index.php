@@ -116,7 +116,7 @@ md-input-container{
     	</div>
     	<div style="width:75%">
     		<h2 class="md-toolbar-tools" style="padding-top: 60px;;font-size:40px;color:white">
-                <img src="img/logo.png" style="height:100px"/>IRoad(Integrated Road Safety Management System)
+                <img src="img/logo.png" style="height:70px"/>Integrated Road Safety Management System
       		</h2>
     	</div>
     	<div style="width:12.5%">
@@ -147,7 +147,7 @@ md-input-container{
 		    </div>
 		    <div ng-if="dashboard" class="highcharts-class" style="width:100%">
 		    	<highchart id="chart1" config="chartConfig2"></highchart>
-		    </div>
+		    </div>   
   	<md-card class="app" ng-if="showApp" ng-repeat="app in apps" ng-click="openApp($event,app.id)" style="background-color:{{app.color.c200}}">
 	 	<div class="img" style="background-image:url(app/{{app.id}}/{{app.icons.small}})">
 	 		
